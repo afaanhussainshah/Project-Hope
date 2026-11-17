@@ -31,6 +31,19 @@ Inspired by iconic cutout and stop-motion aesthetics (e.g., *HyperFrames / Sandp
   - *Ahmedabad Heartbreak:* Inside edge chop-on silencing 130,000 fans (dead silence drop).
   - *Trophy Dust vs Immortal Legacy:* Walk tall, King.
 
+### 3. Cricket Bat Grains — Myth vs Fact (The Science of Willow)
+- **File:** [`bat-grains-myth-reel.mp4`](./bat-grains-myth-reel.mp4)
+- **Duration:** 40.36 seconds
+- **Framerate:** **60 FPS (Ultra-Smooth)**
+- **Resolution:** 1080 × 1920 (Vertical 9:16)
+- **Storyline:**
+  - *Act 1: The Money Waste Hook* — Magnifying glass examining tightly packed grains on an $800 price tag with a torn paper rip effect and `WASTING MONEY` stamp slam.
+  - *Act 2: The Myth or Fact Dilemma* — Grade 1 English Willow card questioning if 12-14 grains actually hit further (`MYTH OR FACT?` double stamp).
+  - *Act 3: The Growth Ring Science* — Cross-section tree trunk revealing that 1 grain simply represents 1 year of natural tree growth.
+  - *Act 4: The 14 Grains Paradox* — Tight grains mean older, drier wood $\rightarrow$ cricket ball impact creates brittle toe cracks (`BRITTLE WOOD CRACKS FAST` stamp).
+  - *Act 5: The 6 Grains Cannon* — Wider grains contain natural moisture and flex $\rightarrow$ wooden mallet knocking generates a glowing trampoline sweet spot (`THE CANNON · 2X LIFESPAN` stamp).
+  - *Act 6: The Final Verdict* — Mechanical balance scale tilting decisively towards pickup, balance, and ping over grain count (`STOP COUNTING LINES` stamp & CTA).
+
 ---
 
 ## 🛠️ Architecture & Tech Stack
@@ -53,8 +66,17 @@ Project Hope/
 │   ├── index.html                # Master GSAP animation composition
 │   └── standalone.html           # Bundled standalone HTML
 │
+├── bat-grains-myth/              # Bat Grains Myth vs Fact Reel Pipeline
+│   ├── assets/                   # Voiceover, fonts & GSAP
+│   ├── preview_frames/           # Render verification snapshots
+│   ├── renders/                  # Final 60 FPS MP4 & mixed audio master
+│   ├── tools/                    # Speech alignment, SFX synth & Playwright renderer
+│   ├── index.html                # Master GSAP animation composition
+│   └── standalone.html           # Bundled standalone HTML
+│
 ├── mohammad-amir-2017-reel.mp4   # Master 60 FPS Export (Amir 2017 CT)
-└── kohli-765-runs-reel.mp4       # Master Export (Kohli 765 Runs)
+├── kohli-765-runs-reel.mp4       # Master Export (Kohli 765 Runs)
+└── bat-grains-myth-reel.mp4      # Master 60 FPS Export (Bat Grains Myth vs Fact)
 ```
 
 ---

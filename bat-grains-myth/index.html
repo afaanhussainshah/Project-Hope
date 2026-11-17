@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #12100E; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Anton", sans-serif; }
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; z-index: 1; }
+      .cam, .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+      .cut { filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.44)); }
+      #wipe { position: absolute; left: 0; top: -190px; width: 1500px; height: 2300px; z-index: 5; }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8; opacity: 0.16; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9; background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 46%, rgba(15, 10, 6, 0.52) 100%); }
+      .cap { position: absolute; left: 50px; width: 980px; top: 1380px; height: 230px; z-index: 10; text-align: center; }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px; background: #f6f1e4; color: #141414;
+        font-size: 78px; line-height: 1.06; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(0 2px 1.5px rgba(20,12,4,.35)) drop-shadow(6px 16px 14px rgba(20,12,4,.4));
+      }
+      .cap b { font-weight: 400; color: #c1121f; }
+      .cap i { font-style: normal; background: #e3b23c; color: #141414; padding: 0 12px; }
+      .cap u { text-decoration: none; color: #0b3c85; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40.36" data-width="1080" data-height="1920">
+      <!-- 6 Narrative Scenes (40.36s) -->
+      <div id="s1" class="clip scene" data-start="0.00" data-duration="4.80" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2" class="clip scene" data-start="4.80" data-duration="8.00" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="12.80" data-duration="3.40" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="16.20" data-duration="8.00" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="24.20" data-duration="9.00" data-track-index="0"><div class="cam"></div></div>
+      <div id="s6" class="clip scene" data-start="33.20" data-duration="7.16" data-track-index="0"><div class="cam"></div></div>
+
+      <audio id="vo" src="assets/voiceover.wav" data-start="0" data-duration="40.36" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="40.36" data-volume="0.45" data-track-index="2"></audio>
+
+      <!-- Overlays -->
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <!-- Timed Captions (Precisely Synced) -->
+      <div class="clip cap" data-start="0.00" data-duration="2.80" data-track-index="1"><span>MORE GRAINS = <b>BETTER BAT?</b></span></div>
+      <div class="clip cap" data-start="2.80" data-duration="2.00" data-track-index="1"><span>YOU’RE <b>WASTING YOUR MONEY!</b></span></div>
+      <div class="clip cap" data-start="5.00" data-duration="5.00" data-track-index="1"><span>12 STRAIGHT GRAINS = <b>GRADE 1 WILLOW?</b></span></div>
+      <div class="clip cap" data-start="10.20" data-duration="2.60" data-track-index="1"><span><b>MYTH...</b> OR <i>FACT?</i></span></div>
+      <div class="clip cap" data-start="13.00" data-duration="3.20" data-track-index="1"><span>1 GRAIN = <b>ONE YEAR OF TREE GROWTH.</b></span></div>
+      <div class="clip cap" data-start="16.40" data-duration="2.80" data-track-index="1"><span>MORE GRAINS = <u>OLDER, DENSER WOOD.</u></span></div>
+      <div class="clip cap" data-start="19.40" data-duration="2.00" data-track-index="1"><span>PINGS INSTANTLY...</span></div>
+      <div class="clip cap" data-start="21.40" data-duration="2.80" data-track-index="1"><span>BUT <b>BRITTLE!</b> CRACKS TWICE AS FAST.</span></div>
+      <div class="clip cap" data-start="24.40" data-duration="3.20" data-track-index="1"><span>FEWER GRAINS = <i>FLEXIBLE WILLOW.</i></span></div>
+      <div class="clip cap" data-start="27.80" data-duration="5.40" data-track-index="1"><span>KNOCK IT IN... <b>BECOMES AN ABSOLUTE CANNON!</b></span></div>
+      <div class="clip cap" data-start="33.40" data-duration="4.60" data-track-index="1"><span>STOP COUNTING LINES. <b>BALANCE & PING WIN.</b></span></div>
+      <div class="clip cap" data-start="38.20" data-duration="2.16" data-track-index="1"><span>HOW MANY GRAINS <i>DOES YOUR BAT HAVE?</i></span></div>
+    </div>
+
+    <script>
+      let seed = 88;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+
+      const C = {
+        paper: "#F6F1E4",
+        ink: "#141414",
+        willow: "#ECD4AD",
+        willow2: "#DFC194",
+        grainLine: "#5D3A1A",
+        handle: "#C8102E",
+        stamp: "#C1121F",
+        gold: "#E3B23C",
+        forest: "#0E291C",
+        cyan: "#00E5FF",
+        darkShop: "#16120E"
+      };
+
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+
+      const tx = (x, y, s, text, col = C.ink, anchor = "middle", extra = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${col}" text-anchor="${anchor}" ${extra}>${text}</text>`;
+
+      const poly = (pts, fill, ex = "") =>
+        `<polygon class="cut" points="${pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ")}" fill="${fill}" ${ex}/>`;
+
+      const sheet = (x, y, w, h, fill = C.paper, n = 12) => {
+        const pts = [];
+        for (let i = 0; i <= n; i++) pts.push([x + (w * i) / n, y + (rnd() - 0.5) * 8]);
+        for (let i = 0; i <= n; i++) pts.push([x + w + (rnd() - 0.5) * 8, y + (h * i) / n]);
+        for (let i = n; i >= 0; i--) pts.push([x + (w * i) / n, y + h + (rnd() - 0.5) * 8]);
+        for (let i = n; i >= 0; i--) pts.push([x + (rnd() - 0.5) * 8, y + (h * i) / n]);
+        return poly(pts, fill);
+      };
+
+      const rays = (id, cx, cy, n = 18, col = "#211A13") => {
+        let s = `<g id="${id}" class="cut">`;
+        const r = 1800;
+        for (let i = 0; i < n; i++) {
+          const a0 = (i * 2 * Math.PI) / n, a1 = ((i + 0.5) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + r * Math.cos(a0)).toFixed(0)},${(cy + r * Math.sin(a0)).toFixed(0)} ${(cx + r * Math.cos(a1)).toFixed(0)},${(cy + r * Math.sin(a1)).toFixed(0)}" fill="${col}"/>`;
+        }
+        return s + "</g>";
+      };
+
+      function banner(id, x, y, text, col1, col2, subtext = "") {
+        const w = 880, h = 190, m = x + w / 2;
+        const zig = `${m - 30},${y - 20} ${m + 25},${y + 45} ${m - 20},${y + 95} ${m + 30},${y + 145} ${m - 15},${y + h + 20}`;
+        const inner = subtext ? `
+          <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${col1}"/>
+          <rect x="${x}" y="${y + 12}" width="${w}" height="10" fill="${col2}"/>
+          <rect x="${x}" y="${y + h - 22}" width="${w}" height="10" fill="${col2}"/>
+          ${tx(m, y + 92, 82, text, col2, "middle", 'letter-spacing="4"')}
+          ${tx(m, y + 146, 42, subtext, col2, "middle", 'letter-spacing="6"')}
+        ` : `
+          <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${col1}"/>
+          <rect x="${x}" y="${y + 12}" width="${w}" height="10" fill="${col2}"/>
+          <rect x="${x}" y="${y + h - 22}" width="${w}" height="10" fill="${col2}"/>
+          ${tx(m, y + 138, 100, text, col2, "middle", 'letter-spacing="6"')}
+        `;
+        return `<defs><clipPath id="${id}cl"><polygon points="${x - 20},${y - 20} ${zig} ${x - 20},${y + h + 20}"/></clipPath><clipPath id="${id}cr"><polygon points="${x + w + 20},${y - 20} ${zig} ${x + w + 20},${y + h + 20}"/></clipPath></defs><g id="${id}" class="cut"><g id="${id}L"><g clip-path="url(#${id}cl)">${inner}</g></g><g id="${id}R"><g clip-path="url(#${id}cr)">${inner}</g></g></g>`;
+      }
+
+      const stamp = (id, cx, cy, l1, l2, rot = -10, col = C.stamp) =>
+        `<g id="${id}" class="cut" transform="translate(${cx} ${cy}) rotate(${rot})">
+          ${sheet(-230, -95, 460, 190, C.paper, 8)}
+          <rect x="-215" y="-80" width="430" height="160" fill="none" stroke="${col}" stroke-width="8" stroke-dasharray="14 10" rx="10"/>
+          ${tx(0, -6, 76, l1, col, "middle", 'letter-spacing="4"')}
+          ${tx(0, 56, 46, l2, col, "middle", 'letter-spacing="6"')}
+        </g>`;
+
+      const scraps = (cls, cx, cy, n, colA = C.stamp, colB = C.gold) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 30 + rnd() * 50;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? colA : colB}" opacity="0"/>`;
+        }
+        return s;
+      };
+
+      // Detailed Cricket Bat with Procedural Grains
+      function fullBat(id, x, y, s, nGrains, o = {}) {
+        const bw = 240, bh = 640;
+        let grainLines = "";
+        const step = bw / (nGrains + 1);
+        for (let i = 1; i <= nGrains; i++) {
+          const gx = -bw / 2 + i * step;
+          const wobble = (rnd() - 0.5) * 6;
+          grainLines += `<path d="M${gx} -140 Q${gx + wobble} 140 ${gx} 460" stroke="${C.grainLine}" stroke-width="${o.grainWidth || 3.5}" fill="none" opacity="0.85"/>`;
+        }
+
+        return `<g id="${id}" class="cut" transform="translate(${x} ${y}) scale(${s})">
+          <!-- Handle -->
+          <rect x="-18" y="-460" width="36" height="340" rx="14" fill="${o.handleCol || C.handle}"/>
+          <!-- Handle Spiral Grips -->
+          ${[-400, -350, -300, -250, -200].map(hy => `<line x1="-18" y1="${hy}" x2="18" y2="${hy + 20}" stroke="#fff" stroke-width="6"/>`).join("")}
+          <!-- Shoulder -->
+          <path d="M-45 -140 L-18 -120 L18 -120 L45 -140 L100 -60 L-100 -60 Z" fill="${C.willow2}"/>
+
+          <!-- Blade Body -->
+          <rect x="${-bw / 2}" y="-80" width="${bw}" height="${bh}" rx="22" fill="${C.willow}"/>
+          <!-- Curved Toe -->
+          <path d="M${-bw / 2} ${bh - 80} Q0 ${bh - 40} ${bw / 2} ${bh - 80} L${bw / 2} ${bh - 100} L${-bw / 2} ${bh - 100} Z" fill="${C.willow2}"/>
+
+          <!-- Grains -->
+          ${grainLines}
+
+          <!-- Sticker Branding -->
+          ${o.noSticker ? "" : `
+            <rect x="-85" y="-30" width="170" height="90" rx="8" fill="#141414"/>
+            <text x="0" y="28" font-family="Anton" font-size="52" fill="${C.gold}" text-anchor="middle" letter-spacing="4">GRAIN</text>
+            <text x="0" y="52" font-family="Anton" font-size="20" fill="#fff" text-anchor="middle" letter-spacing="3">GRADE WILLOW</text>
+          `}
+
+          <!-- Sweet spot glow overlay -->
+          ${o.sweetGlow ? `
+            <ellipse id="${id}_glow" cx="0" cy="220" rx="100" ry="140" fill="${C.gold}" opacity="0" filter="blur(8px)"/>
+          ` : ""}
+
+          <!-- Crack lines on blade -->
+          ${o.crack ? `
+            <g id="${id}_crack" opacity="0">
+              <path d="M10 320 L-25 380 L15 440 L-10 520 L5 560" stroke="${C.stamp}" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M-25 380 L-50 410 M15 440 L45 470" stroke="${C.stamp}" stroke-width="5" fill="none"/>
+            </g>
+          ` : ""}
+        </g>`;
+      }
+
+      // Magnifying Glass
+      function lens(id, x, y, s = 1) {
+        return `<g id="${id}" class="cut" transform="translate(${x} ${y}) scale(${s})">
+          <line x1="90" y1="90" x2="220" y2="220" stroke="#8D6E63" stroke-width="32" stroke-linecap="round"/>
+          <circle cx="0" cy="0" r="130" fill="none" stroke="${C.gold}" stroke-width="26"/>
+          <circle cx="0" cy="0" r="115" fill="#E0F7FA" opacity="0.32"/>
+          <path d="M-60 -70 A80 80 0 0 1 60 -70" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.7"/>
+        </g>`;
+      }
+
+      // ==========================================
+      // SCENE 1: The Money Waste Hook (0.00 - 4.80s)
+      // ==========================================
+      reseed(111);
+      const priceRip = `
+        <g id="price_tag" class="cut" transform="translate(540, 420)">
+          <g id="ptL">
+            <path d="M-220 -80 L0 -80 L-20 0 L10 80 L-220 80 Z" fill="${C.stamp}"/>
+            <circle cx="-180" cy="0" r="14" fill="#fff"/>
+            <text x="-90" y="24" font-family="Anton" font-size="64" fill="#fff" text-anchor="middle">$800</text>
+          </g>
+          <g id="ptR">
+            <path d="M0 -80 L220 -80 L220 80 L10 80 L-20 0 Z" fill="${C.stamp}"/>
+            <text x="110" y="24" font-family="Anton" font-size="44" fill="${C.gold}" text-anchor="middle">GRADE 1</text>
+          </g>
+        </g>
+      `;
+
+      put("s1", svg(
+        rays("r1", 540, 750, 20, "#1F1812") +
+        fullBat("bat1", 540, 840, 1.1, 12) +
+        lens("lens1", 380, 760, 1.1) +
+        priceRip +
+        scraps("tagScraps", 540, 420, 24, C.stamp, C.gold) +
+        stamp("st1_waste", 540, 1140, "WASTING MONEY", "STOP COUNTING", -6, C.stamp), "#14100C"));
+
+      // ==========================================
+      // SCENE 2: Grade 1 Myth... Or Fact? (4.80 - 12.80s)
+      // ==========================================
+      reseed(222);
+      const showcaseCard = `
+        <g id="sc_card" class="cut" transform="translate(540, 740)">
+          ${sheet(-280, -380, 560, 760, C.paper, 8)}
+          <rect x="-255" y="-355" width="510" height="560" fill="#1A1510"/>
+          ${fullBat("bat_card", 0, -40, 0.72, 12, { noSticker: 1 })}
+          <rect x="-255" y="215" width="510" height="120" fill="#120E0A"/>
+          <text x="0" y="265" font-family="Anton" font-size="38" fill="${C.gold}" text-anchor="middle">12 STRAIGHT GRAINS</text>
+          <text x="0" y="308" font-family="Anton" font-size="28" fill="${C.paper}" text-anchor="middle">TEST LEVEL GRADE 1 WILLOW</text>
+        </g>
+      `;
+
+      put("s2", svg(
+        rays("r2", 540, 750, 24, "#211A13") +
+        showcaseCard +
+        stamp("st2_myth", 320, 420, "MYTH", "QUESTIONED", -12, C.stamp) +
+        stamp("st2_fact", 760, 420, "OR FACT?", "EXPLAINED", 10, C.gold) +
+        banner("bn_grade1", 100, 1140, "MORE GRAINS = BETTER?", C.darkShop, C.gold, "THE CRICKET WORLD'S BIGGEST MYTH"), "#130F0B"));
+
+      // ==========================================
+      // SCENE 3: The Secret of Tree Rings (12.80 - 16.20s)
+      // ==========================================
+      reseed(333);
+      const treeCrossSection = `
+        <g id="tree_rings" class="cut" transform="translate(540, 680)">
+          <!-- Outer Bark -->
+          <circle cx="0" cy="0" r="320" fill="#4E342E"/>
+          <!-- Sapwood -->
+          <circle cx="0" cy="0" r="290" fill="${C.willow}"/>
+          <!-- Annual rings -->
+          ${[260, 230, 200, 170, 140, 110, 80, 50, 25].map((r, i) =>
+            `<circle cx="${(rnd() - 0.5) * 6}" cy="${(rnd() - 0.5) * 6}" r="${r}" fill="none" stroke="${C.grainLine}" stroke-width="${3 + (i % 2) * 2}" opacity="0.85"/>`
+          ).join("")}
+          <!-- Heartwood Center -->
+          <circle cx="0" cy="0" r="20" fill="#3E2723"/>
+
+          <!-- Callout Marker -->
+          <line x1="80" y1="-80" x2="220" y2="-180" stroke="${C.stamp}" stroke-width="6"/>
+          <rect x="180" y="-230" width="280" height="70" rx="8" fill="#141414"/>
+          <text x="320" y="-182" font-family="Anton" font-size="28" fill="${C.gold}" text-anchor="middle">1 RING = 1 YEAR</text>
+        </g>
+      `;
+
+      put("s3", svg(
+        rays("r3", 540, 750, 20, C.forest) +
+        treeCrossSection +
+        banner("bn_tree", 100, 1120, "1 GRAIN = 1 YEAR", C.forest, C.gold, "NATURE'S ANNUAL GROWTH CYCLE"), "#0A1B12"));
+
+      // ==========================================
+      // SCENE 4: 12 Grains — Brittle & Cracks Fast (16.20 - 24.20s)
+      // ==========================================
+      reseed(444);
+      const leatherBall = `
+        <g id="ball4" class="cut" transform="translate(540, 820)">
+          <circle cx="0" cy="0" r="38" fill="${C.stamp}"/>
+          <path d="M-22 -18 A28 28 0 0 1 2 -32" stroke="#FF8A80" stroke-width="4" fill="none"/>
+          <line x1="-36" y1="0" x2="36" y2="0" stroke="#fff" stroke-width="3" stroke-dasharray="4 3"/>
+        </g>
+      `;
+
+      put("s4", svg(
+        rays("r4", 540, 750, 22, "#241512") +
+        fullBat("bat_dense", 540, 780, 1.1, 14, { crack: 1 }) +
+        leatherBall +
+        scraps("crackSparks", 540, 820, 26, C.gold, C.stamp) +
+        scraps("woodSplinters", 540, 1080, 22, C.willow2, C.grainLine) +
+        stamp("st4_brittle", 540, 380, "BRITTLE WOOD", "CRACKS FAST", -8, C.stamp) +
+        banner("bn_brittle", 100, 1140, "OLDER & DENSER", C.darkShop, C.stamp, "EXPLOSIVE PING · SHORTER LIFESPAN"), "#180D0B"));
+
+      // ==========================================
+      // SCENE 5: 5–6 Grains — The Flexible Cannon (24.20 - 33.20s)
+      // ==========================================
+      reseed(555);
+      const woodenMallet = `
+        <g id="mallet" class="cut" transform="translate(780, 800) rotate(-35)">
+          <rect x="-14" y="-30" width="28" height="280" rx="8" fill="#8D6E63"/>
+          <rect x="-65" y="-120" width="130" height="95" rx="14" fill="#4E342E"/>
+          <line x1="-65" y1="-72" x2="65" y2="-72" stroke="${C.gold}" stroke-width="6"/>
+        </g>
+      `;
+
+      put("s5", svg(
+        rays("r5", 540, 750, 24, "#241D12") +
+        fullBat("bat_wide", 540, 780, 1.1, 6, { sweetGlow: 1, grainWidth: 5 }) +
+        woodenMallet +
+        scraps("knockSparks", 540, 780, 24, C.gold, "#fff") +
+        stamp("st5_cannon", 540, 380, "THE CANNON", "2X LIFESPAN", 6, C.gold) +
+        banner("bn_cannon", 100, 1140, "YOUNG & FLEXIBLE", C.darkShop, C.gold, "COMPRESSES INTO MONSTROUS POWER"), "#161109"));
+
+      // ==========================================
+      // SCENE 6: Stop Counting Lines & Verdict (33.20 - 40.36s)
+      // ==========================================
+      reseed(666);
+      const balanceScale = `
+        <g id="scale" class="cut" transform="translate(540, 720)">
+          <!-- Base & Pillar -->
+          <rect x="-14" y="-200" width="28" height="420" rx="8" fill="#8D6E63"/>
+          <path d="M-120 220 L120 220 L140 260 L-140 260 Z" fill="${C.gold}"/>
+          <!-- Fulcrum -->
+          <polygon points="0,-210 -40,-150 40,-150" fill="${C.gold}"/>
+
+          <!-- Tilting Beam -->
+          <g id="beam" transform="rotate(16)">
+            <rect x="-290" y="-10" width="580" height="20" rx="6" fill="${C.gold}"/>
+            <circle cx="0" cy="0" r="16" fill="#4E342E"/>
+
+            <!-- Left Pan: Just Lines -->
+            <g id="panL" transform="translate(-250, 0)">
+              <line x1="0" y1="0" x2="-60" y2="120" stroke="${C.gold}" stroke-width="4"/>
+              <line x1="0" y1="0" x2="60" y2="120" stroke="${C.gold}" stroke-width="4"/>
+              <path d="M-90 120 Q0 160 90 120 Z" fill="${C.willow2}"/>
+              <rect x="-85" y="30" width="170" height="85" rx="8" fill="#1C140E" stroke="${C.stamp}" stroke-width="4"/>
+              <text x="0" y="68" font-family="Anton" font-size="28" fill="${C.stamp}" text-anchor="middle">14 GRAINS</text>
+              <text x="0" y="102" font-family="Anton" font-size="20" fill="${C.paper}" text-anchor="middle">JUST LINES</text>
+            </g>
+
+            <!-- Right Pan: Balance & Ping (Heavier!) -->
+            <g id="panR" transform="translate(250, 0)">
+              <line x1="0" y1="0" x2="-60" y2="120" stroke="${C.gold}" stroke-width="4"/>
+              <line x1="0" y1="0" x2="60" y2="120" stroke="${C.gold}" stroke-width="4"/>
+              <path d="M-105 120 Q0 170 105 120 Z" fill="${C.gold}"/>
+              <rect x="-105" y="30" width="210" height="85" rx="8" fill="#241B0E" stroke="${C.gold}" stroke-width="4"/>
+              <text x="0" y="68" font-family="Anton" font-size="28" fill="${C.gold}" text-anchor="middle">PICKUP & PING</text>
+              <text x="0" y="102" font-family="Anton" font-size="20" fill="#fff" text-anchor="middle">TRUE QUALITY ⭐</text>
+            </g>
+          </g>
+        </g>
+      `;
+
+      put("s6", svg(
+        rays("r6", 540, 750, 24, "#1E1810") +
+        balanceScale +
+        stamp("st6_verdict", 540, 360, "STOP COUNTING", "LINES", 0, C.stamp) +
+        banner("bn_cta", 100, 1140, "HOW MANY GRAINS", C.darkShop, C.gold, "DOES YOUR CRICKET BAT HAVE? 💬"), "#120E0A"));
+
+      // ==========================================
+      // GSAP MASTER TIMELINE
+      // ==========================================
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = { main: tl };
+
+      const CC = "50% 50%";
+      const pop = (sel, t, d = 0.22) => tl.fromTo(sel, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: d, ease: "back.out(2.2)" }, t);
+      const slam = (sel, t, r = 0) => tl.fromTo(sel, { scale: 3.2, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.16, ease: "power4.in" }, t);
+      const bannerPop = (sel, t) => tl.fromTo(sel, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.35, ease: "back.out(2)", transformOrigin: "50% 50%" }, t);
+      const shake = (sel, t, a = 22) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t).to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04).to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08).to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") => tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.75, ease: "power2.out", immediateRender: false }, t);
+        });
+
+      // Captions
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 4 : -4, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.5 : 1.5, opacity: 1, duration: 0.15, ease: "back.out(2.5)" }, t);
+      });
+
+      // Scene Transition Wipes
+      gsap.set("#wipe", { x: -1700 });
+      [[4.80, C.paper, 1], [12.80, C.forest, -1], [16.20, C.darkShop, 1], [24.20, C.gold, -1], [33.20, C.stamp, 1]].forEach(([t, c, dir]) => {
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300, background: c }, { x: dir > 0 ? 1300 : -1700, duration: 0.32, ease: "none" }, t - 0.16);
+      });
+
+      // Clip Display Visibility
+      gsap.utils.toArray(".clip").forEach((el) => {
+        const start = +el.dataset.start || 0;
+        const dur = +el.dataset.duration || 0;
+        if (dur > 0) {
+          tl.set(el, { display: "none" }, 0);
+          tl.set(el, { display: "block" }, start);
+          tl.set(el, { display: "none" }, start + dur);
+        }
+      });
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 1 (0.00 - 4.80s)
+      // ==========================================
+      zoom("s1", 0, 4.80, 1, 1.12, "50% 50%");
+      tl.fromTo("#lens1", { x: 260, y: 700 }, { x: 500, y: 840, duration: 2.2, ease: "power1.inOut" }, 0);
+      // Rip price tag at 2.0s
+      tl.to("#ptL", { x: -70, y: -20, rotation: -12, duration: 0.4, ease: "power2.out" }, 2.0);
+      tl.to("#ptR", { x: 70, y: 20, rotation: 12, duration: 0.4, ease: "power2.out" }, 2.0);
+      burst("tagScraps", 2.0, 500, -200, 200);
+      slam("#st1_waste", 2.8, -6);
+      shake("#s1 .cam", 2.8, 25);
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 2 (4.80 - 12.80s)
+      // ==========================================
+      zoom("s2", 4.80, 8.00, 1, 1.10, "50% 50%");
+      tl.fromTo("#sc_card", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" }, 5.0);
+      bannerPop("#bn_grade1", 5.6);
+      slam("#st2_myth", 10.8, -12);
+      shake("#s2 .cam", 10.96, 22);
+      slam("#st2_fact", 11.9, 10);
+      shake("#s2 .cam", 12.06, 24);
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 3 (12.80 - 16.20s)
+      // ==========================================
+      zoom("s3", 12.80, 3.40, 1, 1.12, "50% 50%");
+      tl.fromTo("#tree_rings", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.6)" }, 12.8);
+      bannerPop("#bn_tree", 13.4);
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 4 (16.20 - 24.20s)
+      // ==========================================
+      zoom("s4", 16.20, 8.00, 1, 1.12, "50% 50%");
+      bannerPop("#bn_brittle", 16.6);
+      // Fast ball strikes at 19.4s
+      tl.fromTo("#ball4", { x: 800, y: 500, scale: 0.5 }, { x: 540, y: 820, scale: 1, duration: 0.35, ease: "power3.in" }, 19.1);
+      tl.to("#ball4", { x: 200, y: 400, duration: 0.4, ease: "power2.out" }, 19.45);
+      burst("crackSparks", 19.45, 600, -300, 200);
+      shake("#s4 .cam", 19.45, 26);
+
+      // Crack splits at 21.5s
+      tl.to("#bat_dense_crack", { opacity: 1, duration: 0.1 }, 21.5);
+      burst("woodSplinters", 21.5, 500, -200, 300);
+      shake("#s4 .cam", 21.5, 30);
+      slam("#st4_brittle", 21.8, -8);
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 5 (24.20 - 33.20s)
+      // ==========================================
+      zoom("s5", 24.20, 9.00, 1, 1.10, "50% 50%");
+      bannerPop("#bn_cannon", 24.6);
+      // Mallet knocking hits
+      [25.4, 26.2, 27.0].forEach((t, i) => {
+        tl.fromTo("#mallet", { rotation: -35, x: 780, y: 800 }, { rotation: 10, x: 620, y: 860, duration: 0.12, ease: "power2.in" }, t);
+        tl.to("#mallet", { rotation: -35, x: 780, y: 800, duration: 0.2, ease: "power2.out" }, t + 0.12);
+        burst("knockSparks", t + 0.12, 350, -150, 150);
+        shake("#s5 .cam", t + 0.12, 16);
+      });
+
+      // Sweet spot glows into a cannon!
+      tl.to("#bat_wide_glow", { opacity: 0.8, scale: 1.25, duration: 0.6, ease: "power2.out" }, 28.5);
+      slam("#st5_cannon", 30.2, 6);
+      shake("#s5 .cam", 30.2, 28);
+
+      // ==========================================
+      // TIMELINE ACTIONS: SCENE 6 (33.20 - 40.36s)
+      // ==========================================
+      zoom("s6", 33.20, 7.16, 1, 1.08, "50% 50%");
+      tl.fromTo("#scale", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" }, 33.2);
+      // Scale tilts heavier to the right, pans stay level
+      tl.fromTo("#beam", { rotation: 0 }, { rotation: 18, duration: 0.8, ease: "back.out(2)" }, 33.6);
+      tl.fromTo("#panL", { rotation: 0 }, { rotation: -18, duration: 0.8, ease: "back.out(2)" }, 33.6);
+      tl.fromTo("#panR", { rotation: 0 }, { rotation: -18, duration: 0.8, ease: "back.out(2)" }, 33.6);
+      slam("#st6_verdict", 34.0, 0);
+      shake("#s6 .cam", 34.0, 24);
+      bannerPop("#bn_cta", 38.2);
+    </script>
+  </body>
+</html>
