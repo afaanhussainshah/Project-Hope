@@ -57,7 +57,6 @@ def whistle(d=0.6, f=2400):
     phase = 0.0
     for i in range(L):
         frac = i / L
-        # slight vibrato
         vib = math.sin(2 * math.pi * 18 * (i / SR)) * 80
         phase += 2 * math.pi * (f + vib) / SR
         env = math.sin(math.pi * frac) ** 1.5
@@ -100,50 +99,55 @@ def sub_drop(d=0.8):
         out.append(math.sin(phase) * env)
     return out
 
-# Place SFX across the 47.73s narrative:
+# =========================================================================
+# EXACT MILLISECOND-ALIGNED SFX PLACEMENT
+# =========================================================================
 
 # Scene 1: The Question & "Definitely Not" (0.0s - 12.8s)
 add(0.2, whoosh(0.3), 0.4)
-add(5.2, whistle(0.4, 2200), 0.5)
+add(5.3, whistle(0.4, 2200), 0.5)
 add(8.5, crowd_cheer(2.5), 0.35)
-add(11.0, thud(0.45, 120, 35), 0.95)         # DEFINITELY NOT stamp slam
-add(11.2, crowd_cheer(3.0), 0.6)
+add(11.0, thud(0.45, 120, 35), 0.95)         # DEFINITELY NOT stamp slam (voice: 11.01s)
+add(11.2, crowd_cheer(2.5), 0.6)
 
 # Scene 2: The Shock & Silence (12.8s - 14.8s)
-add(12.8, rip(0.4), 0.8)                     # Red line strikes through Definitely Not
-add(13.2, sub_drop(1.0), 1.0)                 # Heartbreak bass drop
-add(13.6, thud(0.4, 95, 30), 0.85)           # UNTIL TODAY stamp slam
+add(12.8, rip(0.35), 0.75)                   # Red line strikes through Definitely Not
+add(13.1, sub_drop(0.9), 1.0)                # Heartbreak bass drop (...Until today at 13.10s)
+add(13.2, thud(0.4, 95, 30), 0.85)           # UNTIL TODAY stamp slam
 
-# Scene 3: The 5 Trophies Dynasty (14.8s - 23.0s)
+# Scene 3: The 5 Trophies Dynasty (14.8s - 25.8s)
 add(14.8, whoosh(0.35), 0.5)
-# 5 rapid trophy dings
-add(15.2, metallic_ding(0.4, 1200), 0.8)     # Trophy 1 (2010)
-add(15.7, metallic_ding(0.4, 1400), 0.8)     # Trophy 2 (2011)
-add(16.2, metallic_ding(0.4, 1600), 0.8)     # Trophy 3 (2018)
-add(16.7, metallic_ding(0.4, 1800), 0.8)     # Trophy 4 (2021)
-add(17.2, metallic_ding(0.5, 2000), 0.9)     # Trophy 5 (2023)
-add(17.2, thud(0.5, 130, 36), 1.0)           # 5X CHAMPION stamp slam
-add(17.4, crowd_cheer(4.0), 0.7)
+# 5 rapid trophy dings (voice says "Five trophies" 14.87s - 15.65s, "Ten finals" 16.26s - 17.34s)
+add(14.9, metallic_ding(0.4, 1200), 0.8)     # Trophy 1 (2010)
+add(15.3, metallic_ding(0.4, 1400), 0.8)     # Trophy 2 (2011)
+add(15.7, metallic_ding(0.4, 1600), 0.8)     # Trophy 3 (2018)
+add(16.3, metallic_ding(0.4, 1800), 0.8)     # Trophy 4 (2021)
+add(16.8, metallic_ding(0.5, 2000), 0.9)     # Trophy 5 (2023)
+add(17.0, thud(0.5, 130, 36), 1.0)           # 5 IPL TROPHIES stamp slam
+add(17.2, crowd_cheer(3.5), 0.6)
 
-# Scene 4: Busted Knees, Warrior Heart (23.0s - 35.8s)
-add(23.0, whoosh(0.35), 0.5)
-add(23.5, whistle(0.5, 2300), 0.6)
-add(27.5, crowd_cheer(4.5), 0.8)             # 40,000 voices screaming
-add(28.0, whistle(0.6, 2500), 0.7)
-add(29.0, whistle(0.5, 2100), 0.6)
-add(31.5, thud(0.45, 115, 34), 0.9)          # WARRIOR IN YELLOW stamp
+# Scene 4: Busted Knees, Warrior Heart (25.8s - 35.8s)
+add(25.8, whoosh(0.35), 0.5)
+add(26.1, thud(0.3, 85, 40), 0.5)            # Heavy limping step (voice: "Busted knees" 26.09s)
+add(27.4, thud(0.3, 85, 40), 0.5)            # Heavy limping step (voice: "Heavy strapping" 27.34s)
+add(28.6, whistle(0.4, 2100), 0.4)           # "Limping between wickets" 28.56s
+add(31.2, crowd_cheer(4.5), 0.85)            # "40,000 voices screamed his name" (voice: 31.18s)
+add(31.5, whistle(0.6, 2500), 0.75)          # Whistle Podu roar
+add(32.0, whistle(0.5, 2300), 0.65)
+add(31.4, thud(0.45, 115, 34), 0.95)         # WARRIOR IN YELLOW stamp slam
 
-# Scene 5: Never Another Thala (35.8s - 41.2s)
+# Scene 5: Never Another Thala (35.8s - 44.0s)
 add(35.8, whoosh(0.4), 0.6)
-add(36.5, metallic_ding(0.8, 1100), 0.7)
-add(38.2, thud(0.5, 125, 32), 1.0)           # NEVER ANOTHER THALA stamp
+add(36.6, metallic_ding(0.8, 1100), 0.7)     # Crown landing on jersey collar
+add(40.5, thud(0.5, 125, 32), 1.0)           # NEVER ANOTHER THALA stamp (voice: 40.50s)
+add(40.7, crowd_cheer(3.2), 0.5)
 
-# Scene 6: The Farewell (41.2s - 47.73s)
-add(41.2, rip(0.4), 0.6)
-add(41.6, thud(0.5, 120, 30), 1.0)           # END OF AN ERA stamp
-add(44.2, metallic_ding(0.9, 980), 0.75)
-add(44.8, thud(0.55, 135, 28), 1.1)          # THANK YOU #7 stamp
-add(45.0, crowd_cheer(3.5), 0.5)
+# Scene 6: The Farewell (44.0s - 47.73s)
+add(44.0, whoosh(0.35), 0.5)
+add(44.3, thud(0.5, 120, 30), 1.0)           # END OF AN ERA stamp (voice: 44.43s)
+add(46.1, metallic_ding(0.9, 980), 0.75)     # Chime on "Thank you, Number Seven" (voice: 46.15s)
+add(46.1, thud(0.55, 135, 28), 1.05)         # THANK YOU #7 stamp
+add(46.3, crowd_cheer(3.0), 0.45)
 
 # Normalize & write WAV
 peak = max(abs(s) for s in buf) or 1.0

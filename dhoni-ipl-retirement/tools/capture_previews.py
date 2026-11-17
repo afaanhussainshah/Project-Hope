@@ -14,11 +14,11 @@ timestamps = [
     ("01_reporter_question.jpg", 3.5),
     ("02_last_season_yellow.jpg", 7.0),
     ("03_definitely_not_stamp.jpg", 11.5),
-    ("04_until_today_strike.jpg", 13.8),
+    ("04_until_today_strike.jpg", 13.6),
     ("05_five_trophies_dynasty.jpg", 18.5),
     ("06_busted_knees_warrior.jpg", 28.5),
-    ("07_never_another_thala.jpg", 39.0),
-    ("08_final_farewell_walkoff.jpg", 45.5),
+    ("07_never_another_thala.jpg", 41.2),
+    ("08_final_farewell_walkoff.jpg", 46.5),
 ]
 
 with sync_playwright() as p:
