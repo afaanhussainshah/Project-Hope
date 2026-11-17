@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Stat Wars #1: Bumrah vs Starc (Who is Deadlier with the New Ball?)</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #111a14;
+      }
+      #root {
+        position: relative; width: 1080px; height: 1920px; overflow: hidden;
+        font-family: "Anton", sans-serif;
+      }
+      .scene {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        overflow: hidden; z-index: 1;
+      }
+      .cam, .cam svg {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        display: block;
+      }
+      .cut {
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.35));
+      }
+      .cut-lg {
+        filter: drop-shadow(14px 18px 0 rgba(0, 0, 0, 0.42));
+      }
+      #wipe {
+        position: absolute; left: 0; top: -190px; width: 1600px; height: 2300px; z-index: 5;
+      }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8;
+        opacity: 0.22; mix-blend-mode: multiply; pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='7'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9;
+        pointer-events: none;
+        background: radial-gradient(ellipse at 50% 48%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.38) 100%);
+      }
+      .cap {
+        position: absolute; left: 50px; width: 980px; top: 1320px; height: 240px;
+        z-index: 10; text-align: center; pointer-events: none;
+      }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px;
+        background: #F6F1E4; color: #1B1B1B;
+        font-size: 78px; line-height: 1.08; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.35));
+      }
+      .cap b { font-weight: 400; color: #C1121F; }
+      .cap i { font-style: normal; background: #E3B23C; padding: 0 14px; }
+      .cap u { text-decoration: underline; text-decoration-color: #C1121F; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="57.39" data-width="1080" data-height="1920">
+      <!-- 6 Narrative Acts / Scenes -->
+      <div id="s1" class="clip scene" data-start="0.0" data-duration="10.8" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2" class="clip scene" data-start="10.8" data-duration="9.2" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="20.0" data-duration="9.2" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="29.2" data-duration="8.3" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="37.5" data-duration="10.1" data-track-index="0"><div class="cam"></div></div>
+      <div id="s6" class="clip scene" data-start="47.6" data-duration="9.79" data-track-index="0"><div class="cam"></div></div>
+
+      <!-- Audio Elements -->
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="57.39" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="57.39" data-volume="0.4" data-track-index="2"></audio>
+
+      <!-- Physical Paper Overlays -->
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <!-- Millisecond-Synchronized Paper Captions -->
+      <div class="clip cap" data-start="0.05" data-duration="7.25" data-track-index="1"><span>IF INDIA & AUSTRALIA’S DEADLIEST FAST BOWLERS WENT <b>TOE-TO-TOE...</b></span></div>
+      <div class="clip cap" data-start="7.35" data-duration="3.40" data-track-index="1"><span>BUMRAH VS STARC. <i>LET’S SETTLE IT.</i></span></div>
+      <div class="clip cap" data-start="10.85" data-duration="4.75" data-track-index="1"><span>ROUND 1: OPENING IN TESTS. <b>STARC AVERAGES 25.35.</b></span></div>
+      <div class="clip cap" data-start="15.65" data-duration="4.30" data-track-index="1"><span>BUMRAH? AN INSANE <b>18.84!</b> <i>POINT, BUMRAH.</i></span></div>
+      <div class="clip cap" data-start="20.05" data-duration="3.25" data-track-index="1"><span>ROUND 2: <b>FIRST BALL</b> OF A TEST MATCH.</span></div>
+      <div class="clip cap" data-start="23.35" data-duration="5.80" data-track-index="1"><span>STARC STRUCK 4 TIMES! <b>WORLD RECORD.</b> <i>POINT, STARC.</i></span></div>
+      <div class="clip cap" data-start="29.25" data-duration="3.40" data-track-index="1"><span>ROUND 3: UNDER FLOODLIGHTS WITH <b>THE PINK BALL.</b></span></div>
+      <div class="clip cap" data-start="32.70" data-duration="4.75" data-track-index="1"><span>STARC IS THE UNDISPUTED KING WITH <b>89 WICKETS!</b> <i>POINT, STARC.</i></span></div>
+      <div class="clip cap" data-start="37.55" data-duration="5.75" data-track-index="1"><span>ROUND 4: HEAD-TO-HEAD. <b>STARC AVERAGES 35.8</b> VS INDIA.</span></div>
+      <div class="clip cap" data-start="43.35" data-duration="4.20" data-track-index="1"><span>BUT BUMRAH AVERAGES <b>17.15</b> IN AUSTRALIA! <i>POINT, BUMRAH.</i></span></div>
+      <div class="clip cap" data-start="47.65" data-duration="5.85" data-track-index="1"><span>TWO ALL! IN ODIS, THEY’RE SEPARATED BY JUST <b>0.22.</b></span></div>
+      <div class="clip cap" data-start="53.55" data-duration="3.84" data-track-index="1"><span>YOU DECIDE: <b>WHO TAKES THE NEW BALL</b> IN YOUR ALL-TIME XI?</span></div>
+    </div>
+
+    <script>
+      // ---------- Deterministic Random Generator ----------
+      let seed = 88;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+
+      // ---------- Color Palette ----------
+      const C = {
+        paper: "#F6F1E4",
+        kraft: "#D1C2A5",
+        ink: "#1A1A1A",
+        indNavy: "#002B49",
+        indBlue: "#1D70B8",
+        indSaffron: "#FF9933",
+        indGreen: "#138808",
+        ausGold: "#FFCD00",
+        ausGreen: "#004D25",
+        red: "#C1121F",
+        stamp: "#C1121F",
+        pinkBall: "#E91E63",
+        pinkGlow: "#F48FB1",
+        tape: "#EDE7BE"
+      };
+
+      // ---------- SVG Drawing Primitives ----------
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+      const tx = (x, y, s, str, fill, anc = "middle", ex = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${fill}" text-anchor="${anc}" ${ex}>${str}</text>`;
+
+      // Torn Paper Polygon Algorithm
+      function torn(x, y, w, h, j = 10, step = 40) {
+        const p = [];
+        for (let i = 0; i <= w; i += step) p.push([x + Math.min(i, w), y + (rnd() - 0.5) * j]);
+        for (let i = step; i <= h; i += step) p.push([x + w + (rnd() - 0.5) * j, y + Math.min(i, h)]);
+        for (let i = w - step; i >= 0; i -= step) p.push([x + Math.max(i, 0), y + h + (rnd() - 0.5) * j]);
+        for (let i = h - step; i > 0; i -= step) p.push([x + (rnd() - 0.5) * j, y + i]);
+        return p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+      }
+      const sheet = (x, y, w, h, fill, j = 10) => `<polygon points="${torn(x, y, w, h, j)}" fill="${fill}"/>`;
+
+      // Masking Tape Piece
+      const tape = (x, y, w, h, rot = -4) =>
+        `<g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${C.tape}" opacity="0.88"/></g>`;
+
+      // Physical Rubber Stamp
+      const stamp = (id, cx, cy, l1, l2 = "", rot = -8, col = C.stamp) =>
+        `<g id="${id}"><g transform="rotate(${rot} ${cx} ${cy})"><rect x="${cx - 280}" y="${cy - 95}" width="560" height="190" rx="16" fill="rgba(246,241,228,.94)" stroke="${col}" stroke-width="12" stroke-dasharray="14 8"/>${tx(cx, cy + (l2 ? -12 : 30), l2 ? 76 : 84, l1, col)}${l2 ? tx(cx, cy + 60, 52, l2, col) : ""}</g></g>`;
+
+      // Sunburst Rays
+      const rays = (id, cx, cy, n, c) => {
+        let s = `<g id="${id}">`;
+        for (let i = 0; i < n; i += 2) {
+          const a = (i * 2 * Math.PI) / n, b = ((i + 1) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + 2200 * Math.cos(a)).toFixed(0)},${(cy + 2200 * Math.sin(a)).toFixed(0)} ${(cx + 2200 * Math.cos(b)).toFixed(0)},${(cy + 2200 * Math.sin(b)).toFixed(0)}" fill="${c}"/>`;
+        }
+        return s + "</g>";
+      };
+
+      // Confetti Scraps
+      const scraps = (cls, cx, cy, n, col1 = C.indBlue, col2 = C.ausGold) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 25 + rnd() * 45;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? col1 : col2}" opacity="0"/>`;
+        }
+        return s;
+      };
+
+      // Cricket Ball Cutout (Red, White or Pink)
+      function cricketBall(cx, cy, r = 40, col = C.red) {
+        return `<g class="cut" transform="translate(${cx} ${cy})">
+          <circle cx="0" cy="0" r="${r}" fill="${col}"/>
+          <circle cx="${-r*0.28}" cy="${-r*0.28}" r="${r*0.35}" fill="rgba(255,255,255,0.3)"/>
+          <!-- White Seam -->
+          <path d="M ${-r*0.95} 0 C ${-r*0.3} ${r*0.35} ${r*0.3} ${r*0.35} ${r*0.95} 0" stroke="#FFFFFF" stroke-width="${r*0.12}" fill="none" stroke-dasharray="${r*0.12} ${r*0.08}"/>
+        </g>`;
+      }
+
+      // ==========================================
+      // CHARACTERS: BUMRAH & STARC
+      // ==========================================
+
+      // 1. Jasprit Bumrah (India Jersey, slingy arms, curly hair, beard)
+      function char_bumrah(id, x, y, s = 0.75, o = {}) {
+        const skin = "#B87C52", sk2 = "#995F37", hair = "#1C1C1C", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        const armRot = o.arm != null ? o.arm : -25;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <!-- Torso & India Jersey -->
+          <g class="cut">
+            <path d="M-210 420 Q-220 250 -90 210 L90 210 Q220 250 210 420Z" fill="${C.indBlue}"/>
+            <!-- Saffron & Orange Collar and Trim -->
+            <path d="M-55 210 L0 290 L55 210 L35 195 L-35 195Z" fill="${C.indSaffron}"/>
+            <path d="M-90 210 L-55 210 L-65 340 L-110 330 Z" fill="${C.indNavy}"/>
+            <path d="M90 210 L55 210 L65 340 L110 330 Z" fill="${C.indNavy}"/>
+            <!-- India Jersey Text -->
+            ${tx(0, 360, 68, "INDIA", "#FFFFFF", "middle", 'font-weight="bold" letter-spacing="4"')}
+            ${tx(0, 420, 42, "BUMRAH", C.indSaffron, "middle", 'font-weight="bold" letter-spacing="2"')}
+            <rect x="-40" y="150" width="80" height="85" rx="16" fill="${sk2}"/>
+          </g>
+          <!-- Head -->
+          <g class="head cut">
+            <!-- Ears -->
+            <ellipse cx="-145" cy="15" rx="26" ry="38" fill="${sk2}"/><ellipse cx="145" cy="15" rx="26" ry="38" fill="${sk2}"/>
+            <!-- Face Base -->
+            <rect x="-140" y="-155" width="280" height="340" rx="130" fill="${skin}"/>
+            <!-- Bumrah's Beard & Stubble -->
+            <path d="M-138 30 Q-145 185 0 182 Q145 185 138 30 Q115 145 0 148 Q-115 145 -138 30Z" fill="${hair}" opacity="0.75"/>
+            <!-- Mustache -->
+            <path d="M-45 92 Q0 70 45 92 Q0 108 -45 92Z" fill="${hair}"/>
+            <!-- Unruly Curly Hair -->
+            <path d="M-150 -60 Q-155 -215 0 -215 Q155 -215 150 -60 Q130 -130 0 -130 Q-130 -130 -150 -60Z" fill="${hair}"/>
+            <!-- Eyes & Pupils -->
+            <g class="eye"><circle cx="-60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="-60" cy="5" r="16" fill="${C.ink}"/></g>
+            <g class="eye"><circle cx="60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="60" cy="5" r="16" fill="${C.ink}"/></g>
+            <!-- Eyebrows -->
+            <rect class="browL" x="-100" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <!-- Nose -->
+            <path d="M-10 25 Q-4 68 22 58" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- Mouth Expressions -->
+            ${mo("flat", '<rect x="-42" y="115" width="84" height="14" rx="6" fill="#6A2218"/>')}
+            ${mo("o", '<ellipse cx="0" cy="120" rx="28" ry="32" fill="#3D120D"/>')}
+            ${mo("smirk", '<path d="M-45 118 Q14 150 58 102" stroke="#6A2218" stroke-width="12" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-55" y="100" width="110" height="42" rx="12" fill="#fff" stroke="#6A2218" stroke-width="8"/><path d="M-18 102V138M18 102V138M-52 120H52" stroke="#C9B9A8" stroke-width="4"/>')}
+            ${mo("talk", '<ellipse cx="0" cy="122" rx="32" ry="22" fill="#3D120D"/>')}
+          </g>
+          <!-- Slingy Hyperextended Bowling Arm Gripping Ball -->
+          <g id="${id}_arm" class="cut" transform="translate(160, 220) rotate(${armRot})">
+            <rect x="0" y="-22" width="160" height="44" rx="16" fill="${C.indBlue}"/>
+            <rect x="140" y="-20" width="120" height="40" rx="14" fill="${skin}"/>
+            <!-- Gripping Hand with Red Ball -->
+            <circle cx="260" cy="0" r="32" fill="${C.red}"/>
+            <path d="M 235 0 Q 260 12 285 0" stroke="#FFF" stroke-width="4" fill="none" stroke-dasharray="4 3"/>
+            <circle cx="245" cy="-15" r="14" fill="${skin}"/>
+            <circle cx="245" cy="15" r="14" fill="${skin}"/>
+          </g>
+        </g></g>`;
+      }
+
+      // 2. Mitchell Starc (Australia Canary Yellow, Baggy Green cap / Blond hair, Left-arm whippy arc)
+      function char_starc(id, x, y, s = 0.75, o = {}) {
+        const skin = "#F2BF99", sk2 = "#DC9E75", hair = "#CCA152", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        const armRot = o.arm != null ? o.arm : 25;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <!-- Torso & Australia Jersey -->
+          <g class="cut">
+            <path d="M-210 420 Q-220 250 -90 210 L90 210 Q220 250 210 420Z" fill="${C.ausGold}"/>
+            <!-- Dark Green Collar and Trim -->
+            <path d="M-55 210 L0 290 L55 210 L35 195 L-35 195Z" fill="${C.ausGreen}"/>
+            <path d="M-90 210 L-55 210 L-65 340 L-110 330 Z" fill="${C.ausGreen}"/>
+            <path d="M90 210 L55 210 L65 340 L110 330 Z" fill="${C.ausGreen}"/>
+            <!-- Australia Jersey Text -->
+            ${tx(0, 360, 68, "AUSTRALIA", C.ausGreen, "middle", 'font-weight="bold" letter-spacing="4"')}
+            ${tx(0, 420, 42, "STARC", C.ausGreen, "middle", 'font-weight="bold" letter-spacing="2"')}
+            <rect x="-40" y="150" width="80" height="85" rx="16" fill="${sk2}"/>
+          </g>
+          <!-- Head -->
+          <g class="head cut">
+            <!-- Ears -->
+            <ellipse cx="-145" cy="15" rx="26" ry="38" fill="${sk2}"/><ellipse cx="145" cy="15" rx="26" ry="38" fill="${sk2}"/>
+            <!-- Face Base -->
+            <rect x="-140" y="-155" width="280" height="340" rx="130" fill="${skin}"/>
+            <!-- Stubble -->
+            <path d="M-138 40 Q-145 185 0 182 Q145 185 138 40 Q115 145 0 148 Q-115 145 -138 40Z" fill="#A87F52" opacity="0.45"/>
+            <!-- Australian Baggy Green Cap -->
+            <path d="M-150 -75 Q-155 -230 0 -230 Q155 -230 150 -75Z" fill="${C.ausGreen}"/>
+            <path d="M-170 -80 Q0 -115 170 -80 Q190 -50 0 -58 Q-190 -50 -170 -80Z" fill="${C.ausGreen}"/>
+            <!-- Australia Gold Coat of Arms Crest on Cap -->
+            <circle cx="0" cy="-165" r="24" fill="${C.ausGold}"/>
+            ${tx(0, -157, 20, "AUS", C.ausGreen, "middle", 'font-weight="bold"')}
+            <!-- Eyes & Pupils -->
+            <g class="eye"><circle cx="-60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="-60" cy="5" r="16" fill="#1C3D5A"/></g>
+            <g class="eye"><circle cx="60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="60" cy="5" r="16" fill="#1C3D5A"/></g>
+            <!-- Eyebrows -->
+            <rect class="browL" x="-100" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <!-- Nose -->
+            <path d="M-10 25 Q-4 68 22 58" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- Mouth Expressions -->
+            ${mo("flat", '<rect x="-42" y="115" width="84" height="14" rx="6" fill="#6A2218"/>')}
+            ${mo("o", '<ellipse cx="0" cy="120" rx="28" ry="32" fill="#3D120D"/>')}
+            ${mo("smirk", '<path d="M-45 118 Q14 150 58 102" stroke="#6A2218" stroke-width="12" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-55" y="100" width="110" height="42" rx="12" fill="#fff" stroke="#6A2218" stroke-width="8"/><path d="M-18 102V138M18 102V138M-52 120H52" stroke="#C9B9A8" stroke-width="4"/>')}
+            ${mo("talk", '<ellipse cx="0" cy="122" rx="32" ry="22" fill="#3D120D"/>')}
+          </g>
+          <!-- Left-Handed Bowling Arm Raised High -->
+          <g id="${id}_arm" class="cut" transform="translate(-160, 220) rotate(${armRot})">
+            <rect x="-160" y="-22" width="160" height="44" rx="16" fill="${C.ausGold}"/>
+            <rect x="-260" y="-20" width="120" height="40" rx="14" fill="${skin}"/>
+            <!-- Gripping Hand with Cricket Ball -->
+            <circle cx="-260" cy="0" r="32" fill="${o.pink ? C.pinkBall : C.red}"/>
+            <path d="M -285 0 Q -260 12 -235 0" stroke="#FFF" stroke-width="4" fill="none" stroke-dasharray="4 3"/>
+            <circle cx="-245" cy="-15" r="14" fill="${skin}"/>
+            <circle cx="-245" cy="15" r="14" fill="${skin}"/>
+          </g>
+        </g></g>`;
+      }
+
+      // ==========================================
+      // SCOREBOARD HEADER COMPONENT
+      // ==========================================
+      function scoreboardHeader(bScore, sScore) {
+        return `<g class="cut" transform="translate(540, 160)">
+          <!-- Main Header Plank -->
+          <rect x="-490" y="-60" width="980" height="120" rx="18" fill="#1C1C1C" stroke="${C.paper}" stroke-width="6"/>
+          
+          <!-- Bumrah Side -->
+          <rect x="-470" y="-45" width="375" height="90" rx="12" fill="${C.indBlue}"/>
+          <!-- India Flag Badge -->
+          <g transform="translate(-452, -22)">
+            <rect width="44" height="44" rx="8" fill="#FFFFFF"/>
+            <rect x="0" y="0" width="44" height="14.6" rx="4" fill="#FF9933"/>
+            <rect x="0" y="14.6" width="44" height="14.8" fill="#FFFFFF"/>
+            <rect x="0" y="29.4" width="44" height="14.6" rx="4" fill="#138808"/>
+            <circle cx="22" cy="22" r="5" fill="#000080"/>
+          </g>
+          ${tx(-280, 16, 44, "BUMRAH", "#FFFFFF", "middle", 'font-weight="bold" letter-spacing="2"')}
+          <!-- Score Badge Left -->
+          <circle cx="-135" cy="0" r="34" fill="${C.indSaffron}"/>
+          ${tx(-135, 14, 46, bScore, C.ink, "middle", 'font-weight="bold"')}
+          
+          <!-- Center VS Badge -->
+          <polygon points="-42,-26 42,-26 32,26 -32,26" fill="${C.red}"/>
+          ${tx(0, 12, 34, "VS", "#FFFFFF", "middle", 'font-weight="bold"')}
+          
+          <!-- Starc Side -->
+          <rect x="95" y="-45" width="375" height="90" rx="12" fill="${C.ausGreen}"/>
+          <!-- Score Badge Right -->
+          <circle cx="135" cy="0" r="34" fill="${C.ausGold}"/>
+          ${tx(135, 14, 46, sScore, C.ausGreen, "middle", 'font-weight="bold"')}
+          ${tx(280, 16, 44, "STARC", "#FFFFFF", "middle", 'font-weight="bold" letter-spacing="2"')}
+          <!-- Australia Gold/Green Badge -->
+          <g transform="translate(408, -22)">
+            <rect width="44" height="44" rx="8" fill="#004D25" stroke="${C.ausGold}" stroke-width="3"/>
+            <polygon points="22,6 26,17 38,17 28,24 32,35 22,28 12,35 16,24 6,17 18,17" fill="${C.ausGold}"/>
+          </g>
+        </g>`;
+      }
+
+      // ==========================================
+      // SCENE 1: The New Ball Showdown Hook (0.0s – 10.8s)
+      // ==========================================
+      reseed(101);
+      const s1Header = `
+        <g transform="translate(540, 320)"><g id="card_hook" class="cut">
+          ${sheet(-440, -100, 880, 200, C.paper, 8)}
+          ${tape(-320, -125, 140, 38, -5)}
+          ${tape(200, -125, 140, 38, 6)}
+          ${tx(0, -15, 48, "STAT WARS #1 · THE NEW BALL", "#666666")}
+          ${tx(0, 55, 76, "WHO IS DEADLIER?", C.red)}
+        </g></g>`;
+      put("s1", svg(
+        `<rect x="0" y="0" width="540" height="1920" fill="#0A1E30"/>
+         <rect x="540" y="0" width="540" height="1920" fill="#201C06"/>
+         <!-- Center Vertical Seam -->
+         <line x1="540" y1="0" x2="540" y2="1920" stroke="${C.paper}" stroke-width="8" stroke-dasharray="24 16"/>` +
+        s1Header +
+        char_bumrah("s1_bumrah", 260, 840, 0.76, { m: "smirk" }) +
+        char_starc("s1_starc", 820, 840, 0.76, { m: "smirk" }) +
+        stamp("st1_who", 540, 1160, "WHO IS DEADLIER?", "PICK ONE. NOW.", -5, C.stamp),
+        "#111A14"
+      ));
+
+      // ==========================================
+      // SCENE 2: Round 1 — Opening Bowling Average (10.8s – 20.0s)
+      // ==========================================
+      reseed(202);
+      const r1RoundBanner = `
+        <g transform="translate(540, 320)"><g id="r1_banner" class="cut">
+          ${sheet(-440, -75, 880, 150, C.paper, 8)}
+          ${tape(-280, -95, 140, 36, -4)}
+          ${tape(160, -95, 140, 36, 5)}
+          ${tx(0, 18, 54, "ROUND 1: OPENING IN TESTS", C.ink)}
+        </g></g>`;
+      // Comparison Cards
+      const r1Cards = `
+        <!-- Bumrah Card (Left) -->
+        <g transform="translate(290, 710)"><g id="r1_card_bumrah" class="cut-lg">
+          <rect x="-220" y="-210" width="440" height="420" rx="20" fill="#EBF4FA" stroke="${C.indBlue}" stroke-width="10"/>
+          <!-- Top Badge -->
+          <rect x="-220" y="-210" width="440" height="70" rx="16" fill="${C.indBlue}"/>
+          ${tx(0, -162, 38, "JASPRIT BUMRAH", "#FFFFFF")}
+          <!-- Stat Value -->
+          ${tx(0, 15, 120, "18.84", C.indGreen, "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 36, "TEST BOWLING AVERAGE", "#666666")}
+          <rect x="-140" y="110" width="280" height="52" rx="12" fill="${C.indGreen}"/>
+          ${tx(0, 147, 34, "WINNER · HISTORIC", "#FFFFFF")}
+        </g></g>
+        <!-- Starc Card (Right) -->
+        <g transform="translate(790, 710)"><g id="r1_card_starc" class="cut">
+          <rect x="-220" y="-210" width="440" height="420" rx="20" fill="#FFFBE6" stroke="${C.ausGold}" stroke-width="10"/>
+          <rect x="-220" y="-210" width="440" height="70" rx="16" fill="${C.ausGreen}"/>
+          ${tx(0, -162, 38, "MITCHELL STARC", "#FFFFFF")}
+          ${tx(0, 15, 120, "25.35", "#888888", "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 36, "TEST BOWLING AVERAGE", "#666666")}
+          <rect x="-120" y="110" width="240" height="52" rx="12" fill="#888888"/>
+          ${tx(0, 147, 34, "421 WICKETS", "#FFFFFF")}
+        </g></g>`;
+      put("s2", svg(
+        scoreboardHeader("1", "0") +
+        r1RoundBanner +
+        r1Cards +
+        char_bumrah("s2_bumrah_mini", 110, 1110, 0.48, { m: "teeth", arm: 70 }) +
+        char_starc("s2_starc_mini", 970, 1110, 0.48, { m: "flat", arm: -70 }) +
+        scraps("scR1", 540, 1100, 24, C.indBlue, C.paper) +
+        stamp("st2_point_bumrah", 540, 1100, "POINT, BUMRAH!", "1 - 0 TO INDIA", -6, C.stamp),
+        "#102130"
+      ));
+
+      // ==========================================
+      // SCENE 3: Round 2 — Ball 1 Wickets (20.0s – 29.2s)
+      // ==========================================
+      reseed(303);
+      const r2RoundBanner = `
+        <g transform="translate(540, 320)"><g id="r2_banner" class="cut">
+          ${sheet(-440, -75, 880, 150, C.paper, 8)}
+          ${tape(-280, -95, 140, 36, -4)}
+          ${tape(160, -95, 140, 36, 5)}
+          ${tx(0, 18, 54, "ROUND 2: FIRST BALL OF A TEST", C.ink)}
+        </g></g>`;
+      const r2Cards = `
+        <!-- Starc Stat Card (Center Stage) -->
+        <g transform="translate(540, 680)"><g id="r2_card_starc" class="cut-lg">
+          <rect x="-380" y="-180" width="760" height="360" rx="20" fill="#FFFBE6" stroke="${C.ausGold}" stroke-width="12"/>
+          <rect x="-380" y="-180" width="760" height="66" rx="16" fill="${C.ausGreen}"/>
+          ${tx(0, -134, 38, "MITCHELL STARC · BALL 1 DISMISSALS", "#FFFFFF")}
+          ${tx(0, 30, 126, "4 WICKETS", C.red, "middle", 'font-weight="bold"')}
+          ${tx(0, 92, 40, "ALL-TIME TEST WORLD RECORD", C.ink)}
+          <rect x="-240" y="112" width="480" height="48" rx="12" fill="${C.ausGreen}"/>
+          ${tx(0, 146, 30, "NO OTHER BOWLER HAS DONE THIS", "#FFFFFF")}
+        </g></g>`;
+      // Flying Shattered Stumps Graphic placed cleanly in lower-center
+      const shatteredStumps = `
+        <g id="shatteredStumps" class="cut" transform="translate(540, 1100)">
+          <!-- Middle Sturt / Pitch Base -->
+          <rect x="-140" y="80" width="280" height="20" rx="6" fill="#C29D6E"/>
+          <!-- Off Stump Flying Left -->
+          <g id="stump_L" transform="translate(-70, 0) rotate(-35)">
+            <rect x="-10" y="-100" width="20" height="200" rx="6" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/>
+          </g>
+          <!-- Middle Stump Broken in Half -->
+          <g id="stump_M" transform="translate(0, 10) rotate(10)">
+            <rect x="-10" y="-70" width="20" height="140" rx="6" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/>
+          </g>
+          <!-- Leg Stump Flying Right -->
+          <g id="stump_R" transform="translate(70, 0) rotate(40)">
+            <rect x="-10" y="-100" width="20" height="200" rx="6" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/>
+          </g>
+          <!-- Flying Bails -->
+          <rect id="bail_1" x="-50" y="-90" width="60" height="12" rx="4" fill="#C99852" transform="rotate(-60)"/>
+          <rect id="bail_2" x="35" y="-110" width="60" height="12" rx="4" fill="#C99852" transform="rotate(50)"/>
+        </g>`;
+      put("s3", svg(
+        scoreboardHeader("1", "1") +
+        r2RoundBanner +
+        r2Cards +
+        shatteredStumps +
+        char_bumrah("s3_bumrah_react", 110, 1110, 0.48, { m: "o", arm: 70 }) +
+        char_starc("s3_starc_hero", 970, 1110, 0.48, { m: "teeth", arm: -70 }) +
+        scraps("scR2", 540, 1100, 24, C.ausGold, C.paper) +
+        stamp("st3_point_starc", 540, 1100, "POINT, STARC!", "TIED AT 1 - 1", 6, C.stamp),
+        "#1A1E14"
+      ));
+
+      // ==========================================
+      // SCENE 4: Round 3 — Pink Ball Day/Night (29.2s – 37.5s)
+      // ==========================================
+      reseed(404);
+      const r3NightSky = `
+        <rect width="1080" height="1920" fill="#0A101D"/>
+        <!-- Stadium Floodlight Beams -->
+        ${rays("r4_pink_rays", 540, 680, 22, "rgba(233, 30, 99, 0.15)")}
+        <!-- Floodlight Lamps at Top Corners -->
+        <g class="cut" transform="translate(120, 80)">
+          <rect x="-60" y="-30" width="120" height="60" rx="10" fill="#2E3A4D"/>
+          <circle cx="-35" cy="0" r="16" fill="#FFF"/><circle cx="0" cy="0" r="16" fill="#FFF"/><circle cx="35" cy="0" r="16" fill="#FFF"/>
+        </g>
+        <g class="cut" transform="translate(960, 80)">
+          <rect x="-60" y="-30" width="120" height="60" rx="10" fill="#2E3A4D"/>
+          <circle cx="-35" cy="0" r="16" fill="#FFF"/><circle cx="0" cy="0" r="16" fill="#FFF"/><circle cx="35" cy="0" r="16" fill="#FFF"/>
+        </g>`;
+      const r3RoundBanner = `
+        <g transform="translate(540, 320)"><g id="r3_banner" class="cut">
+          ${sheet(-440, -75, 880, 150, C.paper, 8)}
+          ${tape(-280, -95, 140, 36, -4)}
+          ${tape(160, -95, 140, 36, 5)}
+          ${tx(0, 18, 54, "ROUND 3: PINK BALL UNDER LIGHTS", C.ink)}
+        </g></g>`;
+      const r3Cards = `
+        <!-- Bumrah Pink Ball Stat -->
+        <g transform="translate(290, 710)"><g id="r3_card_bumrah" class="cut">
+          <rect x="-220" y="-200" width="440" height="400" rx="20" fill="#152238" stroke="${C.indBlue}" stroke-width="8"/>
+          <rect x="-220" y="-200" width="440" height="65" rx="16" fill="${C.indBlue}"/>
+          ${tx(0, -155, 36, "BUMRAH · DAY/NIGHT", "#FFFFFF")}
+          ${tx(0, 15, 105, "14", "#888888", "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 34, "WICKETS (4 TESTS)", "#AAAAAA")}
+          <rect x="-110" y="105" width="220" height="48" rx="10" fill="#334460"/>
+          ${tx(0, 139, 28, "FEW CHANCES", "#FFFFFF")}
+        </g></g>
+        <!-- Starc Pink Ball King Stat -->
+        <g transform="translate(790, 710)"><g id="r3_card_starc" class="cut-lg">
+          <rect x="-220" y="-200" width="440" height="400" rx="20" fill="#240D1D" stroke="${C.pinkBall}" stroke-width="10"/>
+          <rect x="-220" y="-200" width="440" height="65" rx="16" fill="${C.pinkBall}"/>
+          ${tx(0, -155, 36, "STARC · DAY/NIGHT", "#FFFFFF")}
+          ${tx(0, 15, 115, "89", C.pinkGlow, "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 34, "WICKETS (15 TESTS)", "#FFAEC9")}
+          <rect x="-140" y="105" width="280" height="48" rx="10" fill="${C.pinkBall}"/>
+          ${tx(0, 139, 28, "KING OF PINK BALL", "#FFFFFF")}
+        </g></g>`;
+      put("s4", svg(
+        r3NightSky +
+        scoreboardHeader("1", "2") +
+        r3RoundBanner +
+        r3Cards +
+        char_bumrah("s4_bumrah_pink", 110, 1110, 0.48, { m: "flat", arm: 70 }) +
+        char_starc("s4_starc_pink", 970, 1110, 0.48, { pink: 1, m: "smirk", arm: -70 }) +
+        stamp("st4_point_starc", 540, 1100, "POINT, STARC!", "STARC LEADS 2 - 1", 6, C.pinkBall),
+        "#0A101D"
+      ));
+
+      // ==========================================
+      // SCENE 5: Round 4 — Head-to-Head vs Each Other (37.5s – 47.6s)
+      // ==========================================
+      reseed(505);
+      const r4RoundBanner = `
+        <g transform="translate(540, 320)"><g id="r4_banner" class="cut">
+          ${sheet(-440, -75, 880, 150, C.paper, 8)}
+          ${tape(-280, -95, 140, 36, -4)}
+          ${tape(160, -95, 140, 36, 5)}
+          ${tx(0, 18, 54, "ROUND 4: HEAD-TO-HEAD", C.ink)}
+        </g></g>`;
+      const r4Cards = `
+        <!-- Bumrah vs Australia -->
+        <g transform="translate(290, 710)"><g id="r4_card_bumrah" class="cut-lg">
+          <rect x="-220" y="-200" width="440" height="400" rx="20" fill="#EBF4FA" stroke="${C.indBlue}" stroke-width="10"/>
+          <rect x="-220" y="-200" width="440" height="65" rx="16" fill="${C.indBlue}"/>
+          ${tx(0, -155, 34, "BUMRAH VS AUSTRALIA", "#FFFFFF")}
+          ${tx(0, 15, 115, "17.15", C.indGreen, "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 34, "BOWLING AVERAGE", "#666666")}
+          <rect x="-140" y="105" width="280" height="48" rx="10" fill="${C.indGreen}"/>
+          ${tx(0, 139, 28, "DEMOLISHED AUSSIES", "#FFFFFF")}
+        </g></g>
+        <!-- Starc vs India -->
+        <g transform="translate(790, 710)"><g id="r4_card_starc" class="cut">
+          <rect x="-220" y="-200" width="440" height="400" rx="20" fill="#FFFBE6" stroke="${C.ausGold}" stroke-width="8"/>
+          <rect x="-220" y="-200" width="440" height="65" rx="16" fill="${C.ausGreen}"/>
+          ${tx(0, -155, 34, "STARC VS INDIA", "#FFFFFF")}
+          ${tx(0, 15, 110, "35.84", "#888888", "middle", 'font-weight="bold"')}
+          ${tx(0, 75, 34, "BOWLING AVERAGE", "#666666")}
+          <rect x="-120" y="105" width="240" height="48" rx="10" fill="#888888"/>
+          ${tx(0, 139, 28, "66 WICKETS", "#FFFFFF")}
+        </g></g>`;
+      put("s5", svg(
+        scoreboardHeader("2", "2") +
+        r4RoundBanner +
+        r4Cards +
+        char_bumrah("s5_bumrah_h2h", 110, 1110, 0.48, { m: "teeth", arm: 70 }) +
+        char_starc("s5_starc_h2h", 970, 1110, 0.48, { m: "o", arm: -70 }) +
+        scraps("scR4", 540, 1100, 24, C.indBlue, C.paper) +
+        stamp("st5_point_bumrah", 540, 1100, "POINT, BUMRAH!", "TIED AT 2 - 2!", -6, C.stamp),
+        "#12222E"
+      ));
+
+      // ==========================================
+      // SCENE 6: The Tiebreaker & Outro (47.6s – 57.39s)
+      // ==========================================
+      reseed(606);
+      const tiebreakerBanner = `
+        <g transform="translate(540, 310)"><g id="tb_banner" class="cut">
+          ${sheet(-440, -75, 880, 150, C.paper, 8)}
+          ${tape(-280, -95, 140, 36, -4)}
+          ${tape(160, -95, 140, 36, 5)}
+          ${tx(0, 18, 54, "THE TIEBREAKER · ODI AVERAGE", C.ink)}
+        </g></g>`;
+      // Balance Scale / Dead Heat Component
+      const tiebreakerCard = `
+        <g transform="translate(540, 680)"><g id="card_tiebreak" class="cut-lg">
+          <rect x="-440" y="-190" width="880" height="380" rx="22" fill="${C.paper}" stroke="#CFC5AA" stroke-width="8"/>
+          <!-- Bumrah ODI Stat -->
+          <g transform="translate(-220, -10)">
+            ${tx(0, -60, 42, "BUMRAH", C.indBlue)}
+            ${tx(0, 30, 96, "23.74", C.indBlue, "middle", 'font-weight="bold"')}
+            ${tx(0, 85, 30, "151 WKTS · 91 MTCHS", "#666")}
+          </g>
+          <!-- Center Seam & Difference -->
+          <line x1="0" y1="-140" x2="0" y2="140" stroke="#DDD" stroke-width="4" stroke-dasharray="8 8"/>
+          <g transform="translate(0, 20)">
+            <circle cx="0" cy="0" r="54" fill="${C.red}"/>
+            ${tx(0, -8, 22, "DIFF", "#FFF")}
+            ${tx(0, 18, 32, "0.22", "#FFF", "middle", 'font-weight="bold"')}
+          </g>
+          <!-- Starc ODI Stat -->
+          <g transform="translate(220, -10)">
+            ${tx(0, -60, 42, "STARC", C.ausGreen)}
+            ${tx(0, 30, 96, "23.96", C.ausGreen, "middle", 'font-weight="bold"')}
+            ${tx(0, 85, 30, "247 WKTS · 132 MTCHS", "#666")}
+          </g>
+          <!-- Bottom Banner inside card -->
+          <rect x="-440" y="130" width="880" height="60" rx="14" fill="#1C1C1C"/>
+          ${tx(0, 172, 36, "DEAD HEAT · SEPARATED BY NOTHING", C.ausGold)}
+        </g></g>`;
+      put("s6", svg(
+        rays("r6_final", 540, 720, 24, "rgba(255, 205, 0, 0.16)") +
+        scoreboardHeader("2", "2") +
+        tiebreakerBanner +
+        tiebreakerCard +
+        char_bumrah("s6_bumrah_end", 110, 1110, 0.48, { m: "smirk", arm: 70 }) +
+        char_starc("s6_starc_end", 970, 1110, 0.48, { m: "smirk", arm: -70 }) +
+        stamp("st6_dead_heat", 540, 1100, "DEAD HEAT: 2 - 2!", "WHO TAKES THE NEW BALL?", 0, C.stamp),
+        "#161B22"
+      ));
+
+      // ==========================================
+      // Full-Screen Torn-Paper Wipe Transition Setup
+      // ==========================================
+      reseed(999);
+      document.getElementById("wipe").innerHTML = `
+        <svg viewBox="0 0 1600 2300" width="1600" height="2300" xmlns="http://www.w3.org/2000/svg">
+          <polygon id="wp" points="${torn(20, 20, 1560, 2260, 60, 90)}" fill="${C.paper}"/>
+        </svg>`;
+
+      // ==========================================
+      // GSAP Master Timeline (Millisecond-Accurate Synced)
+      // ==========================================
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = { main: tl };
+
+      const CC = "50% 50%";
+      gsap.set("#r4_pink_rays, #r6_final", { svgOrigin: "540 720" });
+      gsap.set(".eye, .pupil, .browL, .browR, #st1_who, #st2_point_bumrah, #st3_point_starc, #st4_point_starc, #st5_point_bumrah, #st6_dead_heat, #r1_card_bumrah, #r1_card_starc, #r2_card_starc, #r3_card_bumrah, #r3_card_starc, #r4_card_bumrah, #r4_card_starc, #card_tiebreak", { transformOrigin: CC });
+
+      // Motion Helpers
+      const slam = (sel, t, r = 0) => tl.fromTo(sel, { scale: 3.2, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.14, ease: "power4.in" }, t);
+      const shake = (sel, t, a = 24) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t)
+          .to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04)
+          .to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08)
+          .to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") =>
+        tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+
+      // Character Facial Animation Helper
+      function face(id, t, o, d = 0.1) {
+        const q = (s) => `#${id} ${s}`;
+        if (o.m) { tl.set(q(".m"), { opacity: 0 }, t); tl.set(q(".m-" + o.m), { opacity: 1 }, t + 0.001); }
+        if (o.b) {
+          tl.to(q(".browL"), { rotation: o.b[0], y: o.b[2] || 0, duration: d }, t);
+          tl.to(q(".browR"), { rotation: o.b[1], y: o.b[2] || 0, duration: d }, t);
+        }
+        if (o.e != null) tl.to(q(".eye"), { scale: o.e, duration: d }, t);
+        if (o.p) tl.to(q(".pupil"), { x: o.p[0], y: o.p[1], duration: d }, t);
+      }
+
+      // Particle Bursts
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.75, ease: "power2.out", immediateRender: false }, t);
+        });
+
+      // Synced Paper Captions Animation
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 5 : -5, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.5 : 1.5, opacity: 1, duration: 0.14, ease: "back.out(2.6)" }, t);
+      });
+
+      // Torn Paper Wipes Between Scenes (Frame-Locked Boundaries)
+      gsap.set("#wipe", { x: -1700 });
+      [[10.8, C.indBlue, 1], [20.0, C.ausGold, -1], [29.2, C.paper, 1], [37.5, C.indNavy, -1], [47.6, C.paper, 1]].forEach(([t, c, dir]) => {
+        tl.set("#wp", { fill: c }, t - 0.19);
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300 }, { x: dir > 0 ? 1300 : -1700, duration: 0.36, ease: "none" }, t - 0.18);
+      });
+
+      // Scene & Caption Visibility Management (Lifecycle)
+      gsap.utils.toArray(".clip").forEach((el) => {
+        const start = +el.dataset.start || 0;
+        const dur = +el.dataset.duration || 0;
+        if (dur > 0) {
+          if (start === 0) {
+            tl.set(el, { display: "block" }, 0);
+          } else {
+            tl.set(el, { display: "none" }, 0);
+            tl.set(el, { display: "block" }, start);
+          }
+          tl.set(el, { display: "none" }, start + dur);
+        }
+      });
+
+      // ------------------------------------------
+      // ACT 1: The New Ball Showdown Hook (0.0s – 10.8s)
+      // ------------------------------------------
+      zoom("s1", 0, 10.8, 1.0, 1.06);
+      tl.fromTo("#card_hook", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 0.2);
+      face("s1_bumrah", 0.3, { m: "smirk", p: [12, 0] });
+      face("s1_starc", 0.3, { m: "smirk", p: [-12, 0] });
+
+      // Bowlers wind up their bowling arms
+      tl.to("#s1_bumrah_arm", { rotation: -35, duration: 1.5, yoyo: true, repeat: 4, ease: "sine.inOut" }, 0.5);
+      tl.to("#s1_starc_arm", { rotation: 35, duration: 1.5, yoyo: true, repeat: 4, ease: "sine.inOut" }, 0.5);
+
+      // "Bumrah versus Starc. Let's settle it" (7.96s - 10.60s)
+      face("s1_bumrah", 7.9, { m: "teeth", b: [-10, 10, -5] });
+      face("s1_starc", 7.9, { m: "teeth", b: [-10, 10, -5] });
+      slam("#st1_who", 9.7, -6);
+      shake("#s1 .cam", 9.84, 26);
+
+      // ------------------------------------------
+      // ACT 2: Round 1 — Opening Bowling Average (10.8s – 20.0s)
+      // ------------------------------------------
+      zoom("s2", 10.8, 9.2, 1.0, 1.06);
+      tl.fromTo("#r1_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 10.85);
+      tl.fromTo("#r1_card_starc", { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "back.out(1.5)" }, 13.9);
+      tl.fromTo("#r1_card_bumrah", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 16.5);
+
+      // Bumrah Wins Round 1 -> Stamp Slam at 19.0s!
+      slam("#st2_point_bumrah", 19.0, -6);
+      burst("scR1", 19.0, 700, -250, 200);
+      shake("#s2 .cam", 19.14, 28);
+
+      // ------------------------------------------
+      // ACT 3: Round 2 — Ball 1 of a Test (20.0s – 29.2s)
+      // ------------------------------------------
+      zoom("s3", 20.0, 9.2, 1.0, 1.07);
+      tl.fromTo("#r2_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 20.05);
+
+      // Shattered stumps explode at 23.3s ("struck four times on ball one")
+      tl.fromTo("#stump_L", { rotation: -35, x: -70 }, { rotation: -105, x: -160, y: -40, duration: 0.5, ease: "power2.out" }, 23.5);
+      tl.fromTo("#stump_R", { rotation: 40, x: 70 }, { rotation: 110, x: 160, y: -40, duration: 0.5, ease: "power2.out" }, 23.5);
+      tl.fromTo("#bail_1", { y: -90, x: -50 }, { y: -130, x: -110, rotation: -180, duration: 0.35, ease: "power1.out" }, 23.5)
+        .to("#bail_1", { y: 20, x: -160, rotation: -320, duration: 0.35, ease: "power2.in" }, 23.85);
+      tl.fromTo("#bail_2", { y: -110, x: 35 }, { y: -140, x: 110, rotation: 180, duration: 0.35, ease: "power1.out" }, 23.5)
+        .to("#bail_2", { y: 20, x: 160, rotation: 320, duration: 0.35, ease: "power2.in" }, 23.85);
+
+      tl.fromTo("#r2_card_starc", { scale: 0.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 24.2);
+
+      // Starc Wins Round 2 -> Stamp Slam at 28.1s!
+      slam("#st3_point_starc", 28.1, 6);
+      burst("scR2", 28.1, 750, -250, 200);
+      shake("#s3 .cam", 28.24, 28);
+
+      // ------------------------------------------
+      // ACT 4: Round 3 — Pink Ball Under Lights (29.2s – 37.5s)
+      // ------------------------------------------
+      zoom("s4", 29.2, 8.3, 1.0, 1.07);
+      tl.fromTo("#r4_pink_rays", { rotation: 0 }, { rotation: 26, duration: 8.3, ease: "none" }, 29.2);
+      tl.fromTo("#r3_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 29.25);
+      tl.fromTo("#r3_card_bumrah", { x: -250, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }, 30.5);
+      tl.fromTo("#r3_card_starc", { x: 250, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 32.7);
+
+      // Starc Wins Round 3 -> Stamp Slam at 36.3s!
+      slam("#st4_point_starc", 36.3, 6);
+      shake("#s4 .cam", 36.44, 28);
+
+      // ------------------------------------------
+      // ACT 5: Round 4 — Head-to-Head (37.5s – 47.6s)
+      // ------------------------------------------
+      zoom("s5", 37.5, 10.1, 1.0, 1.06);
+      tl.fromTo("#r4_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 37.55);
+      tl.fromTo("#r4_card_starc", { x: 250, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }, 40.8);
+      tl.fromTo("#r4_card_bumrah", { x: -250, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 43.5);
+
+      // Bumrah Wins Round 4 -> Stamp Slam at 46.5s!
+      slam("#st5_point_bumrah", 46.5, -6);
+      burst("scR4", 46.5, 750, -250, 200);
+      shake("#s5 .cam", 46.64, 28);
+
+      // ------------------------------------------
+      // ACT 6: The Tiebreaker & Outro (47.6s – 57.39s)
+      // ------------------------------------------
+      zoom("s6", 47.6, 9.79, 1.0, 1.05);
+      tl.fromTo("#r6_final", { rotation: 0 }, { rotation: 22, duration: 9.79, ease: "none" }, 47.6);
+      tl.fromTo("#tb_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 47.65);
+      tl.fromTo("#card_tiebreak", { scale: 0.3, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.65)" }, 48.5);
+
+      // DEAD HEAT Stamp Slams at 53.6s!
+      slam("#st6_dead_heat", 53.6, 0);
+      shake("#s6 .cam", 53.74, 28);
+    </script>
+  </body>
+</html>

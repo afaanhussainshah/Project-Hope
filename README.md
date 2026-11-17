@@ -57,6 +57,19 @@ Inspired by iconic cutout and stop-motion aesthetics (e.g., *HyperFrames / Sandp
   - *Act 5: Never Another Thala (35.8s – 41.2s)* — Giant suspended CSK Canary Yellow Jersey #7 with a golden royal ruby crown and sunburst rays; `NEVER ANOTHER THALA! 👑` stamp slam.
   - *Act 6: The Farewell Walk-Off (41.2s – 47.73s)* — Dhoni in iconic #7 jersey raising his right arm in salute walking into the Chepauk players' tunnel with golden confetti; `END OF AN ERA` & `THANK YOU #7` stamp slams.
 
+### 5. Bumrah vs Starc — Stat Wars #1 (Who is Deadlier with the New Ball?)
+- **File:** [`bumrah-vs-starc-reel.mp4`](./bumrah-vs-starc-reel.mp4)
+- **Duration:** 57.39 seconds
+- **Framerate:** **60 FPS (Ultra-Smooth)**
+- **Resolution:** 1080 × 1920 (Vertical 9:16)
+- **Storyline:**
+  - *Act 1: Toe-to-Toe Hook (0.0s – 10.8s)* — India & Australia's greatest fast bowlers go head-to-head at the center seam with wind-up bowling arms; `WHO IS DEADLIER? PICK ONE. NOW.` stamp slam.
+  - *Act 2: Round 1 — Opening in Tests (10.8s – 20.0s)* — Starc's 25.35 average vs Bumrah's historic 18.84 average; `POINT, BUMRAH! 1 - 0 TO INDIA` stamp slam (1-0).
+  - *Act 3: Round 2 — First Ball of a Test (20.0s – 29.2s)* — Starc's world-record 4 first-ball dismissals; shattered wooden wickets & tumbling bails; `POINT, STARC! TIED AT 1 - 1` stamp slam (1-1).
+  - *Act 4: Round 3 — Pink Ball Under Floodlights (29.2s – 37.5s)* — Day/night test comparison; rotating floodlight beams; Bumrah's 14 wickets vs Starc's 89-wicket pink ball kingdom; `POINT, STARC! STARC LEADS 2 - 1` stamp slam (1-2).
+  - *Act 5: Round 4 — Head-to-Head Demolition (37.5s – 47.6s)* — Starc vs India (35.84 average) vs Bumrah in Australia (17.15 average); `POINT, BUMRAH! TIED AT 2 - 2!` stamp slam (2-2).
+  - *Act 6: The Tiebreaker & Dead Heat Outro (47.6s – 57.39s)* — ODI average balance card (23.74 vs 23.96, separated by 0.22); `DEAD HEAT: 2 - 2! WHO TAKES THE NEW BALL?` stamp slam & audience vote call-to-action.
+
 ---
 
 ## 🛠️ Architecture & Tech Stack
@@ -95,10 +108,19 @@ Project Hope/
 │   ├── index.html                # Master GSAP animation composition
 │   └── standalone.html           # Bundled standalone HTML
 │
+├── Bumrah vs Starc/              # Bumrah vs Starc Stat Wars Reel Pipeline
+│   ├── assets/                   # Voiceover, fonts & GSAP
+│   ├── preview_frames/           # Render verification snapshots (01 to 08)
+│   ├── renders/                  # Final 60 FPS MP4 & mixed audio master
+│   ├── tools/                    # Speech alignment, SFX synth & Playwright renderer
+│   ├── index.html                # Master GSAP animation composition
+│   └── standalone.html           # Bundled standalone HTML
+│
 ├── mohammad-amir-2017-reel.mp4   # Master 60 FPS Export (Amir 2017 CT)
 ├── kohli-765-runs-reel.mp4       # Master Export (Kohli 765 Runs)
 ├── bat-grains-myth-reel.mp4      # Master 60 FPS Export (Bat Grains Myth vs Fact)
-└── dhoni-ipl-retirement-reel.mp4 # Master 60 FPS Export (MS Dhoni IPL Retirement)
+├── dhoni-ipl-retirement-reel.mp4 # Master 60 FPS Export (MS Dhoni IPL Retirement)
+└── bumrah-vs-starc-reel.mp4      # Master 60 FPS Export (Bumrah vs Starc Stat Wars)
 ```
 
 ---
