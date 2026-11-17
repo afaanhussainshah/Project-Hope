@@ -14,11 +14,11 @@ STANDALONE_HTML = os.path.join(PROJECT_DIR, "standalone.html")
 AUDIO_MIX = os.path.join(PROJECT_DIR, "renders", "full_audio_mix.wav")
 OUTPUT_VIDEO = os.path.join(PROJECT_DIR, "renders", "kohli-765-runs-reel.mp4")
 
-FPS = 24
+FPS = 60
 DURATION = 44.04
 TOTAL_FRAMES = math.ceil(DURATION * FPS)
 
-print(f"=== Starting Paper-Cut Reel Render ===")
+print(f"=== Starting Paper-Cut Reel Render (Ultra-Smooth 60 FPS) ===")
 print(f"Duration: {DURATION}s @ {FPS} fps = {TOTAL_FRAMES} frames")
 print(f"Input HTML: {STANDALONE_HTML}")
 print(f"Audio mix: {AUDIO_MIX}")
@@ -36,7 +36,7 @@ cmd = [
     "-i", "-",
     "-i", AUDIO_MIX,
     "-c:v", "libx264",
-    "-preset", "medium",
+    "-preset", "fast",
     "-crf", "18",
     "-pix_fmt", "yuv420p",
     "-r", str(FPS),

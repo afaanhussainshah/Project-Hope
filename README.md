@@ -23,7 +23,7 @@ Inspired by iconic cutout and stop-motion aesthetics (e.g., *HyperFrames / Sandp
 ### 2. Virat Kohli — 765 Runs (2023 World Cup Chronicle)
 - **File:** [`kohli-765-runs-reel.mp4`](./kohli-765-runs-reel.mp4)
 - **Duration:** 44.04 seconds
-- **Framerate:** 24 FPS
+- **Framerate:** **60 FPS (Ultra-Smooth)**
 - **Resolution:** 1080 × 1920 (Vertical 9:16)
 - **Storyline:**
   - *Mystery Hook:* First 6 seconds reveal an anonymous batter's superhuman stats (95.62 Average, 90.31 Strike Rate, 765 Runs) without naming him.
