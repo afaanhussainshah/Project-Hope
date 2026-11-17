@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>MS Dhoni — The Final Whistle (IPL Retirement)</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #111a14;
+      }
+      #root {
+        position: relative; width: 1080px; height: 1920px; overflow: hidden;
+        font-family: "Anton", sans-serif;
+      }
+      .scene {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        overflow: hidden; z-index: 1;
+      }
+      .cam, .cam svg {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        display: block;
+      }
+      .cut {
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.35));
+      }
+      .cut-lg {
+        filter: drop-shadow(14px 18px 0 rgba(0, 0, 0, 0.42));
+      }
+      #wipe {
+        position: absolute; left: 0; top: -190px; width: 1600px; height: 2300px; z-index: 5;
+      }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8;
+        opacity: 0.22; mix-blend-mode: multiply; pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='7'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9;
+        pointer-events: none;
+        background: radial-gradient(ellipse at 50% 48%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.38) 100%);
+      }
+      .cap {
+        position: absolute; left: 50px; width: 980px; top: 1320px; height: 240px;
+        z-index: 10; text-align: center; pointer-events: none;
+      }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px;
+        background: #F6F1E4; color: #1B1B1B;
+        font-size: 80px; line-height: 1.08; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.35));
+      }
+      .cap b { font-weight: 400; color: #C1121F; }
+      .cap i { font-style: normal; background: #E3B23C; padding: 0 14px; }
+      .cap u { text-decoration: underline; text-decoration-color: #C1121F; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="47.73" data-width="1080" data-height="1920">
+      <!-- 6 Narrative Scenes -->
+      <div id="s1" class="clip scene" data-start="0.0" data-duration="12.8" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2" class="clip scene" data-start="12.8" data-duration="2.0" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="14.8" data-duration="8.2" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="23.0" data-duration="12.8" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="35.8" data-duration="5.4" data-track-index="0"><div class="cam"></div></div>
+      <div id="s6" class="clip scene" data-start="41.2" data-duration="6.53" data-track-index="0"><div class="cam"></div></div>
+
+      <!-- Audio Elements -->
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="47.73" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="47.73" data-volume="0.4" data-track-index="2"></audio>
+
+      <!-- Physical Paper Overlays -->
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <!-- Authentically Synced Paper Captions -->
+      <div class="clip cap" data-start="0.10" data-duration="5.15" data-track-index="1"><span>EVERY COMMENTATOR ASKED <b>THE SAME QUESTION:</b></span></div>
+      <div class="clip cap" data-start="5.25" data-duration="3.55" data-track-index="1"><span>“IS THIS YOUR <i>LAST SEASON IN YELLOW?”</i></span></div>
+      <div class="clip cap" data-start="8.80" data-duration="2.20" data-track-index="1"><span>AND HE ALWAYS REPLIED...</span></div>
+      <div class="clip cap" data-start="11.00" data-duration="1.80" data-track-index="1"><span><b>“DEFINITELY NOT.”</b></span></div>
+      <div class="clip cap" data-start="12.80" data-duration="2.00" data-track-index="1"><span>...<u>UNTIL TODAY.</u></span></div>
+      <div class="clip cap" data-start="14.80" data-duration="2.70" data-track-index="1"><span><b>FIVE TROPHIES.</b> TEN FINALS.</span></div>
+      <div class="clip cap" data-start="17.50" data-duration="5.50" data-track-index="1"><span>THE ONLY CAPTAIN WHO WON WITH <i>PURE MIND GAMES.</i></span></div>
+      <div class="clip cap" data-start="23.00" data-duration="4.50" data-track-index="1"><span>BUSTED KNEES. <b>HEAVY STRAPPING.</b> LIMPING...</span></div>
+      <div class="clip cap" data-start="27.50" data-duration="8.30" data-track-index="1"><span>YET <b>40,000 VOICES</b> SCREAMED HIS NAME!</span></div>
+      <div class="clip cap" data-start="35.80" data-duration="5.40" data-track-index="1"><span>CHENNAI WILL FIND A CAPTAIN... <b>NEVER ANOTHER THALA!</b></span></div>
+      <div class="clip cap" data-start="41.20" data-duration="6.53" data-track-index="1"><span>END OF AN ERA. <i>THANK YOU, NUMBER SEVEN. 💛</i></span></div>
+    </div>
+
+    <script>
+      // ---------- Deterministic Random Generator ----------
+      let seed = 77;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+
+      // ---------- Color Palette ----------
+      const C = {
+        paper: "#F6F1E4",
+        kraft: "#D1C2A5",
+        ink: "#1A1A1A",
+        cskYellow: "#F5D061",
+        cskGold: "#E3B23C",
+        cskBlue: "#1B3A6B",
+        cskDarkBlue: "#102342",
+        red: "#C1121F",
+        stamp: "#C1121F",
+        grass: "#4D853A",
+        dgrass: "#386528",
+        skyBlue: "#BFD9E6",
+        nightSky: "#142436",
+        tape: "#EDE7BE"
+      };
+
+      // ---------- SVG Drawing Primitives ----------
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+      const tx = (x, y, s, str, fill, anc = "middle", ex = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${fill}" text-anchor="${anc}" ${ex}>${str}</text>`;
+
+      // Torn Paper Polygon Algorithm
+      function torn(x, y, w, h, j = 10, step = 40) {
+        const p = [];
+        for (let i = 0; i <= w; i += step) p.push([x + Math.min(i, w), y + (rnd() - 0.5) * j]);
+        for (let i = step; i <= h; i += step) p.push([x + w + (rnd() - 0.5) * j, y + Math.min(i, h)]);
+        for (let i = w - step; i >= 0; i -= step) p.push([x + Math.max(i, 0), y + h + (rnd() - 0.5) * j]);
+        for (let i = h - step; i > 0; i -= step) p.push([x + (rnd() - 0.5) * j, y + i]);
+        return p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+      }
+      const sheet = (x, y, w, h, fill, j = 10) => `<polygon points="${torn(x, y, w, h, j)}" fill="${fill}"/>`;
+
+      // Masking Tape Piece
+      const tape = (x, y, w, h, rot = -4) =>
+        `<g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${C.tape}" opacity="0.88"/></g>`;
+
+      // Physical Rubber Stamp
+      const stamp = (id, cx, cy, l1, l2 = "", rot = -10, col = C.stamp) =>
+        `<g id="${id}"><g transform="rotate(${rot} ${cx} ${cy})"><rect x="${cx - 270}" y="${cy - 95}" width="540" height="190" rx="16" fill="rgba(246,241,228,.92)" stroke="${col}" stroke-width="12" stroke-dasharray="14 8"/>${tx(cx, cy + (l2 ? -12 : 30), l2 ? 76 : 84, l1, col)}${l2 ? tx(cx, cy + 60, 52, l2, col) : ""}</g></g>`;
+
+      // Sunburst Rays
+      const rays = (id, cx, cy, n, c) => {
+        let s = `<g id="${id}">`;
+        for (let i = 0; i < n; i += 2) {
+          const a = (i * 2 * Math.PI) / n, b = ((i + 1) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + 2200 * Math.cos(a)).toFixed(0)},${(cy + 2200 * Math.sin(a)).toFixed(0)} ${(cx + 2200 * Math.cos(b)).toFixed(0)},${(cy + 2200 * Math.sin(b)).toFixed(0)}" fill="${c}"/>`;
+        }
+        return s + "</g>";
+      };
+
+      // Confetti Scraps
+      const scraps = (cls, cx, cy, n, col1 = C.cskGold, col2 = C.paper) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 25 + rnd() * 45;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? col1 : col2}" opacity="0"/>`;
+        }
+        return s;
+      };
+
+      // Sweat Drops
+      const drop = (cls, x, y, s = 1) =>
+        `<path class="${cls}" d="M${x} ${y - 34 * s} Q${x + 24 * s} ${y + 4 * s} ${x} ${y + 22 * s} Q${x - 24 * s} ${y + 4 * s} ${x} ${y - 34 * s}Z" fill="#9AD0EC" opacity="0"/>`;
+
+      // Enhanced IPL Trophy Cutout (Base sits perfectly on y=0)
+      function iplTrophy(id, x, y, s, year) {
+        return `<g transform="translate(${x} ${y})"><g id="${id}" class="cut" transform="scale(${s})">
+          <!-- Octagonal Wooden Pedestal Base -->
+          <polygon points="-65,0 65,0 75,-25 65,-45 -65,-45 -75,-25" fill="#1C1C1C"/>
+          <rect x="-55" y="-70" width="110" height="25" rx="5" fill="#2B2B2B"/>
+          <!-- Gold Plaque with Year -->
+          <rect x="-42" y="-64" width="84" height="18" rx="3" fill="#D4AF37"/>
+          ${tx(0, -50, 18, year, "#1A1A1A", "middle", 'font-weight="bold"')}
+          <!-- Fluted Golden Vase Stem -->
+          <path d="M-28 -70 L-16 -125 L16 -125 L28 -70 Z" fill="#D4AF37"/>
+          <ellipse cx="0" cy="-125" rx="22" ry="7" fill="#F4CF88"/>
+          <!-- Trophy Cup / Bowl -->
+          <path d="M-60 -195 C-65 -135 -20 -125 0 -125 C20 -125 65 -135 60 -195 Z" fill="#E3B23C"/>
+          <ellipse cx="0" cy="-195" rx="60" ry="20" fill="#FFE082"/>
+          <!-- Swooping Handles -->
+          <path d="M-55 -185 C-95 -170 -95 -125 -45 -110" stroke="#F4CF88" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M55 -185 C95 -170 95 -125 45 -110" stroke="#F4CF88" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <!-- Iconic IPL Golden Globe in Cup -->
+          <circle cx="0" cy="-210" r="32" fill="#FFE082" stroke="#D4AF37" stroke-width="4"/>
+          <path d="M-26 -210 Q0 -192 26 -210" stroke="#B8860B" stroke-width="3" fill="none"/>
+          <path d="M-22 -222 Q0 -206 22 -222" stroke="#B8860B" stroke-width="3" fill="none"/>
+          <!-- Gold Sparkle -->
+          <polygon points="0,-255 4,-247 12,-245 4,-243 0,-235 -4,-243 -12,-245 -4,-247" fill="#FFF"/>
+        </g></g>`;
+      }
+
+      // Chepauk Stadium Background
+      function chepaukStadium(crowdColor = C.cskYellow) {
+        let s = `<rect width="1080" height="680" fill="${C.skyBlue}"/><rect y="600" width="1080" height="460" fill="#243447"/>`;
+        const cols = [C.cskYellow, C.cskGold, "#FFE082", C.paper, C.cskBlue, "#E53935"];
+        for (let r = 0; r < 7; r++) {
+          for (let c = 0; c < 22; c++) {
+            s += `<circle cx="${(c * 50 + (r % 2 ? 25 : 0) + rnd() * 8).toFixed(0)}" cy="${630 + r * 58}" r="19" fill="${cols[Math.floor(rnd() * 6)]}"/>`;
+          }
+        }
+        return s + `<rect y="1060" width="1080" height="24" fill="${C.paper}"/><rect y="1084" width="1080" height="836" fill="${C.grass}"/><rect y="1084" width="1080" height="30" fill="${C.dgrass}"/>`;
+      }
+
+      // ---------- Characters Generator ----------
+
+      // 1. MS Dhoni (CSK Yellow Jersey #7, Knee Strap, Smirk, Helmet/Cap)
+      function guy_dhoni(id, x, y, s, o = {}) {
+        const skin = o.skin || "#D99E6B", sk2 = o.sk2 || "#BA7B4A", hair = o.hair || "#2E241E", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <!-- Torso & CSK Yellow Jersey -->
+          <g class="cut">
+            <path d="M-220 420 Q-230 250 -95 210 L95 210 Q230 250 220 420Z" fill="${C.cskYellow}"/>
+            <!-- CSK Blue Collar & Trim -->
+            <path d="M-55 210 L0 290 L55 210 L35 195 L-35 195Z" fill="${C.cskBlue}"/>
+            <!-- Jersey Number 7 on Chest -->
+            ${tx(0, 360, 105, "7", C.cskBlue, "middle", 'font-weight="bold"')}
+            <rect x="-42" y="145" width="84" height="90" rx="18" fill="${sk2}"/>
+            <!-- Batting Pads -->
+            <g class="pads">
+              <rect x="-130" y="420" width="105" height="260" rx="20" fill="${C.paper}" stroke="#CFC5AA" stroke-width="6"/>
+              <!-- Right Pad: Optional Knee Strapping -->
+              ${o.kneeStrap ? `
+                <rect x="25" y="420" width="105" height="260" rx="20" fill="${C.paper}" stroke="#CFC5AA" stroke-width="6"/>
+                <!-- Heavy White/Grey Medical Strapping on Knee -->
+                <rect x="15" y="445" width="125" height="95" rx="14" fill="#EDE4D3" stroke="#C1121F" stroke-width="6" stroke-dasharray="12 6"/>
+                <line x1="15" y1="475" x2="140" y2="475" stroke="#A82824" stroke-width="5"/>
+                <line x1="15" y1="510" x2="140" y2="510" stroke="#A82824" stroke-width="5"/>
+                ${tx(77, 498, 26, "HEAVY STRAP", "#C1121F")}
+              ` : `
+                <rect x="25" y="420" width="105" height="260" rx="20" fill="${C.paper}" stroke="#CFC5AA" stroke-width="6"/>
+              `}
+              <!-- Pad Straps -->
+              ${[-130, 25].map((px) => `
+                <line x1="${px + 6}" y1="480" x2="${px + 99}" y2="480" stroke="${C.cskBlue}" stroke-width="8"/>
+                <line x1="${px + 6}" y1="550" x2="${px + 99}" y2="550" stroke="${C.cskBlue}" stroke-width="8"/>
+                <line x1="${px + 6}" y1="620" x2="${px + 99}" y2="620" stroke="${C.cskBlue}" stroke-width="8"/>
+              `).join("")}
+            </g>
+          </g>
+          <!-- Head -->
+          <g class="head cut">
+            <!-- Ears -->
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="${sk2}"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="${sk2}"/>
+            <!-- Face Base -->
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="${skin}"/>
+            <!-- Dhoni's Stubble / Beard -->
+            <path d="M-142 30 Q-150 190 0 187 Q150 190 142 30 Q118 150 0 152 Q-118 150 -142 30Z" fill="${hair}" opacity="0.6"/>
+            <!-- CSK Yellow Batting Helmet -->
+            <path d="M-158 -80 Q-160 -255 0 -255 Q160 -255 158 -80Z" fill="${C.cskYellow}"/>
+            <path d="M-175 -85 Q0 -120 175 -85 Q195 -50 0 -60 Q-195 -50 -175 -85Z" fill="${C.cskBlue}"/>
+            <!-- Small Lion Crest on Helmet -->
+            <circle cx="0" cy="-175" r="28" fill="${C.cskGold}"/>
+            ${tx(0, -165, 26, "7", C.cskDarkBlue)}
+            <!-- Metallic Wire Face Grill -->
+            <g class="grill">
+              <path d="M-120 40 Q0 85 120 40" stroke="#CFC5AA" stroke-width="8" fill="none"/>
+              <path d="M-115 80 Q0 120 115 80" stroke="#CFC5AA" stroke-width="8" fill="none"/>
+              <line x1="-50" y1="35" x2="-50" y2="105" stroke="#CFC5AA" stroke-width="7"/>
+              <line x1="0" y1="40" x2="0" y2="115" stroke="#CFC5AA" stroke-width="7"/>
+              <line x1="50" y1="35" x2="50" y2="105" stroke="#CFC5AA" stroke-width="7"/>
+            </g>
+            <!-- Eyes & Pupils -->
+            <g class="eye"><circle cx="-62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="-62" cy="5" r="16" fill="${C.ink}"/></g>
+            <g class="eye"><circle cx="62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="62" cy="5" r="16" fill="${C.ink}"/></g>
+            <!-- Eyebrows -->
+            <rect class="browL" x="-102" y="-58" width="80" height="17" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-58" width="80" height="17" rx="6" fill="${hair}"/>
+            <!-- Nose -->
+            <path d="M-10 30 Q-4 72 22 62" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- Mouth Expressions -->
+            ${mo("flat", '<rect x="-44" y="112" width="88" height="13" rx="6" fill="#7A2E22"/>')}
+            ${mo("o", '<ellipse cx="0" cy="118" rx="30" ry="34" fill="#4A1410"/>')}
+            ${mo("smirk", '<path d="M-48 116 Q14 150 62 98" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+            ${mo("frown", '<path d="M-48 138 Q0 98 48 138" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-58" y="96" width="116" height="46" rx="14" fill="#fff" stroke="#7A2E22" stroke-width="9"/><path d="M-20 98V140M20 98V140M-56 119H56" stroke="#C9B9A8" stroke-width="4"/>')}
+            ${mo("talk", '<ellipse cx="0" cy="120" rx="34" ry="20" fill="#4A1410"/>')}
+          </g>
+          <!-- Cricket Bat Held in Hand (Held in left hand if knee strapped so right knee is 100% visible) -->
+          <g id="${id}_bat" class="cut" transform="${o.kneeStrap ? 'translate(-190, 240) rotate(-15)' : 'translate(160, 240) rotate(12)'}">
+            <rect x="-14" y="-30" width="28" height="120" rx="10" fill="#2B2B2B"/>
+            <rect x="-42" y="80" width="84" height="340" rx="16" fill="#ECD4AD"/>
+            <path d="M-42 390 Q0 430 42 390 Z" fill="#DFC194"/>
+          </g>
+        </g></g>`;
+      }
+
+      // 2. TV Commentator / Danny Morrison Character (Holding Mic)
+      function guy_reporter(id, x, y, s, o = {}) {
+        const skin = o.skin || "#E9B990", sk2 = o.sk2 || "#D69E73", hair = o.hair || "#5A3A22", m = o.m || "talk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <!-- Torso with Blue Blazer & White Shirt -->
+          <g class="cut">
+            <path d="M-220 420 Q-230 250 -95 210 L95 210 Q230 250 220 420Z" fill="${C.cskDarkBlue}"/>
+            <path d="M-55 210 L0 320 L55 210 L35 195 L-35 195Z" fill="${C.paper}"/>
+            <!-- Red Tie -->
+            <polygon points="-12,250 12,250 18,360 0,390 -18,360" fill="${C.red}"/>
+            <rect x="-42" y="145" width="84" height="90" rx="18" fill="${sk2}"/>
+          </g>
+          <!-- Head -->
+          <g class="head cut">
+            <!-- Ears -->
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="${sk2}"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="${sk2}"/>
+            <!-- Face -->
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="${skin}"/>
+            <!-- Blonde/Brown Hair -->
+            <path d="M-155 -70 Q-158 -220 0 -220 Q158 -220 155 -70Z" fill="${hair}"/>
+            <!-- Eyes & Pupils -->
+            <g class="eye"><circle cx="-62" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="-62" cy="5" r="15" fill="${C.ink}"/></g>
+            <g class="eye"><circle cx="62" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="62" cy="5" r="15" fill="${C.ink}"/></g>
+            <!-- Eyebrows -->
+            <rect class="browL" x="-102" y="-58" width="80" height="17" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-58" width="80" height="17" rx="6" fill="${hair}"/>
+            <!-- Nose -->
+            <path d="M-10 30 Q-4 72 22 62" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- Mouth Expressions -->
+            ${mo("flat", '<rect x="-44" y="112" width="88" height="13" rx="6" fill="#7A2E22"/>')}
+            ${mo("o", '<ellipse cx="0" cy="118" rx="28" ry="32" fill="#4A1410"/>')}
+            ${mo("smirk", '<path d="M-48 116 Q14 150 62 98" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+            ${mo("frown", '<path d="M-48 138 Q0 98 48 138" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-58" y="96" width="116" height="46" rx="14" fill="#fff" stroke="#7A2E22" stroke-width="9"/><path d="M-20 98V140M20 98V140M-56 119H56" stroke="#C9B9A8" stroke-width="4"/>')}
+            ${mo("talk", '<ellipse cx="0" cy="120" rx="34" ry="20" fill="#4A1410"/>')}
+          </g>
+          <!-- Extended Hand Holding TV Mic -->
+          <g id="${id}_mic" class="cut" transform="translate(180, 210) rotate(-15)">
+            <rect x="0" y="-12" width="140" height="24" rx="8" fill="#1C1C1C"/>
+            <!-- Mic Box with IPL logo -->
+            <rect x="130" y="-35" width="70" height="70" rx="8" fill="${C.cskYellow}"/>
+            ${tx(165, 10, 28, "IPL", C.cskDarkBlue)}
+            <!-- Round Foam Mic Head -->
+            <circle cx="230" cy="0" r="38" fill="#2E2E2E"/>
+          </g>
+        </g></g>`;
+      }
+
+      // 3. Back View of Dhoni (Walking into Stadium Tunnel with #7 DHONI)
+      function dhoni_back_view(id, x, y, s) {
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <!-- Back Torso & Authentic CSK Yellow Jersey Silhouette -->
+          <g class="cut">
+            <path d="M-85 180 L-220 215 L-270 320 L-200 350 L-160 300 L-170 480 Q0 500 170 480 L160 300 L200 350 L270 320 L220 215 L85 180 Q0 200 -85 180 Z" fill="${C.cskYellow}" stroke="#E5BE38" stroke-width="5"/>
+            <!-- Blue Shoulder Yoke & Side Panels -->
+            <path d="M-85 180 L-220 215 L-270 320 L-235 335 L-190 250 L-85 205 Z" fill="${C.cskBlue}"/>
+            <path d="M85 180 L220 215 L270 320 L235 335 L190 250 L85 205 Z" fill="${C.cskBlue}"/>
+            <!-- Collar Band -->
+            <path d="M-70 180 L0 215 L70 180 L45 168 L0 195 L-45 168 Z" fill="${C.cskDarkBlue}"/>
+            <!-- Giant DHONI 7 on Back -->
+            ${tx(0, 285, 78, "DHONI", C.cskBlue, "middle", 'font-weight="bold" letter-spacing="6"')}
+            ${tx(0, 435, 150, "7", C.cskBlue, "middle", 'font-weight="bold"')}
+            <!-- Batting Pads Back View -->
+            <rect x="-135" y="480" width="110" height="260" rx="20" fill="${C.paper}" stroke="#CFC5AA" stroke-width="6"/>
+            <rect x="25" y="480" width="110" height="260" rx="20" fill="${C.paper}" stroke="#CFC5AA" stroke-width="6"/>
+            ${[-135, 25].map((px) => `
+              <rect x="${px + 8}" y="535" width="94" height="18" fill="#999" rx="4"/>
+              <rect x="${px + 8}" y="605" width="94" height="18" fill="#999" rx="4"/>
+              <rect x="${px + 8}" y="675" width="94" height="18" fill="#999" rx="4"/>
+            `).join("")}
+          </g>
+          <!-- Nape of Neck & Back of Yellow Helmet -->
+          <g class="cut">
+            <rect x="-50" y="125" width="100" height="55" rx="14" fill="#2E241E"/>
+            <circle cx="0" cy="20" r="145" fill="${C.cskYellow}"/>
+            <rect x="-150" y="20" width="300" height="32" rx="10" fill="${C.cskBlue}"/>
+            <!-- Small Lion Emblem on Helmet Back -->
+            <circle cx="0" cy="-35" r="24" fill="${C.cskGold}"/>
+            ${tx(0, -27, 22, "CSK", C.cskDarkBlue)}
+            <!-- Raised Right Arm in Farewell Wave -->
+            <g class="cut" transform="translate(180, 80) rotate(-72)">
+              <rect x="0" y="-22" width="180" height="48" rx="18" fill="${C.cskYellow}"/>
+              <circle cx="180" cy="0" r="32" fill="#D99E6B"/>
+            </g>
+          </g>
+          <!-- Cricket Bat Carried in Left Hand -->
+          <g class="cut" transform="translate(-190, 360) rotate(18)">
+            <rect x="-14" y="-30" width="28" height="110" rx="10" fill="#2B2B2B"/>
+            <rect x="-42" y="70" width="84" height="320" rx="16" fill="#ECD4AD"/>
+            <path d="M-42 360 Q0 395 42 360 Z" fill="#DFC194"/>
+          </g>
+        </g></g>`;
+      }
+
+      // ==========================================
+      // SCENE 1: The Question & "Definitely Not" (0.0s – 12.8s)
+      // ==========================================
+      reseed(111);
+      const questionCard = `
+        <g transform="translate(540, 360)"><g id="card_question" class="cut">
+          ${sheet(-440, -110, 880, 220, C.paper, 8)}
+          ${tape(-320, -135, 140, 40, -6)}
+          ${tape(220, -135, 140, 40, 5)}
+          ${tx(0, -20, 44, "DANNY MORRISON (2020)", "#777777")}
+          ${tx(0, 55, 68, "“LAST SEASON IN YELLOW?”", C.cskDarkBlue)}
+        </g></g>`;
+      put("s1", svg(
+        chepaukStadium(C.cskYellow) +
+        questionCard +
+        guy_reporter("g1_reporter", 240, 920, 0.74, { m: "talk" }) +
+        guy_dhoni("g1_dhoni", 800, 920, 0.74, { m: "smirk" }) +
+        scraps("scDefNot", 540, 1140, 20, C.cskYellow, C.paper) +
+        stamp("st1_def_not", 540, 1140, "DEFINITELY NOT!", "CSK FOREVER 💛", -6, C.stamp),
+        "#BFD9E6"
+      ));
+
+      // ==========================================
+      // SCENE 2: The Shock & Silence (12.8s – 14.8s)
+      // ==========================================
+      reseed(222);
+      const strikeCard = `
+        <g transform="translate(540, 680)"><g id="card_strike" class="cut">
+          ${sheet(-420, -130, 840, 260, C.paper, 8)}
+          ${tape(-260, -155, 150, 42, -5)}
+          ${tape(180, -155, 150, 42, 6)}
+          ${tx(0, 25, 96, "“DEFINITELY NOT”", "#888888")}
+          <!-- Thick Red Marker Strike Through -->
+          <line id="mk_strike" x1="-360" y1="30" x2="360" y2="30" stroke="${C.red}" stroke-width="22" stroke-linecap="round"/>
+        </g></g>`;
+      put("s2", svg(
+        strikeCard +
+        stamp("st2_until_today", 540, 1120, "UNTIL TODAY.", "THE FINAL WHISTLE 🛑", -5, C.stamp),
+        "#1A1A1A"
+      ));
+
+      // ==========================================
+      // SCENE 3: The 5 Trophies Dynasty (14.8s – 23.0s)
+      // ==========================================
+      reseed(333);
+      // Grand Trophy Display Table with Royal Blue Apron & Gold Plaque
+      const trophyDisplay = `
+        <g id="trophyTable" class="cut">
+          <!-- Wooden Presentation Table Surface -->
+          <rect x="50" y="860" width="980" height="50" rx="8" fill="#422814"/>
+          <rect x="60" y="855" width="960" height="12" rx="4" fill="#6B4120"/>
+          <!-- Royal Blue Velvet Apron -->
+          <rect x="70" y="910" width="940" height="320" rx="14" fill="#1B3A6B"/>
+          <rect x="70" y="1215" width="940" height="18" fill="${C.cskGold}" rx="4"/>
+          <!-- Table Support Pillars -->
+          <rect x="100" y="1230" width="60" height="180" fill="#2E1B0E" rx="6"/>
+          <rect x="920" y="1230" width="60" height="180" fill="#2E1B0E" rx="6"/>
+          <!-- Center Gold Embossed Plaque (Crisply positioned below trophies) -->
+          <g class="cut" transform="translate(540, 1050)">
+            ${sheet(-380, -55, 760, 110, C.paper, 6)}
+            ${tape(-300, -75, 130, 34, -4)}
+            ${tape(170, -75, 130, 34, 5)}
+            ${tx(0, 18, 54, "CHENNAI SUPER KINGS · 5X CHAMPIONS", C.cskDarkBlue)}
+          </g>
+        </g>`;
+      put("s3", svg(
+        rays("r3_gold", 540, 720, 24, "#1C2B3A") +
+        trophyDisplay +
+        iplTrophy("tr_2010", 170, 860, 0.85, "2010") +
+        iplTrophy("tr_2011", 355, 860, 0.85, "2011") +
+        iplTrophy("tr_2018", 540, 860, 0.98, "2018") +
+        iplTrophy("tr_2021", 725, 860, 0.85, "2021") +
+        iplTrophy("tr_2023", 910, 860, 0.85, "2023") +
+        scraps("scTrophyGold", 540, 720, 32, C.cskGold, C.paper) +
+        stamp("st3_5x", 540, 420, "5 IPL TROPHIES", "10 IPL FINALS ⭐", 0, C.cskGold),
+        "#102342"
+      ));
+
+      // ==========================================
+      // SCENE 4: Busted Knees, Warrior Heart (23.0s – 35.8s)
+      // ==========================================
+      reseed(444);
+      // Chepauk Night Atmosphere with 40,000 Yellow Crowd Dots
+      const yellowCrowd = `
+        <rect width="1080" height="700" fill="#0C1B2A"/>
+        <rect y="580" width="1080" height="520" fill="#152638"/>
+        ${[...Array(150)].map((_, i) => `<circle cx="${(i * 12 + rnd() * 10) % 1080}" cy="${600 + (i % 8) * 54}" r="${8 + rnd() * 6}" fill="${i % 4 ? C.cskYellow : '#FFF'}"/>`).join("")}
+        <rect y="1080" width="1080" height="24" fill="${C.paper}"/>
+        <rect y="1104" width="1080" height="816" fill="${C.dgrass}"/>
+      `;
+      const stadiumBanner = `
+        <g transform="translate(540, 340)"><g id="bn_40k" class="cut">
+          ${sheet(-440, -85, 880, 170, C.cskYellow, 8)}
+          ${tape(-320, -105, 140, 36, -5)}
+          ${tape(220, -105, 140, 36, 6)}
+          ${tx(0, 25, 62, "40,000 VOICES SCREAMING “DHONI!”", C.cskDarkBlue)}
+        </g></g>`;
+      put("s4", svg(
+        yellowCrowd +
+        stadiumBanner +
+        guy_dhoni("g4_dhoni_warrior", 540, 750, 0.78, { kneeStrap: 1, m: "flat" }) +
+        drop("sw4_dhoni", 440, 640) + drop("sw4_dhoni", 640, 620) + drop("sw4_dhoni", 660, 700, 0.8) +
+        stamp("st4_warrior", 540, 1150, "WARRIOR IN YELLOW", "PLAYED THROUGH PAIN", -6, C.stamp),
+        "#0C1B2A"
+      ));
+
+      // ==========================================
+      // SCENE 5: Never Another Thala (35.8s – 41.2s)
+      // ==========================================
+      reseed(555);
+      // Realistic CSK #7 Jersey Cutout with Golden Royal Crown
+      const cskJerseyHero = `
+        <g transform="translate(540, 680)"><g id="jersey7_hero" class="cut-lg">
+          <!-- Authentic Cricket Jersey Silhouette -->
+          <path d="M-85 -160 L-230 -120 L-290 0 L-210 40 L-170 -10 L-180 220 Q0 240 180 220 L170 -10 L210 40 L290 0 L230 -120 L85 -160 Q0 -130 -85 -160 Z" fill="${C.cskYellow}" stroke="#E5BE38" stroke-width="6"/>
+          <!-- Blue Shoulder & Flank Panels -->
+          <path d="M-85 -160 L-230 -120 L-290 0 L-245 20 L-200 -80 L-85 -130 Z" fill="${C.cskBlue}"/>
+          <path d="M85 -160 L230 -120 L290 0 L245 20 L200 -80 L85 -130 Z" fill="${C.cskBlue}"/>
+          <path d="M-170 -10 L-180 220 L-150 220 L-145 0 Z" fill="${C.cskBlue}"/>
+          <path d="M170 -10 L180 220 L150 220 L145 0 Z" fill="${C.cskBlue}"/>
+          <!-- Blue Collar Band -->
+          <path d="M-75 -160 L0 -75 L75 -160 L50 -175 L0 -100 L-50 -175 Z" fill="${C.cskDarkBlue}"/>
+          <!-- CSK Lion Emblem on Left Chest -->
+          <circle cx="-95" cy="-20" r="26" fill="${C.cskGold}"/>
+          <path d="M-108 -20 Q-95 -38 -82 -20 Q-95 -12 -108 -20 Z" fill="${C.cskDarkBlue}"/>
+          <!-- Giant Bold #7 & THALA -->
+          ${tx(0, 115, 185, "7", C.cskBlue, "middle", 'font-weight="bold"')}
+          ${tx(0, 190, 52, "THALA", C.cskDarkBlue, "middle", 'font-weight="bold" letter-spacing="6"')}
+          <!-- Royal Golden Crown with Rubies perched atop collar (wrapped in outer static group so GSAP y-anim doesn't overwrite SVG translate!) -->
+          <g transform="translate(0, -220)"><g id="crown7">
+            <polygon points="-120,50 -135,-30 -60,15 0,-60 60,15 135,-30 120,50" fill="${C.cskGold}" stroke="#B8860B" stroke-width="7"/>
+            <rect x="-120" y="45" width="240" height="22" rx="6" fill="#D4AF37"/>
+            <circle cx="-135" cy="-30" r="15" fill="#C1121F"/>
+            <circle cx="-60" cy="15" r="11" fill="#1B3A6B"/>
+            <circle cx="0" cy="-60" r="18" fill="#C1121F"/>
+            <circle cx="60" cy="15" r="11" fill="#1B3A6B"/>
+            <circle cx="135" cy="-30" r="15" fill="#C1121F"/>
+          </g></g>
+        </g></g>`;
+      put("s5", svg(
+        rays("r5_thala", 540, 680, 26, "#B8860B") +
+        cskJerseyHero +
+        scraps("scThala", 540, 680, 28, C.cskYellow, C.paper) +
+        stamp("st5_never", 540, 1110, "NEVER ANOTHER THALA!", "IMMORTAL #7 👑", 0, C.stamp),
+        "#1A1A1A"
+      ));
+
+      // ==========================================
+      // SCENE 6: The Final Farewell Walk-Off (41.2s – 47.73s)
+      // ==========================================
+      reseed(666);
+      const stadiumTunnel = `
+        <!-- Chepauk Stadium Atmosphere in Background -->
+        <rect width="1080" height="1920" fill="#0C1B2A"/>
+        ${rays("r6_farewell", 540, 720, 24, "rgba(245, 208, 97, 0.16)")}
+        <!-- Tunnel Arch Walls Left and Right -->
+        <polygon points="0,0 220,0 120,1920 0,1920" fill="#121820"/>
+        <polygon points="1080,0 860,0 960,1920 1080,1920" fill="#121820"/>
+        <path d="M 120 0 Q 540 200 960 0 L 1080 0 L 0 0 Z" fill="#0E131A"/>
+        <!-- Stadium Exit Sign -->
+        <g class="cut" transform="translate(540, 180)">
+          <rect x="-190" y="-35" width="380" height="70" rx="10" fill="#0B5345"/>
+          ${tx(0, 10, 32, "CHEPAUK · PLAYERS TUNNEL", "#FFFFFF")}
+        </g>
+      `;
+      put("s6", svg(
+        stadiumTunnel +
+        dhoni_back_view("dhoni_walk_off", 540, 880, 0.86) +
+        scraps("scFarewell", 540, 750, 36, C.cskGold, C.paper) +
+        stamp("st6_end_era", 280, 310, "END OF AN ERA", "2008 – 2026", -8, C.stamp) +
+        stamp("st6_thank_you", 780, 480, "THANK YOU #7", "GREATEST FINISHER", 7, C.cskGold),
+        "#121820"
+      ));
+
+      // ==========================================
+      // Full-Screen Torn-Paper Wipe Transition Setup
+      // ==========================================
+      reseed(999);
+      document.getElementById("wipe").innerHTML = `
+        <svg viewBox="0 0 1600 2300" width="1600" height="2300" xmlns="http://www.w3.org/2000/svg">
+          <polygon id="wp" points="${torn(20, 20, 1560, 2260, 60, 90)}" fill="${C.paper}"/>
+        </svg>`;
+
+      // ==========================================
+      // GSAP Master Timeline (Synced Millisecond-Accurate)
+      // ==========================================
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = { main: tl };
+
+      const CC = "50% 50%";
+      gsap.set("#r3_gold, #r5_thala, #r6_farewell", { svgOrigin: "540 720" });
+      gsap.set(".eye, .pupil, .browL, .browR, #st1_def_not, #st2_until_today, #st3_5x, #st4_warrior, #st5_never, #st6_end_era, #st6_thank_you, #jersey7_hero, #crown7", { transformOrigin: CC });
+
+      // Motion Helpers
+      const pop = (sel, t, d = 0.22) => tl.fromTo(sel, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: d, ease: "back.out(2.2)" }, t);
+      const slam = (sel, t, r = 0) => tl.fromTo(sel, { scale: 3.2, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.14, ease: "power4.in" }, t);
+      const shake = (sel, t, a = 24) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t)
+          .to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04)
+          .to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08)
+          .to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") =>
+        tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+
+      // Character Facial Animation Helper
+      function face(id, t, o, d = 0.1) {
+        const q = (s) => `#${id} ${s}`;
+        if (o.m) { tl.set(q(".m"), { opacity: 0 }, t); tl.set(q(".m-" + o.m), { opacity: 1 }, t + 0.001); }
+        if (o.b) {
+          tl.to(q(".browL"), { rotation: o.b[0], y: o.b[2] || 0, duration: d }, t);
+          tl.to(q(".browR"), { rotation: o.b[1], y: o.b[2] || 0, duration: d }, t);
+        }
+        if (o.e != null) tl.to(q(".eye"), { scale: o.e, duration: d }, t);
+        if (o.p) tl.to(q(".pupil"), { x: o.p[0], y: o.p[1], duration: d }, t);
+        if (o.ps != null) tl.to(q(".pupil"), { scale: o.ps, duration: d }, t);
+      }
+
+      // Particle Bursts & Sweat
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.75, ease: "power2.out", immediateRender: false }, t);
+        });
+      const sweat = (cls, t) =>
+        gsap.utils.toArray("." + cls).forEach((el, i) =>
+          tl.fromTo(el, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1, immediateRender: false }, t + i * 0.06)
+            .to(el, { y: 90, opacity: 0, duration: 0.5, ease: "power1.in" }, t + i * 0.06 + 0.2));
+
+      // Synced Paper Captions Animation
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 5 : -5, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.5 : 1.5, opacity: 1, duration: 0.14, ease: "back.out(2.6)" }, t);
+      });
+
+      // Torn Paper Wipes Between Scenes
+      gsap.set("#wipe", { x: -1700 });
+      [[12.8, C.cskYellow, 1], [14.8, C.paper, -1], [23.0, C.cskBlue, 1], [35.8, C.cskGold, -1], [41.2, C.paper, 1]].forEach(([t, c, dir]) => {
+        tl.set("#wp", { fill: c }, t - 0.19);
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300 }, { x: dir > 0 ? 1300 : -1700, duration: 0.36, ease: "none" }, t - 0.18);
+      });
+
+      // Scene & Caption Visibility Management (Lifecycle)
+      gsap.utils.toArray(".clip").forEach((el) => {
+        const start = +el.dataset.start || 0;
+        const dur = +el.dataset.duration || 0;
+        if (dur > 0) {
+          if (start === 0) {
+            tl.set(el, { display: "block" }, 0);
+          } else {
+            tl.set(el, { display: "none" }, 0);
+            tl.set(el, { display: "block" }, start);
+          }
+          tl.set(el, { display: "none" }, start + dur);
+        }
+      });
+
+      // ------------------------------------------
+      // ACT 1: The Question & "Definitely Not" (0.0s – 12.8s)
+      // ------------------------------------------
+      zoom("s1", 0, 12.8, 1.0, 1.07);
+      tl.fromTo("#card_question", { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 0.2);
+      face("g1_reporter", 0.3, { m: "talk", p: [15, 0] });
+      face("g1_dhoni", 0.3, { m: "smirk", p: [-15, 0] });
+
+      // Reporter asks question
+      [0.8, 1.8, 2.8, 3.8, 5.5, 6.5, 7.5].forEach((t) => {
+        face("g1_reporter", t, { m: "talk" });
+        face("g1_reporter", t + 0.3, { m: "flat" });
+      });
+
+      // Dhoni's iconic smile & DEFINITELY NOT slam at 11.0s
+      face("g1_dhoni", 9.0, { m: "smirk", b: [-8, 8, -4], p: [-12, -4] });
+      face("g1_dhoni", 11.0, { m: "teeth", b: [-12, 12, -8] });
+      slam("#st1_def_not", 11.0, -8);
+      burst("scDefNot", 11.0, 700, -200, 200);
+      shake("#s1 .cam", 11.14, 26);
+
+      // ------------------------------------------
+      // ACT 2: The Shock & Silence (12.8s – 14.8s)
+      // ------------------------------------------
+      zoom("s2", 12.8, 2.0, 1.0, 1.12);
+      tl.fromTo("#card_strike", { scale: 0.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.3, ease: "back.out(1.8)" }, 12.85);
+
+      // Red strike cuts across "Definitely Not" at 13.0s!
+      tl.fromTo("#mk_strike", { scaleX: 0 }, { scaleX: 1.0, duration: 0.35, ease: "power2.inOut", transformOrigin: "0% 50%" }, 13.0);
+
+      // UNTIL TODAY stamp slams!
+      slam("#st2_until_today", 13.6, -5);
+      shake("#s2 .cam", 13.74, 30);
+
+      // ------------------------------------------
+      // ACT 3: The 5 Trophies Dynasty (14.8s – 23.0s)
+      // ------------------------------------------
+      zoom("s3", 14.8, 8.2, 1.0, 1.06);
+      tl.fromTo("#r3_gold", { rotation: 0 }, { rotation: 26, duration: 8.2, ease: "none" }, 14.8);
+      tl.fromTo("#trophyTable", { y: 400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }, 14.85);
+
+      // 5 Trophies sequentially slam down with dings!
+      [
+        ["#tr_2010", 15.2],
+        ["#tr_2011", 15.7],
+        ["#tr_2018", 16.2],
+        ["#tr_2021", 16.7],
+        ["#tr_2023", 17.2]
+      ].forEach(([sel, t]) => {
+        tl.fromTo(sel, { y: -300, scale: 0.3, opacity: 0 }, { y: 0, scale: 0.85, opacity: 1, duration: 0.3, ease: "bounce.out" }, t);
+      });
+
+      // 5X CHAMPION stamp slams at 17.2s!
+      slam("#st3_5x", 17.2, 0);
+      burst("scTrophyGold", 17.2, 900, -400, 300);
+      shake("#s3 .cam", 17.34, 28);
+
+      // ------------------------------------------
+      // ACT 4: Busted Knees, Warrior Heart (23.0s – 35.8s)
+      // ------------------------------------------
+      zoom("s4", 23.0, 12.8, 1.0, 1.07);
+      tl.fromTo("#bn_40k", { y: -300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.5)" }, 23.1);
+      tl.fromTo("#g4_dhoni_warrior", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.2);
+
+      // Dhoni limping & sweating through pain
+      sweat("sw4_dhoni", 24.0);
+      sweat("sw4_dhoni", 28.5);
+      face("g4_dhoni_warrior", 23.5, { m: "flat", p: [0, 5], b: [-10, 10, -5] });
+      // Limping between wickets: wobble
+      tl.to("#g4_dhoni_warrior", { rotation: -3, y: -15, duration: 0.22, yoyo: true, repeat: 7, ease: "sine.inOut" }, 24.0);
+      face("g4_dhoni_warrior", 27.5, { m: "teeth", p: [0, -4], b: [-14, 14, -8], e: 1.12 });
+
+      // WARRIOR IN YELLOW Stamp Slams!
+      slam("#st4_warrior", 31.5, -6);
+      shake("#s4 .cam", 31.64, 26);
+
+      // ------------------------------------------
+      // ACT 5: Never Another Thala (35.8s – 41.2s)
+      // ------------------------------------------
+      zoom("s5", 35.8, 5.4, 1.0, 1.08);
+      tl.fromTo("#r5_thala", { rotation: 0 }, { rotation: 32, duration: 5.4, ease: "none" }, 35.8);
+      tl.fromTo("#jersey7_hero", { scale: 0.2, opacity: 0, y: 150 }, { scale: 1.0, opacity: 1, y: 0, duration: 0.6, ease: "elastic.out(1, 0.6)" }, 36.0);
+      tl.fromTo("#crown7", { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 36.5);
+      burst("scThala", 36.5, 600, -250, 200);
+
+      // NEVER ANOTHER THALA Stamp Slams!
+      slam("#st5_never", 38.2, 0);
+      shake("#s5 .cam", 38.34, 30);
+
+      // ------------------------------------------
+      // ACT 6: The Final Farewell Walk-Off (41.2s – 47.73s)
+      // ------------------------------------------
+      zoom("s6", 41.2, 6.53, 1.0, 1.05);
+      tl.fromTo("#r6_farewell", { rotation: 0 }, { rotation: 20, duration: 6.53, ease: "none" }, 41.2);
+      tl.fromTo("#dhoni_walk_off", { y: 400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 41.3);
+
+      // Walking into the tunnel: slight bobbing
+      tl.to("#dhoni_walk_off", { y: -30, duration: 1.6, yoyo: true, repeat: 2, ease: "sine.inOut" }, 42.0);
+
+      // END OF AN ERA Stamp Slams!
+      slam("#st6_end_era", 41.6, -8);
+      shake("#s6 .cam", 41.74, 26);
+
+      // THANK YOU #7 Stamp Slams!
+      slam("#st6_thank_you", 44.8, 7);
+      burst("scFarewell", 44.8, 700, -300, 250);
+      shake("#s6 .cam", 44.94, 28);
+    </script>
+  </body>
+</html>
