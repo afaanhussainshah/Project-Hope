@@ -1,0 +1,2669 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 32,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"0.2\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"1.25\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"1.95\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"2.45\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"3.25\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"4.65\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"5.45\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"6.35\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"7.15\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"8.2\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"9.45\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"10.65\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"12.05\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"13.25\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"14.05\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"15.1\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"16.3\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"17.6\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"cap\" data-start=\"18.75\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 453 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 10 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 1 has 19 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s1\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s1",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2a\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2a",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2a\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2b\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2b",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2b\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2c\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2c",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2c\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2d\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2d",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2d\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s2e\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2e",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s2e\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s3\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s3",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s3\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s4\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s4",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s4\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s5\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s5",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s5\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"s6\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s6",
+        "dataAttributes": {},
+        "sourceFile": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"s6\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 24,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 1.111,
+        "selector": "#wp",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1709.8,
+          "top": -198.3,
+          "right": -190.4,
+          "bottom": 2118.9,
+          "width": 1519.4,
+          "height": 2317.2
+        },
+        "containerSelector": "#wipe > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -1700,
+          "top": -190,
+          "right": -200,
+          "bottom": 2110,
+          "width": 1500,
+          "height": 2300
+        },
+        "overflow": {
+          "left": 9.8,
+          "right": 9.6,
+          "top": 8.3,
+          "bottom": 8.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1709.8,
+          "y": -198.3,
+          "width": 1519.4,
+          "height": 2317.2
+        },
+        "firstSeen": 1.111,
+        "lastSeen": 18.889,
+        "occurrences": 9,
+        "heldMs": 0,
+        "times": [
+          1.111,
+          3.333,
+          5.556,
+          7.778,
+          10,
+          12.222,
+          14.444,
+          16.667,
+          18.889
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 1.111,
+        "selector": "#r1",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1658.12,
+          "top": -1504.68,
+          "right": 2738.12,
+          "bottom": 2891.57,
+          "width": 4396.25,
+          "height": 4396.25
+        },
+        "containerSelector": "#s1 > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -13.61,
+          "top": -24.19,
+          "right": 1093.61,
+          "bottom": 1944.19,
+          "width": 1107.22,
+          "height": 1968.38
+        },
+        "overflow": {
+          "left": 1644.51,
+          "right": 1644.51,
+          "top": 1480.49,
+          "bottom": 947.38
+        },
+        "dataAttributes": {
+          "data-svg-origin": "540 700"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1658.12,
+          "y": -1504.68,
+          "width": 4396.25,
+          "height": 4396.25
+        },
+        "firstSeen": 1.111,
+        "lastSeen": 1.111,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.111
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#tgA > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -820.9,
+          "top": 231.81,
+          "right": -380.47,
+          "bottom": 338.45,
+          "width": 440.43,
+          "height": 106.64
+        },
+        "containerSelector": "#root",
+        "text": "3RD TEST · DAY 3",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 820.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -820.9,
+          "y": 231.81,
+          "width": 440.43,
+          "height": 106.64
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#tgB > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -1024.02,
+          "top": 356.73,
+          "right": -684.05,
+          "bottom": 442.04,
+          "width": 339.97,
+          "height": 85.31
+        },
+        "containerSelector": "#root",
+        "text": "SERIES LEVEL 1–1",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 1024.02
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1024.02,
+          "y": 356.73,
+          "width": 339.97,
+          "height": 85.31
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#fld",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -8.42,
+          "top": 1132.54,
+          "right": 1088.42,
+          "bottom": 1945.02,
+          "width": 1096.85,
+          "height": 812.48
+        },
+        "containerSelector": "#s2a > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -8.42,
+          "top": -14.98,
+          "right": 1088.42,
+          "bottom": 1934.98,
+          "width": 1096.85,
+          "height": 1949.95
+        },
+        "overflow": {
+          "bottom": 10.04
+        },
+        "dataAttributes": {
+          "data-svg-origin": "0 1120"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -8.42,
+          "y": 1132.54,
+          "width": 1096.85,
+          "height": 812.48
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#tgA",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -854.72,
+          "top": 229.89,
+          "right": -242.01,
+          "bottom": 343.12,
+          "width": 612.71,
+          "height": 113.24
+        },
+        "containerSelector": "#s2a > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -8.42,
+          "top": -14.98,
+          "right": 1088.42,
+          "bottom": 1934.98,
+          "width": 1096.85,
+          "height": 1949.95
+        },
+        "overflow": {
+          "left": 846.3
+        },
+        "dataAttributes": {
+          "data-svg-origin": "66.69999694824219 241.10000610351562"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -854.72,
+          "y": 229.89,
+          "width": 612.71,
+          "height": 113.24
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 3.333,
+        "selector": "#tgB",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1058.05,
+          "top": 355.31,
+          "right": -578.68,
+          "bottom": 452,
+          "width": 479.36,
+          "height": 96.69
+        },
+        "containerSelector": "#s2a > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -8.42,
+          "top": -14.98,
+          "right": 1088.42,
+          "bottom": 1934.98,
+          "width": 1096.85,
+          "height": 1949.95
+        },
+        "overflow": {
+          "left": 1049.63
+        },
+        "dataAttributes": {
+          "data-svg-origin": "66.5 364.6000061035156"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1058.05,
+          "y": 355.31,
+          "width": 479.36,
+          "height": 96.69
+        },
+        "firstSeen": 3.333,
+        "lastSeen": 3.333,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.333
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -73.31,
+          "top": 644.1,
+          "right": -27.07,
+          "bottom": 690.34,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "left": 18.72
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -73.31,
+          "y": 644.1,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(19)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1115.88,
+          "top": 644.1,
+          "right": 1162.12,
+          "bottom": 690.34,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 27.53
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1115.88,
+          "y": 644.1,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(38)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1148.91,
+          "top": 705.76,
+          "right": 1195.15,
+          "bottom": 752.01,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 60.56
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1148.91,
+          "y": 705.76,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(39)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -75.51,
+          "top": 767.42,
+          "right": -29.27,
+          "bottom": 813.67,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "left": 20.92
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -75.51,
+          "y": 767.42,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(57)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1121.38,
+          "top": 767.42,
+          "right": 1167.63,
+          "bottom": 813.67,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 33.04
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1121.38,
+          "y": 767.42,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(76)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1148.91,
+          "top": 829.08,
+          "right": 1195.15,
+          "bottom": 875.33,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 60.56
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1148.91,
+          "y": 829.08,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(77)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -74.41,
+          "top": 890.74,
+          "right": -28.17,
+          "bottom": 936.99,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "left": 19.82
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -74.41,
+          "y": 890.74,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(95)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1113.67,
+          "top": 890.74,
+          "right": 1159.92,
+          "bottom": 936.99,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 25.33
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1113.67,
+          "y": 890.74,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(114)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1151.11,
+          "top": 952.41,
+          "right": 1197.36,
+          "bottom": 998.65,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 62.77
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1151.11,
+          "y": 952.41,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(115)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -72.21,
+          "top": 1014.07,
+          "right": -25.97,
+          "bottom": 1060.31,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "left": 17.62
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -72.21,
+          "y": 1014.07,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1) > circle:nth-of-type(133)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1119.18,
+          "top": 1014.07,
+          "right": 1165.42,
+          "bottom": 1060.31,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "containerSelector": "#s2c > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -54.59,
+          "top": -81.53,
+          "right": 1134.59,
+          "bottom": 2032.58,
+          "width": 1189.19,
+          "height": 2114.11
+        },
+        "overflow": {
+          "right": 30.83
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1119.18,
+          "y": 1014.07,
+          "width": 46.25,
+          "height": 46.25
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.778,
+        "selector": "#r2",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -2205.43,
+          "top": -1826.08,
+          "right": 3117.6,
+          "bottom": 3496.95,
+          "width": 5323.03,
+          "height": 5323.03
+        },
+        "containerSelector": "#s2d > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -123.02,
+          "top": -91.12,
+          "right": 1127.84,
+          "bottom": 2132.62,
+          "width": 1250.86,
+          "height": 2223.74
+        },
+        "overflow": {
+          "left": 2082.41,
+          "right": 1989.76,
+          "top": 1734.96,
+          "bottom": 1364.33
+        },
+        "dataAttributes": {
+          "data-svg-origin": "500 800"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -2205.43,
+          "y": -1826.08,
+          "width": 5323.03,
+          "height": 5323.03
+        },
+        "firstSeen": 7.778,
+        "lastSeen": 7.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.778
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.778,
+        "selector": "#hL",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1000.93,
+          "top": 888.13,
+          "right": 263.82,
+          "bottom": 1121.51,
+          "width": 1264.75,
+          "height": 233.38
+        },
+        "containerSelector": "#s2d > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -123.02,
+          "top": -91.12,
+          "right": 1127.84,
+          "bottom": 2132.62,
+          "width": 1250.86,
+          "height": 2223.74
+        },
+        "overflow": {
+          "left": 877.91
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1000.93,
+          "y": 888.13,
+          "width": 1264.75,
+          "height": 233.38
+        },
+        "firstSeen": 7.778,
+        "lastSeen": 7.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.778
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.778,
+        "selector": "#rub",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 604.72,
+          "top": 411.84,
+          "right": 2038.84,
+          "bottom": 823.55,
+          "width": 1434.13,
+          "height": 411.72
+        },
+        "containerSelector": "#s2d > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -123.02,
+          "top": -91.12,
+          "right": 1127.84,
+          "bottom": 2132.62,
+          "width": 1250.86,
+          "height": 2223.74
+        },
+        "overflow": {
+          "right": 911
+        },
+        "dataAttributes": {
+          "data-svg-origin": "1167.4500122070312 682"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 604.72,
+          "y": 411.84,
+          "width": 1434.13,
+          "height": 411.72
+        },
+        "firstSeen": 7.778,
+        "lastSeen": 7.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.778
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 12.222,
+        "selector": "#smi",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 1419.95,
+          "top": 604.62,
+          "right": 1792.34,
+          "bottom": 2469.26,
+          "width": 372.39,
+          "height": 1864.63
+        },
+        "containerSelector": "#s4 > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -3.13,
+          "top": -5.01,
+          "right": 1083.13,
+          "bottom": 1926.12,
+          "width": 1086.26,
+          "height": 1931.14
+        },
+        "overflow": {
+          "right": 709.21,
+          "bottom": 543.14
+        },
+        "dataAttributes": {
+          "data-svg-origin": "614.8806762695312 606.1199951171875"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1419.95,
+          "y": 604.62,
+          "width": 372.39,
+          "height": 1864.63
+        },
+        "firstSeen": 12.222,
+        "lastSeen": 12.222,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          12.222
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 16.667,
+        "selector": "#s5 > div:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": 8,
+          "top": 9.67,
+          "right": 1088,
+          "bottom": 1929.67,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#s5",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "right": 8,
+          "bottom": 9.67
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 8,
+          "y": 9.67,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 16.667,
+        "lastSeen": 16.667,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          16.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 18.889,
+        "selector": "#s6 > div:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -13,
+          "top": 13.17,
+          "right": 1067,
+          "bottom": 1933.17,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#s6",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 13,
+          "bottom": 13.17
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -13,
+          "y": 13.17,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 18.889,
+        "lastSeen": 18.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          18.889
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 18.889,
+        "selector": "#r6",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1698.89,
+          "top": -1312.72,
+          "right": 2752.89,
+          "bottom": 3139.06,
+          "width": 4451.78,
+          "height": 4451.78
+        },
+        "containerSelector": "#s6 > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": -13,
+          "top": 13.17,
+          "right": 1067,
+          "bottom": 1933.17,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 1685.89,
+          "right": 1685.89,
+          "top": 1325.89,
+          "bottom": 1205.89
+        },
+        "dataAttributes": {
+          "data-svg-origin": "540 900"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": -1698.89,
+          "y": -1312.72,
+          "width": 4451.78,
+          "height": 4451.78
+        },
+        "firstSeen": 18.889,
+        "lastSeen": 18.889,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          18.889
+        ]
+      }
+    ],
+    "duration": 20,
+    "samples": [
+      1.111,
+      3.333,
+      5.556,
+      7.778,
+      10,
+      12.222,
+      14.444,
+      16.667,
+      18.889
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 25,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.111,
+      5.556,
+      10,
+      14.444,
+      18.889
+    ],
+    "checked": 19,
+    "passed": 19
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 11,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"A NATION'S REPUTATION\" (3 words) is on screen 0.60 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "A NATION'S REPUTATION",
+        "selector": "[data-start=\"2.45\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 130.1,
+          "y": 1253.83,
+          "width": 819.54,
+          "height": 172.97000000000003
+        },
+        "time": 2.469,
+        "words": 3,
+        "seconds": 0.602,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 2.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 2.5,
+            "opacity": 1,
+            "heightPx": 173
+          },
+          {
+            "time": 2.625,
+            "opacity": 1,
+            "heightPx": 153
+          },
+          {
+            "time": 2.75,
+            "opacity": 1,
+            "heightPx": 153
+          },
+          {
+            "time": 2.875,
+            "opacity": 1,
+            "heightPx": 153
+          },
+          {
+            "time": 3,
+            "opacity": 1,
+            "heightPx": 153
+          },
+          {
+            "time": 3.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.375,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"SERIES LEVEL 1–1\" (4 words) is on screen 1.17 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "SERIES LEVEL 1–1",
+        "selector": "#tgB > text:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 349.31,
+          "width": 40.95,
+          "height": 86.36000000000001
+        },
+        "time": 3.5,
+        "words": 4,
+        "seconds": 1.172,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 3.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 3.5,
+            "opacity": 1,
+            "heightPx": 86
+          },
+          {
+            "time": 3.625,
+            "opacity": 1,
+            "heightPx": 87
+          },
+          {
+            "time": 3.75,
+            "opacity": 1,
+            "heightPx": 88
+          },
+          {
+            "time": 3.875,
+            "opacity": 1,
+            "heightPx": 88
+          },
+          {
+            "time": 4.25,
+            "opacity": 1,
+            "heightPx": 90
+          },
+          {
+            "time": 4.375,
+            "opacity": 1,
+            "heightPx": 91
+          },
+          {
+            "time": 4.5,
+            "opacity": 1,
+            "heightPx": 92
+          },
+          {
+            "time": 4.625,
+            "opacity": 1,
+            "heightPx": 92
+          },
+          {
+            "time": 4.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 4.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 5,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"RUBBING THE BALL\" (3 words) is on screen 0.80 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "RUBBING THE BALL",
+        "selector": "#root > div:nth-of-type(21)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 304.9,
+          "y": 1283.81,
+          "width": 470.30000000000007,
+          "height": 114.76999999999998
+        },
+        "time": 6.367,
+        "words": 3,
+        "seconds": 0.805,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 6,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 6.375,
+            "opacity": 0.56,
+            "heightPx": 115
+          },
+          {
+            "time": 6.5,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 6.625,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 6.75,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 6.875,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 7,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 7.125,
+            "opacity": 1,
+            "heightPx": 149
+          },
+          {
+            "time": 7.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 7.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 7.5,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"THEN HIDING IT\" (3 words) is on screen 0.97 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "THEN HIDING IT",
+        "selector": "#root > div:nth-of-type(23)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 307.69,
+          "y": 1273.02,
+          "width": 464.52000000000004,
+          "height": 135.22000000000003
+        },
+        "time": 8.234,
+        "words": 3,
+        "seconds": 0.969,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 7.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 8,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 8.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 8.25,
+            "opacity": 0.92,
+            "heightPx": 135
+          },
+          {
+            "time": 8.375,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 8.5,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 8.625,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 8.75,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 8.875,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 9,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 9.125,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 9.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 9.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 9.5,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"HE SAID TAPE.\" (3 words) is on screen 0.94 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "HE SAID TAPE.",
+        "selector": "[data-start=\"9.45\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 283.73,
+          "y": 1259.91,
+          "width": 500.0899999999999,
+          "height": 160.31999999999994
+        },
+        "time": 9.469,
+        "words": 3,
+        "seconds": 0.938,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 9.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 9.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 9.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 9.5,
+            "opacity": 1,
+            "heightPx": 160
+          },
+          {
+            "time": 9.625,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 9.75,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 9.875,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 10,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 10.125,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 10.25,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 10.375,
+            "opacity": 1,
+            "heightPx": 145
+          },
+          {
+            "time": 10.5,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 10.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 10.75,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"CAPTAIN STEVE SMITH\" (3 words) is on screen 0.80 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "CAPTAIN STEVE SMITH",
+        "selector": "[data-start=\"13.25\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 167.62,
+          "y": 1260.08,
+          "width": 744.5500000000001,
+          "height": 160.67000000000007
+        },
+        "time": 13.273,
+        "words": 3,
+        "seconds": 0.797,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 13,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.375,
+            "opacity": 1,
+            "heightPx": 161
+          },
+          {
+            "time": 13.5,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 13.625,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 13.75,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 13.875,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 14,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 14.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 14.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 14.375,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"LET IT HAPPEN.\" (3 words) is on screen 0.90 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "LET IT HAPPEN.",
+        "selector": "[data-start=\"14.05\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 280.26,
+          "y": 1259.77,
+          "width": 519.73,
+          "height": 161.0999999999999
+        },
+        "time": 14.07,
+        "words": 3,
+        "seconds": 0.898,
+        "floorSeconds": 1.05,
+        "measured": [
+          {
+            "time": 13.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 13.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 14,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 14.125,
+            "opacity": 1,
+            "heightPx": 161
+          },
+          {
+            "time": 14.25,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 14.375,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 14.5,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 14.625,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 14.75,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 14.875,
+            "opacity": 1,
+            "heightPx": 146
+          },
+          {
+            "time": 15,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 15.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 15.25,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"BOTH BANNED A YEAR.\" (4 words) is on screen 1.06 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "BOTH BANNED A YEAR.",
+        "selector": "[data-start=\"15.1\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 177.45,
+          "y": 1264.16,
+          "width": 724.9099999999999,
+          "height": 152.66000000000008
+        },
+        "time": 15.141,
+        "words": 4,
+        "seconds": 1.063,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 14.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 15,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 15.125,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 15.25,
+            "opacity": 1,
+            "heightPx": 153
+          },
+          {
+            "time": 15.375,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 15.5,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 15.625,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 15.75,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 15.875,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 16,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 16.125,
+            "opacity": 1,
+            "heightPx": 152
+          },
+          {
+            "time": 16.25,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 16.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 16.5,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"AUSTRALIA LOST THE SERIES\" (4 words) is on screen 1.06 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "AUSTRALIA LOST THE SERIES",
+        "selector": "[data-start=\"17.6\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 201.32,
+          "y": 1264.72,
+          "width": 674.6800000000001,
+          "height": 238.78999999999996
+        },
+        "time": 17.641,
+        "words": 4,
+        "seconds": 1.063,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 17.375,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.5,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.75,
+            "opacity": 1,
+            "heightPx": 239
+          },
+          {
+            "time": 17.875,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.125,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.25,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.375,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.5,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.625,
+            "opacity": 1,
+            "heightPx": 238
+          },
+          {
+            "time": 18.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 19,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"1\" (1 word) is on screen 1.96 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "1",
+        "selector": "#tl2 > text:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 817.8,
+          "y": 506.75,
+          "width": 34.39999999999998,
+          "height": 162.5
+        },
+        "time": 18.039,
+        "words": 1,
+        "seconds": 1.965,
+        "floorSeconds": 2,
+        "measured": [
+          {
+            "time": 17.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 17.875,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.125,
+            "opacity": 1,
+            "heightPx": 163
+          },
+          {
+            "time": 18.25,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 18.375,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 18.5,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 19.5,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 19.625,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 19.75,
+            "opacity": 1,
+            "heightPx": 156
+          },
+          {
+            "time": 19.875,
+            "opacity": 1,
+            "heightPx": 156
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"AND ITS GOOD NAME.\" (4 words) is on screen 0.93 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "AND ITS GOOD NAME.",
+        "selector": "[data-start=\"18.75\"]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 185.86,
+          "y": 1260.66,
+          "width": 708.4799999999999,
+          "height": 159.50999999999976
+        },
+        "time": 18.773,
+        "words": 4,
+        "seconds": 0.93,
+        "floorSeconds": 1.275,
+        "measured": [
+          {
+            "time": 18.5,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.625,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 18.875,
+            "opacity": 1,
+            "heightPx": 160
+          },
+          {
+            "time": 19,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.125,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.25,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.375,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.5,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.625,
+            "opacity": 1,
+            "heightPx": 151
+          },
+          {
+            "time": 19.75,
+            "opacity": null,
+            "heightPx": null
+          },
+          {
+            "time": 19.875,
+            "opacity": null,
+            "heightPx": null
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 160
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

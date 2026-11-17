@@ -1,0 +1,1463 @@
+{
+  "version": 1,
+  "historyId": "bcd43ca3-1b0d-4104-8a16-f15c09a8b36e",
+  "currentRevision": "a72f1fa6-2120-441f-b423-e8b9c0b087b2",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\26\\268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a"
+    },
+    "CLAUDE.md": {
+      "hash": "268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\26\\268ff46777938da818baa92a718571785e9acf2cef2d3ffbacbb93483dcba37a"
+    },
+    "assets/fonts/Anton-Regular.ttf": {
+      "hash": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\a4\\a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab"
+    },
+    "assets/fonts/OFL-Anton.txt": {
+      "hash": "ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\ee\\ee67e6ee22790b7929f1a3769ca2801d565c64b5a9096942c1adf5596de9c9e4"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\53\\53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "424f21fb9be97dc9a3cc4b74a3016b454c226a848ea6d2274c5633847d49da90",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\42\\424f21fb9be97dc9a3cc4b74a3016b454c226a848ea6d2274c5633847d49da90"
+    },
+    "meta.json": {
+      "hash": "f63aefe3eb995d87be2483f2e923f75db398626d59b96db0367e568ba6a938c6",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\f6\\f63aefe3eb995d87be2483f2e923f75db398626d59b96db0367e568ba6a938c6"
+    },
+    "package.json": {
+      "hash": "f70e9af34067d9c5e462b50d89250790b4249edbedd43575c0072dd4821ab1ba",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\f7\\f70e9af34067d9c5e462b50d89250790b4249edbedd43575c0072dd4821ab1ba"
+    },
+    "assets/sfx.wav": {
+      "hash": "3af053d77e700ea9272aef3d0792be45b2c23476cacf8b049b1351ea5534621a",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\3a\\3af053d77e700ea9272aef3d0792be45b2c23476cacf8b049b1351ea5534621a"
+    },
+    "tools/make_sfx.py": {
+      "hash": "aa0a6627a13dd822b5fbb54719e3ec02284ad02f4c1cccc2d366ecf0897863a4",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\aa\\aa0a6627a13dd822b5fbb54719e3ec02284ad02f4c1cccc2d366ecf0897863a4"
+    },
+    "CREDITS.md": {
+      "hash": "2c1dcc1a519eccd60690d77332586d5ec24c583d069cead8e916dd09bddd10bf",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\2c\\2c1dcc1a519eccd60690d77332586d5ec24c583d069cead8e916dd09bddd10bf"
+    },
+    "assets/voiceover.mp3": {
+      "hash": "11bd06d7604fed659382f9649cf46a35b8a31ec3f3d3163fc4ae0726fc8ee562",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\11\\11bd06d7604fed659382f9649cf46a35b8a31ec3f3d3163fc4ae0726fc8ee562"
+    },
+    "v2.html": {
+      "hash": "4f33c5837096e3e9ecfe42675a490825aaf3403e978527c13a49822487814e15",
+      "content": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\4f\\4f33c5837096e3e9ecfe42675a490825aaf3403e978527c13a49822487814e15"
+    }
+  },
+  "revisions": {
+    "b60a3815-a9ca-465e-9f33-51de7fb99ae1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794596556144,
+      "endedAt": 1794596556145,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\76\\76a0626b1e726d062a3fb904f37c4ddbd9316b44720efadc4fddfae466c791dd",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\99\\991b6cfe3e4244aecb7a2aab3e4e4ad86b7f3377095fd01df0a94f1bc895ae55"
+        }
+      }
+    },
+    "097ba2ab-edd6-4730-a778-66ab191d222c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794596671059,
+      "endedAt": 1794596671080,
+      "files": {
+        "assets/sfx.wav": {
+          "before": null,
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\ca\\ca409a07f04be3b9223c26c1acc0ac3580893d9663c6ea77f585025887542ab1"
+        },
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\99\\991b6cfe3e4244aecb7a2aab3e4e4ad86b7f3377095fd01df0a94f1bc895ae55",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\1e\\1e28d3d118f115340746c449290afc8029391bd01a8114854de916c715d32656"
+        },
+        "tools/make_sfx.py": {
+          "before": null,
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\f9\\f983f4938f83e85094dd05907b8c7332fbc2d1f325d8f5c80b72b6bc8c848534"
+        }
+      }
+    },
+    "79ad0438-1366-4fc7-b91e-3a007c042452": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794596779851,
+      "endedAt": 1794596779900,
+      "files": {
+        "CREDITS.md": {
+          "before": null,
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\e4\\e4a2ef7d6037f435d6d6207f0503a421c3a838ea76243cc0afd3137bc0f3f766"
+        },
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\1e\\1e28d3d118f115340746c449290afc8029391bd01a8114854de916c715d32656",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\a0\\a0358f169524dcb00360645eca2c6d765698870e47ab7e90b60b8fc06a944909"
+        }
+      }
+    },
+    "a0ab74e3-92cc-4152-b7c2-8598c4f91b2e": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794596926798,
+      "endedAt": 1794596926802,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\a0\\a0358f169524dcb00360645eca2c6d765698870e47ab7e90b60b8fc06a944909",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\7d\\7d30eafba7d3a20f3291da8ff4f8bc71880fe61fd0eef2893116c5f7e1c2f4e6"
+        }
+      }
+    },
+    "88d35445-b714-4d13-80f0-18717aa5599c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794597576769,
+      "endedAt": 1794597576845,
+      "files": {
+        "assets/sfx.wav": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\ca\\ca409a07f04be3b9223c26c1acc0ac3580893d9663c6ea77f585025887542ab1",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\3a\\3af053d77e700ea9272aef3d0792be45b2c23476cacf8b049b1351ea5534621a"
+        },
+        "assets/voiceover.mp3": {
+          "before": null,
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\11\\11bd06d7604fed659382f9649cf46a35b8a31ec3f3d3163fc4ae0726fc8ee562"
+        },
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\7d\\7d30eafba7d3a20f3291da8ff4f8bc71880fe61fd0eef2893116c5f7e1c2f4e6",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\a1\\a1627cf461aedadaf43769c3263d4a21bb3046d51c16d313763c178450e9ddcd"
+        },
+        "tools/make_sfx.py": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\f9\\f983f4938f83e85094dd05907b8c7332fbc2d1f325d8f5c80b72b6bc8c848534",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\aa\\aa0a6627a13dd822b5fbb54719e3ec02284ad02f4c1cccc2d366ecf0897863a4"
+        }
+      }
+    },
+    "c0199982-3568-4665-b6d4-3bf20fb6cd12": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794597664303,
+      "endedAt": 1794597664307,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\a1\\a1627cf461aedadaf43769c3263d4a21bb3046d51c16d313763c178450e9ddcd",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\42\\424f21fb9be97dc9a3cc4b74a3016b454c226a848ea6d2274c5633847d49da90"
+        }
+      }
+    },
+    "a72f1fa6-2120-441f-b423-e8b9c0b087b2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794598035266,
+      "endedAt": 1794598035284,
+      "files": {
+        "CREDITS.md": {
+          "before": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\e4\\e4a2ef7d6037f435d6d6207f0503a421c3a838ea76243cc0afd3137bc0f3f766",
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\2c\\2c1dcc1a519eccd60690d77332586d5ec24c583d069cead8e916dd09bddd10bf"
+        },
+        "v2.html": {
+          "before": null,
+          "after": "C:\\Users\\masud\\.cache\\hyperframes\\history\\bcd43ca3-1b0d-4104-8a16-f15c09a8b36e\\blobs\\4f\\4f33c5837096e3e9ecfe42675a490825aaf3403e978527c13a49822487814e15"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "a0ab74e3-92cc-4152-b7c2-8598c4f91b2e",
+      "id": "d870ee08-80c6-4841-b2f4-b8544bacc1f8"
+    },
+    "revisions": {
+      "097ba2ab-edd6-4730-a778-66ab191d222c": [
+        {
+          "id": "26298111-1ed6-4951-97c6-2073bc05c02b",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794596689040,
+          "contentHash": "895907bc71ff65cca5e2a83aba0777d6d5f5e8f881a74ab54dba26dbe34d42e6",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "f783848a-c6c8-4eb9-aec7-d8b01c51745b"
+        }
+      ],
+      "a0ab74e3-92cc-4152-b7c2-8598c4f91b2e": [
+        {
+          "id": "d870ee08-80c6-4841-b2f4-b8544bacc1f8",
+          "scope": "project",
+          "report": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\.hyperframes\\artifacts\\checks\\d870ee08-80c6-4841-b2f4-b8544bacc1f8.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794597072121,
+          "contentHash": "e27626ca10b16e8d4b139008b2fd599a72951946fbbababa32a15b6fc14bf4a5",
+          "revision": "a0ab74e3-92cc-4152-b7c2-8598c4f91b2e",
+          "inputFingerprint": "d0613829cf17d58d5a5f571099f1d8bc45301b3334b252986559d6d7b8531bad",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "88d35445-b714-4d13-80f0-18717aa5599c": [
+        {
+          "id": "4f616f95-7606-4b56-966e-2bcc57cde5a8",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1794597602513,
+          "contentHash": "86a0946458eaf239a3b3edee459ed02bf42bda6851e5aad1022749737ba709ec",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "5d7af528-7e51-4775-993e-4d12d7bc75f0"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "e0674549-7a36-4eaa-8514-57b2f2643c76",
+        "scope": "project",
+        "report": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\.hyperframes\\artifacts\\checks\\e0674549-7a36-4eaa-8514-57b2f2643c76.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1794596446004,
+        "contentHash": "96cc08035fd019d78ed61a209555c32f9718e50653a131aaad41cac31072e72a",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+      "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-18"
+    },
+    "revisions": {
+      "b60a3815-a9ca-465e-9f33-51de7fb99ae1": [
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-0",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-00-at-0.03s.png",
+          "time": 0.03,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577059,
+          "contentHash": "8062b67db9656fa61283054aa8dea0493135852fa3a3155ac08116a5dc25c7eb",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-1",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-01-at-0.3s.png",
+          "time": 0.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577060,
+          "contentHash": "9b35d123c5878f221f43e03d0da67269508e4c7fa0443b2e3121f02631d0ad4d",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-2",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-02-at-1s.png",
+          "time": 1,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577060,
+          "contentHash": "3eda409c311268feb1a2160afc5de88843ce7e15e186263dd6e0db364dc84579",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-3",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-03-at-2.3s.png",
+          "time": 2.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577061,
+          "contentHash": "78d9369313f08f10a1d886a560c86cd63548fe28d819ecfa5afa4e4a0e8c7739",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-4",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-04-at-5s.png",
+          "time": 5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577062,
+          "contentHash": "9d21a56f15df5bd19162c4577e94c027ac5d3ae8edde37820a32d3a688b5ae37",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-5",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-05-at-5.3s.png",
+          "time": 5.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577062,
+          "contentHash": "1593da5cd13d3dcececcac2d5392d474eb9e5b616d6a9fd7f62db8cb68433538",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-6",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-06-at-8.7s.png",
+          "time": 8.7,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577063,
+          "contentHash": "6b42abd137df17b1cfa9c7969ecae04e2b63e9a46b2268c6e6f4421767e7dbc6",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-7",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-07-at-10.2s.png",
+          "time": 10.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577064,
+          "contentHash": "49c6d1ace5c4753f22b2b3440488263deaa927f86411b8fd015a1ce96b2b85ee",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-8",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-08-at-11.2s.png",
+          "time": 11.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577064,
+          "contentHash": "2a3dbde3e51db449d80e40d14271bd97ebd3b4803d174fde8d588b74ef2022b8",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-9",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-09-at-12.9s.png",
+          "time": 12.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577065,
+          "contentHash": "7ea43ac427ac6fcae3805d64230107d312a3699617fdfd47b21fa02921d131c2",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-10",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-10-at-14.5s.png",
+          "time": 14.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577066,
+          "contentHash": "5739f8493c48246b516612ed2d13e6b2e0aa208ac452766d128a10c2501ceda2",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-11",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-11-at-15.8s.png",
+          "time": 15.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577067,
+          "contentHash": "6546a07aad12b52791455c78b7da041d15aa18980504309294bb9c13139e58f6",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-12",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-12-at-17s.png",
+          "time": 17,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577069,
+          "contentHash": "7603d9ad1a4eefae67a507d047634825069141a7d18fc3e22df80b6a70cae810",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-13",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-13-at-18.5s.png",
+          "time": 18.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577070,
+          "contentHash": "ac016af956d581e2b8d0991c074745ed3977b2c354cbdb998bf635fed9d0b06b",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-14",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-14-at-19.2s.png",
+          "time": 19.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577072,
+          "contentHash": "9595960e6b67f002011a2a900f48c086c2ddad2aa94b746ed62bf8cd0a442f21",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-15",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-15-at-19.8s.png",
+          "time": 19.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577074,
+          "contentHash": "2aafbfffd912723038cf5b9fa45c20734b27d03b8ad6a7d6305a281a33fa2b6a",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-16",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-16-at-19.95s.png",
+          "time": 19.95,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577075,
+          "contentHash": "e5903c173c26f2dfd285c45b59895c29040b971e8fd0ef20b3eff91ff7dad06b",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "6f1dc05c-835f-4a2d-9329-bb03fe4030da-17",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap2\\frame-17-at-19.75s.png",
+          "time": 19.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596577076,
+          "contentHash": "8e490a356247c5c543d17b42fd6758c03c0b2ce925e4bacf55dc6df6cdfca32c",
+          "revision": "b60a3815-a9ca-465e-9f33-51de7fb99ae1",
+          "inputFingerprint": "a8f9512c94b26d22856bdcf4b75b98e69d05b6ecefd128434ef72dddb2f46be4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "097ba2ab-edd6-4730-a778-66ab191d222c": [
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-0",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-00-at-0.8s.png",
+          "time": 0.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709082,
+          "contentHash": "fc0a700366fc7f11fdf4a857d8ba8ce50a7f9d00ff183b0adee458b383f736e7",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-1",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-01-at-1.3s.png",
+          "time": 1.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709086,
+          "contentHash": "ad4116275bf104c7ad96fada7f7021220fb786d15b462a4348eeeee43c9f77fb",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-2",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-02-at-8.75s.png",
+          "time": 8.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709090,
+          "contentHash": "dd4ea3afa3be808e0d58adf3cc4e7a938f7f2adadd52b35826415ea46a6929d0",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-3",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-03-at-14.5s.png",
+          "time": 14.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709094,
+          "contentHash": "6b94e7715ef9ca76ae496246825703e5cf64f3b6bd4a2938ec8724816642b2b6",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-4",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-04-at-15.3s.png",
+          "time": 15.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709100,
+          "contentHash": "b5c411f1033ab27e4fb30941be85b0dbe4915a65871f533550cdc697ff6f1588",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-5",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-05-at-16s.png",
+          "time": 16,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709104,
+          "contentHash": "b59ff94e20b69a35a238a63e978b840f954a0a2165f1c4572944310b49ab67de",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "44165b75-1ffe-4478-a1fc-e93047c5b1af-6",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap3\\frame-06-at-19.75s.png",
+          "time": 19.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794596709108,
+          "contentHash": "8e490a356247c5c543d17b42fd6758c03c0b2ce925e4bacf55dc6df6cdfca32c",
+          "revision": "097ba2ab-edd6-4730-a778-66ab191d222c",
+          "inputFingerprint": "7a17b7968ac0e9b6c1a60165d7919e3c78f584d5858462f155592b0b78c45cfc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "88d35445-b714-4d13-80f0-18717aa5599c": [
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-0",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-00-at-1.6s.png",
+          "time": 1.6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635082,
+          "contentHash": "e25fd5874bdfbf39c9552bef0604264fd300bbcf64e8332a60ba60b094f71eb8",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-1",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-01-at-4.2s.png",
+          "time": 4.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635094,
+          "contentHash": "b7614cf3bb653e7293d6b41d71d5b1f6141ffdb0937b2d7c570abbd1a48c74c2",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-2",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-02-at-7.6s.png",
+          "time": 7.6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635098,
+          "contentHash": "c6f92932b886a15230186a7f56b1bb64eed6c8e073ed2c1669dd787bd8e609a6",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-3",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-03-at-10.3s.png",
+          "time": 10.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635102,
+          "contentHash": "0b0ae9f7f06b6e5913e8e47449445df58653bb372e3b9a9945dd1f3d95a2307c",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-4",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-04-at-12.4s.png",
+          "time": 12.4,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635105,
+          "contentHash": "0ddab70d90a7a3d3b98e6d85cda75260c461fe40ffedefe12f65df7de775e689",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-5",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-05-at-14.8s.png",
+          "time": 14.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635109,
+          "contentHash": "d929a0d4b37ff996190e9c7ab7e79ece901b427d329f0fca06034cb9b8882827",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-6",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-06-at-17.5s.png",
+          "time": 17.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635113,
+          "contentHash": "580622c05a0199f0f9b7d44f6eb6767a131ef2daae2482eabb87f4d8f0db3e59",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-7",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-07-at-19.2s.png",
+          "time": 19.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635118,
+          "contentHash": "c6248d44b81cd3fcf6b43e950a35bfd95876a36928888d69ea34829a10632f83",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-8",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-08-at-21.8s.png",
+          "time": 21.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635123,
+          "contentHash": "015fb128f6c1ecd762864d1619235911f8c6cf7d62960f1082a33e1644d8a694",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-9",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-09-at-24.4s.png",
+          "time": 24.4,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635127,
+          "contentHash": "b05b15af2b4d065063592e49a38a037a6e5dd18897c7dceda5c937ab8072ff21",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-10",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-10-at-26.5s.png",
+          "time": 26.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635132,
+          "contentHash": "edd2ea9799d2b2d577662e66cf9d7ad6014ab291da3f30e585b4544b2c673890",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-11",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-11-at-28.2s.png",
+          "time": 28.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635139,
+          "contentHash": "330eba825b1e5e6664df2b2cc82c91a237814af9d83802be13ddd6d92e52e16c",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-12",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-12-at-30s.png",
+          "time": 30,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635149,
+          "contentHash": "6dd6ae0a714a781456535a75d9be6a2c9f54f1ca04fa168cd76c1b6d51891b15",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-13",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-13-at-31.6s.png",
+          "time": 31.6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635166,
+          "contentHash": "49edb0a8c5e70f408c37d8a553b4d5ca2783bdda0cd958232037abbdecbe9a5f",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-14",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-14-at-33.8s.png",
+          "time": 33.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635174,
+          "contentHash": "957e357a42b46e395d8445976c14ff4f694ab84187b356daac608fc108f6ff68",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-15",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-15-at-36s.png",
+          "time": 36,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635183,
+          "contentHash": "8926862769f6c69c9e111b414bf2aeac35b4a927b528cdc46eb187c2c2edd9b1",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-16",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-16-at-38.8s.png",
+          "time": 38.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635192,
+          "contentHash": "af5946431a7c1811c0abd488427b1e73aa2017df244bf2ccfb05ce95c6fb58ef",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-17",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-17-at-40.2s.png",
+          "time": 40.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635202,
+          "contentHash": "649af1158db2037bea37363ad4e9fe32f7376b20c16817b7bc25d0ca0a1b7c43",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "d1f9c7a7-b6ce-429e-b207-c96c17444e0d-18",
+          "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap4\\frame-18-at-40.75s.png",
+          "time": 40.75,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1794597635225,
+          "contentHash": "d6d70153e5cef22580e245d6cc5ca250ef482ef9472016f4bf486f239cc614f4",
+          "revision": "88d35445-b714-4d13-80f0-18717aa5599c",
+          "inputFingerprint": "a64d1ef89c8fe386ce5f782fdd2dacccaeb3f4b1488091935e293009678ce692",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-0",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-00-at-0.1s.png",
+        "time": 0.1,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "f886196df6a51a6ee4ad64c5932e5019e4e69022b167f8b4323741757b1692ff",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-1",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-01-at-1s.png",
+        "time": 1,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "b28d7eef888543dd2eb5622500f34d7d3b8da89ca62b217c771072d8dd2dc498",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-2",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-02-at-1.8s.png",
+        "time": 1.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "e05b218ec3197cb44ffd8cd1be7d80dc2c664dd54dba3e629c1845fba757694e",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-3",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-03-at-2.3s.png",
+        "time": 2.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "85c542462377b2fb70b4e16b30e0283e82f0146bf4c3a0ca2a361b7a0e694128",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-4",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-04-at-3.9s.png",
+        "time": 3.9,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "d2cf81f8c0e1b50f020b916015096a1de088efadb0c041917c6c9e2c234e4839",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-5",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-05-at-5s.png",
+        "time": 5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477594,
+        "contentHash": "15e376ec141547a0769c421be5c897b37efe685ec5401929cdb217cb6019a3f7",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-6",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-06-at-5.9s.png",
+        "time": 5.9,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477595,
+        "contentHash": "a024b07d5b9122e599a4aa5534c58293102ae10194caafcf38e8e2654527d1f6",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-7",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-07-at-6.8s.png",
+        "time": 6.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477595,
+        "contentHash": "90e74cf2de8665a08d481c81899c790125350a995a3b369fa3d5221e6618ac52",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-8",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-08-at-7.5s.png",
+        "time": 7.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477595,
+        "contentHash": "75bc86554ad49b22aace61a6572f4c6060a3600b0b00cd930739dcd368320154",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-9",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-09-at-8.7s.png",
+        "time": 8.7,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477596,
+        "contentHash": "9cd5d36518c3235dbebcf5d4dbda7a3d68ebb35c331d338fe814b42393b0170b",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "6dd8c6d5-877d-42c1-b20a-a49dfcb49143-10",
+        "image": "C:\\Users\\masud\\AppData\\Local\\Temp\\hfsnap1\\frame-10-at-19.75s.png",
+        "time": 19.75,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794596477596,
+        "contentHash": "918da3d04b474f0d25b7ac711077e2b435d825ac61105878f3913b94cc3ead32",
+        "revision": null,
+        "inputFingerprint": "2a63bfbc9bc4ef08caabd5ca4542d1999cd8b3f0ec0dff7b8ee68b76c0baad0b",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "5d7af528-7e51-4775-993e-4d12d7bc75f0",
+      "completedAt": 1794598250704,
+      "output": "C:\\Users\\masud\\Desktop\\Cricket\\sandpaper-gate\\renders\\sandpaper-gate-reel-v2.mp4",
+      "status": "completed",
+      "revision": "a72f1fa6-2120-441f-b423-e8b9c0b087b2"
+    },
+    "retainedRevisions": [
+      "a72f1fa6-2120-441f-b423-e8b9c0b087b2",
+      "a0ab74e3-92cc-4152-b7c2-8598c4f91b2e"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

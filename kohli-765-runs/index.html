@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #071526; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Anton", sans-serif; }
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; z-index: 1; }
+      .cam, .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+      .cut { filter: drop-shadow(9px 11px 0 rgba(0, 0, 0, 0.38)); }
+      #wipe { position: absolute; left: 0; top: -190px; width: 1500px; height: 2300px; z-index: 5; }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8; opacity: 0.16; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9; background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 48%, rgba(10, 8, 5, 0.45) 100%); }
+      .cap { position: absolute; left: 50px; width: 980px; top: 1380px; height: 230px; z-index: 10; text-align: center; }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px; background: #f6f1e4; color: #1b1b1b;
+        font-size: 82px; line-height: 1.06; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(0 2px 1.5px rgba(20,12,4,.35)) drop-shadow(6px 16px 14px rgba(20,12,4,.4));
+      }
+      .cap b { font-weight: 400; color: #c1121f; }
+      .cap i { font-style: normal; background: #e3b23c; padding: 0 12px; }
+      .cap u { text-decoration: none; color: #0b3c85; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="44.04" data-width="1080" data-height="1920">
+      <!-- 5 Narrative Scenes (44.04s) -->
+      <div id="s1" class="clip scene" data-start="0.00" data-duration="13.80" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2" class="clip scene" data-start="13.80" data-duration="7.20" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="21.00" data-duration="12.00" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="33.00" data-duration="3.50" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="36.50" data-duration="7.54" data-track-index="0"><div class="cam"></div></div>
+
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="44.04" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="44.04" data-volume="0.45" data-track-index="2"></audio>
+
+      <!-- Overlays -->
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <!-- Timed Captions (Precisely Synced with New Audio) -->
+      <div class="clip cap" data-start="0.00" data-duration="2.50" data-track-index="1"><span>AN AVERAGE OF <b>95.6.</b></span></div>
+      <div class="clip cap" data-start="2.80" data-duration="3.80" data-track-index="1"><span>A <i>90 STRIKE RATE.</i> 765 RUNS.</span></div>
+      <div class="clip cap" data-start="7.00" data-duration="4.20" data-track-index="1"><span>HE SHOULD HAVE WON <b>THE WORLD CUP.</b></span></div>
+      <div class="clip cap" data-start="11.60" data-duration="2.20" data-track-index="1"><span>BUT DESTINY HAD A <b>CRUEL TWIST.</b></span></div>
+
+      <div class="clip cap" data-start="14.10" data-duration="2.10" data-track-index="1"><span>BECAUSE THIS WAS <b>VIRAT KOHLI.</b></span></div>
+      <div class="clip cap" data-start="16.40" data-duration="4.50" data-track-index="1"><span>50 CENTURIES... SURPASSING <b>THE GOD.</b></span></div>
+
+      <div class="clip cap" data-start="21.30" data-duration="3.20" data-track-index="1"><span>AHMEDABAD. <u>A BILLION PRAYERS.</u></span></div>
+      <div class="clip cap" data-start="24.50" data-duration="2.00" data-track-index="1"><span>UNTIL... THE <b>INSIDE EDGE.</b></span></div>
+      <div class="clip cap" data-start="26.70" data-duration="2.80" data-track-index="1"><span>STUMPS <b>SHATTERED.</b></span></div>
+      <div class="clip cap" data-start="29.50" data-duration="3.40" data-track-index="1"><span>130,000 SOULS... <b>SILENCED.</b></span></div>
+
+      <div class="clip cap" data-start="33.30" data-duration="3.20" data-track-index="1"><span>CAP PULLED LOW. <i>HE GAVE HIS SOUL.</i></span></div>
+
+      <div class="clip cap" data-start="36.70" data-duration="4.10" data-track-index="1"><span>IMMORTAL STORIES LIVE <b>FOREVER.</b></span></div>
+      <div class="clip cap" data-start="41.20" data-duration="2.84" data-track-index="1"><span>WALK TALL, <b>KING.</b> RESPECT, VIRAT.</span></div>
+    </div>
+
+    <script>
+      let seed = 28;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+
+      const C = {
+        paper: "#F6F1E4",
+        ink: "#1B1B1B",
+        blue: "#0B2545",
+        dblue: "#071526",
+        jersey: "#154A8A",
+        gold: "#E3B23C",
+        red: "#B3261E",
+        stamp: "#C1121F",
+        saffron: "#FF671F",
+        green: "#174D3A",
+        turf: "#5E8744"
+      };
+
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+      const tx = (x, y, s, str, fill, anc = "middle", ex = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${fill}" text-anchor="${anc}" ${ex}>${str}</text>`;
+
+      function torn(x, y, w, h, j = 12, step = 42) {
+        const p = [];
+        for (let i = 0; i <= w; i += step) p.push([x + Math.min(i, w), y + (rnd() - 0.5) * j]);
+        for (let i = step; i <= h; i += step) p.push([x + w + (rnd() - 0.5) * j, y + Math.min(i, h)]);
+        for (let i = w - step; i >= 0; i -= step) p.push([x + Math.max(i, 0), y + h + (rnd() - 0.5) * j]);
+        for (let i = h - step; i > 0; i -= step) p.push([x + (rnd() - 0.5) * j, y + i]);
+        return p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+      }
+
+      const sheet = (x, y, w, h, fill, j = 10) => `<polygon points="${torn(x, y, w, h, j)}" fill="${fill}"/>`;
+
+      const rays = (id, cx, cy, n, c) => {
+        let s = `<g id="${id}">`;
+        for (let i = 0; i < n; i += 2) {
+          const a = (i * 2 * Math.PI) / n, b = ((i + 1) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + 1900 * Math.cos(a)).toFixed(0)},${(cy + 1900 * Math.sin(a)).toFixed(0)} ${(cx + 1900 * Math.cos(b)).toFixed(0)},${(cy + 1900 * Math.sin(b)).toFixed(0)}" fill="${c}"/>`;
+        }
+        return s + "</g>";
+      };
+
+      function banner(id, x, y, text, col1, col2, subtext = "") {
+        const w = 880, h = 190, m = x + w / 2;
+        const zig = `${m - 30},${y - 20} ${m + 25},${y + 45} ${m - 20},${y + 95} ${m + 30},${y + 145} ${m - 15},${y + h + 20}`;
+        const inner = subtext ? `
+          <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${col1}"/>
+          <rect x="${x}" y="${y + 12}" width="${w}" height="10" fill="${col2}"/>
+          <rect x="${x}" y="${y + h - 22}" width="${w}" height="10" fill="${col2}"/>
+          ${tx(m, y + 92, 82, text, col2, "middle", 'letter-spacing="4"')}
+          ${tx(m, y + 146, 42, subtext, col2, "middle", 'letter-spacing="6"')}
+        ` : `
+          <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${col1}"/>
+          <rect x="${x}" y="${y + 12}" width="${w}" height="10" fill="${col2}"/>
+          <rect x="${x}" y="${y + h - 22}" width="${w}" height="10" fill="${col2}"/>
+          ${tx(m, y + 138, 115, text, col2, "middle", 'letter-spacing="6"')}
+        `;
+        return `<defs><clipPath id="${id}cl"><polygon points="${x - 20},${y - 20} ${zig} ${x - 20},${y + h + 20}"/></clipPath><clipPath id="${id}cr"><polygon points="${x + w + 20},${y - 20} ${zig} ${x + w + 20},${y + h + 20}"/></clipPath></defs><g id="${id}" class="cut"><g id="${id}L"><g clip-path="url(#${id}cl)">${inner}</g></g><g id="${id}R"><g clip-path="url(#${id}cr)">${inner}</g></g></g>`;
+      }
+
+      const ball = (id, cx, cy, r, ex = "") =>
+        `<g id="${id}" class="cut"><circle cx="${cx}" cy="${cy}" r="${r}" fill="${C.red}"/><path d="M${cx - r * 0.62} ${cy - r * 0.5} A${r * 0.75} ${r * 0.75} 0 0 1 ${cx - r * 0.1} ${cy - r * 0.82}" stroke="#D9574A" stroke-width="${r * 0.09}" fill="none" stroke-linecap="round"/>${[-0.09, 0.09]
+          .map((k) => `<path d="M${cx + r * k} ${cy - r * 0.98} Q${cx + r * (k + 0.34)} ${cy} ${cx + r * k} ${cy + r * 0.98}" stroke="${C.paper}" stroke-width="${r * 0.035}" fill="none" stroke-dasharray="${r * 0.07} ${r * 0.06}"/>`)
+          .join("")}${ex}</g>`;
+
+      const bat = (id, x, y, s = 1, rot = 0) =>
+        `<g id="${id}" class="cut" transform="translate(${x} ${y}) rotate(${rot}) scale(${s})">
+          <rect x="-14" y="-220" width="28" height="130" rx="10" fill="#C1121F"/>
+          <line x1="-14" y1="-180" x2="14" y2="-180" stroke="#fff" stroke-width="4"/>
+          <line x1="-14" y1="-140" x2="14" y2="-140" stroke="#fff" stroke-width="4"/>
+          <path d="M-36 -90 L36 -90 L42 220 Q42 250 0 255 Q-42 250 -42 220 Z" fill="#E8D5B5"/>
+          <rect x="-30" y="-80" width="60" height="50" fill="#C1121F"/>
+          <text x="0" y="-45" font-family="Anton" font-size="28" fill="#fff" text-anchor="middle">MRF</text>
+          <path d="M-15 0 L15 0 L10 180 L-10 180 Z" fill="#D9BC82" opacity="0.6"/>
+        </g>`;
+
+      const trophy = (id, x, y, s = 1) =>
+        `<g id="${id}" class="cut" transform="translate(${x} ${y}) scale(${s})">
+          <circle cx="0" cy="-140" r="85" fill="#E8B938"/>
+          <circle cx="-25" cy="-165" r="30" fill="#FFF2B2" opacity="0.6"/>
+          <path d="M-80 -60 L-30 110 L-60 110 L-110 -60 Z" fill="#D49E24"/>
+          <path d="M-20 -55 L-10 110 L10 110 L20 -55 Z" fill="#FFD54F"/>
+          <path d="M80 -60 L30 110 L60 110 L110 -60 Z" fill="#D49E24"/>
+          <rect x="-95" y="110" width="190" height="45" rx="8" fill="#1B1B1B"/>
+          <text x="0" y="142" font-family="Anton" font-size="28" fill="${C.gold}" text-anchor="middle">ICC WORLD CUP</text>
+        </g>`;
+
+      const wickets = (id, x, y, s = 1) =>
+        `<g id="${id}" class="cut" transform="translate(${x} ${y}) scale(${s})">
+          <rect x="-110" y="190" width="220" height="30" rx="8" fill="${C.turf}"/>
+          <g id="${id}_s1"><rect x="-80" y="-180" width="22" height="370" rx="8" fill="#D9A855"/><rect x="-76" y="-176" width="14" height="362" fill="#F4CF88"/></g>
+          <g id="${id}_s2"><rect x="-11" y="-185" width="22" height="375" rx="8" fill="#D9A855"/><rect x="-7" y="-181" width="14" height="367" fill="#F4CF88"/></g>
+          <g id="${id}_s3"><rect x="58" y="-180" width="22" height="370" rx="8" fill="#D9A855"/><rect x="62" y="-176" width="14" height="362" fill="#F4CF88"/></g>
+          <g id="${id}_b1"><rect x="-86" y="-196" width="76" height="14" rx="4" fill="#C48E3A"/></g>
+          <g id="${id}_b2"><rect x="-3" y="-196" width="76" height="14" rx="4" fill="#C48E3A"/></g>
+        </g>`;
+
+      const scraps = (cls, cx, cy, n, colA = C.saffron, colB = C.blue) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 30 + rnd() * 50;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? colA : colB}" opacity="0"/>`;
+        }
+        return s;
+      };
+
+      const drop = (cls, x, y, s = 1, col = "#9AD0EC") =>
+        `<path class="${cls}" d="M${x} ${y - 34 * s} Q${x + 24 * s} ${y + 4 * s} ${x} ${y + 22 * s} Q${x - 24 * s} ${y + 4 * s} ${x} ${y - 34 * s}Z" fill="${col}" opacity="0"/>`;
+
+      const stamp = (id, cx, cy, l1, l2, rot = -10, col = C.stamp) =>
+        `<g id="${id}" class="cut"><g transform="rotate(${rot} ${cx} ${cy})"><rect x="${cx - 240}" y="${cy - 95}" width="480" height="190" rx="16" fill="rgba(246,241,228,.92)" stroke="${col}" stroke-width="12"/>${tx(cx, cy - 4, 76, l1, col)}${tx(cx, cy + 62, 50, l2, col)}</g></g>`;
+
+      const stadium = () => {
+        let s = `<rect width="1080" height="700" fill="#0A1D37"/><rect y="640" width="1080" height="420" fill="#1C2E42"/>`;
+        const cols = [C.paper, C.gold, C.saffron, C.blue, "#2E5EAA", "#F2CE6B"];
+        for (let r = 0; r < 7; r++)
+          for (let c = 0; c < 19; c++)
+            s += `<circle cx="${(c * 60 + (r % 2 ? 30 : 0) + rnd() * 10).toFixed(0)}" cy="${680 + r * 56}" r="21" fill="${cols[Math.floor(rnd() * 6)]}"/>`;
+        return s + `<rect y="1060" width="1080" height="24" fill="${C.paper}"/><rect y="1084" width="1080" height="836" fill="#4B6F3E"/><rect y="1084" width="1080" height="30" fill="#3D5A32"/>`;
+      };
+
+      const vf = (venue = "LIVE · WANKHEDE") =>
+        `<path d="M70 330V250H150M930 250H1010V330M70 1170V1250H150M930 1250H1010V1170" stroke="${C.paper}" stroke-width="10" fill="none"/><rect x="92" y="272" width="310" height="66" rx="8" fill="#1B1B1B"/><circle class="rec" cx="125" cy="305" r="20" fill="#E0241B"/>${tx(160, 322, 42, venue, C.paper, "start")}`;
+
+      function guy(id, x, y, s, o = {}) {
+        const isMystery = !!o.mystery;
+        const skin = isMystery ? "#32231A" : (o.skin || "#DDA77C");
+        const sk2 = isMystery ? "#221711" : (o.sk2 || "#C48455");
+        const hair = isMystery ? "#110D0A" : (o.hair || "#181818");
+        const jersey = isMystery ? "#091626" : (o.jersey || C.jersey);
+        const capCol = isMystery ? "#060F1A" : (o.capCol || C.blue);
+        const accent = isMystery ? "#4A2508" : (o.accent || C.saffron);
+        const m = o.m || "flat";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+
+        return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})">
+          <g class="cut">
+            <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="${jersey}"/>
+            <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="${accent}"/>
+            <path d="M-45 205 L0 270 L45 205Z" fill="${isMystery ? '#182432' : '#fff'}"/>
+            ${(o.noJerseyText || isMystery) ? "" : `
+              <text x="0" y="380" font-family="Anton" font-size="52" fill="#fff" text-anchor="middle" letter-spacing="4">INDIA</text>
+              <text x="0" y="425" font-family="Anton" font-size="34" fill="${accent}" text-anchor="middle">18</text>
+            `}
+            <rect x="-48" y="140" width="96" height="90" rx="18" fill="${sk2}"/>
+          </g>
+
+          <g class="head cut">
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="${sk2}"/>
+            <ellipse cx="148" cy="15" rx="26" ry="40" fill="${sk2}"/>
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="${skin}"/>
+
+            ${(o.beard && !isMystery) ? `
+              <path d="M-145 20 Q-152 195 0 205 Q152 195 145 20 Q120 155 0 158 Q-120 155 -145 20Z" fill="${hair}"/>
+              <path d="M-60 85 Q0 70 60 85 Q30 115 0 100 Q-30 115 -60 85Z" fill="${hair}"/>
+            ` : ""}
+
+            <path d="M-150 -60 L-150 -95 L-118 -95 L-128 -15Z M150 -60 L150 -95 L118 -95 L128 -15Z" fill="${hair}"/>
+
+            ${o.noCap ? `
+              <path d="M-150 -80 Q-150 -250 0 -250 Q150 -250 150 -80 Q100 -120 0 -110 Q-100 -120 -150 -80Z" fill="${hair}"/>
+            ` : `
+              <path d="M-158 -92 Q-160 -262 0 -262 Q160 -262 158 -92Z" fill="${capCol}"/>
+              <path d="M-178 -94 Q0 -134 178 -94 Q198 -60 0 -70 Q-198 -60 -178 -94Z" fill="${isMystery ? '#03080E' : (o.visorCol || '#06162D')}"/>
+              <polygon points="0,-195 6,-180 22,-180 10,-170 14,-155 0,-165 -14,-155 -10,-170 -22,-180 -6,-180" fill="${isMystery ? '#5A4A1C' : C.gold}"/>
+            `}
+
+            <!-- Eyes -->
+            ${isMystery ? `
+              <!-- Glowing shadowy mystery eyes -->
+              <g class="eye"><ellipse cx="-62" cy="15" rx="28" ry="12" fill="#0C141F"/><circle class="pupil" cx="-62" cy="15" r="8" fill="${C.gold}" opacity="0.8"/></g>
+              <g class="eye"><ellipse cx="62" cy="15" rx="28" ry="12" fill="#0C141F"/><circle class="pupil" cx="62" cy="15" r="8" fill="${C.gold}" opacity="0.8"/></g>
+            ` : `
+              <g class="eye"><circle cx="-62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="-62" cy="5" r="16" fill="${C.ink}"/></g>
+              <g class="eye"><circle cx="62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="62" cy="5" r="16" fill="${C.ink}"/></g>
+            `}
+
+            <rect class="browL" x="-105" y="-58" width="85" height="18" rx="6" fill="${hair}"/>
+            <rect class="browR" x="20" y="-58" width="85" height="18" rx="6" fill="${hair}"/>
+
+            <path d="M-10 25 Q-4 70 24 60" stroke="${sk2}" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+            ${isMystery ? '<rect x="-35" y="115" width="70" height="10" rx="5" fill="#1A110B"/>' : `
+              ${mo("flat", '<rect x="-44" y="115" width="88" height="13" rx="6" fill="#7A2E22"/>')}
+              ${mo("o", '<ellipse cx="0" cy="120" rx="30" ry="34" fill="#4A1410"/>')}
+              ${mo("smirk", '<path d="M-48 116 Q14 152 64 98" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+              ${mo("frown", '<path d="M-48 138 Q0 98 48 138" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+              ${mo("teeth", '<rect x="-58" y="98" width="116" height="46" rx="14" fill="#fff" stroke="#7A2E22" stroke-width="9"/><path d="M-20 100V142M20 100V142M-56 121H56" stroke="#C9B9A8" stroke-width="4"/>')}
+              ${mo("talk", '<ellipse cx="0" cy="122" rx="36" ry="22" fill="#4A1410"/>')}
+              ${mo("roar", '<path d="M-62 98 Q0 78 62 98 Q70 148 0 152 Q-70 148 -62 98Z" fill="#3D0B0B" stroke="#7A2E22" stroke-width="8"/><rect x="-45" y="102" width="90" height="18" rx="5" fill="#fff"/>')}
+            `}
+          </g>
+        </g></g>`;
+      }
+
+      // Camera Flash Helper
+      let flashGlints = "";
+      [[150, 420], [920, 600], [220, 880], [860, 320], [100, 720], [980, 920]].forEach((p) => {
+        flashGlints += `<g class="fl" opacity="0"><circle cx="${p[0]}" cy="${p[1]}" r="85" fill="#fff" opacity=".6"/><polygon points="${p[0]},${p[1] - 140} ${p[0] + 24},${p[1] - 24} ${p[0] + 140},${p[1]} ${p[0] + 24},${p[1] + 24} ${p[0]},${p[1] + 140} ${p[0] - 24},${p[1] + 24} ${p[0] - 140},${p[1]} ${p[0] - 24},${p[1] - 24}" fill="#fff"/></g>`;
+      });
+
+      // ==========================================
+      // SCENE 1: The Mystery Stats Hook (0.00 - 13.80s)
+      // ==========================================
+      reseed(11);
+      const bn1 = banner("bn1", 100, 1120, "765 RUNS", C.blue, C.gold, "RECORD OF HUMANITY");
+      const scDestiny = scraps("scDestiny", 540, 1215, 20, C.stamp, C.gold);
+      put("s1", svg(
+        rays("r1", 540, 700, 22, "#081E38") +
+        `<g id="qmark" class="cut" opacity="0.12">${tx(540, 680, 520, "?", C.paper)}</g>` +
+        trophy("tr1", 540, 680, 0.95) +
+        guy("g_mystery", 540, 850, 1.05, { mystery: 1 }) +
+        bat("bat_mystery", 790, 820, 1.1, 24) +
+        stamp("st1_avg", 320, 360, "95.62", "AVERAGE", -8, C.stamp) +
+        stamp("st1_sr", 760, 360, "90.31", "STRIKE RATE", 10, C.gold) +
+        bn1 + scDestiny, C.dblue));
+
+      // ==========================================
+      // SCENE 2: The Reveal & Wankhede Peak (13.80 - 21.00s)
+      // ==========================================
+      reseed(21);
+      const std2 = stadium();
+      const sachinCard = `<g id="sachin" class="cut" transform="translate(260, 480) rotate(-6)">
+        ${sheet(-170, -200, 340, 400, C.paper, 8)}
+        <rect x="-150" y="-180" width="300" height="260" fill="#132B45"/>
+        ${guy("sachin_guy", 0, -30, 0.42, { skin: "#E0A477", hair: "#1A1A1A", beard: 0, noCap: 1, m: "smirk", jersey: "#0B2545" })}
+        <rect x="-150" y="90" width="300" height="90" fill="#1B1B1B"/>
+        <text x="0" y="132" font-family="Anton" font-size="34" fill="${C.gold}" text-anchor="middle">THE MASTER</text>
+        <text x="0" y="165" font-family="Anton" font-size="24" fill="${C.paper}" text-anchor="middle">49 CENTURIES</text>
+      </g>`;
+
+      put("s2", svg(
+        std2 +
+        flashGlints +
+        sachinCard +
+        guy("g2", 680, 840, 1.0, { beard: 1, m: "smirk", noCap: 1 }) +
+        bat("bat2", 900, 780, 1.15, 28) +
+        drop("sw2", 540, 760) + drop("sw2", 840, 740) +
+        stamp("st2_50th", 680, 480, "50TH", "CENTURY", 8, C.stamp) +
+        vf("LIVE · WANKHEDE SEMI-FINAL"), "#0A1D37"));
+
+      // ==========================================
+      // SCENE 3: Ahmedabad Final & Chop-On (21.00 - 33.00s)
+      // ==========================================
+      reseed(31);
+      const sparks = scraps("spk", 560, 840, 20, "#FFE082", "#FF5252");
+      put("s3", svg(
+        stadium() +
+        `<g id="cummins">${guy("g_cummins", 220, 830, 0.76, { skin: "#F0C8A0", hair: "#E5B869", beard: 0, capCol: C.green, visorCol: "#0D2E22", jersey: "#F2CE6B", accent: C.green, noJerseyText: 1, m: "teeth" })}</g>` +
+        wickets("w3", 640, 830, 0.85) +
+        guy("g3", 750, 810, 0.95, { beard: 1, m: "flat" }) +
+        bat("bat3", 670, 860, 1.05, 30) +
+        ball("b3", 380, 820, 36) +
+        sparks +
+        drop("sw3", 640, 730) + drop("sw3", 860, 710) + drop("sw3", 880, 810) +
+        stamp("st3_silence", 540, 440, "130,000", "SILENCED", -8, C.stamp) +
+        vf("LIVE · AHMEDABAD FINAL"), "#190808"));
+
+      // ==========================================
+      // SCENE 4: The Heartbreak (33.00 - 36.50s)
+      // ==========================================
+      reseed(41);
+      put("s4", svg(
+        `<rect width="1080" height="1920" fill="#070A0F"/>` +
+        `<circle id="spot" cx="540" cy="850" r="480" fill="#1C2E4A" opacity="0.25"/>` +
+        trophy("tr4", 820, 780, 0.7) +
+        guy("g4", 540, 880, 1.0, { beard: 1, m: "frown" }) +
+        drop("tear", 480, 890, 0.65) + drop("tear", 600, 890, 0.65) +
+        `<g id="card4" class="cut" transform="translate(540, 430)">
+          ${sheet(-440, -140, 880, 280, C.paper, 8)}
+          ${tx(0, -45, 68, "HE GAVE HIS ENTIRE SOUL.", C.ink)}
+          <line x1="-380" y1="5" x2="380" y2="5" stroke="${C.stamp}" stroke-width="6"/>
+          ${tx(0, 75, 62, "AND STILL... NOT ENOUGH.", C.stamp)}
+        </g>` +
+        `<g id="stat_tag" class="cut" transform="translate(540, 1220)">
+          ${sheet(-340, -55, 680, 110, C.ink, 8)}
+          ${tx(0, 18, 54, "95.62 TOURNAMENT AVERAGE", C.gold)}
+        </g>`, "#05070B"));
+
+      // ==========================================
+      // SCENE 5: Immortal King (36.50 - 44.04s)
+      // ==========================================
+      reseed(51);
+      const conf = scraps("conf", 540, 700, 24, C.gold, C.saffron);
+      put("s5", svg(
+        rays("r5", 540, 780, 24, "#133E6E") +
+        banner("bn5", 100, 280, "WALK TALL · KING", C.blue, C.gold) +
+        guy("g5", 540, 860, 1.08, { beard: 1, m: "smirk" }) +
+        `<g id="crown" class="cut" transform="translate(540, 520) scale(1.1)">
+          <polygon points="-90,40 -120,-30 -50,0 0,-60 50,0 120,-30 90,40" fill="${C.gold}"/>
+          <circle cx="-120" cy="-35" r="10" fill="#fff"/>
+          <circle cx="0" cy="-65" r="12" fill="#fff"/>
+          <circle cx="120" cy="-35" r="10" fill="#fff"/>
+        </g>` +
+        stamp("st5_immortal", 540, 1160, "IMMORTAL", "STORIES LIVE FOREVER", -6, C.gold) +
+        conf, C.dblue));
+
+      // Torn Paper Transition Wipe Setup
+      reseed(91);
+      document.getElementById("wipe").innerHTML = `<svg viewBox="0 0 1500 2300" width="1500" height="2300" xmlns="http://www.w3.org/2000/svg"><polygon id="wp" points="${torn(20, 20, 1460, 2260, 60, 90)}" fill="${C.paper}"/></svg>`;
+
+      // ---------- Master Timeline ----------
+      const tl = gsap.timeline({ paused: true });
+      const CC = "50% 50%";
+
+      gsap.set("#r1", { svgOrigin: "540 700" });
+      gsap.set("#r5", { svgOrigin: "540 780" });
+      gsap.set("#st1_avg,#st1_sr,#st2_50th,#st3_silence,#card4,#stat_tag,#st5_immortal,#crown,#bn1L,#bn1R,#bn5L,#bn5R,.scDestiny,.fl,.spk,.conf", { transformOrigin: CC });
+      gsap.set("#bat_mystery", { transformOrigin: "0% 0%" });
+      gsap.set("#bat2", { transformOrigin: "0% 0%" });
+      gsap.set("#bat3", { transformOrigin: "0% 0%" });
+      gsap.set("#w3_s1,#w3_s2,#w3_s3,#w3_b1,#w3_b2", { transformOrigin: "50% 100%" });
+
+      const pop = (sel, t, d = 0.22) => tl.fromTo(sel, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: d, ease: "back.out(2.2)" }, t);
+      const slam = (sel, t, r = 0) => tl.fromTo(sel, { scale: 3.2, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.16, ease: "power4.in" }, t);
+      const shake = (sel, t, a = 22) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t).to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04).to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08).to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") => tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+
+      function face(id, t, o, d = 0.1) {
+        const q = (s) => `#${id} ${s}`;
+        if (o.m) { tl.set(q(".m"), { opacity: 0 }, t); tl.set(q(".m-" + o.m), { opacity: 1 }, t + 0.001); }
+        if (o.b) {
+          tl.to(q(".browL"), { rotation: o.b[0], y: o.b[2] || 0, duration: d }, t);
+          tl.to(q(".browR"), { rotation: o.b[1], y: o.b[2] || 0, duration: d }, t);
+        }
+        if (o.e != null) tl.to(q(".eye"), { scale: o.e, duration: d }, t);
+        if (o.p) tl.to(q(".pupil"), { x: o.p[0], y: o.p[1], duration: d }, t);
+        if (o.ps != null) tl.to(q(".pupil"), { scale: o.ps, duration: d }, t);
+      }
+
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.75, ease: "power2.out", immediateRender: false }, t);
+        });
+
+      const sweat = (cls, t) => gsap.utils.toArray("." + cls).forEach((el, i) => tl.fromTo(el, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1, immediateRender: false }, t + i * 0.06).to(el, { y: 90, opacity: 0, duration: 0.5, ease: "power1.in" }, t + i * 0.06 + 0.2));
+
+      // Timed Captions Animation
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 5 : -5, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.5 : 1.5, opacity: 1, duration: 0.15, ease: "back.out(2.5)" }, t);
+      });
+
+      // Scene Transition Wipes
+      gsap.set("#wipe", { x: -1700 });
+      [[13.80, C.paper, 1], [21.00, C.stamp, -1], [33.00, C.ink, 1], [36.50, C.gold, -1]].forEach(([t, c, dir]) => {
+        tl.set("#wp", { fill: c }, t - 0.19);
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300 }, { x: dir > 0 ? 1300 : -1700, duration: 0.36, ease: "none" }, t - 0.18);
+      });
+
+      // Clip Visibility Management
+      gsap.utils.toArray(".clip").forEach((el) => {
+        const start = +el.dataset.start || 0;
+        const dur = +el.dataset.duration || 0;
+        if (dur > 0) {
+          tl.set(el, { display: "none" }, 0);
+          tl.set(el, { display: "block" }, start);
+          tl.set(el, { display: "none" }, start + dur);
+        }
+      });
+
+      // ==========================================
+      // SCENE 1 (0.00 - 13.80s): The Mystery Hook
+      // ==========================================
+      tl.fromTo("#r1", { rotation: 0 }, { rotation: 32, duration: 13.80, ease: "none" }, 0);
+      zoom("s1", 0, 13.80, 1, 1.10, "50% 50%");
+      tl.fromTo("#g_mystery", { y: 1100 }, { y: 0, duration: 0.5, ease: "back.out(1.4)" }, 0);
+
+      // 0.0s - 2.5s: "An average of 95.6."
+      slam("#st1_avg", 0.6, -10);
+      shake("#s1 .cam", 0.76, 25);
+
+      // 2.8s - 6.6s: "A ninety strike rate. 765 runs."
+      slam("#st1_sr", 2.9, 12);
+      shake("#s1 .cam", 3.06, 22);
+      tl.fromTo("#bn1", { y: 800 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, 4.5);
+      tl.fromTo("#tr1", { scale: 0, opacity: 0 }, { scale: 0.95, opacity: 1, duration: 0.6, ease: "back.out(2)" }, 7.0);
+
+      // 11.6s - 13.8s: "But destiny had a cruel twist."
+      tl.to("#bn1L", { x: -160, y: 70, rotation: -14, duration: 0.5, ease: "power3.out" }, 11.6);
+      tl.to("#bn1R", { x: 160, y: 100, rotation: 12, duration: 0.5, ease: "power3.out" }, 11.6);
+      burst("scDestiny", 11.6, 1100, -500, 400);
+      shake("#s1 .cam", 11.6, 30);
+      tl.to("#tr1", { rotation: 25, y: 150, opacity: 0.3, duration: 0.8, ease: "power2.in" }, 11.8);
+
+      // ==========================================
+      // SCENE 2 (13.80 - 21.00s): The Reveal & 50th Century
+      // ==========================================
+      zoom("s2", 13.80, 7.20, 1, 1.10, "50% 45%");
+      tl.fromTo("#g2", { y: 1000 }, { y: 0, duration: 0.45, ease: "back.out(1.3)" }, 13.85);
+
+      // 14.1s - 16.2s: "Because this was Virat Kohli."
+      face("g2", 14.1, { m: "roar", b: [16, -16, -12] });
+      tl.fromTo("#bat2", { rotation: -50 }, { rotation: 25, duration: 0.5, ease: "back.out(1.8)" }, 14.2);
+
+      // Camera flashes
+      [14.3, 15.0, 15.8, 16.5, 17.2, 18.0, 18.8, 19.5].forEach((t, i) => {
+        const el = gsap.utils.toArray(".fl")[i % 6];
+        tl.fromTo(el, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.05, immediateRender: false }, t).to(el, { opacity: 0, duration: 0.08 }, t + 0.06);
+      });
+
+      // 16.4s - 20.9s: "50 centuries... surpassing the God."
+      tl.fromTo("#sachin", { x: -600, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "back.out(1.3)" }, 16.4);
+      slam("#st2_50th", 16.8, 8);
+      shake("#s2 .cam", 16.96, 22);
+      // Bowing animation towards Sachin
+      tl.to("#g2", { rotation: -16, y: 30, transformOrigin: "50% 100%", duration: 0.6, ease: "power2.inOut" }, 17.2);
+      face("g2", 17.3, { m: "smirk", p: [-15, 10], b: [-8, 8, 4] });
+      tl.to("#g2", { rotation: 0, y: 0, duration: 0.5, ease: "power2.out" }, 19.2);
+
+      // ==========================================
+      // SCENE 3 (21.00 - 33.00s): Ahmedabad Final & Chop-On
+      // ==========================================
+      zoom("s3", 21.00, 12.00, 1, 1.15, "50% 45%");
+      tl.fromTo("#g3", { x: 600 }, { x: 0, duration: 0.4, ease: "back.out(1.3)" }, 21.05);
+      tl.fromTo("#cummins", { x: -600 }, { x: 0, duration: 0.4, ease: "back.out(1.3)" }, 21.1);
+
+      // 21.3s - 24.5s: Focused stance
+      face("g3", 21.3, { m: "flat", b: [10, -10, 6], p: [-18, 5] });
+
+      // 24.5s - 26.5s: "until the inside edge."
+      tl.fromTo("#b3", { x: -100, y: 50, scale: 0.5 }, { x: 260, y: 30, scale: 1, duration: 0.55, ease: "power1.in" }, 25.5);
+      face("g3", 25.6, { p: [-22, 2] });
+
+      // Inside edge at 26.4s
+      tl.to("#bat3", { rotation: -12, duration: 0.08, yoyo: true, repeat: 2 }, 26.4);
+      burst("spk", 26.4, 600, -300, 300);
+      shake("#s3 .cam", 26.45, 20);
+
+      // Stumps shatter at 26.8s
+      tl.to("#b3", { x: 340, y: 60, duration: 0.2, ease: "none" }, 26.7);
+      tl.to("#w3_s1", { rotation: 38, x: -30, duration: 0.4, ease: "power2.out" }, 26.8);
+      tl.to("#w3_s2", { rotation: -22, x: 25, duration: 0.4, ease: "power2.out" }, 26.8);
+      tl.to("#w3_b1", { y: -180, rotation: 180, duration: 0.6, ease: "power1.out" }, 26.8);
+      tl.to("#w3_b2", { y: -220, x: 60, rotation: -240, duration: 0.6, ease: "power1.out" }, 26.8);
+      shake("#s3 .cam", 26.9, 28);
+
+      // 28.5s - 32.9s: "130,000 souls silenced."
+      tl.to("#cummins, #b3, #w3", { opacity: 0, duration: 0.25 }, 28.5);
+      tl.to("#g3", { x: -210, scale: 1.25, transformOrigin: "50% 50%", duration: 0.4, ease: "power2.out" }, 28.6);
+      slam("#st3_silence", 29.5, -8);
+      shake("#s3 .cam", 29.66, 36);
+      face("g3", 29.0, { m: "o", e: 1.45, ps: 0.5, b: [-16, 16, -14], p: [0, 8] });
+      sweat("sw3", 29.2);
+
+      // ==========================================
+      // SCENE 4 (33.00 - 36.50s): The Heartbreak
+      // ==========================================
+      zoom("s4", 33.00, 3.50, 1, 1.06, "50% 50%");
+      tl.fromTo("#g4", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 33.05);
+      tl.fromTo("#spot", { opacity: 0 }, { opacity: 0.3, duration: 0.6 }, 33.1);
+      tl.to("#g4", { y: 50, duration: 0.8, ease: "power2.inOut" }, 33.4);
+      face("g4", 33.3, { m: "frown", b: [-14, 14, 12], p: [0, 15] });
+      pop("#card4", 33.8, 0.25);
+      pop("#stat_tag", 34.2, 0.25);
+      gsap.utils.toArray(".tear").forEach((el, i) => {
+        tl.fromTo(el, { opacity: 0, y: 0 }, { opacity: 1, duration: 0.1, immediateRender: false }, 34.5 + i * 0.15)
+          .to(el, { y: 120, opacity: 0, duration: 0.8, ease: "power1.in" }, 34.6 + i * 0.15);
+      });
+
+      // ==========================================
+      // SCENE 5 (36.50 - 44.04s): Immortal King
+      // ==========================================
+      tl.fromTo("#r5", { rotation: 0 }, { rotation: 30, duration: 7.54, ease: "none" }, 36.5);
+      zoom("s5", 36.50, 7.54, 1, 1.12, "50% 45%");
+      tl.fromTo("#bn5", { y: -300 }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, 36.6);
+      tl.fromTo("#g5", { y: 700 }, { y: 0, duration: 0.45, ease: "back.out(1.3)" }, 36.7);
+      face("g5", 37.0, { m: "smirk", b: [10, -10, -4], p: [0, -4] });
+      pop("#crown", 38.0, 0.3);
+
+      // 41.2s - 44.0s: "Walk tall, King. Respect, Virat."
+      slam("#st5_immortal", 41.2, -4);
+      shake("#s5 .cam", 41.36, 30);
+      burst("conf", 41.36, 1200, -500, 400);
+      face("g5", 41.4, { m: "roar", b: [16, -16, -10] });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

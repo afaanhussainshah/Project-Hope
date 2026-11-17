@@ -1,0 +1,8 @@
+# Ignore files exceeding GitHub 100MB limit
+reference folder/*.zip
+*.zip
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class

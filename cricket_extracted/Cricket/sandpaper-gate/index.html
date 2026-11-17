@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #143d30; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Anton", sans-serif; }
+      .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; z-index: 1; }
+      .cam, .cam svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+      .cut { filter: drop-shadow(9px 11px 0 rgba(0, 0, 0, 0.3)); }
+      #wipe { position: absolute; left: 0; top: -190px; width: 1500px; height: 2300px; z-index: 5; }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8; opacity: 0.2; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9; background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.32) 100%); }
+      .cap { position: absolute; left: 50px; width: 980px; top: 1280px; height: 230px; z-index: 10; text-align: center; }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px; background: #f6f1e4; color: #1b1b1b;
+        font-size: 88px; line-height: 1.06; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(9px 11px 0 rgba(0, 0, 0, 0.35));
+      }
+      .cap b { font-weight: 400; color: #c1121f; }
+      .cap i { font-style: normal; background: #e3b23c; padding: 0 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="41" data-width="1080" data-height="1920">
+      <div id="s1" class="clip scene" data-start="0" data-duration="5.3" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2a" class="clip scene" data-start="5.3" data-duration="3.45" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2b" class="clip scene" data-start="8.75" data-duration="0.9" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2c" class="clip scene" data-start="9.65" data-duration="1.2" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2d" class="clip scene" data-start="10.85" data-duration="2.45" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2e" class="clip scene" data-start="13.3" data-duration="2.6" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="15.9" data-duration="4" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="19.9" data-duration="7.55" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="27.45" data-duration="6.85" data-track-index="0"><div class="cam"></div></div>
+      <div id="s6" class="clip scene" data-start="34.3" data-duration="6.7" data-track-index="0"><div class="cam"></div></div>
+
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="40.75" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="41" data-volume="0.4" data-track-index="2"></audio>
+
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <div class="clip cap" data-start="0.06" data-duration="0.94" data-track-index="1"><span>One piece of</span></div>
+      <div class="clip cap" data-start="1" data-duration="1.5" data-track-index="1"><span><i>Sandpaper</i></span></div>
+      <div class="clip cap" data-start="2.6" data-duration="0.65" data-track-index="1"><span><b>Shredded</b></span></div>
+      <div class="clip cap" data-start="3.25" data-duration="1.95" data-track-index="1"><span>A nation's reputation</span></div>
+      <div class="clip cap" data-start="5.55" data-duration="1.2" data-track-index="1"><span>Cape Town</span></div>
+      <div class="clip cap" data-start="6.82" data-duration="1.83" data-track-index="1"><span><b>2018</b></span></div>
+      <div class="clip cap" data-start="8.85" data-duration="0.78" data-track-index="1"><span>Cameras caught</span></div>
+      <div class="clip cap" data-start="9.65" data-duration="1.17" data-track-index="1"><span>Cameron <b>Bancroft</b></span></div>
+      <div class="clip cap" data-start="10.85" data-duration="0.94" data-track-index="1"><span>Rubbing the ball</span></div>
+      <div class="clip cap" data-start="11.79" data-duration="1.41" data-track-index="1"><span>With something <i>yellow</i></span></div>
+      <div class="clip cap" data-start="13.45" data-duration="1.85" data-track-index="1"><span>Then desperately <b>hiding</b> it</span></div>
+      <div class="clip cap" data-start="16.2" data-duration="0.95" data-track-index="1"><span>He said it was</span></div>
+      <div class="clip cap" data-start="17.15" data-duration="1" data-track-index="1"><span><i>Sticky tape.</i></span></div>
+      <div class="clip cap" data-start="18.32" data-duration="1.48" data-track-index="1"><span>It was <b>sandpaper.</b></span></div>
+      <div class="clip cap" data-start="20.12" data-duration="0.93" data-track-index="1"><span>David <b>Warner</b></span></div>
+      <div class="clip cap" data-start="21.05" data-duration="1.35" data-track-index="1"><span>Had devised the <b>plan.</b></span></div>
+      <div class="clip cap" data-start="22.55" data-duration="1.3" data-track-index="1"><span>And captain Steve <b>Smith</b></span></div>
+      <div class="clip cap" data-start="23.85" data-duration="1.25" data-track-index="1"><span><b>Knew</b> about it</span></div>
+      <div class="clip cap" data-start="25.26" data-duration="2.04" data-track-index="1"><span>But <b>failed</b> to stop it.</span></div>
+      <div class="clip cap" data-start="27.62" data-duration="0.98" data-track-index="1"><span>The punishment?</span></div>
+      <div class="clip cap" data-start="28.8" data-duration="1.6" data-track-index="1"><span>Smith and Warner:</span></div>
+      <div class="clip cap" data-start="30.59" data-duration="1.51" data-track-index="1"><span><b>Twelve months</b> banned.</span></div>
+      <div class="clip cap" data-start="32.39" data-duration="0.86" data-track-index="1"><span>Bancroft:</span></div>
+      <div class="clip cap" data-start="33.31" data-duration="0.94" data-track-index="1"><span><b>Nine months.</b></span></div>
+      <div class="clip cap" data-start="34.53" data-duration="1.87" data-track-index="1"><span>Australia <b>lost</b> the series</span></div>
+      <div class="clip cap" data-start="36.4" data-duration="1" data-track-index="1"><span><b>3–1.</b></span></div>
+      <div class="clip cap" data-start="37.77" data-duration="1.33" data-track-index="1"><span>But the bigger loss...</span></div>
+      <div class="clip cap" data-start="39.4" data-duration="1.3" data-track-index="1"><span>Was its <b>reputation.</b></span></div>
+    </div>
+    <script>
+      // ---------- deterministic helpers ----------
+      let seed = 7;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+      const C = { paper: "#F6F1E4", ink: "#1B1B1B", green: "#174D3A", dgreen: "#143D30", gold: "#E3B23C", red: "#B3261E", stamp: "#C1121F" };
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+      const tx = (x, y, s, str, fill, anc = "middle", ex = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${fill}" text-anchor="${anc}" ${ex}>${str}</text>`;
+      function torn(x, y, w, h, j = 10, step = 40) {
+        const p = [];
+        for (let i = 0; i <= w; i += step) p.push([x + Math.min(i, w), y + (rnd() - 0.5) * j]);
+        for (let i = step; i <= h; i += step) p.push([x + w + (rnd() - 0.5) * j, y + Math.min(i, h)]);
+        for (let i = w - step; i >= 0; i -= step) p.push([x + Math.max(i, 0), y + h + (rnd() - 0.5) * j]);
+        for (let i = h - step; i > 0; i -= step) p.push([x + (rnd() - 0.5) * j, y + i]);
+        return p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+      }
+      const sheet = (x, y, w, h, fill, j = 10) => `<polygon points="${torn(x, y, w, h, j)}" fill="${fill}"/>`;
+      function sand(x, y, w, h, id, extra = "") {
+        let s = `<g id="${id}" class="cut"><polygon points="${torn(x, y, w, h, 14, 46)}" fill="${C.gold}"/>`;
+        const n = Math.round((w * h) / 2600);
+        for (let i = 0; i < n; i++)
+          s += `<circle cx="${(x + 12 + rnd() * (w - 24)).toFixed(0)}" cy="${(y + 12 + rnd() * (h - 24)).toFixed(0)}" r="${(2 + rnd() * 3).toFixed(1)}" fill="${rnd() > 0.5 ? "#B98A1F" : "#F2CE6B"}"/>`;
+        return s + extra + "</g>";
+      }
+      const rays = (id, cx, cy, n, c) => {
+        let s = `<g id="${id}">`;
+        for (let i = 0; i < n; i += 2) {
+          const a = (i * 2 * Math.PI) / n, b = ((i + 1) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + 1900 * Math.cos(a)).toFixed(0)},${(cy + 1900 * Math.sin(a)).toFixed(0)} ${(cx + 1900 * Math.cos(b)).toFixed(0)},${(cy + 1900 * Math.sin(b)).toFixed(0)}" fill="${c}"/>`;
+        }
+        return s + "</g>";
+      };
+      function banner(id, x, y) {
+        const w = 860, h = 200, m = x + w / 2;
+        const zig = `${m - 30},${y - 20} ${m + 25},${y + 45} ${m - 20},${y + 95} ${m + 30},${y + 150} ${m - 15},${y + h + 20}`;
+        const inner = `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${C.green}"/><rect x="${x}" y="${y + 14}" width="${w}" height="10" fill="${C.gold}"/><rect x="${x}" y="${y + h - 24}" width="${w}" height="10" fill="${C.gold}"/>${tx(m, y + 150, 130, "AUSTRALIA", C.gold, "middle", 'letter-spacing="8"')}`;
+        return `<defs><clipPath id="${id}cl"><polygon points="${x - 20},${y - 20} ${zig} ${x - 20},${y + h + 20}"/></clipPath><clipPath id="${id}cr"><polygon points="${x + w + 20},${y - 20} ${zig} ${x + w + 20},${y + h + 20}"/></clipPath></defs><g id="${id}" class="cut"><g id="${id}L"><g clip-path="url(#${id}cl)">${inner}</g></g><g id="${id}R"><g clip-path="url(#${id}cr)">${inner}</g></g></g>`;
+      }
+      const ball = (id, cx, cy, r, ex = "") =>
+        `<g id="${id}" class="cut"><circle cx="${cx}" cy="${cy}" r="${r}" fill="${C.red}"/><path d="M${cx - r * 0.62} ${cy - r * 0.5} A${r * 0.75} ${r * 0.75} 0 0 1 ${cx - r * 0.1} ${cy - r * 0.82}" stroke="#D9574A" stroke-width="${r * 0.09}" fill="none" stroke-linecap="round"/>${[-0.09, 0.09]
+          .map((k) => `<path d="M${cx + r * k} ${cy - r * 0.98} Q${cx + r * (k + 0.34)} ${cy} ${cx + r * k} ${cy + r * 0.98}" stroke="${C.paper}" stroke-width="${r * 0.035}" fill="none" stroke-dasharray="${r * 0.07} ${r * 0.06}"/>`)
+          .join("")}${ex}</g>`;
+      const hand = (id, x, y, s, f) =>
+        `<g id="${id}" class="cut"><g transform="translate(${x} ${y}) scale(${s * f} ${s})"><rect x="60" y="-48" width="700" height="100" fill="${C.paper}"/><rect x="-80" y="-65" width="190" height="135" rx="60" fill="#E9B990"/><rect x="-60" y="40" width="120" height="50" rx="25" fill="#DDA77C"/><path d="M-40 -65V-20M0 -65V-15M40 -65V-20" stroke="#D69E73" stroke-width="6"/></g></g>`;
+      const scraps = (cls, cx, cy, n) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 30 + rnd() * 50;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? C.gold : C.green}" opacity="0"/>`;
+        }
+        return s;
+      };
+      const drop = (cls, x, y, s = 1) =>
+        `<path class="${cls}" d="M${x} ${y - 34 * s} Q${x + 24 * s} ${y + 4 * s} ${x} ${y + 22 * s} Q${x - 24 * s} ${y + 4 * s} ${x} ${y - 34 * s}Z" fill="#9AD0EC" opacity="0"/>`;
+      function guy(id, x, y, s, o = {}) {
+        const skin = o.skin || "#E9B990", sk2 = o.sk2 || "#D69E73", hair = o.hair || "#5A3A22", m = o.m || "flat";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        return `<g id="${id}"><g transform="translate(${x} ${y}) scale(${s})"><g class="cut">
+<path d="M-250 430 Q-255 255 -105 218 L105 218 Q255 255 250 430Z" fill="${C.paper}"/>
+<path d="M-62 218 L0 305 L62 218 L38 200 L-38 200Z" fill="#DDD5C0"/>
+<rect x="-46" y="150" width="92" height="95" rx="20" fill="${sk2}"/></g>
+<g class="head cut">
+<ellipse cx="-148" cy="15" rx="26" ry="40" fill="${sk2}"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="${sk2}"/>
+<rect x="-145" y="-160" width="290" height="345" rx="135" fill="${skin}"/>
+${o.beard ? `<path d="M-145 30 Q-150 190 0 187 Q150 190 145 30 Q118 150 0 152 Q-118 150 -145 30Z" fill="${hair}"/>` : ""}
+<path d="M-150 -60 L-150 -95 L-118 -95 L-128 -20Z M150 -60 L150 -95 L118 -95 L128 -20Z" fill="${hair}"/>
+<path d="M-158 -92 Q-160 -262 0 -262 Q160 -262 158 -92Z" fill="${C.green}"/>
+<path d="M-176 -96 Q0 -132 176 -96 Q196 -62 0 -72 Q-196 -62 -176 -96Z" fill="#0F3B2C"/>
+<circle cx="0" cy="-185" r="30" fill="${C.gold}"/>
+<g class="eye"><circle cx="-62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="-62" cy="5" r="16" fill="${C.ink}"/></g>
+<g class="eye"><circle cx="62" cy="5" r="36" fill="#fff"/><circle class="pupil" cx="62" cy="5" r="16" fill="${C.ink}"/></g>
+<rect class="browL" x="-102" y="-58" width="80" height="17" rx="6" fill="${hair}"/><rect class="browR" x="22" y="-58" width="80" height="17" rx="6" fill="${hair}"/>
+<path d="M-10 30 Q-4 72 22 62" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+${mo("flat", '<rect x="-44" y="112" width="88" height="13" rx="6" fill="#7A2E22"/>')}
+${mo("o", '<ellipse cx="0" cy="118" rx="28" ry="32" fill="#4A1410"/>')}
+${mo("smirk", '<path d="M-48 116 Q14 150 62 98" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+${mo("frown", '<path d="M-48 138 Q0 98 48 138" stroke="#7A2E22" stroke-width="13" fill="none" stroke-linecap="round"/>')}
+${mo("teeth", '<rect x="-58" y="96" width="116" height="46" rx="14" fill="#fff" stroke="#7A2E22" stroke-width="9"/><path d="M-20 98V140M20 98V140M-56 119H56" stroke="#C9B9A8" stroke-width="4"/>')}
+${mo("talk", '<ellipse cx="0" cy="120" rx="34" ry="20" fill="#4A1410"/>')}
+</g></g></g>`;
+      }
+      const stadium = () => {
+        let s = `<rect width="1080" height="700" fill="#BFD9E6"/><rect y="640" width="1080" height="420" fill="#39424E"/>`;
+        const cols = [C.paper, C.gold, C.red, C.green, "#5FA8C9", "#F2CE6B"];
+        for (let r = 0; r < 7; r++)
+          for (let c = 0; c < 19; c++)
+            s += `<circle cx="${(c * 60 + (r % 2 ? 30 : 0) + rnd() * 10).toFixed(0)}" cy="${680 + r * 56}" r="21" fill="${cols[Math.floor(rnd() * 6)]}"/>`;
+        return s + `<rect y="1060" width="1080" height="24" fill="${C.paper}"/><rect y="1084" width="1080" height="836" fill="#6F9A4B"/><rect y="1084" width="1080" height="30" fill="#5E8744"/>`;
+      };
+      const vf = () =>
+        `<path d="M70 330V250H150M930 250H1010V330M70 1170V1250H150M930 1250H1010V1170" stroke="${C.paper}" stroke-width="10" fill="none"/><rect x="92" y="272" width="200" height="66" rx="8" fill="#1B1B1B"/><circle class="rec" cx="125" cy="305" r="20" fill="#E0241B"/>${tx(160, 324, 52, "REC", C.paper, "start")}`;
+      const stamp = (id, cx, cy, l2) =>
+        `<g id="${id}"><g transform="rotate(-12 ${cx} ${cy})"><rect x="${cx - 175}" y="${cy - 85}" width="350" height="170" rx="16" fill="rgba(246,241,228,.82)" stroke="${C.stamp}" stroke-width="12"/>${tx(cx, cy - 2, 78, "BANNED", C.stamp)}${tx(cx, cy + 62, 52, l2, C.stamp)}</g></g>`;
+      const card = (id, x, y, rot, gid, o, name) =>
+        `<g transform="rotate(${rot} ${x + 200} ${y + 220})"><g id="${id}"><g class="cut">${sheet(x, y, 400, 440, C.paper, 8)}</g><rect x="${x + 25}" y="${y + 25}" width="350" height="325" fill="#9DB7C4"/>${guy(gid, x + 200, y + 185, 0.44, o)}<rect x="${x + 25}" y="${y + 345}" width="350" height="72" fill="${C.ink}"/>${tx(x + 200, y + 400, 48, name, C.paper)}</g></g>`;
+
+      // ---------- scene art ----------
+      reseed(11);
+      const sp1 = sand(240, 380, 600, 560, "sp1");
+      put("s1", svg(
+        rays("r1", 540, 700, 20, "#1A4A3A") +
+        banner("bn1", 110, 960) + scraps("scA", 540, 1060, 12) + sp1 +
+        `<g id="ts1" class="cut"><g transform="rotate(-7 250 290)">${sheet(80, 240, 360, 96, C.stamp, 8)}${tx(260, 312, 62, "TRUE STORY", C.paper)}</g></g>`, C.dgreen));
+
+      put("s2a", svg(
+        `<circle id="sun" cx="800" cy="560" r="120" fill="${C.gold}"/>` +
+        `<g id="mtB" class="cut"><polygon points="0,1160 0,840 140,720 260,780 330,660 760,660 820,740 900,780 990,660 1080,740 1080,1160" fill="#7FA596"/></g>` +
+        `<g id="mtF" class="cut"><polygon points="0,1160 0,980 200,920 420,980 640,920 860,980 1080,920 1080,1160" fill="#2F5D50"/></g>` +
+        `<g id="fld"><rect y="1120" width="1080" height="800" fill="#6F9A4B"/><rect y="1120" width="1080" height="30" fill="#5E8744"/><polygon points="430,1150 650,1150 760,1920 320,1920" fill="#D9BC82"/></g>` +
+        `<g id="tgA" class="cut">${sheet(70, 245, 600, 104, C.ink, 8)}${tx(100, 325, 70, "3RD TEST · DAY 3", C.paper, "start")}</g>` +
+        `<g id="tgB" class="cut">${sheet(70, 368, 470, 88, C.gold, 8)}${tx(100, 432, 56, "SERIES LEVEL 1–1", C.ink, "start")}</g>` +
+        `<g id="yr" class="cut"><g transform="rotate(-4 350 545)">${sheet(70, 482, 570, 122, C.stamp, 8)}${tx(355, 574, 88, "24 MARCH 2018", C.paper)}</g></g>`, "#BFD9E6"));
+
+      reseed(21);
+      const std = stadium();
+      put("s2b", svg(std +
+        `<g id="camZ"><g id="camA"><g class="cut"><path d="M540 1000L300 1640M540 1000L540 1700M540 1000L780 1640" stroke="#2B2B2B" stroke-width="36" stroke-linecap="round"/></g>` +
+        `<g class="cut"><rect x="380" y="510" width="320" height="60" rx="22" fill="#1F1F1F"/><rect x="770" y="510" width="150" height="120" rx="12" fill="#1F1F1F"/><rect x="240" y="580" width="600" height="440" rx="34" fill="#2E2E2E"/></g>` +
+        `<rect x="275" y="930" width="160" height="62" fill="${C.stamp}"/>${tx(355, 980, 46, "LIVE", C.paper)}` +
+        `<circle id="recA" cx="780" cy="640" r="24" fill="#E0241B"/>` +
+        `<circle cx="540" cy="800" r="195" fill="#161616"/><circle cx="540" cy="800" r="155" fill="#3B3B3B"/><circle cx="540" cy="800" r="118" fill="#0E1A22"/><circle id="glint" cx="492" cy="752" r="30" fill="#5FA8C9"/></g></g>`, "#6F9A4B"));
+
+      const bancroft = { hair: "#3B2A1E", beard: 1 };
+      put("s2c", svg(std + guy("g1", 540, 800, 1, bancroft) +
+        `<g id="tg1" class="cut">${sheet(330, 1150, 420, 86, C.ink, 8)}${tx(540, 1213, 52, "OPENING BATTER", C.paper)}</g>` +
+        vf() + `<rect id="ir" width="1080" height="1920" fill="#0E1A22"/>`, "#6F9A4B"));
+
+      reseed(31);
+      let grit = "";
+      for (let i = 0; i < 18; i++) grit += `<circle class="gr" cx="640" cy="690" r="${(5 + rnd() * 6).toFixed(0)}" fill="${i % 3 ? "#F2CE6B" : "#E8A79B"}" opacity="0"/>`;
+      put("s2d", svg(
+        rays("r2", 500, 800, 20, "#1A4A3A") +
+        ball("b2", 500, 800, 260,
+          `<g fill="none" stroke="#E8A79B" stroke-width="10" stroke-linecap="round"><path class="sc" d="M560 600l70-28"/><path class="sc" d="M560 640l90-30"/><path class="sc" d="M570 680l110-30"/><path class="sc" d="M585 720l100-24"/><path class="sc" d="M600 760l90-20"/><path class="sc" d="M610 800l70-14"/><path class="sc" d="M540 566l60-26"/><path class="sc" d="M630 838l56-10"/></g>`) +
+        hand("hL", 230, 930, 1.3, -1) + grit +
+        `<g id="rub">${sand(560, 560, 230, 180, "spR")}${hand("hR", 790, 690, 1.3, 1)}</g>` +
+        `<g id="hl"><circle cx="745" cy="590" r="185" fill="none" stroke="${C.paper}" stroke-width="12" stroke-dasharray="34 22"/></g>` +
+        `<g class="cut">${tx(900, 400, 190, "?", C.gold, "middle", 'class="qm"')}${tx(990, 560, 130, "?", C.paper, "middle", 'class="qm"')}${tx(790, 330, 120, "?", C.paper, "middle", 'class="qm"')}</g>` +
+        vf(), C.dgreen));
+
+      reseed(41);
+      put("s2e", svg(std +
+        `<g id="scr" class="cut"><rect x="250" y="520" width="26" height="200" fill="#2B2B2B"/><rect x="804" y="520" width="26" height="200" fill="#2B2B2B"/><rect x="180" y="235" width="720" height="320" rx="14" fill="#1B1B1B"/><rect x="204" y="259" width="672" height="272" fill="#22313A"/><circle cx="470" cy="395" r="80" fill="${C.red}"/><rect x="520" y="330" width="120" height="90" fill="${C.gold}" transform="rotate(-14 580 375)"/><rect x="690" y="275" width="170" height="56" fill="${C.stamp}"/>${tx(775, 319, 42, "REPLAY", C.paper)}</g>` +
+        guy("g2", 540, 900, 0.82, { ...bancroft, m: "o" }) +
+        drop("sw", 360, 800) + drop("sw", 725, 770) + drop("sw", 745, 880, 0.8) +
+        `<g id="hide">${sand(585, 965, 130, 96, "spH")}${hand("hH", 735, 1035, 0.9, 1)}</g>` +
+        `<g class="cut"><polygon points="250,1215 830,1215 880,1920 610,1920 540,1560 470,1920 200,1920" fill="#EFE8D6"/><rect x="250" y="1215" width="580" height="46" fill="#CFC5AA"/><rect x="330" y="1203" width="24" height="70" fill="#EFE8D6"/><rect x="726" y="1203" width="24" height="70" fill="#EFE8D6"/><path d="M540 1261V1560M650 1300Q770 1320 800 1440" stroke="#CFC5AA" stroke-width="8" fill="none"/></g>` +
+        `<g class="cut">${tx(150, 800, 300, "!", C.stamp, "middle", 'class="ex"')}${tx(935, 800, 300, "!", C.stamp, "middle", 'class="ex"')}</g>`, "#6F9A4B"));
+
+      reseed(51);
+      let fl = "";
+      [[130, 420], [960, 640], [180, 930], [900, 300], [70, 680], [1000, 980]].forEach((p) => {
+        fl += `<g class="fl" opacity="0"><circle cx="${p[0]}" cy="${p[1]}" r="90" fill="#fff" opacity=".5"/><polygon points="${p[0]},${p[1] - 150} ${p[0] + 26},${p[1] - 26} ${p[0] + 150},${p[1]} ${p[0] + 26},${p[1] + 26} ${p[0]},${p[1] + 150} ${p[0] - 26},${p[1] + 26} ${p[0] - 150},${p[1]} ${p[0] - 26},${p[1] - 26}" fill="#fff"/></g>`;
+      });
+      let mics = "";
+      [400, 540, 680].forEach((x, i) => {
+        mics += `<rect x="${x - 8}" y="1070" width="16" height="80" fill="#2B2B2B"/><ellipse cx="${x}" cy="1040" rx="44" ry="60" fill="${[C.red, "#2B2B2B", C.gold][i]}"/>`;
+      });
+      put("s3", svg(
+        `<rect x="0" y="0" width="1080" height="1140" fill="#22364A"/><rect x="120" y="0" width="200" height="1140" fill="#1C2B3A"/><rect x="760" y="0" width="200" height="1140" fill="#1C2B3A"/>` +
+        fl + guy("g3", 540, 790, 0.9, bancroft) +
+        drop("sw3", 340, 690) + drop("sw3", 742, 660) + drop("sw3", 760, 780, 0.8) +
+        `<g class="cut"><rect y="1140" width="1080" height="780" fill="#5B3D22"/><rect y="1140" width="1080" height="26" fill="#7A5632"/>${mics}</g>` +
+        `<g id="bub" class="cut">${sheet(520, 250, 490, 220, C.paper)}<polygon points="600,462 690,462 610,570" fill="${C.paper}"/>${tx(765, 392, 80, "“STICKY TAPE”", C.ink)}</g>` +
+        `<g transform="rotate(-8 765 358)"><rect id="stk" x="535" y="346" width="460" height="24" fill="${C.stamp}"/></g>` +
+        sand(490, 230, 550, 270, "sp3", tx(765, 408, 112, "SANDPAPER", C.ink)), "#1C2B3A"));
+
+      reseed(61);
+      const hcov = (x) => `<rect x="${x - 34}" y="870" width="68" height="290" fill="${C.paper}"/><rect x="${x - 62}" y="752" width="124" height="130" rx="46" fill="#E2AC82"/><path d="M${x - 26} 752v46M${x} 752v52M${x + 26} 752v46" stroke="#D69E73" stroke-width="5"/>`;
+      put("s4", svg(
+        `<polygon points="0,0 660,0 420,1920 0,1920" fill="#8E2A1E"/>` +
+        `<g id="plan" class="cut"><g transform="rotate(-5 310 375)">${sheet(90, 250, 440, 250, C.paper)}${tx(120, 335, 68, "THE PLAN", C.stamp, "start")}<circle cx="185" cy="420" r="46" fill="${C.red}"/><path d="M252 420H338M316 396L342 420L316 444" stroke="${C.ink}" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="370" y="378" width="110" height="84" fill="${C.gold}"/></g></g>` +
+        `<circle class="td" cx="330" cy="545" r="20" fill="${C.paper}"/><circle class="td" cx="312" cy="590" r="12" fill="${C.paper}"/>` +
+        `<path id="look" d="M712 792L528 520" stroke="${C.paper}" stroke-width="10" stroke-dasharray="26 18" fill="none" stroke-linecap="round" opacity="0"/>` +
+        guy("g4", 290, 800, 0.74, { hair: "#C9A25E", m: "smirk" }) +
+        `<g id="t4" class="cut">${sheet(60, 1135, 470, 84, C.ink, 8)}${tx(295, 1197, 46, "WARNER · VICE-CAPTAIN", C.gold)}</g>` +
+        `<g id="smi">${guy("g5", 800, 800, 0.74, { hair: "#B58A4A", m: "o" })}<g id="hs" class="cut">${hcov(752)}${hcov(848)}</g></g>` +
+        `<g id="t5" class="cut">${sheet(600, 1135, 410, 84, C.ink, 8)}${tx(805, 1197, 46, "SMITH · CAPTAIN", C.gold)}</g>`, C.green));
+
+      reseed(71);
+      const sad = { m: "frown" };
+      put("s5", svg(
+        `<g id="ttl" class="cut">${sheet(130, 235, 820, 96, C.ink, 8)}${tx(540, 304, 56, "CRICKET AUSTRALIA'S VERDICT", C.paper)}</g>` +
+        `<g id="pq" class="cut">${tx(540, 1010, 600, "?", C.stamp)}</g>` +
+        card("c1", 95, 355, -3, "g6", { hair: "#B58A4A", ...sad }, "SMITH") +
+        card("c2", 585, 355, 3, "g7", { hair: "#C9A25E", ...sad }, "WARNER") +
+        card("c3", 340, 810, -2, "g8", { ...bancroft, ...sad }, "BANCROFT") +
+        drop("tear", 268, 565, 0.5) + drop("tear", 322, 565, 0.5) +
+        stamp("st1", 295, 600, "12 MONTHS") + stamp("st2", 785, 600, "12 MONTHS") + stamp("st3", 540, 1055, "9 MONTHS"), "#C9A46A"));
+
+      reseed(81);
+      const board = `<g id="sb" class="cut">${sheet(130, 250, 820, 440, C.ink, 8)}${tx(540, 335, 52, "SERIES RESULT", C.gold)}${tx(180, 480, 88, "SOUTH AFRICA", C.paper, "start")}${tx(180, 628, 88, "AUSTRALIA", C.paper, "start")}<g id="tl1"><rect x="770" y="388" width="130" height="118" fill="${C.paper}"/>${tx(835, 484, 104, "3", C.ink)}</g><g id="tl2"><rect x="770" y="536" width="130" height="118" fill="${C.stamp}"/>${tx(835, 632, 104, "1", C.paper)}</g></g>`;
+      const bn6 = banner("bn6", 110, 800);
+      const sc6 = scraps("scB", 540, 900, 12);
+      reseed(11);
+      put("s6", svg(
+        rays("r6", 540, 900, 20, "#1A4A3A") + board + bn6 + sc6 +
+        ball("b6", 540, 1140, 120, `<g fill="none" stroke="#E8A79B" stroke-width="7" stroke-linecap="round"><path d="M570 1080l44-14M576 1106l56-14M584 1132l50-10M592 1158l40-8"/></g>`) +
+        sand(240, 380, 600, 560, "sp6"), C.dgreen));
+
+      reseed(91);
+      document.getElementById("wipe").innerHTML = `<svg viewBox="0 0 1500 2300" width="1500" height="2300" xmlns="http://www.w3.org/2000/svg"><polygon id="wp" points="${torn(20, 20, 1460, 2260, 60, 90)}" fill="${C.paper}"/></svg>`;
+
+      // ---------- timeline (cut to the voiceover in assets/voiceover.mp3) ----------
+      const tl = gsap.timeline({ paused: true });
+      const CC = "50% 50%";
+      gsap.set("#r1", { svgOrigin: "540 700" });
+      gsap.set("#sp1,#sp6", { svgOrigin: "540 660" });
+      gsap.set("#r2", { svgOrigin: "500 800" });
+      gsap.set("#r6", { svgOrigin: "540 900" });
+      gsap.set("#camA", { svgOrigin: "540 1650" });
+      gsap.set("#camZ", { svgOrigin: "540 800" });
+      gsap.set("#bub", { transformOrigin: "20% 100%" });
+      gsap.set("#stk", { transformOrigin: "0% 50%" });
+      gsap.set("#ts1,#yr,#pq,#bn1L,#bn1R,#bn6L,#bn6R,.scA,.scB,#tg1,#b2,#rub,#hl,.qm,.ex,.fl,#sp3,#plan,.td,#t4,#t5,#st1,#st2,#st3,#tl1,#tl2,#b6,.browL,.browR,.eye,.pupil", { transformOrigin: CC });
+      const pop = (sel, t, d = 0.22) => tl.fromTo(sel, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: d, ease: "back.out(2.2)" }, t);
+      const slam = (sel, t, r = 0) => tl.fromTo(sel, { scale: 3.2, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.14, ease: "power4.in" }, t);
+      const shake = (sel, t, a = 22) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t).to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04).to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08).to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") => tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+      function face(id, t, o, d = 0.1) {
+        const q = (s) => `#${id} ${s}`;
+        if (o.m) { tl.set(q(".m"), { opacity: 0 }, t); tl.set(q(".m-" + o.m), { opacity: 1 }, t + 0.001); }
+        if (o.b) {
+          tl.to(q(".browL"), { rotation: o.b[0], y: o.b[2] || 0, duration: d }, t);
+          tl.to(q(".browR"), { rotation: o.b[1], y: o.b[2] || 0, duration: d }, t);
+        }
+        if (o.e != null) tl.to(q(".eye"), { scale: o.e, duration: d }, t);
+        if (o.p) tl.to(q(".pupil"), { x: o.p[0], y: o.p[1], duration: d }, t);
+        if (o.ps != null) tl.to(q(".pupil"), { scale: o.ps, duration: d }, t);
+      }
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.75, ease: "power2.out", immediateRender: false }, t);
+        });
+      const sweat = (cls, t) => gsap.utils.toArray("." + cls).forEach((el, i) => tl.fromTo(el, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1, immediateRender: false }, t + i * 0.06).to(el, { y: 90, opacity: 0, duration: 0.5, ease: "power1.in" }, t + i * 0.06 + 0.2));
+      const blink = (sel, times) => times.forEach((t) => { tl.set(sel, { opacity: 0.15 }, t); tl.set(sel, { opacity: 1 }, t + 0.12); });
+
+      // captions
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 5 : -5, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.5 : 1.5, opacity: 1, duration: 0.14, ease: "back.out(2.6)" }, t);
+      });
+
+      // wipes
+      gsap.set("#wipe", { x: -1700 });
+      [[5.3, C.paper, 1], [15.9, C.stamp, -1], [19.9, C.gold, 1], [27.45, C.ink, -1], [34.3, C.paper, 1]].forEach(([t, c, dir]) => {
+        tl.set("#wp", { fill: c }, t - 0.19);
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300 }, { x: dir > 0 ? 1300 : -1700, duration: 0.36, ease: "none" }, t - 0.18);
+      });
+
+      // S1 0-5.3  "One piece of sandpaper... shredded a nation's reputation."
+      tl.fromTo("#r1", { rotation: 0 }, { rotation: 36, duration: 5.3, ease: "none" }, 0);
+      zoom("s1", 0, 5.3, 1, 1.1);
+      tl.fromTo("#sp1", { scale: 4, rotation: -14, x: 0, y: 300 }, { scale: 1, rotation: -6, y: 0, duration: 0.42, ease: "power4.out" }, 0);
+      shake("#s1 .cam", 0.4, 16);
+      pop("#ts1", 0.5);
+      tl.fromTo("#bn1", { y: 1000 }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, 1.0);
+      tl.to("#sp1", { rotation: -2, duration: 1.6, ease: "sine.inOut" }, 0.5);
+      tl.to("#sp1", { x: -130, y: 340, rotation: -22, duration: 0.18, ease: "power2.in" }, 2.2);
+      tl.to("#sp1", { x: 170, y: 420, rotation: 9, duration: 0.13, ease: "none" }, 2.38);
+      tl.to("#sp1", { x: -70, y: 380, rotation: -12, duration: 0.1, ease: "none" }, 2.51);
+      tl.to("#bn1L", { x: -150, y: 70, rotation: -14, duration: 0.5, ease: "power3.out" }, 2.62);
+      tl.to("#bn1R", { x: 150, y: 110, rotation: 11, duration: 0.5, ease: "power3.out" }, 2.62);
+      burst("scA", 2.62, 1000, -500, 400);
+      shake("#s1 .cam", 2.62, 30);
+      tl.to("#sp1", { x: 620, y: -1000, rotation: 50, duration: 0.5, ease: "power2.in" }, 2.75);
+      tl.to("#bn1L", { y: 85, rotation: -17, duration: 2.15, ease: "none" }, 3.15);
+      tl.to("#bn1R", { y: 130, rotation: 14, duration: 2.15, ease: "none" }, 3.15);
+
+      // S2a 5.3-8.75  "Cape Town. 2018."
+      zoom("s2a", 5.3, 3.45, 1, 1.14);
+      tl.fromTo("#mtB", { y: 700 }, { y: 0, duration: 0.45, ease: "back.out(1.2)" }, 5.3);
+      tl.fromTo("#mtF", { y: 600 }, { y: 0, duration: 0.45, ease: "back.out(1.2)" }, 5.37);
+      tl.fromTo("#sun", { y: 500 }, { y: 0, duration: 0.6, ease: "back.out(1.4)" }, 5.4);
+      tl.to("#sun", { y: -70, duration: 2.7, ease: "none" }, 6.05);
+      tl.fromTo("#fld", { y: 500 }, { y: 0, duration: 0.4, ease: "power3.out" }, 5.3);
+      tl.fromTo("#tgA", { x: -900 }, { x: 0, duration: 0.25, ease: "back.out(1.3)" }, 5.6);
+      tl.fromTo("#tgB", { x: -1100 }, { x: 0, duration: 0.25, ease: "back.out(1.3)" }, 5.8);
+      slam("#yr", 6.85, -12);
+      shake("#s2a .cam", 6.99, 24);
+
+      // S2b 8.75-9.65  "Cameras caught"
+      tl.fromTo("#camA", { x: 1000, rotation: 20 }, { x: 0, rotation: 0, duration: 0.32, ease: "back.out(1.5)" }, 8.75);
+      shake("#s2b .cam", 9.05, 14);
+      [9.0, 9.15].forEach((t) => { tl.set("#recA", { opacity: 0.15 }, t); tl.set("#recA", { opacity: 1 }, t + 0.07); });
+      tl.to("#glint", { opacity: 0, duration: 0.1 }, 9.33);
+      tl.fromTo("#camZ", { scale: 1 }, { scale: 13, duration: 0.28, ease: "power3.in", immediateRender: false }, 9.37);
+
+      // S2c 9.65-10.85  "Cameron Bancroft"
+      tl.fromTo("#ir", { opacity: 1 }, { opacity: 0, duration: 0.14 }, 9.65);
+      zoom("s2c", 9.65, 0.35, 1.3, 1, "50% 42%", "power3.out");
+      zoom("s2c", 10.0, 0.85, 1, 1.06, "50% 42%");
+      face("g1", 9.65, { b: [9, -9, 8], p: [-15, 12] }, 0.01);
+      face("g1", 9.95, { p: [16, 12] });
+      face("g1", 10.3, { p: [-16, 12] });
+      face("g1", 10.6, { p: [16, 12] });
+      pop("#tg1", 9.8);
+      blink("#s2c .rec", [9.9, 10.4]);
+
+      // S2d 10.85-13.3  "rubbing the ball with something yellow..."
+      tl.fromTo("#r2", { rotation: 0 }, { rotation: -24, duration: 2.45, ease: "none" }, 10.85);
+      zoom("s2d", 10.85, 0.25, 1.25, 1, "50% 42%", "power3.out");
+      tl.fromTo("#rub", { x: -50, y: 20 }, { x: 60, y: -20, duration: 0.09, ease: "sine.inOut", repeat: 8, yoyo: true }, 10.9);
+      tl.fromTo("#b2", { rotation: -2 }, { rotation: 2, duration: 0.09, ease: "sine.inOut", repeat: 8, yoyo: true }, 10.9);
+      gsap.utils.toArray(".sc").forEach((el, i) => tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.05 }, i < 5 ? 11.0 + i * 0.14 : 12.95 + (i - 5) * 0.1));
+      gsap.utils.toArray(".gr").forEach((el, i) =>
+        tl.fromTo(el, { x: 0, y: 0, opacity: 1 }, { x: 80 + rnd() * 260, y: -280 + rnd() * 420, opacity: 0, duration: 0.4, ease: "power2.out", immediateRender: false }, i < 12 ? 10.95 + i * 0.06 : 12.95 + (i - 12) * 0.05));
+      tl.to("#rub", { x: 80, y: -70, rotation: 5, duration: 0.14, ease: "power2.out" }, 11.79);
+      zoom("s2d", 11.79, 0.3, 1, 1.16, "72% 30%", "power3.out");
+      tl.set("#hl", { opacity: 0 }, 10.85);
+      tl.fromTo("#hl", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "power3.in", immediateRender: false }, 11.86);
+      tl.to("#hl", { rotation: 70, duration: 0.86, ease: "none" }, 12.02);
+      gsap.utils.toArray(".qm").forEach((el, i) => { tl.set(el, { opacity: 0 }, 10.85); pop(el, 11.95 + i * 0.1, 0.16); tl.to(el, { opacity: 0, duration: 0.08 }, 12.88); });
+      tl.to("#hl", { opacity: 0, duration: 0.08 }, 12.88);
+      zoom("s2d", 12.88, 0.12, 1.16, 1, "72% 30%", "power2.in");
+      tl.fromTo("#rub", { x: -50, y: 20, rotation: 0 }, { x: 60, y: -20, duration: 0.07, ease: "sine.inOut", repeat: 4, yoyo: true, immediateRender: false }, 12.94);
+      blink("#s2d .rec", [11.2, 11.7, 12.3, 13.0]);
+
+      // S2e 13.3-15.9  "then desperately hiding it." + exhale
+      zoom("s2e", 13.3, 0.22, 1.28, 1, "50% 45%", "power3.out");
+      zoom("s2e", 13.6, 2.3, 1, 1.07, "50% 45%");
+      tl.fromTo("#scr", { y: -700 }, { y: 0, duration: 0.26, ease: "back.out(1.4)" }, 13.3);
+      face("g2", 13.3, { e: 1.32, ps: 0.55, b: [-12, 12, -26] }, 0.01);
+      gsap.utils.toArray(".ex").forEach((el, i) => slam(el, 13.48 + i * 0.1, i ? 20 : -20));
+      shake("#s2e .cam", 13.62, 26);
+      sweat("sw", 13.55);
+      tl.fromTo("#hide", { x: 0, y: 0 }, { x: -70, y: 290, duration: 0.7, ease: "power2.in" }, 13.75);
+      face("g2", 13.95, { p: [20, 0] });
+      face("g2", 14.2, { p: [-20, 0] });
+      face("g2", 14.45, { p: [20, 0] });
+      face("g2", 14.7, { p: [-20, 0], m: "flat" });
+      face("g2", 15.0, { p: [0, 0] });
+      face("g2", 15.42, { m: "o", e: 1, ps: 1, b: [-6, 6, -8] }, 0.15);
+      sweat("sw", 15.45);
+
+      // S3 15.9-19.9  "He said it was sticky tape." / "It was sandpaper."
+      zoom("s3", 15.9, 2.4, 1, 1.06, "50% 42%");
+      face("g3", 15.9, { b: [-14, 14, -10], p: [12, 6] }, 0.01);
+      tl.fromTo("#bub", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: "back.out(2)" }, 16.28);
+      [16.28, 16.58, 16.88, 17.18, 17.48, 17.75].forEach((t) => { face("g3", t, { m: "talk" }); face("g3", t + 0.15, { m: "flat" }); });
+      face("g3", 17.2, { p: [-12, 6] });
+      [16.0, 16.6, 17.3, 17.9, 18.5, 18.7, 19.0, 19.4].forEach((t, i) => {
+        const el = gsap.utils.toArray(".fl")[i % 6];
+        tl.fromTo(el, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.05, immediateRender: false }, t).to(el, { opacity: 0, duration: 0.08 }, t + 0.06);
+      });
+      tl.fromTo("#stk", { scaleX: 0 }, { scaleX: 1, duration: 0.1, ease: "power2.in" }, 18.16);
+      slam("#sp3", 18.3, -18);
+      tl.set("#bub,#stk", { opacity: 0 }, 18.44);
+      tl.to("#sp3", { rotation: -5, duration: 0.06 }, 18.44);
+      shake("#s3 .cam", 18.44, 34);
+      zoom("s3", 18.44, 0.12, 1.06, 1.16, "50% 40%", "power3.out");
+      zoom("s3", 18.56, 1.34, 1.16, 1.1, "50% 40%");
+      face("g3", 18.44, { m: "teeth", e: 1.32, ps: 0.55, b: [-16, 16, -26], p: [0, 0] });
+      sweat("sw3", 18.55);
+
+      // S4 19.9-27.45  Warner's plan / Smith knew / failed to stop it
+      zoom("s4", 19.9, 5.5, 1, 1.05, "50% 45%");
+      face("g4", 19.9, { b: [16, -16, 6] }, 0.01);
+      tl.fromTo("#g4", { y: 1200 }, { y: 0, duration: 0.3, ease: "back.out(1.5)" }, 20.0);
+      pop("#t4", 20.3);
+      slam("#plan", 21.05, -15);
+      shake("#s4 .cam", 21.19, 22);
+      gsap.utils.toArray(".td").forEach((el, i) => pop(el, 21.3 + i * 0.07, 0.14));
+      face("g4", 21.5, { p: [-12, -10] });
+      face("g5", 19.9, { b: [-8, 8, -14], p: [15, -12] }, 0.01);
+      tl.fromTo("#smi", { x: 800 }, { x: 0, duration: 0.3, ease: "back.out(1.4)" }, 22.55);
+      face("g4", 22.6, { p: [16, 2] });
+      pop("#t5", 22.85);
+      face("g5", 23.85, { p: [-17, -8], e: 1.2, m: "flat" });
+      tl.fromTo("#look", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 23.9);
+      tl.to("#plan", { rotation: 4, duration: 0.1, repeat: 3, yoyo: true, ease: "sine.inOut" }, 24.0);
+      tl.to("#look", { opacity: 0, duration: 0.12 }, 25.2);
+      tl.fromTo("#hs", { y: 1300 }, { y: 0, duration: 0.22, ease: "back.out(1.6)" }, 25.28);
+      shake("#s4 .cam", 25.47, 20);
+      zoom("s4", 25.47, 0.14, 1.05, 1.12, "74% 45%", "power3.out");
+      zoom("s4", 25.61, 1.84, 1.12, 1.2, "74% 45%");
+
+      // S5 27.45-34.3  the punishment
+      tl.fromTo("#ttl", { y: -400 }, { y: 0, duration: 0.25, ease: "back.out(1.4)" }, 27.5);
+      pop("#pq", 27.68, 0.2);
+      tl.to("#pq", { rotation: 8, duration: 0.5, ease: "sine.inOut" }, 27.9);
+      tl.to("#pq", { scale: 0, opacity: 0, duration: 0.1, ease: "power2.in" }, 28.68);
+      tl.fromTo("#c1", { x: -800 }, { x: 0, duration: 0.25, ease: "back.out(1.3)" }, 28.8);
+      tl.fromTo("#c2", { x: 800 }, { x: 0, duration: 0.25, ease: "back.out(1.3)" }, 29.35);
+      ["g6", "g7", "g8"].forEach((g) => face(g, 27.45, { b: [-15, 15, -6], p: [0, 10] }, 0.01));
+      slam("#st1", 30.6);
+      shake("#s5 .cam", 30.74, 30);
+      slam("#st2", 31.0);
+      shake("#s5 .cam", 31.14, 30);
+      gsap.utils.toArray(".tear").forEach((el, i) => tl.fromTo(el, { opacity: 0, y: 0 }, { opacity: 1, duration: 0.08, immediateRender: false }, 31.3 + i * 0.1).to(el, { y: 70, opacity: 0, duration: 0.6, ease: "power1.in" }, 31.4 + i * 0.1));
+      tl.fromTo("#c3", { y: 1200 }, { y: 0, duration: 0.26, ease: "back.out(1.3)" }, 32.39);
+      slam("#st3", 33.31);
+      shake("#s5 .cam", 33.45, 30);
+      zoom("s5", 33.45, 0.85, 1, 1.05, "50% 48%");
+
+      // S6 34.3-41  the cost, then loop back to the sandpaper
+      tl.fromTo("#r6", { rotation: 0 }, { rotation: 44, duration: 6.7, ease: "none" }, 34.3);
+      tl.fromTo("#sb", { y: -900 }, { y: 0, duration: 0.3, ease: "back.out(1.3)" }, 34.35);
+      shake("#s6 .cam", 34.6, 24);
+      tl.fromTo("#tl1", { scaleY: 0 }, { scaleY: 1, duration: 0.12, ease: "back.out(2)" }, 36.4);
+      tl.fromTo("#tl2", { scaleY: 0 }, { scaleY: 1, duration: 0.12, ease: "back.out(2)" }, 36.72);
+      shake("#s6 .cam", 36.8, 18);
+      tl.fromTo("#bn6", { y: 1200 }, { y: 0, duration: 0.3, ease: "back.out(1.3)" }, 37.75);
+      tl.fromTo("#b6", { x: -900, rotation: -600 }, { x: 0, rotation: 0, duration: 0.7, ease: "power2.out" }, 37.9);
+      tl.to("#bn6L", { x: -120, y: 60, rotation: -12, duration: 0.5, ease: "power3.out" }, 39.4);
+      tl.to("#bn6R", { x: 120, y: 90, rotation: 10, duration: 0.5, ease: "power3.out" }, 39.4);
+      burst("scB", 39.4, 1000, -500, 400);
+      shake("#s6 .cam", 39.4, 30);
+      tl.to("#bn6L", { y: 100, rotation: -16, duration: 0.55, ease: "none" }, 39.9);
+      tl.to("#bn6R", { y: 140, rotation: 14, duration: 0.55, ease: "none" }, 39.9);
+      tl.set("#sp6", { opacity: 0 }, 34.3);
+      tl.set("#sp6", { opacity: 1 }, 40.44);
+      tl.fromTo("#sp6", { scale: 0.05, rotation: 70, y: 0 }, { scale: 4, rotation: -14, y: 300, duration: 0.52, ease: "power3.in", immediateRender: false }, 40.46);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
