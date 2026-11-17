@@ -70,6 +70,19 @@ Inspired by iconic cutout and stop-motion aesthetics (e.g., *HyperFrames / Sandp
   - *Act 5: Round 4 — Head-to-Head Demolition (37.5s – 47.6s)* — Starc vs India (35.84 average) vs Bumrah in Australia (17.15 average); `POINT, BUMRAH! TIED AT 2 - 2!` stamp slam (2-2).
   - *Act 6: The Tiebreaker & Dead Heat Outro (47.6s – 57.39s)* — ODI average balance card (23.74 vs 23.96, separated by 0.22); `DEAD HEAT: 2 - 2! WHO TAKES THE NEW BALL?` stamp slam & audience vote call-to-action.
 
+### 6. Imran Khan — Two Legends in One (Bumrah + Steve Smith)
+- **File:** [`imran-khan-two-legends-reel.mp4`](./imran-khan-two-legends-reel.mp4)
+- **Duration:** 52.61 seconds
+- **Framerate:** **60 FPS (Ultra-Smooth, rendered via GPU-Chromium Parallel Pipeline)**
+- **Resolution:** 1080 × 1920 (Vertical 9:16)
+- **Storyline:**
+  - *Act 1: The Trick Question Hook (0.0s – 10.1s)* — Split showdown: Face Jasprit Bumrah or bowl to Steve Smith? Slams `TRICK QUESTION! ONE MAN DID BOTH`.
+  - *Act 2: Jasprit Bumrah — Survival Mode (10.1s – 19.75s)* — High-speed yorker shatters wooden stumps, `~20` Test bowling average card, terrified batter & `SURVIVAL MODE!` stamp.
+  - *Act 3: Steve Smith — Unstoppable (19.75s – 30.35s)* — Quirky head-fidgeting Smith, `55+` Test batting average card, bowlers' tactical chalkboard crossed out in bold red & `UNSTOPPABLE!` stamp.
+  - *Act 4: The Impossible Fusion (30.35s – 35.6s)* — `BUMRAH'S FIRE + BATTER'S BACKBONE` cards locking into a pulsing mystery legend silhouette.
+  - *Act 5: The Reveal — Imran Khan (35.6s – 46.65s)* — Custom 1992 Pakistan green kit character, `362` Test wickets & `3,807` Test runs cards, rising faceted 1992 Crystal World Cup trophy & `1992 WORLD CUP / CHAMPION CAPTAIN` stamp.
+  - *Act 6: Finale — Carried Both (46.65s – 52.61s)* — Bumrah & Smith flanking a crowned Imran Khan holding both bat & ball; `IMRAN KHAN / CARRIED BOTH!` stamp slam.
+
 ---
 
 ## 🛠️ Architecture & Tech Stack
@@ -116,6 +129,14 @@ Project Hope/
 │   ├── index.html                # Master GSAP animation composition
 │   └── standalone.html           # Bundled standalone HTML
 │
+├── imran-khan-two-legends/       # Imran Khan (Bumrah + Smith) Reel Pipeline
+│   ├── assets/                   # Voiceover, fonts & GSAP
+│   ├── preview_frames/           # Render verification snapshots (01 to 08)
+│   ├── renders/                  # Final 60 FPS MP4 & mixed audio master
+│   ├── tools/                    # Speech alignment, SFX synth & preview scripts
+│   ├── index.html                # Master GSAP animation composition
+│   └── standalone.html           # Bundled standalone HTML
+│
 ├── tools/                        # Shared Pipeline Utilities
 │   └── fast_render.py            # Parallel GPU-Chromium CDP + libx264 CRF 18 Master Renderer
 │
@@ -123,7 +144,8 @@ Project Hope/
 ├── kohli-765-runs-reel.mp4       # Master Export (Kohli 765 Runs)
 ├── bat-grains-myth-reel.mp4      # Master 60 FPS Export (Bat Grains Myth vs Fact)
 ├── dhoni-ipl-retirement-reel.mp4 # Master 60 FPS Export (MS Dhoni IPL Retirement)
-└── bumrah-vs-starc-reel.mp4      # Master 60 FPS Export (Bumrah vs Starc Stat Wars)
+├── bumrah-vs-starc-reel.mp4      # Master 60 FPS Export (Bumrah vs Starc Stat Wars)
+└── imran-khan-two-legends-reel.mp4 # Master 60 FPS Export (Imran Khan Two Legends)
 ```
 
 ---

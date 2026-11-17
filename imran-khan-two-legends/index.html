@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Bumrah + Steve Smith = Imran Khan (Two Legends in One)</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Anton";
+        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #0D1612;
+      }
+      #root {
+        position: relative; width: 1080px; height: 1920px; overflow: hidden;
+        font-family: "Anton", sans-serif;
+      }
+      .scene {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        overflow: hidden; z-index: 1;
+      }
+      .cam, .scene svg {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+        display: block;
+      }
+      .cut {
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.36));
+      }
+      .cut-lg {
+        filter: drop-shadow(14px 18px 0 rgba(0, 0, 0, 0.44));
+      }
+      #wipe {
+        position: absolute; left: 0; top: -190px; width: 1600px; height: 2300px; z-index: 5;
+      }
+      #grain {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 8;
+        opacity: 0.22; mix-blend-mode: multiply; pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='11'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .25  0 0 0 .9 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      #vig {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 9;
+        pointer-events: none;
+        background: radial-gradient(ellipse at 50% 48%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.40) 100%);
+      }
+      .cap {
+        position: absolute; left: 50px; width: 980px; top: 1325px; height: 240px;
+        z-index: 10; text-align: center; pointer-events: none;
+      }
+      .cap span {
+        display: inline-block; max-width: 960px; padding: 14px 34px 20px;
+        background: #F6F1E4; color: #1B1B1B;
+        font-size: 76px; line-height: 1.08; letter-spacing: 1px; text-transform: uppercase;
+        filter: drop-shadow(9px 12px 0 rgba(0, 0, 0, 0.36));
+      }
+      .cap b { font-weight: 400; color: #C1121F; }
+      .cap i { font-style: normal; background: #E3B23C; padding: 0 14px; }
+      .cap u { text-decoration: underline; text-decoration-color: #01411C; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="52.62" data-width="1080" data-height="1920">
+      <!-- 6 Narrative Acts (Millisecond-Locked to Voiceover) -->
+      <div id="s1" class="clip scene" data-start="0.0" data-duration="10.10" data-track-index="0"><div class="cam"></div></div>
+      <div id="s2" class="clip scene" data-start="10.10" data-duration="9.65" data-track-index="0"><div class="cam"></div></div>
+      <div id="s3" class="clip scene" data-start="19.75" data-duration="10.60" data-track-index="0"><div class="cam"></div></div>
+      <div id="s4" class="clip scene" data-start="30.35" data-duration="5.25" data-track-index="0"><div class="cam"></div></div>
+      <div id="s5" class="clip scene" data-start="35.60" data-duration="11.05" data-track-index="0"><div class="cam"></div></div>
+      <div id="s6" class="clip scene" data-start="46.65" data-duration="5.97" data-track-index="0"><div class="cam"></div></div>
+
+      <!-- Audio Elements -->
+      <audio id="vo" src="assets/voiceover.mp3" data-start="0" data-duration="52.61" data-volume="1" data-track-index="3"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="52.61" data-volume="0.36" data-track-index="2"></audio>
+
+      <!-- Physical Paper Overlays -->
+      <div id="wipe"></div>
+      <div id="grain"></div>
+      <div id="vig"></div>
+
+      <!-- Millisecond-Synchronized Paper Captions -->
+      <!-- Act 1 -->
+      <div class="clip cap" data-start="0.05" data-duration="5.05" data-track-index="1"><span>QUICK QUESTION: FACE <b>BUMRAH</b>... OR BOWL TO <b>STEVE SMITH?</b></span></div>
+      <div class="clip cap" data-start="5.20" data-duration="4.85" data-track-index="1"><span><i>TRICK QUESTION.</i> ONE MAN MADE BATTERS <b>AND BOWLERS</b> SUFFER.</span></div>
+      <!-- Act 2 -->
+      <div class="clip cap" data-start="10.20" data-duration="3.35" data-track-index="1"><span><b>BUMRAH.</b> THAT ACTION. <i>THOSE YORKERS.</i></span></div>
+      <div class="clip cap" data-start="13.60" data-duration="2.10" data-track-index="1"><span>A TEST AVERAGE <b>AROUND 20.</b></span></div>
+      <div class="clip cap" data-start="15.75" data-duration="3.95" data-track-index="1"><span>BATTERS AREN’T TRYING TO SCORE... JUST TRYING TO <b>SURVIVE.</b></span></div>
+      <!-- Act 3 -->
+      <div class="clip cap" data-start="19.85" data-duration="4.10" data-track-index="1"><span>AND <b>SMITH?</b> AWKWARD. SHUFFLES. FIDGETS...</span></div>
+      <div class="clip cap" data-start="24.00" data-duration="2.50" data-track-index="1"><span>...STILL AVERAGES IN THE <b>MID-FIFTIES!</b></span></div>
+      <div class="clip cap" data-start="26.55" data-duration="3.75" data-track-index="1"><span>BOWLERS PLAN FOR DAYS. HE JUST KEEPS <i>SCORING.</i></span></div>
+      <!-- Act 4 -->
+      <div class="clip cap" data-start="30.50" data-duration="5.05" data-track-index="1"><span>NOW IMAGINE <i>ONE PLAYER</i> WITH <b>BUMRAH’S FIRE</b> &amp; A <b>BATTER’S BACKBONE.</b></span></div>
+      <!-- Act 5 -->
+      <div class="clip cap" data-start="35.70" data-duration="1.30" data-track-index="1"><span><i>IMRAN KHAN.</i></span></div>
+      <div class="clip cap" data-start="37.05" data-duration="2.85" data-track-index="1"><span><b>362</b> TEST WICKETS.</span></div>
+      <div class="clip cap" data-start="39.95" data-duration="2.75" data-track-index="1"><span>OVER <b>3,800</b> TEST RUNS.</span></div>
+      <div class="clip cap" data-start="42.75" data-duration="3.85" data-track-index="1"><span>CAPTAINED PAKISTAN TO THE <b>1992 WORLD CUP!</b></span></div>
+      <!-- Act 6 -->
+      <div class="clip cap" data-start="46.80" data-duration="3.65" data-track-index="1"><span>BUMRAH. SMITH. <b>TWO MODERN GREATS.</b></span></div>
+      <div class="clip cap" data-start="50.50" data-duration="2.10" data-track-index="1"><span><i>IMRAN KHAN</i> <b>CARRIED BOTH.</b></span></div>
+    </div>
+
+    <script>
+      // ---------- Deterministic Random Generator ----------
+      let seed = 92;
+      const reseed = (n) => (seed = n);
+      const rnd = () => {
+        seed = (seed + 0x6d2b79f5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+
+      // ---------- Color Palette ----------
+      const C = {
+        paper: "#F6F1E4",
+        ink: "#1B1B1B",
+        indBlue: "#0066B3",
+        indNavy: "#0B2948",
+        indSaffron: "#FF9933",
+        indGreen: "#138808",
+        ausGold: "#FFCD00",
+        ausGreen: "#004D25",
+        pakDark: "#01411C",
+        pakLime: "#4CAF50",
+        pakGold: "#F4C430",
+        red: "#C1121F",
+        stamp: "#C1121F",
+        tape: "#EDE7BE",
+        willow: "#DFB885",
+        willowDark: "#B98B52"
+      };
+
+      // ---------- SVG Drawing Primitives ----------
+      const svg = (inner, bg) =>
+        `<svg viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="${bg}"/>${inner}</svg>`;
+      const put = (id, html) => (document.querySelector("#" + id + " .cam").innerHTML = html);
+      const tx = (x, y, s, str, fill, anc = "middle", ex = "") =>
+        `<text x="${x}" y="${y}" font-family="Anton" font-size="${s}" fill="${fill}" text-anchor="${anc}" ${ex}>${str}</text>`;
+
+      function torn(x, y, w, h, j = 10, step = 40) {
+        const p = [];
+        for (let i = 0; i <= w; i += step) p.push([x + Math.min(i, w), y + (rnd() - 0.5) * j]);
+        for (let i = step; i <= h; i += step) p.push([x + w + (rnd() - 0.5) * j, y + Math.min(i, h)]);
+        for (let i = w - step; i >= 0; i -= step) p.push([x + Math.max(i, 0), y + h + (rnd() - 0.5) * j]);
+        for (let i = h - step; i > 0; i -= step) p.push([x + (rnd() - 0.5) * j, y + i]);
+        return p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
+      }
+      const sheet = (x, y, w, h, fill, j = 10) => `<polygon points="${torn(x, y, w, h, j)}" fill="${fill}"/>`;
+      const tape = (x, y, w, h, rot = -4) =>
+        `<g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${C.tape}" opacity="0.88"/></g>`;
+      const stamp = (id, cx, cy, l1, l2 = "", rot = -6, col = C.stamp) =>
+        `<g id="${id}" opacity="0"><g transform="rotate(${rot} ${cx} ${cy})"><rect x="${cx - 285}" y="${cy - 92}" width="570" height="184" rx="16" fill="rgba(246,241,228,.95)" stroke="${col}" stroke-width="12" stroke-dasharray="14 8"/>${tx(cx, cy + (l2 ? -10 : 30), l2 ? 74 : 82, l1, col)}${l2 ? tx(cx, cy + 58, 48, l2, col) : ""}</g></g>`;
+      const rays = (id, cx, cy, n, c) => {
+        let s = `<g id="${id}">`;
+        for (let i = 0; i < n; i += 2) {
+          const a = (i * 2 * Math.PI) / n, b = ((i + 1) * 2 * Math.PI) / n;
+          s += `<polygon points="${cx},${cy} ${(cx + 2200 * Math.cos(a)).toFixed(0)},${(cy + 2200 * Math.sin(a)).toFixed(0)} ${(cx + 2200 * Math.cos(b)).toFixed(0)},${(cy + 2200 * Math.sin(b)).toFixed(0)}" fill="${c}"/>`;
+        }
+        return s + "</g>";
+      };
+      const scraps = (cls, cx, cy, n, col1 = C.pakGold, col2 = C.paper) => {
+        let s = "";
+        for (let i = 0; i < n; i++) {
+          const w = 24 + rnd() * 42;
+          s += `<polygon class="${cls}" points="${cx},${cy} ${(cx + w).toFixed(0)},${(cy + rnd() * 20).toFixed(0)} ${(cx + w * 0.6).toFixed(0)},${(cy + w * 0.8).toFixed(0)}" fill="${i % 2 ? col1 : col2}" opacity="0"/>`;
+        }
+        return s;
+      };
+
+      // Clean Vector National Badges (Zero Emoji Dependencies)
+      const badgeIndia = (x, y) => `
+        <g transform="translate(${x}, ${y})">
+          <rect width="46" height="46" rx="8" fill="#FFFFFF" stroke="#111" stroke-width="2"/>
+          <rect x="2" y="2" width="42" height="14" rx="4" fill="#FF9933"/>
+          <rect x="2" y="16" width="42" height="14" fill="#FFFFFF"/>
+          <rect x="2" y="30" width="42" height="14" rx="4" fill="#138808"/>
+          <circle cx="23" cy="23" r="5" fill="#000080"/>
+        </g>`;
+      const badgeAus = (x, y) => `
+        <g transform="translate(${x}, ${y})">
+          <rect width="46" height="46" rx="8" fill="${C.ausGreen}" stroke="${C.ausGold}" stroke-width="3"/>
+          <polygon points="23,7 27,18 39,18 29,25 33,36 23,29 13,36 17,25 7,18 19,18" fill="${C.ausGold}"/>
+        </g>`;
+      const badgePak = (x, y) => `
+        <g transform="translate(${x}, ${y})">
+          <rect width="46" height="46" rx="8" fill="${C.pakDark}" stroke="${C.pakGold}" stroke-width="3"/>
+          <rect x="2" y="2" width="11" height="42" rx="4" fill="#FFFFFF"/>
+          <circle cx="29" cy="23" r="10" fill="#FFFFFF"/>
+          <circle cx="32" cy="21" r="8.5" fill="${C.pakDark}"/>
+          <polygon points="34,15 35.5,18.5 39,18.5 36.2,20.5 37.2,24 34,21.8 30.8,24 31.8,20.5 29,18.5 32.5,18.5" fill="#FFFFFF"/>
+        </g>`;
+
+      // ==========================================
+      // CHARACTERS: BUMRAH, STEVE SMITH, IMRAN KHAN
+      // ==========================================
+
+      // 1. Jasprit Bumrah
+      function char_bumrah(id, x, y, s = 0.75, o = {}) {
+        const skin = "#B87C52", sk2 = "#995F37", hair = "#1C1C1C", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        const armRot = o.arm != null ? o.arm : -25;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <g class="cut">
+            <path d="M-210 420 Q-220 250 -90 210 L90 210 Q220 250 210 420Z" fill="${C.indBlue}"/>
+            <path d="M-55 210 L0 290 L55 210 L35 195 L-35 195Z" fill="${C.indSaffron}"/>
+            <path d="M-90 210 L-55 210 L-65 340 L-110 330 Z" fill="${C.indNavy}"/>
+            <path d="M90 210 L55 210 L65 340 L110 330 Z" fill="${C.indNavy}"/>
+            ${tx(0, 355, 64, "INDIA", "#FFFFFF", "middle", 'font-weight="bold" letter-spacing="4"')}
+            ${tx(0, 408, 40, "BUMRAH", C.indSaffron, "middle", 'font-weight="bold" letter-spacing="2"')}
+            <rect x="-40" y="150" width="80" height="85" rx="16" fill="${sk2}"/>
+          </g>
+          <g class="head cut">
+            <ellipse cx="-145" cy="15" rx="26" ry="38" fill="${sk2}"/><ellipse cx="145" cy="15" rx="26" ry="38" fill="${sk2}"/>
+            <rect x="-140" y="-155" width="280" height="340" rx="130" fill="${skin}"/>
+            <path d="M-138 30 Q-145 185 0 182 Q145 185 138 30 Q115 145 0 148 Q-115 145 -138 30Z" fill="${hair}" opacity="0.78"/>
+            <path d="M-45 92 Q0 70 45 92 Q0 108 -45 92Z" fill="${hair}"/>
+            <path d="M-150 -60 Q-155 -215 0 -215 Q155 -215 150 -60 Q130 -130 0 -130 Q-130 -130 -150 -60Z" fill="${hair}"/>
+            <g class="eye"><circle cx="-60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="-60" cy="5" r="16" fill="${C.ink}"/></g>
+            <g class="eye"><circle cx="60" cy="5" r="34" fill="#fff"/><circle class="pupil" cx="60" cy="5" r="16" fill="${C.ink}"/></g>
+            <rect class="browL" x="-100" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-55" width="78" height="18" rx="6" fill="${hair}"/>
+            <path d="M-10 25 Q-4 68 22 58" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            ${mo("flat", '<rect x="-42" y="115" width="84" height="14" rx="6" fill="#6A2218"/>')}
+            ${mo("o", '<ellipse cx="0" cy="120" rx="28" ry="32" fill="#3D120D"/>')}
+            ${mo("smirk", '<path d="M-45 118 Q14 150 58 102" stroke="#6A2218" stroke-width="12" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-55" y="100" width="110" height="42" rx="12" fill="#fff" stroke="#6A2218" stroke-width="8"/><path d="M-18 102V138M18 102V138M-52 120H52" stroke="#C9B9A8" stroke-width="4"/>')}
+          </g>
+          ${o.noArm ? "" : `<g id="${id}_arm" class="cut" transform="translate(160, 220) rotate(${armRot})">
+            <rect x="0" y="-22" width="150" height="44" rx="16" fill="${C.indBlue}"/>
+            <rect x="130" y="-20" width="115" height="40" rx="14" fill="${skin}"/>
+            <circle cx="245" cy="0" r="32" fill="${C.red}"/>
+            <path d="M 220 0 Q 245 12 270 0" stroke="#FFF" stroke-width="4" fill="none" stroke-dasharray="4 3"/>
+          </g>`}
+        </g></g>`;
+      }
+
+      // 2. Steve Smith (Australia Baggy Green, quirky focused gaze, willow cricket bat!)
+      function char_smith(id, x, y, s = 0.75, o = {}) {
+        const skin = "#F3C3A0", sk2 = "#DA9F76", hair = "#D4A857", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        const batRot = o.batRot != null ? o.batRot : -28;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <g class="cut">
+            <!-- Aussie Test Sweater / Gold-Trimmed Cream Kit -->
+            <path d="M-210 420 Q-220 250 -90 210 L90 210 Q220 250 210 420Z" fill="#FAF6EB" stroke="${C.ausGreen}" stroke-width="8"/>
+            <!-- V-Neck Green & Gold Stripes -->
+            <path d="M-65 210 L0 305 L65 210 L42 195 L0 265 L-42 195Z" fill="${C.ausGreen}"/>
+            <path d="M-46 210 L0 278 L46 210 L32 200 L0 252 L-32 200Z" fill="${C.ausGold}"/>
+            <!-- Baggy Green Crest on Chest -->
+            <circle cx="85" cy="295" r="24" fill="${C.ausGreen}"/>
+            ${tx(85, 303, 18, "AUS", C.ausGold, "middle", 'font-weight="bold"')}
+            ${tx(0, 398, 44, "SMITH", C.ausGreen, "middle", 'font-weight="bold" letter-spacing="3"')}
+            <rect x="-40" y="150" width="80" height="85" rx="16" fill="${sk2}"/>
+          </g>
+          <g class="head cut">
+            <ellipse cx="-142" cy="18" rx="25" ry="36" fill="${sk2}"/><ellipse cx="142" cy="18" rx="25" ry="36" fill="${sk2}"/>
+            <rect x="-138" y="-152" width="276" height="335" rx="125" fill="${skin}"/>
+            <!-- Light stubble -->
+            <path d="M-125 65 Q-130 180 0 178 Q130 180 125 65 Q98 150 0 152 Q-98 150 -125 65Z" fill="#B88E61" opacity="0.32"/>
+            <!-- Iconic Baggy Green Cap -->
+            <path d="M-148 -72 Q-155 -225 0 -225 Q155 -225 148 -72Z" fill="${C.ausGreen}"/>
+            <path d="M-168 -78 Q0 -112 168 -78 Q186 -48 0 -56 Q-186 -48 -168 -78Z" fill="${C.ausGreen}"/>
+            <circle cx="0" cy="-160" r="23" fill="${C.ausGold}"/>
+            ${tx(0, -152, 19, "AUS", C.ausGreen, "middle", 'font-weight="bold"')}
+            <!-- Focused Eyes -->
+            <g class="eye"><circle cx="-58" cy="8" r="33" fill="#fff"/><circle class="pupil" cx="-58" cy="8" r="15" fill="#1F4A6E"/></g>
+            <g class="eye"><circle cx="58" cy="8" r="33" fill="#fff"/><circle class="pupil" cx="58" cy="8" r="15" fill="#1F4A6E"/></g>
+            <!-- Blonde Eyebrows -->
+            <rect class="browL" x="-98" y="-50" width="76" height="16" rx="6" fill="${hair}"/>
+            <rect class="browR" x="22" y="-50" width="76" height="16" rx="6" fill="${hair}"/>
+            <path d="M-8 25 Q-2 66 20 56" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            ${mo("flat", '<rect x="-42" y="114" width="84" height="14" rx="6" fill="#7D3224"/>')}
+            ${mo("smirk", '<path d="M-44 116 Q10 144 54 102" stroke="#7D3224" stroke-width="11" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-54" y="100" width="108" height="40" rx="12" fill="#fff" stroke="#7D3224" stroke-width="8"/><path d="M-18 102V138M18 102V138M-50 120H50" stroke="#C9B9A8" stroke-width="4"/>')}
+          </g>
+          ${o.noBat ? "" : `<!-- Quirky Raised Bat Arm -->
+          <g id="${id}_bat" class="cut" transform="translate(-165, 250) rotate(${batRot})">
+            <!-- Glove & Handle -->
+            <rect x="-18" y="-90" width="24" height="110" rx="8" fill="#1B1B1B"/>
+            <!-- Willow Blade -->
+            <rect x="-42" y="-330" width="72" height="250" rx="12" fill="${C.willow}" stroke="${C.willowDark}" stroke-width="6"/>
+            <line x1="-6" y1="-320" x2="-6" y2="-90" stroke="${C.willowDark}" stroke-width="4" opacity="0.5"/>
+            <!-- Red Bat Sticker -->
+            <rect x="-36" y="-235" width="60" height="54" rx="6" fill="${C.ausGreen}"/>
+            ${tx(-6, -198, 22, "49", C.ausGold, "middle", 'font-weight="bold"')}
+            <!-- Batting Glove -->
+            <rect x="-34" y="-12" width="56" height="48" rx="14" fill="#FFFFFF" stroke="${C.ausGreen}" stroke-width="5"/>
+          </g>`}
+        </g></g>`;
+      }
+
+      // 3. IMRAN KHAN (Legendary 1992 Captain: Flowing dark hair, intense lion gaze, iconic 1992 Pakistan green kit + bat & ball!)
+      function char_imran(id, x, y, s = 0.80, o = {}) {
+        const skin = "#D4A076", sk2 = "#B57F54", hair = "#181818", m = o.m || "smirk";
+        const mo = (n, h) => `<g class="m m-${n}" opacity="${n === m ? 1 : 0}">${h}</g>`;
+        return `<g transform="translate(${x} ${y})"><g id="${id}" transform="scale(${s})">
+          <g class="cut-lg">
+            <!-- Iconic 1992 Pakistan World Cup Jersey -->
+            <path d="M-225 430 Q-235 250 -95 208 L95 208 Q235 250 225 430Z" fill="#2E8B57"/>
+            <!-- 1992 Diagonal Lime & Gold Chest Stripes -->
+            <polygon points="-210,320 210,270 218,308 -216,358" fill="#76D275" opacity="0.88"/>
+            <polygon points="-214,358 218,308 220,330 -216,380" fill="${C.pakGold}" opacity="0.95"/>
+            <!-- Classic Dark Green Collar -->
+            <path d="M-64 208 L0 295 L64 208 L40 190 L-40 190Z" fill="${C.pakDark}"/>
+            <path d="M-38 208 L0 264 L38 208Z" fill="${C.pakGold}"/>
+            <!-- Bold PAKISTAN text -->
+            ${tx(0, 360, 62, "PAKISTAN", "#FFFFFF", "middle", 'font-weight="bold" letter-spacing="4"')}
+            ${tx(0, 412, 42, "IMRAN KHAN", C.pakGold, "middle", 'font-weight="bold" letter-spacing="2"')}
+            <rect x="-42" y="148" width="84" height="86" rx="16" fill="${sk2}"/>
+          </g>
+          <!-- Iconic Head & Flowing 1992 Hair -->
+          <g class="head cut-lg">
+            <!-- Back Flowing Hair Volume -->
+            <path d="M-168 35 Q-188 -125 -110 -208 Q0 -250 110 -208 Q188 -125 168 35 Q150 95 130 60 L-130 60 Q-150 95 -168 35Z" fill="${hair}"/>
+            <ellipse cx="-146" cy="18" rx="25" ry="36" fill="${sk2}"/><ellipse cx="146" cy="18" rx="25" ry="36" fill="${sk2}"/>
+            <!-- Chiseled Face -->
+            <rect x="-140" y="-155" width="280" height="340" rx="122" fill="${skin}"/>
+            <!-- Classic Sideburns -->
+            <rect x="-142" y="-35" width="22" height="72" rx="8" fill="${hair}"/>
+            <rect x="120" y="-35" width="22" height="72" rx="8" fill="${hair}"/>
+            <!-- Swept Forehead Fringe -->
+            <path d="M-148 -65 Q-130 -185 0 -190 Q135 -185 148 -65 Q105 -125 25 -128 Q-65 -135 -148 -65Z" fill="${hair}"/>
+            <!-- Intense Focused Lion Eyes -->
+            <g class="eye"><circle cx="-58" cy="8" r="33" fill="#fff"/><circle class="pupil" cx="-58" cy="8" r="16" fill="#181818"/></g>
+            <g class="eye"><circle cx="58" cy="8" r="33" fill="#fff"/><circle class="pupil" cx="58" cy="8" r="16" fill="#181818"/></g>
+            <!-- Thick Charismatic Eyebrows -->
+            <rect class="browL" x="-102" y="-52" width="84" height="20" rx="6" fill="${hair}" transform="rotate(6 -60 -42)"/>
+            <rect class="browR" x="18" y="-52" width="84" height="20" rx="6" fill="${hair}" transform="rotate(-6 60 -42)"/>
+            <path d="M-8 25 Q-2 68 20 58" stroke="${sk2}" stroke-width="9" fill="none" stroke-linecap="round"/>
+            ${mo("flat", '<rect x="-44" y="114" width="88" height="14" rx="6" fill="#6A2218"/>')}
+            ${mo("smirk", '<path d="M-46 116 Q10 144 56 104" stroke="#6A2218" stroke-width="12" fill="none" stroke-linecap="round"/>')}
+            ${mo("teeth", '<rect x="-56" y="98" width="112" height="42" rx="12" fill="#fff" stroke="#6A2218" stroke-width="8"/><path d="M-18 100V138M18 100V138M-52 119H52" stroke="#C9B9A8" stroke-width="4"/>')}
+          </g>
+          ${o.dualProps ? `
+          <!-- Left Hand: Red Cricket Ball (Bumrah's Fire) -->
+          <g class="cut" transform="translate(-230, 290)">
+            <circle cx="0" cy="0" r="44" fill="${C.red}" stroke="#FFF" stroke-width="4"/>
+            <path d="M-34 0 Q0 16 34 0" stroke="#FFF" stroke-width="5" fill="none" stroke-dasharray="5 4"/>
+          </g>
+          <!-- Right Hand: Willow Cricket Bat (Batter's Backbone) -->
+          <g class="cut" transform="translate(230, 290) rotate(22)">
+            <rect x="-12" y="-30" width="24" height="80" rx="6" fill="#1B1B1B"/>
+            <rect x="-32" y="-220" width="64" height="196" rx="10" fill="${C.willow}" stroke="${C.willowDark}" stroke-width="6"/>
+            <rect x="-26" y="-155" width="52" height="42" rx="5" fill="${C.pakDark}"/>
+            ${tx(0, -125, 22, "IK", C.pakGold, "middle", 'font-weight="bold"')}
+          </g>` : ""}
+        </g></g>`;
+      }
+
+      // 4. Iconic 1992 Waterford Crystal World Cup Trophy
+      function trophy1992(id, cx, cy, s = 1.0) {
+        return `<g transform="translate(${cx} ${cy})"><g id="${id}" transform="scale(${s})" class="cut-lg">
+          <!-- Mahogany Wooden Plinth -->
+          <rect x="-80" y="95" width="160" height="46" rx="8" fill="#4A2511" stroke="${C.pakGold}" stroke-width="4"/>
+          <rect x="-56" y="108" width="112" height="22" rx="4" fill="${C.pakGold}"/>
+          ${tx(0, 126, 18, "1992 WORLD CUP", "#1B1B1B", "middle", 'font-weight="bold"')}
+          <!-- Crystal Stem -->
+          <polygon points="-28,95 -16,25 16,25 28,95" fill="#E3F2FD" stroke="#90CAF9" stroke-width="4"/>
+          <!-- Iconic Flared Faceted Crystal Chalice -->
+          <polygon points="-75,-95 75,-95 45,25 -45,25" fill="rgba(227, 242, 253, 0.94)" stroke="#FFFFFF" stroke-width="6"/>
+          <!-- Crystal Facet Highlights -->
+          <polygon points="-50,-95 -10,-95 -18,25 -35,25" fill="rgba(255,255,255,0.65)"/>
+          <polygon points="15,-95 48,-95 30,25 10,25" fill="rgba(144,202,249,0.45)"/>
+          <!-- Golden Cricket Ball Crown atop -->
+          <circle cx="0" cy="-118" r="24" fill="${C.pakGold}" stroke="#FFF" stroke-width="4"/>
+        </g></g>`;
+      }
+
+      // ==========================================
+      // SCENE 1: Trick Question Hook (0.0s – 10.10s)
+      // ==========================================
+      reseed(101);
+      put("s1", svg(
+        `<rect x="0" y="0" width="540" height="1920" fill="#0B1E33"/>
+         <rect x="540" y="0" width="540" height="1920" fill="#1F1B07"/>
+         <line x1="540" y1="0" x2="540" y2="1920" stroke="${C.paper}" stroke-width="8" stroke-dasharray="22 16"/>` +
+        `<g transform="translate(540, 250)"><g id="s1_header" class="cut">
+          ${sheet(-450, -95, 900, 190, C.paper, 8)}
+          ${tape(-320, -118, 145, 36, -5)}
+          ${tape(185, -118, 145, 36, 5)}
+          ${tx(0, -14, 44, "CRICKET'S ULTIMATE DILEMMA", "#555555")}
+          ${tx(0, 58, 76, "BUMRAH OR STEVE SMITH?", C.red)}
+        </g></g>` +
+        // Country Name Pills
+        `<g class="cut" transform="translate(270, 445)">
+          <rect x="-195" y="-38" width="390" height="76" rx="14" fill="${C.indBlue}" stroke="${C.paper}" stroke-width="5"/>
+          ${badgeIndia(-175, -23)}
+          ${tx(25, 16, 44, "FACE BUMRAH", "#FFFFFF")}
+        </g>` +
+        `<g class="cut" transform="translate(810, 445)">
+          <rect x="-195" y="-38" width="390" height="76" rx="14" fill="${C.ausGreen}" stroke="${C.ausGold}" stroke-width="5"/>
+          ${tx(-28, 16, 44, "BOWL TO SMITH", C.ausGold)}
+          ${badgeAus(130, -23)}
+        </g>` +
+        char_bumrah("s1_bumrah", 265, 800, 0.74, { m: "smirk", arm: -18 }) +
+        char_smith("s1_smith", 815, 800, 0.74, { m: "smirk", batRot: -25 }) +
+        scraps("scS1", 540, 1100, 26, C.red, C.ausGold) +
+        stamp("st1_trick", 540, 1110, "TRICK QUESTION!", "ONE MAN DID BOTH", -5, C.stamp),
+        "#0B1E33"
+      ));
+
+      // ==========================================
+      // SCENE 2: Jasprit Bumrah — Survival Mode (10.10s – 19.75s)
+      // ==========================================
+      reseed(202);
+      put("s2", svg(
+        rays("s2_rays", 540, 680, 24, "rgba(0, 102, 179, 0.22)") +
+        `<g transform="translate(540, 230)"><g id="s2_banner" class="cut">
+          ${sheet(-460, -78, 920, 156, C.paper, 8)}
+          ${tape(-300, -98, 140, 36, -4)}
+          ${tape(165, -98, 140, 36, 5)}
+          ${badgeIndia(-420, -23)}
+          ${tx(20, 20, 56, "THE NIGHTMARE: JASPRIT BUMRAH", C.indNavy)}
+        </g></g>` +
+        // Hero Stat Card
+        `<g transform="translate(540, 625)"><g id="s2_card" class="cut-lg">
+          <rect x="-390" y="-185" width="780" height="370" rx="22" fill="#EBF4FA" stroke="${C.indBlue}" stroke-width="12"/>
+          <rect x="-390" y="-185" width="780" height="68" rx="16" fill="${C.indBlue}"/>
+          ${tx(0, -138, 38, "LETHAL ACTION · UNPLAYABLE YORKERS", "#FFFFFF")}
+          ${tx(0, 30, 148, "~20", C.red, "middle", 'font-weight="bold"')}
+          ${tx(0, 96, 42, "TEST BOWLING AVERAGE", C.indNavy)}
+          <rect x="-250" y="118" width="500" height="48" rx="12" fill="${C.indNavy}"/>
+          ${tx(0, 152, 30, "BATTERS JUST TRY TO SURVIVE", C.indSaffron)}
+        </g></g>` +
+        // Shattered Stumps & Yorker Ball (center lower before stamp)
+        `<g id="s2_stumps" class="cut" transform="translate(540, 1095)">
+          <rect x="-135" y="75" width="270" height="18" rx="6" fill="#C29D6E"/>
+          <g id="s2_st_L" transform="translate(-55, -5)"><rect x="-10" y="-90" width="20" height="180" rx="5" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/></g>
+          <g id="s2_st_M" transform="translate(0, -5)"><rect x="-10" y="-90" width="20" height="180" rx="5" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/></g>
+          <g id="s2_st_R" transform="translate(55, -5)"><rect x="-10" y="-90" width="20" height="180" rx="5" fill="#ECCB98" stroke="#3D2314" stroke-width="4"/></g>
+          <rect id="s2_bail1" x="-52" y="-102" width="50" height="12" rx="4" fill="#C99852"/>
+          <rect id="s2_bail2" x="2" y="-102" width="50" height="12" rx="4" fill="#C99852"/>
+          <!-- Incoming Red Yorker -->
+          <circle id="s2_ball" cx="-460" cy="40" r="24" fill="${C.red}" stroke="#FFF" stroke-width="3"/>
+        </g>` +
+        char_bumrah("s2_bumrah", 125, 1095, 0.50, { m: "teeth", arm: 72 }) +
+        // Terrified cutout batter badge on right
+        `<g id="s2_batter" class="cut" transform="translate(955, 1095)">
+          <circle cx="0" cy="-30" r="68" fill="#E6D5C3" stroke="#1B1B1B" stroke-width="6"/>
+          <path d="M-72 -42 Q0 -118 72 -42Z" fill="#2B3D4F"/>
+          <circle cx="-24" cy="-24" r="16" fill="#FFF"/><circle cx="-24" cy="-24" r="6" fill="#111"/>
+          <circle cx="24" cy="-24" r="16" fill="#FFF"/><circle cx="24" cy="-24" r="6" fill="#111"/>
+          <ellipse cx="0" cy="14" rx="16" ry="20" fill="#3D120D"/>
+          <!-- Sweat Drop -->
+          <path d="M52 -58 Q66 -38 52 -24 Q38 -38 52 -58Z" fill="#4FC3F7"/>
+          <rect x="-78" y="48" width="156" height="50" rx="10" fill="${C.red}"/>
+          ${tx(0, 84, 30, "SURVIVING!", "#FFFFFF")}
+        </g>` +
+        scraps("scS2", 540, 1090, 22, C.indBlue, C.indSaffron) +
+        stamp("st2_survive", 540, 1095, "SURVIVAL MODE!", "NO RUNS ALLOWED", -5, C.stamp),
+        "#081829"
+      ));
+
+      // ==========================================
+      // SCENE 3: Steve Smith — Unstoppable (19.75s – 30.35s)
+      // ==========================================
+      reseed(303);
+      put("s3", svg(
+        rays("s3_rays", 540, 680, 24, "rgba(255, 205, 0, 0.14)") +
+        `<g transform="translate(540, 230)"><g id="s3_banner" class="cut">
+          ${sheet(-460, -78, 920, 156, C.paper, 8)}
+          ${tape(-300, -98, 140, 36, -4)}
+          ${tape(165, -98, 140, 36, 5)}
+          ${badgeAus(-420, -23)}
+          ${tx(20, 20, 56, "THE ANOMALY: STEVE SMITH", C.ausGreen)}
+        </g></g>` +
+        // Left: Smith Stat Card
+        `<g transform="translate(310, 640)"><g id="s3_card_stat" class="cut-lg">
+          <rect x="-235" y="-195" width="470" height="390" rx="22" fill="#FFFBE6" stroke="${C.ausGold}" stroke-width="12"/>
+          <rect x="-235" y="-195" width="470" height="66" rx="16" fill="${C.ausGreen}"/>
+          ${tx(0, -148, 36, "TEST BATTING AVERAGE", "#FFFFFF")}
+          ${tx(0, 26, 145, "55+", C.ausGreen, "middle", 'font-weight="bold"')}
+          ${tx(0, 92, 34, "MID-FIFTIES FOR A DECADE", "#555")}
+          <rect x="-165" y="114" width="330" height="48" rx="12" fill="${C.ausGreen}"/>
+          ${tx(0, 148, 30, "SHUFFLES &amp; FIDGETS", C.ausGold)}
+        </g></g>` +
+        // Right: Bowlers' Tactical Plan Chalkboard (gets crossed out!)
+        `<g transform="translate(790, 640)"><g id="s3_plan_card" class="cut">
+          <rect x="-215" y="-195" width="430" height="390" rx="22" fill="#182A20" stroke="${C.paper}" stroke-width="10"/>
+          ${tx(0, -138, 36, "BOWLERS' PLAN", C.ausGold)}
+          <!-- Chalkboard Cricket Pitch & Field X's -->
+          <rect x="-28" y="-92" width="56" height="190" rx="6" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-dasharray="8 6"/>
+          ${tx(-110, -45, 34, "X", "#FFF")}
+          ${tx(110, -45, 34, "X", "#FFF")}
+          ${tx(-125, 45, 34, "X", "#FFF")}
+          ${tx(120, 60, 34, "X", "#FFF")}
+          <path d="M-80 115 Q0 10 85 -75" stroke="#FF6B6B" stroke-width="6" fill="none" stroke-dasharray="10 6"/>
+          ${tx(0, 152, 30, "PLANNED FOR DAYS...", "#CCCCCC")}
+          <!-- Giant Red X Cross-out (animates at 28.5s!) -->
+          <g id="s3_cross" opacity="0">
+            <line x1="-175" y1="-145" x2="175" y2="145" stroke="${C.red}" stroke-width="24" stroke-linecap="round"/>
+            <line x1="175" y1="-145" x2="-175" y2="145" stroke="${C.red}" stroke-width="24" stroke-linecap="round"/>
+          </g>
+        </g></g>` +
+        // Smith Character fidgeting on left
+        char_smith("s3_smith", 125, 1100, 0.48, { m: "smirk", noBat: true }) +
+        // Animated bat icon on right
+        `<g id="s3_bat_badge" class="cut" transform="translate(945, 1100)">
+          <circle cx="0" cy="0" r="85" fill="${C.ausGreen}" stroke="${C.ausGold}" stroke-width="8"/>
+          ${tx(0, -6, 62, "4 &amp; 6", C.ausGold)}
+          ${tx(0, 40, 28, "NON-STOP", "#FFFFFF")}
+        </g>` +
+        scraps("scS3", 540, 1095, 24, C.ausGold, C.paper) +
+        stamp("st3_scoring", 540, 1095, "UNSTOPPABLE!", "JUST KEEPS SCORING", 5, C.ausGreen),
+        "#121A0E"
+      ));
+
+      // ==========================================
+      // SCENE 4: The Impossible Fusion (30.35s – 35.60s)
+      // ==========================================
+      reseed(404);
+      put("s4", svg(
+        rays("s4_rays", 540, 740, 24, "rgba(244, 196, 48, 0.14)") +
+        `<g transform="translate(540, 225)"><g id="s4_banner" class="cut">
+          ${sheet(-440, -76, 880, 152, C.paper, 8)}
+          ${tape(-280, -96, 140, 36, -4)}
+          ${tape(160, -96, 140, 36, 5)}
+          ${tx(0, 20, 56, "NOW IMAGINE ONE PLAYER...", C.ink)}
+        </g></g>` +
+        // Left Fusion Card: Bumrah's Fire
+        `<g transform="translate(275, 580)"><g id="s4_fire" class="cut-lg">
+          <rect x="-210" y="-145" width="420" height="290" rx="22" fill="#0B2948" stroke="${C.red}" stroke-width="10"/>
+          ${tx(0, -62, 46, "BUMRAH'S FIRE", C.indSaffron)}
+          ${tx(0, 28, 72, "LETHAL PACE", "#FFFFFF")}
+          <rect x="-150" y="64" width="300" height="46" rx="10" fill="${C.red}"/>
+          ${tx(0, 98, 28, "TERRIFIES BATTERS", "#FFFFFF")}
+        </g></g>` +
+        // Plus Sign Center
+        `<g id="s4_plus" class="cut" transform="translate(540, 580)">
+          <circle cx="0" cy="0" r="56" fill="${C.pakGold}" stroke="#1B1B1B" stroke-width="8"/>
+          ${tx(0, 26, 88, "+", "#1B1B1B")}
+        </g>` +
+        // Right Fusion Card: Batter's Backbone
+        `<g transform="translate(805, 580)"><g id="s4_backbone" class="cut-lg">
+          <rect x="-210" y="-145" width="420" height="290" rx="22" fill="#152B1E" stroke="${C.ausGold}" stroke-width="10"/>
+          ${tx(0, -62, 42, "BATTER'S BACKBONE", C.ausGold)}
+          ${tx(0, 28, 72, "PURE GRIT", "#FFFFFF")}
+          <rect x="-150" y="64" width="300" height="46" rx="10" fill="${C.ausGreen}"/>
+          ${tx(0, 98, 28, "BREAKS BOWLERS", "#FFFFFF")}
+        </g></g>` +
+        // Mystery Silhouette below cards
+        `<g id="s4_mystery" class="cut-lg" transform="translate(540, 1020)">
+          <circle cx="0" cy="0" r="195" fill="#012B13" stroke="${C.pakGold}" stroke-width="12" stroke-dasharray="18 12"/>
+          <!-- Dark Player Silhouette -->
+          <circle cx="0" cy="-48" r="64" fill="#0A140F"/>
+          <path d="M-112 135 Q-118 35 -48 16 L48 16 Q118 35 112 135Z" fill="#0A140F"/>
+          ${tx(0, 52, 165, "?", C.pakGold)}
+        </g>`,
+        "#09130D"
+      ));
+
+      // ==========================================
+      // SCENE 5: THE REVEAL — IMRAN KHAN (35.60s – 46.65s)
+      // ==========================================
+      reseed(505);
+      put("s5", svg(
+        rays("s5_rays", 540, 740, 28, "rgba(244, 196, 48, 0.19)") +
+        // Top Pakistan Legend Banner
+        `<g transform="translate(540, 210)"><g id="s5_banner" class="cut-lg">
+          ${sheet(-470, -82, 940, 164, C.paper, 8)}
+          ${tape(-310, -104, 145, 36, -4)}
+          ${tape(175, -104, 145, 36, 5)}
+          ${badgePak(-430, -23)}
+          ${tx(15, 24, 78, "IMRAN KHAN", C.pakDark, "middle", 'letter-spacing="4"')}
+          ${badgePak(385, -23)}
+        </g></g>` +
+        // Left Stat Card: 362 Test Wickets (slams at 37.05s)
+        `<g transform="translate(275, 505)"><g id="s5_stat_wkts" class="cut-lg">
+          <rect x="-215" y="-140" width="430" height="280" rx="22" fill="${C.paper}" stroke="${C.pakGold}" stroke-width="10"/>
+          <rect x="-215" y="-140" width="430" height="58" rx="16" fill="${C.pakDark}"/>
+          ${tx(0, -100, 34, "TEST WICKETS", C.pakGold)}
+          ${tx(0, 36, 128, "362", C.red, "middle", 'font-weight="bold"')}
+          ${tx(0, 96, 32, "22.81 AVG · 23 FIVE-FERS", "#444")}
+        </g></g>` +
+        // Right Stat Card: 3,807 Test Runs (slams at 39.95s)
+        `<g transform="translate(805, 505)"><g id="s5_stat_runs" class="cut-lg">
+          <rect x="-215" y="-140" width="430" height="280" rx="22" fill="${C.paper}" stroke="${C.pakGold}" stroke-width="10"/>
+          <rect x="-215" y="-140" width="430" height="58" rx="16" fill="${C.pakDark}"/>
+          ${tx(0, -100, 34, "TEST RUNS", C.pakGold)}
+          ${tx(0, 36, 118, "3,807", C.pakDark, "middle", 'font-weight="bold"')}
+          ${tx(0, 96, 32, "52.34 AVG AS CAPTAIN", "#444")}
+        </g></g>` +
+        // Center Hero Imran Khan
+        char_imran("s5_imran", 340, 825, 0.65, { m: "smirk" }) +
+        // 1992 Crystal World Cup Trophy rising on right at 42.8s!
+        trophy1992("s5_trophy", 805, 860, 1.05) +
+        scraps("scS5", 540, 1020, 36, C.pakGold, C.paper) +
+        stamp("st5_wc92", 540, 1155, "1992 WORLD CUP", "CHAMPION CAPTAIN", -3, C.pakDark),
+        "#013015"
+      ));
+
+      // ==========================================
+      // SCENE 6: Two Modern Greats — Carried Both (46.65s – 52.62s)
+      // ==========================================
+      reseed(606);
+      put("s6", svg(
+        rays("s6_rays", 540, 740, 28, "rgba(244, 196, 48, 0.22)") +
+        `<g transform="translate(540, 215)"><g id="s6_banner" class="cut">
+          ${sheet(-460, -76, 920, 152, C.paper, 8)}
+          ${tape(-300, -96, 140, 36, -4)}
+          ${tape(165, -96, 140, 36, 5)}
+          ${tx(0, 22, 60, "TWO MODERN GREATS. ONE LEGEND.", C.pakDark)}
+        </g></g>` +
+        // Left: Bumrah Modern Great Card + Mini Portrait
+        `<g id="s6_left_grp">
+          ${char_bumrah("s6_bumrah", 160, 680, 0.50, { m: "smirk", noArm: true })}
+          <g class="cut" transform="translate(160, 935)">
+            <rect x="-125" y="-32" width="250" height="64" rx="12" fill="${C.indBlue}" stroke="${C.paper}" stroke-width="4"/>
+            ${tx(0, 14, 38, "BUMRAH", "#FFFFFF")}
+          </g>
+        </g>` +
+        // Right: Smith Modern Great Card + Mini Portrait
+        `<g id="s6_right_grp">
+          ${char_smith("s6_smith", 920, 680, 0.50, { m: "smirk", noBat: true })}
+          <g class="cut" transform="translate(920, 935)">
+            <rect x="-125" y="-32" width="250" height="64" rx="12" fill="${C.ausGreen}" stroke="${C.ausGold}" stroke-width="4"/>
+            ${tx(0, 14, 38, "STEVE SMITH", C.ausGold)}
+          </g>
+        </g>` +
+        // Center Towering Legend: IMRAN KHAN carrying BOTH (ball & bat!)
+        char_imran("s6_imran", 540, 680, 0.78, { m: "smirk", dualProps: true }) +
+        // Golden Crown atop Imran's head!
+        `<g transform="translate(540, 465)"><g id="s6_crown" class="cut">
+          <polygon points="-75,28 -90,-36 -34,-4 0,-52 34,-4 90,-36 75,28" fill="${C.pakGold}" stroke="#1B1B1B" stroke-width="6"/>
+          <circle cx="0" cy="-52" r="10" fill="${C.red}"/>
+          <circle cx="-90" cy="-36" r="9" fill="#FFFFFF"/>
+          <circle cx="90" cy="-36" r="9" fill="#FFFFFF"/>
+        </g></g>` +
+        scraps("scS6", 540, 1080, 40, C.pakGold, C.paper) +
+        stamp("st6_both", 540, 1110, "IMRAN KHAN", "CARRIED BOTH!", 0, C.stamp),
+        "#022410"
+      ));
+
+      // ==========================================
+      // Full-Screen Torn-Paper Wipe Transition Setup
+      // ==========================================
+      reseed(999);
+      document.getElementById("wipe").innerHTML = `
+        <svg viewBox="0 0 1600 2300" width="1600" height="2300" xmlns="http://www.w3.org/2000/svg">
+          <polygon id="wp" points="${torn(20, 20, 1560, 2260, 60, 90)}" fill="${C.paper}"/>
+        </svg>`;
+
+      // ==========================================
+      // GSAP Master Timeline (Millisecond-Synced)
+      // ==========================================
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines = { main: tl };
+
+      const CC = "50% 50%";
+      gsap.set("#s2_rays, #s3_rays, #s4_rays, #s5_rays, #s6_rays", { svgOrigin: "540 700" });
+      gsap.set(
+        ".eye, .pupil, .browL, .browR, #st1_trick, #st2_survive, #st3_scoring, #st5_wc92, #st6_both, #s2_card, #s3_card_stat, #s3_plan_card, #s3_cross, #s4_fire, #s4_backbone, #s4_plus, #s4_mystery, #s5_stat_wkts, #s5_stat_runs, #s5_trophy, #s6_crown",
+        { transformOrigin: CC }
+      );
+
+      const slam = (sel, t, r = 0) =>
+        tl.fromTo(sel, { scale: 3.1, opacity: 0, rotation: r }, { scale: 1, opacity: 1, rotation: 0, duration: 0.14, ease: "power4.in" }, t);
+      const shake = (sel, t, a = 24) =>
+        tl.to(sel, { x: a, y: -a * 0.6, duration: 0.04 }, t)
+          .to(sel, { x: -a * 0.8, y: a * 0.5, duration: 0.04 }, t + 0.04)
+          .to(sel, { x: a * 0.4, y: a * 0.3, duration: 0.04 }, t + 0.08)
+          .to(sel, { x: 0, y: 0, duration: 0.05 }, t + 0.12);
+      const zoom = (id, t, d, from, to, origin = CC, ease = "none") =>
+        tl.fromTo(`#${id} svg`, { scale: from }, { scale: to, duration: d, ease, transformOrigin: origin }, t);
+
+      function face(id, t, o, d = 0.1) {
+        const q = (s) => `#${id} ${s}`;
+        if (o.m) { tl.set(q(".m"), { opacity: 0 }, t); tl.set(q(".m-" + o.m), { opacity: 1 }, t + 0.001); }
+        if (o.b) {
+          tl.to(q(".browL"), { rotation: o.b[0], y: o.b[2] || 0, duration: d }, t);
+          tl.to(q(".browR"), { rotation: o.b[1], y: o.b[2] || 0, duration: d }, t);
+        }
+        if (o.p) tl.to(q(".pupil"), { x: o.p[0], y: o.p[1], duration: d }, t);
+      }
+
+      const burst = (cls, t, sx, sy0, sy1) =>
+        gsap.utils.toArray("." + cls).forEach((el) => {
+          tl.fromTo(
+            el,
+            { x: 0, y: 0, rotation: 0, opacity: 1 },
+            { x: (rnd() - 0.5) * sx, y: sy0 + rnd() * (sy1 - sy0), rotation: (rnd() - 0.5) * 720, opacity: 0, duration: 0.8, ease: "power2.out", immediateRender: false },
+            t
+          );
+        });
+
+      // Captions pop-in
+      gsap.utils.toArray(".cap span").forEach((el, i) => {
+        const t = +el.parentNode.dataset.start;
+        tl.fromTo(el, { scale: 0.5, rotation: i % 2 ? 4 : -4, opacity: 0 }, { scale: 1, rotation: i % 2 ? -1.4 : 1.4, opacity: 1, duration: 0.14, ease: "back.out(2.5)" }, t);
+      });
+
+      // Torn-paper transitions between scenes
+      gsap.set("#wipe", { x: -1700 });
+      [
+        [10.10, C.indBlue, 1],
+        [19.75, C.ausGold, -1],
+        [30.35, C.paper, 1],
+        [35.60, C.pakDark, -1],
+        [46.65, C.pakGold, 1]
+      ].forEach(([t, c, dir]) => {
+        tl.set("#wp", { fill: c }, t - 0.19);
+        tl.fromTo("#wipe", { x: dir > 0 ? -1700 : 1300 }, { x: dir > 0 ? 1300 : -1700, duration: 0.36, ease: "none" }, t - 0.18);
+      });
+
+      // Clip visibility lifecycle
+      gsap.utils.toArray(".clip").forEach((el) => {
+        const start = +el.dataset.start || 0;
+        const dur = +el.dataset.duration || 0;
+        if (dur > 0) {
+          if (start === 0) {
+            tl.set(el, { display: "block" }, 0);
+          } else {
+            tl.set(el, { display: "none" }, 0);
+            tl.set(el, { display: "block" }, start);
+          }
+          tl.set(el, { display: "none" }, start + dur);
+        }
+      });
+
+      // ------------------------------------------
+      // ACT 1: Trick Question Hook (0.0s – 10.10s)
+      // ------------------------------------------
+      zoom("s1", 0, 10.10, 1.0, 1.06);
+      tl.fromTo("#s1_header", { y: -320, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }, 0.1);
+      face("s1_bumrah", 0.3, { m: "smirk", p: [10, 0] });
+      face("s1_smith", 0.3, { m: "smirk", p: [-10, 0] });
+      tl.to("#s1_bumrah_arm", { rotation: -34, duration: 1.2, yoyo: true, repeat: 6, ease: "sine.inOut" }, 0.4);
+      tl.to("#s1_smith_bat", { rotation: -12, duration: 0.65, yoyo: true, repeat: 10, ease: "sine.inOut" }, 0.4);
+
+      // "Trick question." at 5.28s
+      face("s1_bumrah", 5.25, { m: "teeth", b: [-8, 8, -4] });
+      face("s1_smith", 5.25, { m: "teeth", b: [-8, 8, -4] });
+      slam("#st1_trick", 5.28, -6);
+      burst("scS1", 5.30, 750, -240, 220);
+      shake("#s1 .cam", 5.40, 26);
+
+      // ------------------------------------------
+      // ACT 2: Jasprit Bumrah (10.10s – 19.75s)
+      // ------------------------------------------
+      zoom("s2", 10.10, 9.65, 1.0, 1.06);
+      tl.fromTo("#s2_rays", { rotation: 0 }, { rotation: 24, duration: 9.65, ease: "none" }, 10.10);
+      tl.fromTo("#s2_banner", { y: -260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 10.15);
+
+      // Yorker ball streaks in & shatters stumps at 12.15s ("Those yorkers.")
+      tl.fromTo("#s2_ball", { x: -460, y: 40, opacity: 0 }, { x: 0, y: 20, opacity: 1, duration: 0.25, ease: "power2.in" }, 11.95)
+        .to("#s2_ball", { x: 240, y: -120, opacity: 0, duration: 0.35, ease: "power1.out" }, 12.20);
+      tl.to("#s2_st_L", { x: -135, y: -45, rotation: -108, duration: 0.48, ease: "power2.out" }, 12.20);
+      tl.to("#s2_st_R", { x: 145, y: -40, rotation: 112, duration: 0.48, ease: "power2.out" }, 12.20);
+      tl.to("#s2_bail1", { x: -120, y: -130, rotation: -260, duration: 0.4, ease: "power1.out" }, 12.20)
+        .to("#s2_bail1", { y: 30, rotation: -390, duration: 0.35, ease: "power2.in" }, 12.60);
+      tl.to("#s2_bail2", { x: 120, y: -140, rotation: 260, duration: 0.4, ease: "power1.out" }, 12.20)
+        .to("#s2_bail2", { y: 30, rotation: 390, duration: 0.35, ease: "power2.in" }, 12.60);
+      shake("#s2 .cam", 12.20, 20);
+
+      // "~20 Test average" card pops at 13.60s
+      tl.fromTo("#s2_card", { scale: 0.35, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.42, ease: "back.out(1.7)" }, 13.60);
+
+      // "trying to survive" -> SURVIVAL MODE stamp at 17.50s
+      slam("#st2_survive", 17.50, -6);
+      burst("scS2", 17.50, 720, -240, 200);
+      shake("#s2 .cam", 17.64, 26);
+
+      // ------------------------------------------
+      // ACT 3: Steve Smith (19.75s – 30.35s)
+      // ------------------------------------------
+      zoom("s3", 19.75, 10.60, 1.0, 1.06);
+      tl.fromTo("#s3_rays", { rotation: 0 }, { rotation: -24, duration: 10.60, ease: "none" }, 19.75);
+      tl.fromTo("#s3_banner", { y: -260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 19.80);
+
+      // Quirky Smith side-to-side fidget & shuffle animation!
+      tl.to("#s3_smith .head", { x: 16, rotation: 6, duration: 0.28, yoyo: true, repeat: 14, ease: "sine.inOut" }, 20.60);
+
+      // "averages in the mid-fifties" card pops at 24.00s
+      tl.fromTo("#s3_card_stat", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: "back.out(1.6)" }, 24.00);
+      // "Bowlers plan for days" chalkboard slides in at 26.55s
+      tl.fromTo("#s3_plan_card", { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "back.out(1.5)" }, 26.55);
+      // "He just keeps scoring." -> Red X crosses out plan + UNSTOPPABLE stamp at 28.55s!
+      tl.fromTo("#s3_cross", { scale: 2.2, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.16, ease: "power4.in" }, 28.50);
+      slam("#st3_scoring", 28.60, 6);
+      burst("scS3", 28.60, 720, -240, 200);
+      shake("#s3 .cam", 28.72, 26);
+
+      // ------------------------------------------
+      // ACT 4: The Impossible Fusion (30.35s – 35.60s)
+      // ------------------------------------------
+      zoom("s4", 30.35, 5.25, 1.0, 1.08);
+      tl.fromTo("#s4_rays", { rotation: 0 }, { rotation: 30, duration: 5.25, ease: "none" }, 30.35);
+      tl.fromTo("#s4_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 30.40);
+      tl.fromTo("#s4_mystery", { scale: 0.5, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.5, ease: "back.out(1.5)" }, 30.70);
+      tl.to("#s4_mystery", { scale: 1.07, duration: 0.45, yoyo: true, repeat: 8, ease: "sine.inOut" }, 31.30);
+
+      // "Bumrah's fire" at 32.45s
+      tl.fromTo("#s4_fire", { x: -340, opacity: 0 }, { x: 0, opacity: 1, duration: 0.38, ease: "back.out(1.6)" }, 32.45);
+      tl.fromTo("#s4_plus", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2.2)" }, 33.20);
+      // "and a batter's backbone" at 33.85s
+      tl.fromTo("#s4_backbone", { x: 340, opacity: 0 }, { x: 0, opacity: 1, duration: 0.38, ease: "back.out(1.6)" }, 33.85);
+
+      // ------------------------------------------
+      // ACT 5: THE REVEAL — IMRAN KHAN (35.60s – 46.65s)
+      // ------------------------------------------
+      zoom("s5", 35.60, 11.05, 1.0, 1.06);
+      tl.fromTo("#s5_rays", { rotation: 0 }, { rotation: 36, duration: 11.05, ease: "none" }, 35.60);
+      tl.fromTo("#s5_banner", { scale: 1.8, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.32, ease: "back.out(1.7)" }, 35.65);
+      tl.fromTo("#s5_imran", { y: 380, scale: 0.65, opacity: 0 }, { y: 0, scale: 0.65, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 35.70);
+      shake("#s5 .cam", 35.70, 22);
+
+      // "362 Test wickets" at 37.05s
+      tl.fromTo("#s5_stat_wkts", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.38, ease: "back.out(1.7)" }, 37.05);
+      // "Over 3,800 runs" at 39.95s
+      tl.fromTo("#s5_stat_runs", { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.38, ease: "back.out(1.7)" }, 39.95);
+      // "1992 World Cup" trophy rises at 42.80s!
+      tl.fromTo("#s5_trophy", { y: 420, scale: 0.4, opacity: 0 }, { y: 0, scale: 1.05, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, 42.80);
+      burst("scS5", 43.00, 820, -320, 240);
+      // Stamp slam at 44.50s
+      slam("#st5_wc92", 44.50, -4);
+      shake("#s5 .cam", 44.64, 28);
+
+      // ------------------------------------------
+      // ACT 6: Two Modern Greats — Carried Both (46.65s – 52.62s)
+      // ------------------------------------------
+      zoom("s6", 46.65, 5.97, 1.0, 1.05);
+      tl.fromTo("#s6_rays", { rotation: 0 }, { rotation: 22, duration: 5.97, ease: "none" }, 46.65);
+      tl.fromTo("#s6_banner", { y: -250, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: "back.out(1.4)" }, 46.70);
+
+      // "Bumrah." (46.90s)
+      tl.fromTo("#s6_left_grp", { x: -240, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "back.out(1.6)" }, 46.88);
+      // "Smith." (47.75s)
+      tl.fromTo("#s6_right_grp", { x: 240, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "back.out(1.6)" }, 47.72);
+      // "Imran Khan carried both." (50.60s)
+      tl.fromTo("#s6_imran", { scale: 0.65, opacity: 0 }, { scale: 0.78, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 48.60);
+      tl.fromTo("#s6_crown", { y: -220, opacity: 0, rotation: -18 }, { y: 0, opacity: 1, rotation: 0, duration: 0.35, ease: "back.out(2.0)" }, 50.30);
+      slam("#st6_both", 50.65, 0);
+      burst("scS6", 50.65, 860, -300, 260);
+      shake("#s6 .cam", 50.79, 28);
+    </script>
+  </body>
+</html>
