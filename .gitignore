@@ -1,5 +1,5 @@
-# Ignore files exceeding GitHub 100MB limit
-reference folder/*.zip
+# Ignore reference assets & archives
+reference folder/
 *.zip
 
 # Python caches
