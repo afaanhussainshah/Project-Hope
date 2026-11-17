@@ -116,6 +116,9 @@ Project Hope/
 │   ├── index.html                # Master GSAP animation composition
 │   └── standalone.html           # Bundled standalone HTML
 │
+├── tools/                        # Shared Pipeline Utilities
+│   └── fast_render.py            # Parallel GPU-Chromium CDP + libx264 CRF 18 Master Renderer
+│
 ├── mohammad-amir-2017-reel.mp4   # Master 60 FPS Export (Amir 2017 CT)
 ├── kohli-765-runs-reel.mp4       # Master Export (Kohli 765 Runs)
 ├── bat-grains-myth-reel.mp4      # Master 60 FPS Export (Bat Grains Myth vs Fact)
@@ -144,10 +147,14 @@ Bundles SVGs, Base64 fonts, and GSAP timelines into an isolated zero-dependency 
 python dhoni-ipl-retirement/tools/build_standalone.py
 ```
 
-### 3. Render High-FPS MP4
-Drives headless Chromium via Playwright, steps through the GSAP timeline with millisecond precision, and pipes frames directly into FFmpeg stdin:
+### 3. Render High-FPS MP4 (Fast Parallel GPU-Chromium + `libx264` CRF 18)
+Drives 4 parallel GPU-accelerated headless Chromium CDP tabs, steps through the GSAP timeline in lockstep, and pipes ordered frames directly into a single master `libx264` CRF 18 FFmpeg stream:
 ```bash
-python dhoni-ipl-retirement/tools/render_reel.py
+python tools/fast_render.py \
+  --html "Bumrah vs Starc/standalone.html" \
+  --audio "Bumrah vs Starc/renders/full_audio_mix.wav" \
+  --output "Bumrah vs Starc/renders/bumrah-vs-starc-reel.mp4" \
+  --duration 57.39 --fps 60 --workers 4
 ```
 
 ---
