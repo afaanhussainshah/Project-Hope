@@ -83,6 +83,18 @@ Inspired by iconic cutout and stop-motion aesthetics (e.g., *HyperFrames / Sandp
   - *Act 5: The Reveal — Imran Khan (35.6s – 46.65s)* — Custom 1992 Pakistan green kit character, `362` Test wickets & `3,807` Test runs cards, rising faceted 1992 Crystal World Cup trophy & `1992 WORLD CUP / CHAMPION CAPTAIN` stamp.
   - *Act 6: Finale — Carried Both (46.65s – 52.61s)* — Bumrah & Smith flanking a crowned Imran Khan holding both bat & ball; `IMRAN KHAN / CARRIED BOTH!` stamp slam.
 
+### 7. Virat Kohli — 31 for 4 (MCG 2022 vs Pakistan — The Impossible Miracle)
+- **File:** [`kohli-31-for-4-reel.mp4`](./kohli-31-for-4-reel.mp4)
+- **Duration:** 44.83 seconds
+- **Framerate:** **60 FPS (Ultra-Smooth, Parallel GPU-Chromium CDP Pipeline)**
+- **Resolution:** **True 4K Ultra HD (2160 × 3840, 9:16 Vertical)**
+- **Storyline:**
+  - *Act 1: The Collapse & Impossible Odds (0.0s – 7.1s)* — Scoreboard shock `31/4`; 90,000 crowd roar; Haris Rauf & Shaheen celebration; lone Kohli walking to the middle; `EVERYONE GAVE UP... EXCEPT ONE MAN` stamp slam.
+  - *Act 2: Melbourne Under Siege (7.1s – 14.9s)* — Iconic MCG stadium bowl under floodlights; Pakistan players celebrating; mounting chase mountain `160 TO CHASE`; unbearable pressure gauge; `MELBOURNE SILENCED` stamp slam.
+  - *Act 3: The Slow Reconstruction (14.9s – 23.4s)* — Kohli and Hardik Pandya sprinting hard between the wickets; required rate climbing; pulsing sub-bass heartbeat sound; `113-RUN PARTNERSHIP` & `HE DIDN'T PANIC` stamp slam.
+  - *Act 4: The 19th Over & The Shot That Broke Physics (23.4s – 33.6s)* — 28 needed off 8 balls; Haris Rauf express pace; Kohli's iconic backfoot straight lofted punch over the bowler's head; cricket ball soaring with flame comet trail; second wrist-whip six over fine leg; crowd sonic explosion; `TWO SIXES! A MATCH WON FROM THE GRAVE!` stamp slam.
+  - *Act 5: Early Diwali & The Immortal Question (33.6s – 44.83s)* — Pandya lifting a roaring Kohli; festive Diwali fireworks bursts lighting up Melbourne sky; `82* OFF 53 BALLS · DIWALI CAME EARLY` & closing debate challenge `WAS THIS THE GREATEST INNINGS EVER?` stamp slam.
+
 ---
 
 ## 🛠️ Architecture & Tech Stack

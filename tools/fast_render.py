@@ -186,6 +186,8 @@ def main():
     parser.add_argument("--output", required=True, help="Output MP4 path")
     parser.add_argument("--duration", type=float, required=True, help="Video duration in seconds")
     parser.add_argument("--fps", type=int, default=60, help="Frames per second (default: 60)")
+    parser.add_argument("--width", type=int, default=1080, help="Video width in pixels (default: 1080)")
+    parser.add_argument("--height", type=int, default=1920, help="Video height in pixels (default: 1920)")
     parser.add_argument("--workers", type=int, default=4, help="Parallel Chromium tabs (default: 4)")
     parser.add_argument("--crf", type=int, default=18, help="libx264 CRF quality (default: 18)")
     parser.add_argument("--preset", default="fast", help="libx264 preset (default: fast)")
@@ -203,6 +205,8 @@ def main():
             duration=args.duration,
             fps=args.fps,
             workers=args.workers,
+            width=args.width,
+            height=args.height,
             crf=args.crf,
             preset=args.preset,
             img_format=args.format,

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>31 for 4. Then Kohli Did the Impossible. (MCG 2022)</title>
+  <style>
+    @font-face {
+      font-family: 'Anton';
+      src: url('assets/fonts/Anton-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #040812;
+      font-family: 'Anton', Impact, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #stage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #040812;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      max-width: 100vw;
+      max-height: 100vh;
+      display: block;
+    }
+
+    .paper-cut {
+      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.72));
+    }
+
+    .heavy-shadow {
+      filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.88));
+    }
+
+    .gold-glow {
+      filter: drop-shadow(0 0 32px rgba(245, 184, 46, 0.75)) drop-shadow(0 14px 20px rgba(0, 0, 0, 0.8));
+    }
+
+    .red-glow {
+      filter: drop-shadow(0 0 30px rgba(229, 34, 34, 0.75));
+    }
+  </style>
+  <script src="assets/gsap.min.js"></script>
+</head>
+<body>
+  <div id="stage">
+    <svg id="svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Gradients -->
+        <!-- Radial Vignette: r=75% so all banners from y=250 to y=1650 stay 100% bright -->
+        <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="75%">
+          <stop offset="60%" stop-color="#000" stop-opacity="0" />
+          <stop offset="88%" stop-color="#03060f" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#010307" stop-opacity="0.75" />
+        </radialGradient>
+
+        <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#03060E" />
+          <stop offset="35%" stop-color="#08142C" />
+          <stop offset="75%" stop-color="#0A1836" />
+          <stop offset="100%" stop-color="#040915" />
+        </linearGradient>
+
+        <linearGradient id="floodBeam" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFDF0" stop-opacity="0.85" />
+          <stop offset="30%" stop-color="#F5B82E" stop-opacity="0.32" />
+          <stop offset="100%" stop-color="#0a142c" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="goldTextGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF" />
+          <stop offset="38%" stop-color="#FFF3C4" />
+          <stop offset="75%" stop-color="#F6B92E" />
+          <stop offset="100%" stop-color="#DF8A10" />
+        </linearGradient>
+
+        <linearGradient id="indJersey" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1B60EC" />
+          <stop offset="100%" stop-color="#0B3798" />
+        </linearGradient>
+
+        <linearGradient id="pakJersey" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#15824A" />
+          <stop offset="100%" stop-color="#084224" />
+        </linearGradient>
+      </defs>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- GLOBAL BACKGROUND (Melbourne MCG Arena)                          -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="bg_layer">
+        <rect width="1080" height="1920" fill="url(#skyNight)" />
+
+        <!-- Massive MCG Floodlight Towers -->
+        <g id="floodlight_beams" opacity="0.55">
+          <polygon points="140,40 -140,1180 440,1280" fill="url(#floodBeam)" />
+          <polygon points="940,40 640,1280 1220,1180" fill="url(#floodBeam)" />
+          <circle cx="140" cy="40" r="54" fill="#FFF9E6" filter="drop-shadow(0 0 45px #F5B82E)" />
+          <circle cx="940" cy="40" r="54" fill="#FFF9E6" filter="drop-shadow(0 0 45px #F5B82E)" />
+        </g>
+
+        <!-- MCG Stands & 90,000 Crowd Layers -->
+        <g id="mcg_stands">
+          <path d="M-40 1080 Q540 920 1120 1080 L1120 1560 L-40 1560 Z" fill="#0A1428" />
+          <path d="M-40 1180 Q540 1030 1120 1180 L1120 1560 L-40 1560 Z" fill="#070E1C" />
+          <g id="crowd_dots"></g>
+          <path d="M-40 1280 Q540 1150 1120 1280" stroke="#FAF4E6" stroke-width="6" stroke-opacity="0.25" fill="none" />
+        </g>
+
+        <!-- Turf Field & 22-Yard Pitch Strip -->
+        <g id="turf">
+          <path d="M-40 1330 Q540 1190 1120 1330 L1120 1960 L-40 1960 Z" fill="#144220" />
+          <polygon points="460,1230 620,1230 670,1960 410,1960" fill="#755835" />
+          <polygon points="475,1230 605,1230 645,1960 435,1960" fill="#8E6E44" />
+          <line x1="430" y1="1350" x2="650" y2="1350" stroke="#FAF4E6" stroke-width="8" stroke-linecap="round" />
+          <line x1="390" y1="1720" x2="690" y2="1720" stroke="#FAF4E6" stroke-width="12" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- SCENE 1: THE HOOK & 31/4 COLLAPSE (0.00s – 5.60s)                -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="scene1" opacity="1">
+        <rect id="s1_dark_curtain" width="1080" height="1920" fill="#040812" opacity="0.80" />
+
+        <!-- Massive Digital Broken Scoreboard: 31 / 4 -->
+        <g id="s1_scoreboard" transform="translate(540, 440)" class="heavy-shadow">
+          <rect x="-420" y="-190" width="840" height="380" rx="20" fill="#0C1424" stroke="#253858" stroke-width="10" />
+          <rect x="-400" y="-170" width="800" height="340" rx="12" fill="#050B14" />
+          <path d="M-360 -130 L360 -130" stroke="#E52222" stroke-width="4" stroke-dasharray="14 10" />
+          <text x="0" y="-85" font-family="Anton" font-size="44" fill="#E52222" text-anchor="middle" letter-spacing="8">INDIA &bull; T20 WORLD CUP 2022</text>
+          
+          <text id="s1_score_val" x="-120" y="85" font-family="Anton" font-size="200" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">31</text>
+          <text x="0" y="75" font-family="Anton" font-size="170" fill="#E52222" text-anchor="middle">/</text>
+          <text id="s1_wickets_val" x="120" y="85" font-family="Anton" font-size="200" fill="#E52222" text-anchor="middle" letter-spacing="4">4</text>
+          
+          <rect x="-340" y="115" width="680" height="42" rx="8" fill="#1A253A" />
+          <text x="0" y="145" font-family="Anton" font-size="30" fill="#FFC72C" text-anchor="middle" letter-spacing="6">OVERS: 6.1 &bull; TOP ORDER OBLITERATED</text>
+        </g>
+
+        <!-- Hook Red Torn-Paper Tape: "THE SHOT THAT BROKE A STADIUM" -->
+        <g id="s1_hook_banner" transform="translate(540, 820)" class="heavy-shadow">
+          <polygon points="-480,-65 480,-80 470,75 -475,85" fill="#FAF4E6" />
+          <polygon points="-475,-58 475,-73 465,68 -470,78" fill="#E52222" />
+          <text x="0" y="18" font-family="Anton" font-size="60" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">THE SHOT THAT BROKE A STADIUM</text>
+        </g>
+
+        <!-- Subtitle Prompt Tape: "EXCEPT ONE MAN" -->
+        <g transform="translate(540, 980)">
+          <g id="s1_except_tape" scale="0" class="heavy-shadow">
+            <polygon points="-320,-45 320,-55 315,55 -325,48" fill="#FAF4E6" />
+            <text x="0" y="16" font-family="Anton" font-size="52" fill="#060B18" text-anchor="middle" letter-spacing="6">EXCEPT ONE MAN.</text>
+          </g>
+        </g>
+
+        <!-- Kohli Walking In Alone: Proportional Character Model -->
+        <g id="s1_kohli_walk" transform="translate(540, 1500) scale(0.76)" class="heavy-shadow">
+          <ellipse cx="0" cy="440" rx="180" ry="32" fill="#000" opacity="0.6" />
+          <!-- Torso -->
+          <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="url(#indJersey)"/>
+          <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="#FF7722"/>
+          <path d="M-45 205 L0 270 L45 205Z" fill="#FFF"/>
+          <text x="0" y="380" font-family="Anton" font-size="52" fill="#fff" text-anchor="middle" letter-spacing="4">INDIA</text>
+          <text x="0" y="425" font-family="Anton" font-size="34" fill="#FF7722" text-anchor="middle">18</text>
+          <rect x="-48" y="140" width="96" height="90" rx="18" fill="#995F37"/>
+          <!-- Head -->
+          <g class="head">
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="#995F37"/>
+            <ellipse cx="148" cy="15" rx="26" ry="40" fill="#995F37"/>
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="#B87C52"/>
+            <!-- Beard -->
+            <path d="M-145 20 Q-152 195 0 205 Q152 195 145 20 Q120 155 0 158 Q-120 155 -145 20Z" fill="#181818"/>
+            <path d="M-60 85 Q0 70 60 85 Q30 115 0 100 Q-30 115 -60 85Z" fill="#181818"/>
+            <!-- Cap -->
+            <path d="M-158 -92 Q-160 -262 0 -262 Q160 -262 158 -92Z" fill="#0A2C68"/>
+            <path d="M-178 -94 Q0 -134 178 -94 Q198 -60 0 -70 Q-198 -60 -178 -94Z" fill="#06162D"/>
+            <polygon points="0,-195 6,-180 22,-180 10,-170 14,-155 0,-165 -14,-155 -10,-170 -22,-180 -6,-180" fill="#FFC72C"/>
+            <!-- Eyes -->
+            <circle cx="-62" cy="5" r="36" fill="#fff"/><circle cx="-62" cy="5" r="16" fill="#0A0A0A"/>
+            <circle cx="62" cy="5" r="36" fill="#fff"/><circle cx="62" cy="5" r="16" fill="#0A0A0A"/>
+            <rect x="-105" y="-58" width="85" height="18" rx="6" fill="#181818" transform="rotate(8 -62 -58)"/>
+            <rect x="20" y="-58" width="85" height="18" rx="6" fill="#181818" transform="rotate(-8 62 -58)"/>
+            <path d="M-10 25 Q-4 70 24 60" stroke="#995F37" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <rect x="-44" y="115" width="88" height="14" rx="6" fill="#6A2218"/>
+          </g>
+          <!-- Bat Resting on Shoulder -->
+          <g transform="translate(180, 220) rotate(-40)">
+            <rect x="-24" y="-320" width="48" height="320" rx="10" fill="#FAF4E6" stroke="#C49B60" stroke-width="6"/>
+            <polygon points="-24,-320 24,-320 16,-220 -16,-220" fill="#E52222"/>
+            <text x="0" y="-250" font-family="Anton" font-size="28" fill="#FFF" text-anchor="middle">MRF</text>
+            <rect x="-12" y="0" width="24" height="100" rx="6" fill="#D4A155"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- SCENE 2: THE MCG CRUCIBLE & THE COLLAPSE (5.6s – 15.8s)          -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="scene2" opacity="0">
+        <!-- Melbourne MCG Tag -->
+        <g id="s2_venue_badge" transform="translate(540, 270)" class="paper-cut">
+          <polygon points="-380,-45 380,-45 370,45 -390,45" fill="#FAF4E6" />
+          <text x="0" y="15" font-family="Anton" font-size="44" fill="#0A142C" text-anchor="middle" letter-spacing="6">MELBOURNE CRICKET GROUND &bull; 90,293</text>
+        </g>
+
+        <!-- Target Big Board -->
+        <g id="s2_target_board" transform="translate(540, 460)" class="heavy-shadow">
+          <rect x="-420" y="-110" width="840" height="220" rx="18" fill="#0C1832" stroke="#FAF4E6" stroke-width="8" />
+          <text x="0" y="-35" font-family="Anton" font-size="38" fill="#90CDF4" text-anchor="middle" letter-spacing="6">TARGET TO CHASE</text>
+          <text x="0" y="65" font-family="Anton" font-size="118" fill="#FFC72C" text-anchor="middle" letter-spacing="4">160 RUNS</text>
+        </g>
+
+        <!-- 4 Wicket Cards Stamped OUT -->
+        <g id="s2_wicket_cards" transform="translate(540, 820)">
+          <!-- Rohit -->
+          <g id="s2_c1" transform="translate(-360, 0)" class="paper-cut">
+            <rect x="-85" y="-120" width="170" height="240" rx="14" fill="#FAF4E6" stroke="#0F2B5C" stroke-width="4" />
+            <text x="0" y="-65" font-family="Anton" font-size="28" fill="#0F2B5C" text-anchor="middle">ROHIT</text>
+            <text x="0" y="0" font-family="Anton" font-size="62" fill="#0F2B5C" text-anchor="middle">4</text>
+            <text x="0" y="45" font-family="Anton" font-size="20" fill="#718096" text-anchor="middle">(7b)</text>
+            <g id="s2_out1" transform="rotate(-25)"><rect x="-65" y="-18" width="130" height="36" fill="#E52222" rx="4" /><text x="0" y="9" font-family="Anton" font-size="26" fill="#FFF" text-anchor="middle">OUT</text></g>
+          </g>
+          <!-- Rahul -->
+          <g id="s2_c2" transform="translate(-120, 0)" class="paper-cut">
+            <rect x="-85" y="-120" width="170" height="240" rx="14" fill="#FAF4E6" stroke="#0F2B5C" stroke-width="4" />
+            <text x="0" y="-65" font-family="Anton" font-size="28" fill="#0F2B5C" text-anchor="middle">RAHUL</text>
+            <text x="0" y="0" font-family="Anton" font-size="62" fill="#0F2B5C" text-anchor="middle">4</text>
+            <text x="0" y="45" font-family="Anton" font-size="20" fill="#718096" text-anchor="middle">(8b)</text>
+            <g id="s2_out2" transform="rotate(-25)"><rect x="-65" y="-18" width="130" height="36" fill="#E52222" rx="4" /><text x="0" y="9" font-family="Anton" font-size="26" fill="#FFF" text-anchor="middle">OUT</text></g>
+          </g>
+          <!-- Surya -->
+          <g id="s2_c3" transform="translate(120, 0)" class="paper-cut">
+            <rect x="-85" y="-120" width="170" height="240" rx="14" fill="#FAF4E6" stroke="#0F2B5C" stroke-width="4" />
+            <text x="0" y="-65" font-family="Anton" font-size="28" fill="#0F2B5C" text-anchor="middle">SURYA</text>
+            <text x="0" y="0" font-family="Anton" font-size="62" fill="#0F2B5C" text-anchor="middle">15</text>
+            <text x="0" y="45" font-family="Anton" font-size="20" fill="#718096" text-anchor="middle">(10b)</text>
+            <g id="s2_out3" transform="rotate(-25)"><rect x="-65" y="-18" width="130" height="36" fill="#E52222" rx="4" /><text x="0" y="9" font-family="Anton" font-size="26" fill="#FFF" text-anchor="middle">OUT</text></g>
+          </g>
+          <!-- Axar -->
+          <g id="s2_c4" transform="translate(360, 0)" class="paper-cut">
+            <rect x="-85" y="-120" width="170" height="240" rx="14" fill="#FAF4E6" stroke="#0F2B5C" stroke-width="4" />
+            <text x="0" y="-65" font-family="Anton" font-size="28" fill="#0F2B5C" text-anchor="middle">AXAR</text>
+            <text x="0" y="0" font-family="Anton" font-size="62" fill="#0F2B5C" text-anchor="middle">2</text>
+            <text x="0" y="45" font-family="Anton" font-size="20" fill="#718096" text-anchor="middle">(3b)</text>
+            <g id="s2_out4" transform="rotate(-25)"><rect x="-65" y="-18" width="130" height="36" fill="#E52222" rx="4" /><text x="0" y="9" font-family="Anton" font-size="26" fill="#FFF" text-anchor="middle">OUT</text></g>
+          </g>
+        </g>
+
+        <!-- Unbearable Pressure Dial Meter -->
+        <g id="s2_pressure_gauge" transform="translate(540, 1340)" class="heavy-shadow">
+          <circle cx="0" cy="0" r="220" fill="#0A1224" stroke="#FAF4E6" stroke-width="8" />
+          <path d="M-160 80 A180 180 0 1 1 160 80" stroke="#253858" stroke-width="32" fill="none" />
+          <path d="M40 -175 A180 180 0 0 1 160 80" stroke="#E52222" stroke-width="32" fill="none" />
+          <text x="0" y="-55" font-family="Anton" font-size="34" fill="#A0AEC0" text-anchor="middle" letter-spacing="4">PRESSURE LEVEL</text>
+          <text id="s2_pressure_text" x="0" y="25" font-family="Anton" font-size="74" fill="#E52222" text-anchor="middle">UNBEARABLE</text>
+          <g id="s2_needle" transform="rotate(-60)">
+            <polygon points="-8,20 8,20 0,-170" fill="#FFC72C" />
+            <circle cx="0" cy="0" r="18" fill="#FAF4E6" />
+          </g>
+          <path d="M-45 95 L-25 95 L-15 70 L0 120 L15 80 L25 95 L45 95" stroke="#E52222" stroke-width="6" fill="none" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- SCENE 3: THE 113-RUN REBUILD (15.8s – 26.5s)                     -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="scene3" opacity="0">
+        <!-- Rebuild Header Tape -->
+        <g id="s3_header" transform="translate(540, 310)" class="heavy-shadow">
+          <polygon points="-360,-40 360,-50 350,45 -370,40" fill="#FFC72C" />
+          <text x="0" y="16" font-family="Anton" font-size="48" fill="#060B18" text-anchor="middle" letter-spacing="6">ONE RUN AT A TIME &bull; THE REBUILD</text>
+        </g>
+
+        <!-- Characters: Hardik (Left) & Kohli (Right) Running on Pitch -->
+        <g id="s3_runners" transform="translate(540, 750)">
+          <!-- Hardik Pandya (Left) -->
+          <g id="s3_hardik" transform="translate(-250, 0) scale(0.68)" class="heavy-shadow">
+            <ellipse cx="0" cy="440" rx="180" ry="32" fill="#000" opacity="0.5" />
+            <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="url(#indJersey)"/>
+            <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="#FF7722"/>
+            <text x="0" y="380" font-family="Anton" font-size="52" fill="#fff" text-anchor="middle" letter-spacing="4">HARDIK</text>
+            <text x="0" y="425" font-family="Anton" font-size="34" fill="#FF7722" text-anchor="middle">33</text>
+            <rect x="-48" y="140" width="96" height="90" rx="18" fill="#8C532E"/>
+            <g class="head">
+              <ellipse cx="-148" cy="15" rx="26" ry="40" fill="#8C532E"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="#8C532E"/>
+              <circle cx="148" cy="30" r="8" fill="#FFF" /> <!-- Diamond Stud -->
+              <rect x="-145" y="-160" width="290" height="345" rx="135" fill="#A86C44"/>
+              <path d="M-50 85 Q0 135 50 85 Q30 145 0 148 Q-30 145 -50 85Z" fill="#181818"/> <!-- Goatee -->
+              <path d="M-150 -60 Q-155 -230 0 -230 Q155 -230 150 -60 Q120 -130 0 -125 Q-120 -130 -150 -60Z" fill="#181818"/>
+              <circle cx="-62" cy="5" r="36" fill="#fff"/><circle cx="-62" cy="5" r="16" fill="#0A0A0A"/>
+              <circle cx="62" cy="5" r="36" fill="#fff"/><circle cx="62" cy="5" r="16" fill="#0A0A0A"/>
+              <rect x="-105" y="-55" width="85" height="18" rx="6" fill="#181818"/>
+              <rect x="20" y="-55" width="85" height="18" rx="6" fill="#181818"/>
+              <path d="M-45 110 Q0 150 45 110" stroke="#581616" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(180, 220) rotate(35)">
+              <rect x="-20" y="-280" width="40" height="280" rx="8" fill="#FAF4E6" stroke="#C49B60" stroke-width="5"/>
+              <rect x="-10" y="0" width="20" height="90" rx="5" fill="#D4A155"/>
+            </g>
+          </g>
+
+          <!-- Virat Kohli (Right) -->
+          <g id="s3_kohli" transform="translate(250, 0) scale(0.68)" class="heavy-shadow">
+            <ellipse cx="0" cy="440" rx="180" ry="32" fill="#000" opacity="0.5" />
+            <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="url(#indJersey)"/>
+            <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="#FF7722"/>
+            <text x="0" y="380" font-family="Anton" font-size="52" fill="#fff" text-anchor="middle" letter-spacing="4">KOHLI</text>
+            <text x="0" y="425" font-family="Anton" font-size="34" fill="#FF7722" text-anchor="middle">18</text>
+            <rect x="-48" y="140" width="96" height="90" rx="18" fill="#995F37"/>
+            <g class="head">
+              <ellipse cx="-148" cy="15" rx="26" ry="40" fill="#995F37"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="#995F37"/>
+              <rect x="-145" y="-160" width="290" height="345" rx="135" fill="#B87C52"/>
+              <path d="M-145 20 Q-152 195 0 205 Q152 195 145 20 Q120 155 0 158 Q-120 155 -145 20Z" fill="#181818"/>
+              <path d="M-158 -92 Q-160 -262 0 -262 Q160 -262 158 -92Z" fill="#0A2C68"/>
+              <path d="M-178 -94 Q0 -134 178 -94 Q198 -60 0 -70 Q-198 -60 -178 -94Z" fill="#06162D"/>
+              <circle cx="-62" cy="5" r="36" fill="#fff"/><circle cx="-62" cy="5" r="16" fill="#0A0A0A"/>
+              <circle cx="62" cy="5" r="36" fill="#fff"/><circle cx="62" cy="5" r="16" fill="#0A0A0A"/>
+              <rect x="-105" y="-58" width="85" height="18" rx="6" fill="#181818" transform="rotate(8 -62 -58)"/>
+              <rect x="20" y="-58" width="85" height="18" rx="6" fill="#181818" transform="rotate(-8 62 -58)"/>
+              <rect x="-44" y="115" width="88" height="14" rx="6" fill="#6A2218"/>
+            </g>
+            <g transform="translate(-180, 220) rotate(-35)">
+              <rect x="-20" y="-280" width="40" height="280" rx="8" fill="#FAF4E6" stroke="#C49B60" stroke-width="5"/>
+              <rect x="-10" y="0" width="20" height="90" rx="5" fill="#D4A155"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- Big 113 Partnership Golden Stamp -->
+        <g id="s3_partnership_card" transform="translate(540, 1140)" class="heavy-shadow">
+          <polygon points="-440,-95 440,-110 430,95 -435,110" fill="#FAF4E6" stroke="#D4A155" stroke-width="8" />
+          <text x="0" y="-35" font-family="Anton" font-size="40" fill="#060B18" text-anchor="middle" letter-spacing="6">HISTORIC 5TH WICKET PARTNERSHIP</text>
+          <text x="0" y="55" font-family="Anton" font-size="115" fill="#E52222" text-anchor="middle" letter-spacing="4">113 RUNS</text>
+          <text x="0" y="85" font-family="Anton" font-size="28" fill="#4A5568" text-anchor="middle" letter-spacing="4">HARDIK 40 (37) &bull; KOHLI 42* (43)</text>
+        </g>
+
+        <!-- The 19th Over Crisis Card -->
+        <g id="s3_crisis_box" transform="translate(540, 1490) scale(0)" class="heavy-shadow">
+          <rect x="-420" y="-100" width="840" height="200" rx="16" fill="#E52222" stroke="#FFF" stroke-width="8" />
+          <text x="0" y="-35" font-family="Anton" font-size="44" fill="#FFF" text-anchor="middle" letter-spacing="6">THE 19TH OVER</text>
+          <text x="0" y="45" font-family="Anton" font-size="95" fill="#FFC72C" text-anchor="middle" letter-spacing="4">28 NEEDED OFF 8 BALLS</text>
+          <text x="0" y="78" font-family="Anton" font-size="26" fill="#FFF" text-anchor="middle" letter-spacing="6">HARIS RAUF STEAMING IN</text>
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- SCENE 4: THE SHOTS (18.5 & 18.6) (26.5s – 36.4s)                 -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="scene4" opacity="0">
+        <!-- Haris Rauf Badge -->
+        <g id="s4_rauf_badge" transform="translate(540, 240)" class="heavy-shadow">
+          <polygon points="-400,-45 400,-55 390,45 -410,40" fill="#0A4726" stroke="#FFC72C" stroke-width="6" />
+          <text x="0" y="16" font-family="Anton" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">HARIS RAUF &bull; 148 KM/H EXPRESS PACE</text>
+        </g>
+
+        <!-- Haris Rauf Bowler (Positioned in pitch mid-ground, looking up in shock) -->
+        <g id="s4_bowler" transform="translate(320, 560) scale(0.65)" class="heavy-shadow">
+          <ellipse cx="0" cy="440" rx="180" ry="32" fill="#000" opacity="0.5" />
+          <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="url(#pakJersey)"/>
+          <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="#FFC72C"/>
+          <text x="0" y="380" font-family="Anton" font-size="52" fill="#FFC72C" text-anchor="middle" letter-spacing="4">PAKISTAN</text>
+          <rect x="-48" y="140" width="96" height="90" rx="18" fill="#8C532E"/>
+          <!-- Stunned Head with hands on head -->
+          <g class="head">
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="#8C532E"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="#8C532E"/>
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="#A86C44"/>
+            <path d="M-150 -60 Q-155 -230 0 -230 Q155 -230 150 -60 Q120 -130 0 -125 Q-120 -130 -150 -60Z" fill="#181818"/>
+            <!-- Stunned Wide Eyes -->
+            <circle cx="-62" cy="0" r="42" fill="#fff"/><circle cx="-62" cy="0" r="16" fill="#0A0A0A"/>
+            <circle cx="62" cy="0" r="42" fill="#fff"/><circle cx="62" cy="0" r="16" fill="#0A0A0A"/>
+            <!-- Disbelief Dropped Mouth -->
+            <ellipse cx="0" cy="95" rx="36" ry="44" fill="#3D120D" stroke="#FFF" stroke-width="4"/>
+            <!-- Hands on Head -->
+            <g transform="translate(-160, -110) rotate(-45)">
+              <rect x="-25" y="-40" width="50" height="90" rx="20" fill="#A86C44"/>
+            </g>
+            <g transform="translate(160, -110) rotate(45)">
+              <rect x="-25" y="-40" width="50" height="90" rx="20" fill="#A86C44"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- THE ICONIC KOHLI BACKFOOT STRAIGHT PUNCH POSE (Ball 18.5) -->
+        <g id="s4_kohli_shot" transform="translate(540, 1140)" class="heavy-shadow">
+          <ellipse cx="0" cy="280" rx="220" ry="35" fill="#000" opacity="0.6" />
+          
+          <!-- Backfoot Legs -->
+          <rect x="-90" y="140" width="45" height="150" rx="12" fill="#0A2C68" transform="rotate(-12 -90 140)" />
+          <rect x="50" y="130" width="45" height="160" rx="12" fill="#0A2C68" transform="rotate(18 50 130)" />
+          <g transform="translate(-85, 230) rotate(-10)">
+            <rect x="-28" y="-70" width="56" height="140" rx="16" fill="#FAF4E6" stroke="#0A2C68" stroke-width="4" />
+            <line x1="-28" y1="-25" x2="28" y2="-25" stroke="#0A2C68" stroke-width="3" />
+            <line x1="-28" y1="20" x2="28" y2="20" stroke="#0A2C68" stroke-width="3" />
+          </g>
+          <g transform="translate(75, 230) rotate(15)">
+            <rect x="-28" y="-70" width="56" height="140" rx="16" fill="#FAF4E6" stroke="#0A2C68" stroke-width="4" />
+            <line x1="-28" y1="-25" x2="28" y2="-25" stroke="#0A2C68" stroke-width="3" />
+            <line x1="-28" y1="20" x2="28" y2="20" stroke="#0A2C68" stroke-width="3" />
+          </g>
+
+          <!-- Torso -->
+          <path d="M-130 150 Q0 50 130 150 L100 20 L-100 20 Z" fill="url(#indJersey)" />
+          <text x="0" y="105" font-family="Anton" font-size="52" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">INDIA</text>
+          <text x="0" y="145" font-family="Anton" font-size="36" fill="#FFC72C" text-anchor="middle">18</text>
+
+          <!-- Helmet Head -->
+          <g transform="translate(0, -60)">
+            <ellipse cx="-85" cy="12" rx="16" ry="26" fill="#995F37" />
+            <ellipse cx="85" cy="12" rx="16" ry="26" fill="#995F37" />
+            <rect x="-80" y="-95" width="160" height="210" rx="75" fill="#B87C52" />
+            <path d="M-80 20 Q-85 110 0 112 Q85 110 80 20 Q65 88 0 92 Q-65 88 -80 20 Z" fill="#181818" />
+            <path d="M-90 -55 Q-95 -170 0 -170 Q95 -170 90 -55 Z" fill="#0A2C68" />
+            <path d="M-105 -58 Q0 -88 105 -58 Q118 -32 0 -38 Q-118 -32 -105 -58 Z" fill="#06162D" />
+            <path d="M-65 -15 L-65 45 Q0 70 65 45 L65 -15" stroke="#FAF4E6" stroke-width="5" fill="none" />
+            <line x1="-65" y1="15" x2="65" y2="15" stroke="#FAF4E6" stroke-width="4" />
+            <circle cx="-35" cy="-2" r="18" fill="#FFF" /><circle cx="-35" cy="-2" r="8" fill="#000" />
+            <circle cx="35" cy="-2" r="18" fill="#FFF" /><circle cx="35" cy="-2" r="8" fill="#000" />
+            <rect x="-60" y="-30" width="50" height="12" rx="4" fill="#181818" transform="rotate(8 -35 -30)" />
+            <rect x="10" y="-30" width="50" height="12" rx="4" fill="#181818" transform="rotate(-8 35 -30)" />
+          </g>
+          
+          <!-- Batting Arms & MRF Willow Bat Straight Punch -->
+          <g id="s4_bat_arm" transform="translate(40, -10) rotate(-15)">
+            <rect x="-20" y="-280" width="40" height="280" rx="8" fill="#FAF4E6" stroke="#C49B60" stroke-width="4" />
+            <polygon points="-20,-280 20,-280 14,-200 -14,-200" fill="#E52222" />
+            <text x="0" y="-225" font-family="Anton" font-size="22" fill="#FFFFFF" text-anchor="middle">MRF</text>
+            <rect x="-9" y="0" width="18" height="85" rx="4" fill="#D4A155" />
+            <!-- Both Batting Gloves -->
+            <ellipse cx="-4" cy="15" rx="22" ry="18" fill="#FAF4E6" stroke="#0A2C68" stroke-width="4" />
+            <ellipse cx="6" cy="35" rx="22" ry="18" fill="#FAF4E6" stroke="#0A2C68" stroke-width="4" />
+          </g>
+        </g>
+
+        <!-- Ball 18.5 Flight & Soaring Path -->
+        <g id="s4_ball_flight">
+          <path id="s4_ball_path" d="M540 1020 Q540 550 540 -80" stroke="#FFC72C" stroke-width="14" stroke-linecap="round" stroke-dasharray="18 14" fill="none" opacity="0.85" />
+          <g id="s4_ball" transform="translate(540, 1020)" class="gold-glow">
+            <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="#E52222" stroke-width="4" />
+            <path d="M-22 -16 Q0 0 22 -16 M-22 16 Q0 0 22 16" stroke="#E52222" stroke-width="3" fill="none" />
+          </g>
+        </g>
+
+        <!-- Comic / Paper Blast: SIX! -->
+        <g id="s4_six_stamp" transform="translate(540, 460) scale(0)" class="heavy-shadow">
+          <polygon points="0,-160 50,-60 160,-80 90,20 170,120 60,90 0,180 -60,90 -170,120 -90,20 -160,-80 -50,-60" fill="#FFC72C" stroke="#FAF4E6" stroke-width="8" />
+          <text x="0" y="35" font-family="Anton" font-size="140" fill="#E52222" text-anchor="middle" letter-spacing="6">SIX!</text>
+        </g>
+
+        <!-- Big Double Six Banner (18.5 & 18.6) -->
+        <g id="s4_double_six" transform="translate(540, 1590)" class="heavy-shadow">
+          <polygon points="-460,-65 460,-80 445,75 -455,85" fill="#FAF4E6" stroke="#E52222" stroke-width="8" />
+          <text x="0" y="-8" font-family="Anton" font-size="58" fill="#0A1224" text-anchor="middle" letter-spacing="4">TWO SIXES &bull; 18.5 & 18.6</text>
+          <text x="0" y="52" font-family="Anton" font-size="34" fill="#E52222" text-anchor="middle" letter-spacing="6">THE MATCH IS BACK FROM THE DEAD</text>
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- SCENE 5: DIWALI IMMORTALITY & KING KOHLI (36.4s – 44.83s)        -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <g id="scene5" opacity="0">
+        <!-- Diwali Fireworks Layer -->
+        <g id="s5_fireworks">
+          <g id="fw1" transform="translate(200, 220) scale(0)">
+            <circle cx="0" cy="0" r="10" fill="#FFF" />
+            <path d="M0 -150 L0 150 M-150 0 L150 0 M-106 -106 L106 106 M-106 106 L106 -106" stroke="#FFC72C" stroke-width="7" stroke-linecap="round" />
+            <circle cx="0" cy="-150" r="9" fill="#FF5252" /><circle cx="0" cy="150" r="9" fill="#FF5252" />
+            <circle cx="-150" cy="0" r="9" fill="#FF5252" /><circle cx="150" cy="0" r="9" fill="#FF5252" />
+          </g>
+          <g id="fw2" transform="translate(880, 260) scale(0)">
+            <circle cx="0" cy="0" r="10" fill="#FFF" />
+            <path d="M0 -130 L0 130 M-130 0 L130 0 M-92 -92 L92 92 M-92 92 L92 -92" stroke="#E52222" stroke-width="7" stroke-linecap="round" />
+            <circle cx="0" cy="-130" r="9" fill="#FFC72C" /><circle cx="0" cy="130" r="9" fill="#FFC72C" />
+          </g>
+          <g id="fw3" transform="translate(540, 150) scale(0)">
+            <circle cx="0" cy="0" r="10" fill="#FFF" />
+            <path d="M0 -160 L0 160 M-150 0 L150 0 M-113 -113 L113 113 M-113 113 L113 -113" stroke="#48BB78" stroke-width="8" stroke-linecap="round" />
+          </g>
+        </g>
+
+        <!-- Golden Diwali Tape Header -->
+        <g id="s5_diwali_badge" transform="translate(540, 320)" class="heavy-shadow">
+          <polygon points="-400,-45 400,-55 390,45 -410,40" fill="#E52222" stroke="#FFC72C" stroke-width="6" />
+          <text x="0" y="16" font-family="Anton" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">DIWALI CAME EARLY &bull; OCTOBER 23, 2022</text>
+        </g>
+
+        <!-- King's Golden Crown -->
+        <g id="s5_crown" transform="translate(540, 470) scale(0)" class="gold-glow">
+          <polygon points="-130,40 -150,-50 -65,-12 0,-75 65,-12 150,-50 130,40" fill="url(#goldTextGrad)" stroke="#FAF4E6" stroke-width="6" />
+          <circle cx="-150" cy="-50" r="14" fill="#E52222" />
+          <circle cx="0" cy="-75" r="18" fill="#1253D8" />
+          <circle cx="150" cy="-50" r="14" fill="#E52222" />
+        </g>
+
+        <!-- Detailed Kohli Triumphant Fist Pump -->
+        <g id="s5_kohli_triumph" transform="translate(540, 870) scale(0.85)" class="heavy-shadow">
+          <ellipse cx="0" cy="440" rx="180" ry="32" fill="#000" opacity="0.6" />
+          <path d="M-250 430 Q-255 240 -110 205 L110 205 Q255 240 250 430Z" fill="url(#indJersey)"/>
+          <path d="M-70 205 L0 300 L70 205 L45 188 L-45 188Z" fill="#FF7722"/>
+          <text x="0" y="380" font-family="Anton" font-size="52" fill="#fff" text-anchor="middle" letter-spacing="4">INDIA</text>
+          <text x="0" y="425" font-family="Anton" font-size="34" fill="#FF7722" text-anchor="middle">18</text>
+          <rect x="-48" y="140" width="96" height="90" rx="18" fill="#995F37"/>
+          
+          <!-- Head (No Helmet, Roaring with Raw Emotion) -->
+          <g class="head">
+            <ellipse cx="-148" cy="15" rx="26" ry="40" fill="#995F37"/><ellipse cx="148" cy="15" rx="26" ry="40" fill="#995F37"/>
+            <rect x="-145" y="-160" width="290" height="345" rx="135" fill="#B87C52"/>
+            <path d="M-145 20 Q-152 195 0 205 Q152 195 145 20 Q120 155 0 158 Q-120 155 -145 20Z" fill="#181818"/>
+            <path d="M-150 -60 Q-155 -245 0 -245 Q155 -245 150 -60 Q120 -135 0 -130 Q-120 -135 -150 -60Z" fill="#181818"/>
+            <!-- Roaring Mouth -->
+            <ellipse cx="0" cy="115" rx="52" ry="38" fill="#3D120D" stroke="#FFF" stroke-width="6"/>
+            <!-- Intense Emotional Eyes -->
+            <circle cx="-62" cy="0" r="36" fill="#fff"/><circle cx="-62" cy="0" r="16" fill="#0A0A0A"/>
+            <circle cx="62" cy="0" r="36" fill="#fff"/><circle cx="62" cy="0" r="16" fill="#0A0A0A"/>
+            <rect x="-105" y="-62" width="85" height="18" rx="6" fill="#181818" transform="rotate(-15 -62 -62)"/>
+            <rect x="20" y="-62" width="85" height="18" rx="6" fill="#181818" transform="rotate(15 62 -62)"/>
+          </g>
+          
+          <!-- Clenched Fist Pumping Skyward (Clear of head on right side) -->
+          <g transform="translate(200, 190)">
+            <g id="s5_fist_pump">
+              <rect x="-38" y="-160" width="76" height="170" rx="35" fill="url(#indJersey)" transform="rotate(28)"/>
+              <g transform="translate(75, -135) rotate(-18)">
+                <rect x="-35" y="-170" width="70" height="180" rx="32" fill="url(#indJersey)" />
+                <rect x="-38" y="-175" width="76" height="20" rx="6" fill="#FF7722" />
+                <circle cx="0" cy="-205" r="46" fill="#B87C52" />
+              </g>
+            </g>
+          </g>
+        </g>
+
+        <!-- Superhuman Stats Card: 82* OFF 53 -->
+        <g id="s5_stat_card" transform="translate(540, 1310)" class="heavy-shadow">
+          <polygon points="-440,-95 440,-110 430,95 -435,110" fill="#FAF4E6" stroke="#E52222" stroke-width="8" />
+          <text x="0" y="-40" font-family="Anton" font-size="34" fill="#060B18" text-anchor="middle" letter-spacing="6">THE INNINGS OF A LIFETIME</text>
+          <text x="0" y="48" font-family="Anton" font-size="98" fill="#1253D8" text-anchor="middle" letter-spacing="3">82* OFF 53 BALLS</text>
+          <text x="0" y="88" font-family="Anton" font-size="28" fill="#E52222" text-anchor="middle" letter-spacing="6">6 FOURS &bull; 4 SIXES &bull; SR 154.7</text>
+        </g>
+
+        <!-- Final Verdict / CTA Banner -->
+        <g id="s5_verdict" transform="translate(540, 1530)" class="heavy-shadow">
+          <rect x="-460" y="-60" width="920" height="120" rx="14" fill="#FFC72C" stroke="#FAF4E6" stroke-width="8" />
+          <text x="0" y="16" font-family="Anton" font-size="52" fill="#060B18" text-anchor="middle" letter-spacing="4">WAS THIS THE GREATEST EVER? 👑</text>
+        </g>
+      </g>
+
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <!-- GLOBAL VIGNETTE OVERLAY                                           -->
+      <!-- ═════════════════════════════════════════════════════════════════ -->
+      <rect width="1080" height="1920" fill="url(#vignetteGrad)" pointer-events="none" />
+    </svg>
+  </div>
+
+  <script>
+    // Initialize crowd dots dynamically
+    const crowdGroup = document.getElementById('crowd_dots');
+    const cols = ['#1E65F3', '#0A4726', '#FFFFFF', '#FFC72C', '#FF5252'];
+    for (let i = 0; i < 200; i++) {
+      const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      const x = (i % 30) * 38 + (Math.random() * 20 - 10);
+      const y = 980 + Math.floor(i / 30) * 38 + (Math.random() * 20 - 10);
+      c.setAttribute('cx', x);
+      c.setAttribute('cy', y);
+      c.setAttribute('r', Math.random() * 5 + 3);
+      c.setAttribute('fill', cols[Math.floor(Math.random() * cols.length)]);
+      c.setAttribute('opacity', Math.random() * 0.7 + 0.3);
+      crowdGroup.appendChild(c);
+    }
+
+    // GSAP Master Timeline (44.83 seconds duration, synced with voiceover)
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines = { main: tl };
+
+    // ─────────────────────────────────────────────────────────────
+    // SCENE 1: THE DARK ABYSS & HOOK (0.00s – 5.60s)
+    // ─────────────────────────────────────────────────────────────
+    tl.set('#scene1', { opacity: 1 }, 0);
+    tl.fromTo('#s1_scoreboard', 
+      { scale: 1.4, opacity: 0, rotation: -4 }, 
+      { scale: 1, opacity: 1, rotation: 0, duration: 0.35, ease: 'back.out(2)' }, 0.15);
+
+    // Vibration on scoreboard
+    tl.to('#s1_scoreboard', { x: '+=8', yoyo: true, repeat: 5, duration: 0.05 }, 0.25);
+
+    // Hook Banner Slam: "THE SHOT THAT BROKE A STADIUM"
+    tl.fromTo('#s1_hook_banner',
+      { y: 1100, scale: 0.6, opacity: 0, rotation: 6 },
+      { y: 820, scale: 1, opacity: 1, rotation: -1.5, duration: 0.4, ease: 'back.out(1.8)' }, 2.66);
+
+    // Kohli strides in
+    tl.fromTo('#s1_kohli_walk',
+      { y: 1650, opacity: 0 },
+      { y: 1500, opacity: 1, duration: 0.5, ease: 'power2.out' }, 3.20);
+
+    tl.fromTo('#s1_except_tape',
+      { scale: 0, rotation: -12 },
+      { scale: 1, rotation: 1.2, duration: 0.35, ease: 'back.out(2.2)' }, 4.27);
+
+    // Fade out Scene 1
+    tl.to('#scene1', { opacity: 0, scale: 0.95, duration: 0.45, ease: 'power2.in' }, 5.40);
+
+    // ─────────────────────────────────────────────────────────────
+    // SCENE 2: THE MCG CRUCIBLE & COLLAPSE (5.60s – 15.80s)
+    // ─────────────────────────────────────────────────────────────
+    tl.set('#scene2', { opacity: 1 }, 5.60);
+    tl.fromTo('#s2_venue_badge',
+      { y: 180, opacity: 0 },
+      { y: 270, opacity: 1, duration: 0.4, ease: 'back.out(1.8)' }, 5.85);
+
+    tl.fromTo('#s2_target_board',
+      { scale: 0.7, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2)' }, 6.78);
+
+    // Sequential Wicket Cards Out Slams
+    tl.fromTo('#s2_c1', { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }, 9.90);
+    tl.fromTo('#s2_out1', { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: 'power4.in' }, 10.15);
+
+    tl.fromTo('#s2_c2', { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }, 10.35);
+    tl.fromTo('#s2_out2', { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: 'power4.in' }, 10.55);
+
+    tl.fromTo('#s2_c3', { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }, 10.75);
+    tl.fromTo('#s2_out3', { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: 'power4.in' }, 10.95);
+
+    tl.fromTo('#s2_c4', { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }, 11.15);
+    tl.fromTo('#s2_out4', { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.2, ease: 'power4.in' }, 11.35);
+
+    // Pressure Meter needle spiking violently
+    tl.fromTo('#s2_pressure_gauge',
+      { scale: 0.6, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(1.8)' }, 13.50);
+
+    tl.to('#s2_needle', { rotation: 65, duration: 1.2, ease: 'elastic.out(1, 0.4)' }, 13.75);
+    tl.to('#s2_pressure_gauge', { scale: 1.05, yoyo: true, repeat: 7, duration: 0.12 }, 14.20);
+
+    // Fade out Scene 2
+    tl.to('#scene2', { opacity: 0, scale: 0.95, duration: 0.4, ease: 'power2.in' }, 15.60);
+
+    // ─────────────────────────────────────────────────────────────
+    // SCENE 3: THE 113-RUN REBUILD (15.80s – 26.50s)
+    // ─────────────────────────────────────────────────────────────
+    tl.set('#scene3', { opacity: 1 }, 15.80);
+    tl.fromTo('#s3_header',
+      { y: 150, opacity: 0, rotation: 5 },
+      { y: 310, opacity: 1, rotation: -1.2, duration: 0.4, ease: 'back.out(2)' }, 16.05);
+
+    // Runners enter pitch
+    tl.fromTo('#s3_hardik', { x: -450, opacity: 0 }, { x: -250, opacity: 1, duration: 0.6, ease: 'power2.out' }, 17.50);
+    tl.fromTo('#s3_kohli', { x: 450, opacity: 0 }, { x: 250, opacity: 1, duration: 0.6, ease: 'power2.out' }, 17.50);
+
+    // Running between wickets bobbing
+    tl.to(['#s3_hardik', '#s3_kohli'], { y: -25, yoyo: true, repeat: 11, duration: 0.25, ease: 'sine.inOut' }, 18.20);
+
+    // Partnership Banner Slam
+    tl.fromTo('#s3_partnership_card',
+      { scale: 1.4, opacity: 0, rotation: -6 },
+      { scale: 1, opacity: 1, rotation: 1.5, duration: 0.45, ease: 'back.out(2.2)' }, 21.25);
+
+    // 19th Over Crisis Box Zoom Slam
+    tl.to('#s3_partnership_card', { scale: 0.9, y: 1090, duration: 0.3 }, 23.70);
+    tl.fromTo('#s3_crisis_box',
+      { scale: 0, rotation: -8 },
+      { scale: 1, rotation: 0, duration: 0.45, ease: 'back.out(2)' }, 23.85);
+
+    // Ticking heartbeat pulsation
+    tl.to('#s3_crisis_box', { scale: 1.04, yoyo: true, repeat: 7, duration: 0.16 }, 24.50);
+
+    // Fade out Scene 3
+    tl.to('#scene3', { opacity: 0, scale: 0.94, duration: 0.35, ease: 'power2.in' }, 26.40);
+
+    // ─────────────────────────────────────────────────────────────
+    // SCENE 4: THE SHOTS (18.5 & 18.6) (26.50s – 36.40s)
+    // ─────────────────────────────────────────────────────────────
+    tl.set('#scene4', { opacity: 1 }, 26.50);
+    tl.fromTo('#s4_rauf_badge',
+      { y: 150, opacity: 0 },
+      { y: 240, opacity: 1, duration: 0.35, ease: 'back.out(2)' }, 26.70);
+
+    tl.fromTo('#s4_bowler',
+      { scale: 0.3, opacity: 0 },
+      { scale: 0.65, opacity: 1, duration: 0.4, ease: 'power2.out' }, 27.10);
+
+    // Kohli Batting Setup
+    tl.fromTo('#s4_kohli_shot',
+      { y: 1350, opacity: 0 },
+      { y: 1140, opacity: 1, duration: 0.45, ease: 'power2.out' }, 27.40);
+
+    // 28.50s: BALL 18.5 - THE STRAIGHT SIX OVER RAUF'S HEAD!
+    tl.to('#s4_bat_arm', { rotation: 25, duration: 0.15, ease: 'power4.in' }, 28.45);
+    tl.to('#s4_bat_arm', { rotation: -12, duration: 0.35, ease: 'back.out(2.5)' }, 28.60);
+
+    // Ball rocket straight up over bowler's head into crowd
+    tl.fromTo('#s4_ball',
+      { x: 540, y: 1020, scale: 1 },
+      { x: 540, y: -80, scale: 2.2, duration: 0.95, ease: 'power2.out' }, 28.60);
+
+    // SIX! Comic Stamp Slam
+    tl.fromTo('#s4_six_stamp',
+      { scale: 0, rotation: -35 },
+      { scale: 1.25, rotation: 8, duration: 0.35, ease: 'back.out(2.8)' }, 28.75);
+    tl.to('#s4_six_stamp', { scale: 1, duration: 0.2 }, 29.10);
+
+    // Bowler in despair
+    tl.to('#s4_bowler', { y: '+=30', scale: 0.72, duration: 0.3, ease: 'bounce.out' }, 29.20);
+
+    // 31.35s: BALL 18.6 - FLICK OVER FINE LEG!
+    tl.to('#s4_six_stamp', { scale: 0, duration: 0.2 }, 31.20);
+    tl.to('#s4_bat_arm', { rotation: 35, duration: 0.18, ease: 'power4.in' }, 31.30);
+    tl.to('#s4_bat_arm', { rotation: -50, duration: 0.3, ease: 'back.out(2)' }, 31.48);
+
+    // Ball 2 arc to fine leg
+    tl.fromTo('#s4_ball',
+      { x: 540, y: 1020, scale: 1 },
+      { x: 120, y: -60, scale: 2.0, duration: 0.85, ease: 'power2.out' }, 31.38);
+
+    // Double Six Stamp Slam
+    tl.fromTo('#s4_double_six',
+      { y: 1750, scale: 0.7, opacity: 0 },
+      { y: 1590, scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, 32.10);
+
+    // Fade out Scene 4
+    tl.to('#scene4', { opacity: 0, scale: 0.95, duration: 0.45, ease: 'power2.in' }, 36.20);
+
+    // ─────────────────────────────────────────────────────────────
+    // SCENE 5: DIWALI IMMORTALITY & KING KOHLI (36.40s – 44.83s)
+    // ─────────────────────────────────────────────────────────────
+    tl.set('#scene5', { opacity: 1 }, 36.40);
+
+    // Stat Card Slam: 82* OFF 53
+    tl.fromTo('#s5_stat_card',
+      { scale: 1.5, opacity: 0, rotation: -5 },
+      { scale: 1, opacity: 1, rotation: 1.2, duration: 0.45, ease: 'back.out(2.2)' }, 36.65);
+
+    // Kohli Triumphant Fist Pump
+    tl.fromTo('#s5_kohli_triumph',
+      { y: 1050, opacity: 0 },
+      { y: 870, opacity: 1, duration: 0.5, ease: 'back.out(1.8)' }, 37.50);
+
+    tl.to('#s5_fist_pump', { rotation: 15, yoyo: true, repeat: 7, duration: 0.3, ease: 'sine.inOut' }, 38.00);
+
+    // Diwali Fireworks Launch
+    tl.fromTo('#s5_diwali_badge',
+      { y: 220, opacity: 0 },
+      { y: 320, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, 39.50);
+
+    tl.fromTo('#fw1', { scale: 0 }, { scale: 1.2, duration: 0.6, ease: 'back.out(2.5)' }, 39.60);
+    tl.fromTo('#fw2', { scale: 0 }, { scale: 1.3, duration: 0.6, ease: 'back.out(2.5)' }, 40.10);
+    tl.fromTo('#fw3', { scale: 0 }, { scale: 1.4, duration: 0.7, ease: 'back.out(2.5)' }, 40.75);
+
+    // Royal Crown descends onto King Kohli
+    tl.fromTo('#s5_crown',
+      { y: 280, scale: 0, rotation: -15 },
+      { y: 470, scale: 1.15, rotation: 0, duration: 0.65, ease: 'bounce.out' }, 41.25);
+
+    // Final Verdict Banner Slam
+    tl.fromTo('#s5_verdict',
+      { y: 1750, scale: 0.7, opacity: 0 },
+      { y: 1580, scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2.2)' }, 42.45);
+  </script>
+</body>
+</html>
