@@ -133,7 +133,7 @@ async def render_video(
                     await write_cond.wait()
 
             t = frame_idx / fps
-            await page.evaluate(f"window.__timelines['main'].seek({t:.4f}); void 0;")
+            await page.evaluate(f"if (window.seekFrame) window.seekFrame({t:.4f}); else if (window.__timelines && window.__timelines['main']) window.__timelines['main'].seek({t:.4f}); void 0;")
             res = await cdp.send("Page.captureScreenshot", cdp_params)
             img_bytes = base64.b64decode(res["data"])
 
