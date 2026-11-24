@@ -20,8 +20,9 @@
       }
       .scene {
         position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-        overflow: hidden; z-index: 1;
+        overflow: hidden; z-index: 1; display: none;
       }
+      #s1 { display: block; z-index: 2; }
       .cam, .cam svg {
         position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block;
       }
@@ -594,6 +595,28 @@
           tl.fromTo(el, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.1, immediateRender: false }, t + i * 0.06)
             .to(el, { y: 90, opacity: 0, duration: 0.5, ease: "power1.in" }, t + i * 0.06 + 0.2)
         );
+
+      // ==========================================================
+      // SCENE VISIBILITY CONTROLLER: STRICT TIME WINDOWS!
+      // ==========================================================
+      const sceneList = [
+        { id: "#s1", start: 0.00, end: 7.60 },
+        { id: "#s2", start: 7.60, end: 16.50 },
+        { id: "#s3", start: 16.50, end: 26.60 },
+        { id: "#s4", start: 26.60, end: 42.00 },
+        { id: "#s5", start: 42.00, end: 49.48 }
+      ];
+
+      // Initially ensure only s1 is active at t=0
+      tl.set("#s2,#s3,#s4,#s5", { display: "none", zIndex: 1 }, 0);
+      tl.set("#s1", { display: "block", zIndex: 2 }, 0);
+
+      sceneList.forEach((sc) => {
+        tl.set(sc.id, { display: "block", zIndex: 3 }, sc.start);
+        if (sc.end < 49.4) {
+          tl.set(sc.id, { display: "none", zIndex: 1 }, sc.end);
+        }
+      });
 
       // ==========================================================
       // CAPTIONS: SINGLE ACTIVE CAPTION AT A TIME (ZERO OVERLAP!)
