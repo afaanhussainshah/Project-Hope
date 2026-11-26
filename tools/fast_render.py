@@ -21,6 +21,7 @@ async def render_video(
     workers: int = 4,
     width: int = 1080,
     height: int = 1920,
+    scale: float = 1.0,
     crf: int = 18,
     preset: str = "fast",
     img_format: str = "jpeg",
@@ -59,11 +60,13 @@ async def render_video(
 
     cmd.append(output_path)
 
+    out_width = int(width * scale)
+    out_height = int(height * scale)
     print("=== Project Hope Fast Parallel GPU-Chromium Renderer ===")
     print(f"HTML:       {html_path}")
     print(f"Audio:      {audio_path}")
     print(f"Output:     {output_path}")
-    print(f"Frames:     {total_frames} ({duration:.2f}s @ {fps} fps, {width}x{height})")
+    print(f"Frames:     {total_frames} ({duration:.2f}s @ {fps} fps, {out_width}x{out_height}) [scale={scale}]")
     print(f"Workers:    {workers} parallel Chromium tabs | GPU Raster: {use_gpu}")
     print(f"Quality:    {img_format.upper()}{f' q={jpeg_quality}' if img_format == 'jpeg' else ''} -> libx264 CRF {crf} ({preset})")
 
@@ -120,6 +123,8 @@ async def render_video(
             if img_format == "png"
             else {"format": "jpeg", "quality": jpeg_quality}
         )
+        if scale != 1.0:
+            cdp_params["clip"] = {"x": 0, "y": 0, "width": width, "height": height, "scale": scale}
         while True:
             async with assign_lock:
                 if next_assign >= total_frames:
@@ -143,7 +148,10 @@ async def render_video(
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True, args=launch_args)
-        context = await browser.new_context(viewport={"width": width, "height": height})
+        context = await browser.new_context(
+            viewport={"width": width, "height": height},
+            device_scale_factor=scale,
+        )
 
         pages = []
         cdps = []
@@ -188,6 +196,7 @@ def main():
     parser.add_argument("--fps", type=int, default=60, help="Frames per second (default: 60)")
     parser.add_argument("--width", type=int, default=1080, help="Video width in pixels (default: 1080)")
     parser.add_argument("--height", type=int, default=1920, help="Video height in pixels (default: 1920)")
+    parser.add_argument("--scale", type=float, default=1.0, help="Device scale factor (e.g. 2.0 for 4K)")
     parser.add_argument("--workers", type=int, default=4, help="Parallel Chromium tabs (default: 4)")
     parser.add_argument("--crf", type=int, default=18, help="libx264 CRF quality (default: 18)")
     parser.add_argument("--preset", default="fast", help="libx264 preset (default: fast)")
@@ -207,6 +216,7 @@ def main():
             workers=args.workers,
             width=args.width,
             height=args.height,
+            scale=args.scale,
             crf=args.crf,
             preset=args.preset,
             img_format=args.format,

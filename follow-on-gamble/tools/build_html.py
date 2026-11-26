@@ -384,12 +384,12 @@ __GSAP_CODE__
 
       // Cracked Pitch Graphic
       const s3_pitch = `<g id="s3_cracks" class="cut">
-        <polygon points="120,950 960,950 1020,1280 60,1280" fill="${C.pitch}"/>
+        <polygon points="120,860 960,860 1020,1190 60,1190" fill="${C.pitch}"/>
         <!-- Cracks -->
-        <path d="M300 950 L340 1050 L280 1150 L360 1280" stroke="#5A3A1A" stroke-width="12" fill="none" stroke-linejoin="round"/>
-        <path d="M540 950 L500 1040 L580 1160 L520 1280" stroke="#5A3A1A" stroke-width="16" fill="none" stroke-linejoin="round"/>
-        <path d="M780 950 L740 1080 L820 1200 L790 1280" stroke="#5A3A1A" stroke-width="10" fill="none" stroke-linejoin="round"/>
-        ${tx(540, 1240, 52, "DAY 5: CRACKED, WORN-OUT PITCH", C.ink)}
+        <path d="M300 860 L340 960 L280 1060 L360 1190" stroke="#5A3A1A" stroke-width="12" fill="none" stroke-linejoin="round"/>
+        <path d="M540 860 L500 950 L580 1070 L520 1190" stroke="#5A3A1A" stroke-width="16" fill="none" stroke-linejoin="round"/>
+        <path d="M780 860 L740 990 L820 1110 L790 1190" stroke="#5A3A1A" stroke-width="10" fill="none" stroke-linejoin="round"/>
+        ${tx(540, 1150, 48, "DAY 5: CRACKED, WORN-OUT PITCH", C.ink)}
       </g>`;
 
       put("s3", svg(
@@ -449,22 +449,31 @@ __GSAP_CODE__
             ${tx(760, 455, 46, "274 RUNS BEHIND!", C.paper)}
           </g>
         </g>` +
+        // Australia Enforces Follow-on Stamp
+        `<g id="s4_enforce" class="cut"><g transform="rotate(-6 540 680)">
+          ${sheet(160, 610, 760, 140, C.stamp, 8)}
+          ${tx(540, 675, 42, "STEVE WAUGH CALLS IT", C.gold)}
+          ${tx(540, 725, 68, "ENFORCE THE FOLLOW-ON!", C.paper)}
+        </g></g>` +
         // Characters: Laxman & Dravid + Bats
         `<g id="s4_heroes">
-          ${s4_laxman}
-          ${cricketBat("batLaxman", 190, 820, -35, 0.8)}
-          ${s4_dravid}
-          ${cricketBat("batDravid", 890, 820, 35, 0.8)}
-          <!-- Name tags -->
-          <g class="cut" transform="translate(340, 1100)">
-            ${sheet(-180, -45, 360, 95, C.paper, 6)}
-            ${tx(0, -6, 44, "V.V.S. LAXMAN", C.ink)}
-            ${tx(0, 36, 44, "281 RUNS", C.stamp)}
+          <g id="gLaxmanGroup">
+            ${s4_laxman}
+            ${cricketBat("batLaxman", 190, 820, -35, 0.8)}
+            <g class="cut" transform="translate(340, 1100)">
+              ${sheet(-180, -45, 360, 95, C.paper, 6)}
+              ${tx(0, -6, 44, "V.V.S. LAXMAN", C.ink)}
+              ${tx(0, 36, 44, "281 RUNS", C.stamp)}
+            </g>
           </g>
-          <g class="cut" transform="translate(740, 1100)">
-            ${sheet(-180, -45, 360, 95, C.paper, 6)}
-            ${tx(0, -6, 44, "RAHUL DRAVID", C.ink)}
-            ${tx(0, 36, 44, "180 RUNS", C.stamp)}
+          <g id="gDravidGroup">
+            ${s4_dravid}
+            ${cricketBat("batDravid", 890, 820, 35, 0.8)}
+            <g class="cut" transform="translate(740, 1100)">
+              ${sheet(-180, -45, 360, 95, C.paper, 6)}
+              ${tx(0, -6, 44, "RAHUL DRAVID", C.ink)}
+              ${tx(0, 36, 44, "180 RUNS", C.stamp)}
+            </g>
           </g>
         </g>` +
         // Shocked Waugh in corner
@@ -491,48 +500,82 @@ __GSAP_CODE__
       // SCENE 5: WEAPON VS TRAP (CLIMAX & CTA)
       // ==========================================================
       reseed(505);
-      function bearTrap(id, cx, cy) {
+      function paperSword(id, cx, cy) {
         return `<g id="${id}" class="cut">
-          <!-- Base -->
-          <rect x="${cx - 240}" y="${cy + 60}" width="480" height="40" rx="12" fill="#2B2B2B"/>
-          <circle cx="${cx}" cy="${cy + 75}" r="35" fill="#C1121F"/>
-          <!-- Left Jaw -->
-          <g id="trapJawL" style="transform-origin: ${cx - 220}px ${cy + 70}px;">
-            <path d="M${cx - 220} ${cy + 70} Q${cx - 240} ${cy - 160} ${cx} ${cy - 160} L${cx} ${cy - 120} Q${cx - 180} ${cy - 120} ${cx - 180} ${cy + 70} Z" fill="#4A4A4A"/>
-            <!-- Teeth -->
-            ${[-140, -100, -60, -20].map((dx) => `<polygon points="${cx + dx},${cy - 120} ${cx + dx + 18},${cy - 80} ${cx + dx + 36},${cy - 120}" fill="#F6F1E4"/>`).join("")}
+          <!-- Backing Glow -->
+          <circle cx="${cx}" cy="${cy}" r="160" fill="${C.gold}" opacity="0.2"/>
+          <!-- Blade -->
+          <polygon points="${cx},${cy - 220} ${cx - 30},${cy + 30} ${cx},${cy + 55} ${cx + 30},${cy + 30}" fill="#ECEFF1"/>
+          <polygon points="${cx},${cy - 220} ${cx},${cy + 55} ${cx + 30},${cy + 30}" fill="#B0BEC5"/>
+          <line x1="${cx}" y1="${cy - 200}" x2="${cx}" y2="${cy + 40}" stroke="#78909C" stroke-width="4"/>
+          <!-- Crossguard -->
+          <rect x="${cx - 90}" y="${cy + 48}" width="180" height="26" rx="6" fill="${C.gold}"/>
+          <circle cx="${cx}" cy="${cy + 61}" r="12" fill="${C.stamp}"/>
+          <!-- Handle -->
+          <rect x="${cx - 14}" y="${cy + 74}" width="28" height="65" rx="4" fill="#37474F"/>
+          <line x1="${cx - 14}" y1="${cy + 92}" x2="${cx + 14}" y2="${cy + 92}" stroke="${C.gold}" stroke-width="3"/>
+          <line x1="${cx - 14}" y1="${cy + 115}" x2="${cx + 14}" y2="${cy + 115}" stroke="${C.gold}" stroke-width="3"/>
+          <!-- Pommel -->
+          <circle cx="${cx}" cy="${cy + 155}" r="20" fill="${C.gold}"/>
+        </g>`;
+      }
+
+      function bearTrap(id, cx, cy) {
+        const hxL = cx - 200;
+        const hxR = cx + 200;
+        const hy = cy + 70;
+        return `<g id="${id}" class="cut">
+          <!-- Base bar -->
+          <rect x="${cx - 240}" y="${hy - 14}" width="480" height="32" rx="8" fill="#2B2B2B"/>
+          <!-- Pressure Plate -->
+          <circle cx="${cx}" cy="${hy + 2}" r="32" fill="${C.stamp}"/>
+          <circle cx="${cx}" cy="${hy + 2}" r="18" fill="#2B2B2B"/>
+          <!-- Hinges -->
+          <circle cx="${hxL}" cy="${hy}" r="16" fill="#1B1B1B"/>
+          <circle cx="${hxR}" cy="${hy}" r="16" fill="#1B1B1B"/>
+          <!-- Left Jaw (pivot at hxL, hy) -->
+          <g id="trapJawL">
+            <path d="M${hxL} ${hy} C${hxL - 20} ${cy - 140} ${cx - 40} ${cy - 140} ${cx} ${cy - 140} L${cx} ${cy - 100} C${cx - 30} ${cy - 100} ${hxL + 40} ${cy - 100} ${hxL + 30} ${hy} Z" fill="#4E4E4E"/>
+            <polygon points="${cx - 150},${cy - 100} ${cx - 135},${cy - 60} ${cx - 120},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx - 110},${cy - 100} ${cx - 95},${cy - 60} ${cx - 80},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx - 70},${cy - 100} ${cx - 55},${cy - 60} ${cx - 40},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx - 30},${cy - 100} ${cx - 15},${cy - 60} ${cx},${cy - 100}" fill="${C.paper}"/>
           </g>
-          <!-- Right Jaw -->
-          <g id="trapJawR" style="transform-origin: ${cx + 220}px ${cy + 70}px;">
-            <path d="M${cx + 220} ${cy + 70} Q${cx + 240} ${cy - 160} ${cx} ${cy - 160} L${cx} ${cy - 120} Q${cx + 180} ${cy - 120} ${cx + 180} ${cy + 70} Z" fill="#3B3B3B"/>
-            <!-- Teeth -->
-            ${[20, 60, 100, 140].map((dx) => `<polygon points="${cx + dx},${cy - 120} ${cx + dx - 18},${cy - 80} ${cx + dx - 36},${cy - 120}" fill="#F6F1E4"/>`).join("")}
+          <!-- Right Jaw (pivot at hxR, hy) -->
+          <g id="trapJawR">
+            <path d="M${hxR} ${hy} C${hxR + 20} ${cy - 140} ${cx + 40} ${cy - 140} ${cx} ${cy - 140} L${cx} ${cy - 100} C${cx + 30} ${cy - 100} ${hxR - 40} ${cy - 100} ${hxR - 30} ${hy} Z" fill="#3D3D3D"/>
+            <polygon points="${cx + 10},${cy - 100} ${cx + 25},${cy - 60} ${cx + 40},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx + 50},${cy - 100} ${cx + 65},${cy - 60} ${cx + 80},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx + 90},${cy - 100} ${cx + 105},${cy - 60} ${cx + 120},${cy - 100}" fill="${C.paper}"/>
+            <polygon points="${cx + 130},${cy - 100} ${cx + 145},${cy - 60} ${cx + 160},${cy - 100}" fill="${C.paper}"/>
           </g>
         </g>`;
       }
 
       put("s5", svg(
         rays("r5", 540, 800, 22, "#1A4A3A") +
-        // Weapon Card
-        `<g id="s5_weapon" class="cut"><g transform="rotate(-6 540 320)">
-          ${sheet(160, 240, 760, 140, C.paper, 8)}
-          ${tx(540, 310, 44, "THE FOLLOW-ON IS A...", C.ink)}
-          ${tx(540, 365, 76, "DEADLY WEAPON", C.ausGreen)}
+        // Weapon Card at top
+        `<g id="s5_weapon" class="cut"><g transform="rotate(-5 540 230)">
+          ${sheet(160, 170, 760, 130, C.paper, 8)}
+          ${tx(540, 230, 42, "THE FOLLOW-ON IS A...", C.ink)}
+          ${tx(540, 280, 70, "DEADLY WEAPON", C.ausGreen)}
         </g></g>` +
+        // Sword illustration
+        paperSword("sword5", 540, 520) +
         // Trap Graphic
-        bearTrap("trap5", 540, 700) +
-        // Trap Stamp
-        `<g id="s5_trap" class="cut"><g transform="rotate(8 540 680)">
-          ${sheet(220, 610, 640, 140, C.stamp, 8)}
-          ${tx(540, 690, 84, "BUT IT'S A TRAP!", C.paper)}
+        bearTrap("trap5", 540, 680) +
+        // Trap Stamp positioned at y=360 (above the trap, clear of teeth)
+        `<g id="s5_trap" class="cut"><g transform="rotate(7 540 430)">
+          ${sheet(200, 360, 680, 130, C.stamp, 8)}
+          ${tx(540, 435, 78, "BUT IT'S A TRAP!", C.paper)}
         </g></g>` +
         // Final CTA
         `<g id="s5_cta" class="cut">
-          ${sheet(120, 920, 840, 240, C.gold, 10)}
-          <rect x="140" y="940" width="800" height="200" fill="${C.ink}"/>
-          ${tx(540, 1005, 48, "ONLY TRUE CRICKET FANS KNOW", C.gold)}
-          ${tx(540, 1075, 72, "FOLLOW FOR MORE SECRETS!", C.paper)}
-          ${tx(540, 1120, 36, "SHARE THIS WITH A CRICKET FAN", C.gold)}
+          ${sheet(120, 880, 840, 240, C.gold, 10)}
+          <rect x="140" y="900" width="800" height="200" fill="${C.ink}"/>
+          ${tx(540, 965, 48, "ONLY TRUE CRICKET FANS KNOW", C.gold)}
+          ${tx(540, 1035, 72, "FOLLOW FOR MORE SECRETS!", C.paper)}
+          ${tx(540, 1080, 36, "SHARE THIS WITH A CRICKET FAN", C.gold)}
         </g>`,
         C.dgreen
       ));
@@ -546,10 +589,18 @@ __GSAP_CODE__
       // Register transform origins
       gsap.set("#r1,#r5", { svgOrigin: "540 800" });
       gsap.set("#waughHand", { svgOrigin: "380 920" });
-      gsap.set("#s1_quote,#ts1,#s1_cost,#s2_diff,#s2_stampOpt,#s3_recordCard,#s4_win,#s4_waughBox,#s5_weapon,#s5_trap", { transformOrigin: CC });
+      gsap.set("#s1_quote,#ts1,#s1_cost,#s2_diff,#s2_choiceCard,#s2_stampOpt,#s3_recordCard,#s4_enforce,#s4_win,#s4_waughBox,#s5_weapon,#sword5,#trap5,#s5_trap,#s5_cta", { transformOrigin: CC });
       gsap.set("#batLaxman", { svgOrigin: "190 820" });
       gsap.set("#batDravid", { svgOrigin: "890 820" });
+      gsap.set("#trapJawL", { svgOrigin: "340 750" });
+      gsap.set("#trapJawR", { svgOrigin: "740 750" });
       gsap.set(".browL,.browR,.eye,.pupil", { transformOrigin: CC });
+
+      // Initially hide elements that appear later in scenes
+      gsap.set("#leadBarA,#leadBarB,#s2_diff,#s2_choiceCard,#s2_stampOpt", { opacity: 0 });
+      gsap.set("#s3_cracks,#s3_recordCard", { opacity: 0 });
+      gsap.set("#s4_enforce,#gLaxmanGroup,#gDravidGroup,#s4_waughBox,#s4_win", { opacity: 0 });
+      gsap.set("#s5_weapon,#sword5,#trap5,#s5_trap,#s5_cta", { opacity: 0 });
 
       // Core Animation Primitives
       const pop = (sel, t, d = 0.22) =>
@@ -694,8 +745,8 @@ __GSAP_CODE__
       shake("#s2 .cam", 7.95, 16);
 
       // Lead bars pop up
-      tl.fromTo("#leadBarA", { y: 800 }, { y: 0, duration: 0.32, ease: "back.out(1.4)" }, 8.70);
-      tl.fromTo("#leadBarB", { y: 800 }, { y: 0, duration: 0.32, ease: "back.out(1.4)" }, 9.00);
+      tl.fromTo("#leadBarA", { y: 600, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: "back.out(1.4)" }, 8.70);
+      tl.fromTo("#leadBarB", { y: 600, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: "back.out(1.4)" }, 9.00);
 
       // 274-run diff stamp slams
       slam("#s2_diff", 10.5, -12);
@@ -751,18 +802,23 @@ __GSAP_CODE__
       // Sun time-lapse moving across Eden Gardens sky
       tl.fromTo("#s4_sun", { cx: 200, cy: 420 }, { cx: 880, cy: 420, duration: 5.5, ease: "sine.inOut" }, 34.8);
 
+      // Australia Enforces Follow-on at 35.10s
+      slam("#s4_enforce", 35.10, -5);
+      shake("#s4 .cam", 35.26, 22);
+      tl.to("#s4_enforce", { scale: 0, opacity: 0, duration: 0.15 }, 37.15);
+
       // Laxman & Dravid pop up heroically
-      tl.fromTo("#gLaxman", { y: 900 }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, 37.25);
-      tl.fromTo("#gDravid", { y: 900 }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, 37.55);
-      tl.fromTo("#batLaxman", { scale: 0, rotation: -90 }, { scale: 0.8, rotation: -35, duration: 0.35, ease: "back.out(1.6)" }, 37.4);
-      tl.fromTo("#batDravid", { scale: 0, rotation: 90 }, { scale: 0.8, rotation: 35, duration: 0.35, ease: "back.out(1.6)" }, 37.7);
+      tl.fromTo("#gLaxmanGroup", { y: 1000, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 37.25);
+      tl.fromTo("#gDravidGroup", { y: 1000, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 37.55);
+      tl.fromTo("#batLaxman", { scale: 0, rotation: -90 }, { scale: 0.8, rotation: -35, duration: 0.35, ease: "back.out(1.6)" }, 37.40);
+      tl.fromTo("#batDravid", { scale: 0, rotation: 90 }, { scale: 0.8, rotation: 35, duration: 0.35, ease: "back.out(1.6)" }, 37.70);
 
       face("gLaxman", 37.3, { m: "smirk", b: [10, -10, 6] }, 0.01);
       face("gDravid", 37.6, { m: "smirk", b: [10, -10, 6] }, 0.01);
       shake("#s4 .cam", 37.95, 20);
 
       // Shocked Waugh
-      tl.fromTo("#s4_waughBox", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 38.8);
+      tl.fromTo("#s4_waughBox", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)" }, 38.8);
       face("gWaughShock", 38.8, { m: "teeth", b: [-18, 18, -26], p: [-12, 12] }, 0.01);
 
       // Victory Card + Confetti Slam!
@@ -776,22 +832,31 @@ __GSAP_CODE__
       tl.fromTo("#r5", { rotation: 0 }, { rotation: 28, duration: 7.48, ease: "none" }, 42.0);
       zoom("s5", 42.0, 7.48, 1, 1.06);
 
-      // Weapon card slides in
+      // Open bear trap jaws initially at 42.0s
+      tl.set("#trapJawL", { rotation: -68 }, 42.0);
+      tl.set("#trapJawR", { rotation: 68 }, 42.0);
+
+      // Weapon card & sword slide in
       tl.fromTo("#s5_weapon", { x: -700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.32, ease: "back.out(1.4)" }, 42.20);
+      tl.fromTo("#sword5", { y: -300, opacity: 0, rotation: -25 }, { y: 0, opacity: 1, rotation: 0, duration: 0.36, ease: "back.out(1.5)" }, 42.25);
       shake("#s5 .cam", 42.45, 18);
 
-      // Bear trap snaps shut aggressively!
-      tl.fromTo("#trap5", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(1.4)" }, 43.80);
-      tl.fromTo("#trapJawL", { rotation: 0 }, { rotation: 38, duration: 0.07, ease: "power4.in" }, 44.18);
-      tl.fromTo("#trapJawR", { rotation: 0 }, { rotation: -38, duration: 0.07, ease: "power4.in" }, 44.18);
-      shake("#s5 .cam", 44.25, 30);
+      // At 43.80s ("But sometimes... it's a trap"): sword & weapon card fade out and open trap zooms in
+      tl.to("#sword5,#s5_weapon", { opacity: 0, scale: 0.5, duration: 0.18 }, 43.75);
+      tl.to("#s5_weapon", { opacity: 0, scale: 0.8, duration: 0.2 }, 43.80);
+      tl.fromTo("#trap5", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(1.4)" }, 43.80);
 
-      // Trap stamp slams
-      slam("#s5_trap", 44.30, 8);
-      shake("#s5 .cam", 44.46, 28);
+      // Bear trap snaps shut aggressively at 44.18s!
+      tl.to("#trapJawL", { rotation: 0, duration: 0.08, ease: "power4.in" }, 44.18);
+      tl.to("#trapJawR", { rotation: 0, duration: 0.08, ease: "power4.in" }, 44.18);
+      shake("#s5 .cam", 44.25, 34);
+
+      // Trap stamp slams right above closed trap at 44.28s!
+      slam("#s5_trap", 44.28, 7);
+      shake("#s5 .cam", 44.44, 28);
 
       // Final CTA pop
-      pop("#s5_cta", 46.40, 0.26);
+      pop("#s5_cta", 46.40, 0.28);
       shake("#s5 .cam", 46.68, 18);
 
       // Register for headless render
