@@ -82,6 +82,8 @@ async def render_video(
         "--disable-backgrounding-occluded-windows",
         "--disable-renderer-backgrounding",
         "--font-render-hinting=none",
+        "--disable-dev-shm-usage",
+        "--js-flags=--max-old-space-size=4096",
     ]
     if use_gpu:
         launch_args += [
@@ -91,6 +93,7 @@ async def render_video(
             "--ignore-gpu-blocklist",
         ]
 
+    file_url = "file:///" + os.path.abspath(html_path).replace("\\", "/")
     start_time = time.time()
     next_assign = 0
     next_write = 0
@@ -125,6 +128,7 @@ async def render_video(
         )
         if scale != 1.0:
             cdp_params["clip"] = {"x": 0, "y": 0, "width": width, "height": height, "scale": scale}
+        
         while True:
             async with assign_lock:
                 if next_assign >= total_frames:
@@ -138,9 +142,28 @@ async def render_video(
                     await write_cond.wait()
 
             t = frame_idx / fps
-            await page.evaluate(f"if (window.seekFrame) window.seekFrame({t:.4f}); else if (window.__timelines && window.__timelines['main']) window.__timelines['main'].seek({t:.4f}); void 0;")
-            res = await cdp.send("Page.captureScreenshot", cdp_params)
-            img_bytes = base64.b64decode(res["data"])
+            img_bytes = None
+            
+            # Resilient retry with auto-tab recovery
+            for attempt in range(4):
+                try:
+                    await page.evaluate(f"if (window.seekFrame) window.seekFrame({t:.4f}); else if (window.__timelines && window.__timelines['main']) window.__timelines['main'].seek({t:.4f}); void 0;")
+                    res = await cdp.send("Page.captureScreenshot", cdp_params)
+                    img_bytes = base64.b64decode(res["data"])
+                    break
+                except Exception as err:
+                    print(f"\n[Worker {worker_id}] Transient error at frame {frame_idx} (attempt {attempt+1}/4): {err}")
+                    if attempt == 3:
+                        raise err
+                    try:
+                        await page.close()
+                    except Exception:
+                        pass
+                    await asyncio.sleep(1.0)
+                    page = await context.new_page()
+                    await page.goto(file_url, wait_until="load")
+                    await page.evaluate("document.fonts.ready")
+                    cdp = await context.new_cdp_session(page)
 
             async with write_cond:
                 ready_frames[frame_idx] = img_bytes
