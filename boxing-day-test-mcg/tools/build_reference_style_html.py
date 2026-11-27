@@ -1,10 +1,20 @@
 import os
 import json
+import base64
 
 def build():
     base_dir = r"c:\Users\Lenovo\OneDrive\Desktop\Project Hope\boxing-day-test-mcg"
     out_standalone = os.path.join(base_dir, "standalone.html")
     out_index = os.path.join(base_dir, "index.html")
+
+    # Read and inline GSAP & Font for 100% self-contained standalone execution
+    gsap_path = os.path.join(base_dir, "assets", "gsap.min.js")
+    with open(gsap_path, "r", encoding="utf-8") as f:
+        gsap_source = f.read()
+
+    font_path = os.path.join(base_dir, "assets", "fonts", "Anton-Regular.ttf")
+    with open(font_path, "rb") as f:
+        font_b64 = base64.b64encode(f.read()).decode("utf-8")
 
     # Speech segment aligned captions
     # Speech timeline:
@@ -62,11 +72,11 @@ def build():
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <script src="assets/gsap.min.js"></script>
+    <script>{gsap_source}</script>
     <style>
       @font-face {{
         font-family: "Anton";
-        src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+        src: url("data:font/truetype;charset=utf-8;base64,{font_b64}") format("truetype"), url("assets/fonts/Anton-Regular.ttf") format("truetype");
         font-weight: 400;
         font-style: normal;
       }}

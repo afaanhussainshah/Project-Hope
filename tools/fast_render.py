@@ -155,13 +155,27 @@ async def render_video(
 
         pages = []
         cdps = []
-        for _ in range(workers):
+        file_url = "file:///" + os.path.abspath(html_path).replace("\\", "/")
+        for w_idx in range(workers):
             page = await context.new_page()
-            await page.set_content(html_content, wait_until="domcontentloaded")
+            await page.goto(file_url, wait_until="load")
             await page.evaluate("document.fonts.ready")
+            has_seek = await page.evaluate("typeof window.seekFrame === 'function'")
+            if not has_seek:
+                raise RuntimeError("CRITICAL ERROR: window.seekFrame is undefined on page! Animation cannot play.")
             cdp = await context.new_cdp_session(page)
             pages.append(page)
             cdps.append(cdp)
+
+        # Quick motion verification test
+        test_p = pages[0]
+        await test_p.evaluate("window.seekFrame(0.0)")
+        res0 = await cdps[0].send("Page.captureScreenshot", {"format": "jpeg", "quality": 50})
+        await test_p.evaluate("window.seekFrame(5.0)")
+        res5 = await cdps[0].send("Page.captureScreenshot", {"format": "jpeg", "quality": 50})
+        if res0["data"] == res5["data"]:
+            raise RuntimeError("CRITICAL ERROR: Frame at t=0.0 and t=5.0 are identical! The animation is stuck!")
+        print("Verified animation seeking is fully dynamic (t=0.0 vs t=5.0 confirmed different).")
 
         print(f"Loaded {workers} GPU-Chromium CDP tabs in {time.time() - start_time:.2f}s. Starting parallel capture...")
         start_time = time.time()
